@@ -1,0 +1,8 @@
+1.	Job Search Service
+a.	A job application service. People looking for jobs can create profiles and apply for positions. Employers can post jobs and look through employees who applied for the position
+2.	API: SpaceX, Target Group: Teenagers and below
+a.	With this API, we could teach those in or below this age group information about launches (past, present, and future launches) from SpaceX. We can try to visually chart what an orbit of a rocket would look like using information like apoapsis, periapsis, eccentricity and how far the object is from the Earth. Also, we could use a sorting algorithm to sort launches by duration, or type, or if it was successful or not.
+3.	API: Swapi and Yoda Translator, Target Group: People interested in Star Wars
+a.	With this API, we could show the connections between different Star Wars things. Whether it be connections between characters, droids, ships, utilities, we could, show the history of these things. We could use a sorting algorithm for the type of species characters are or sort them by their home world. We could also sort or search them by their birth year. As for the Yoda Translator API, we could use that as a small feature of our program just to make it a little more “fun”.
+4.	A pantry management/recipe finder
+a.	The user would be able to track what ingredients they have in their kitchen via an editable databases and using the databases they would be able to find recipes that match ingredients that they have available in their pantry/kitchen.
