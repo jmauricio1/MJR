@@ -11,6 +11,8 @@ namespace AthleteDataTracker.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+            //disable initializer
+            Database.SetInitializer<DatabaseContext>(null);
         }
     }
 }
