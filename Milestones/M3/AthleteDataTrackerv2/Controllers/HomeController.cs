@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AthleteDataTrackerv2.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +12,10 @@ namespace AthleteDataTrackerv2.Controllers
     {
         public ActionResult Index()
         {
+            if (User.Identity.IsAuthenticated) 
+            {
+                
+            }
             return View();
         }
 
