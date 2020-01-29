@@ -34,5 +34,7 @@ namespace AthleteDataTrackerv2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AthleteDataTrackerv2.Models.AthleteResult> AthleteResults { get; set; }
     }
 }
