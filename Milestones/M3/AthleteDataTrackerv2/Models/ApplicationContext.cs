@@ -8,7 +8,8 @@ namespace AthleteDataTrackerv2.Models
     public partial class ApplicationContext : DbContext
     {
         public ApplicationContext()
-            : base("name=ApplicationContext")
+        : base("name=ApplicationContext")
+       // : base("name=AthleteDataTrackerDB")
         {
         }
 
