@@ -1,0 +1,58 @@
+﻿@model AthleteDataTrackerv2.Models.AthleteResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AthleteResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaceTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaceTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
