@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AthleteDataTrackerv2.Models.AthleteResult>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Athletes</h2>
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    -->
+<table class="table">
+    <tr>
+        <th>
+            Athlete Name
+        </th>
+        <th>
+            Event
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Time
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Athlete.FName)
+            @Html.DisplayFor(modelItem => item.Athlete.LName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelITem => item.Athlete.Gender)
+            @Html.DisplayFor(modelItem => item.Event.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RaceTime)
+        </td>
+        <!--
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+            -->
+    </tr>
+}
+
+</table>
