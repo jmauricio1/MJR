@@ -114,7 +114,7 @@ Interactive Components
 
 Other Features
 
-*Administrator Account
+* Administrator Account
 	* [U] As an administrator, I want to be able to create an administrator account to be able to 	manage the website.
 		* [T] Create a table for user accounts.
 		* [T] Create a page for users to create accounts.
@@ -143,7 +143,7 @@ Other Features
 
 ## Agile Data Modeling
 
-## Timeline and Release Plan
+## Timeline and Release Plan.
 
 
 
