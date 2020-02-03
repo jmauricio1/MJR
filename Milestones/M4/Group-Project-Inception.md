@@ -56,88 +56,85 @@ Universe Information
 * [E] SunCalc Api
 	* [U] As a visitor, I would like to be able to see how the sun affects different areas at different times.
 
-	[E] The Moon
-		Information
-[U] As a visitor, I want to be able to learn information about the moon.
+* [E] The Moon
+	* Information
+	* [U] As a visitor, I want to be able to learn information about the moon.
 
-MoonCalc Api
-[U] As a visitor, I would like to be able to see how the moon affects different areas 		at different times. 
+* [E]MoonCalc Api
+	*[U] As a visitor, I would like to be able to see how the moon affects different areas at different times. 
 
-	[E] Solar System
-		Information
-[U] As a visitor, I want to be able to learn information about our solar system.
-[U] As a visitor, I want to see basic information about the planets in our solar system so I can know some simple facts about the planets
-[U] As a visitor, I want an image of the planet so I can see what the planet looks like
+* [E] Solar System
+	* Information
+	* [U] As a visitor, I want to be able to learn information about our solar system.
+	* [U] As a visitor, I want to see basic information about the planets in our solar system so I can know some simple facts about the planets
+	* [U] As a visitor, I want an image of the planet so I can see what the planet looks like
 
-	[E] Outside Solar System
-		Information
-[U] As a visitor, I want to be able to learn information about things outside our	 	solar system.
-[U] As a visitor, I want some information of the Kuiper belt so that I can learn about what exists right outside our solar system
-[U] As a visitor, I want minimal information about the milky way galaxy to learn more about what exists outside our solar system
-	[E] Stars
-		Information
-[U] As a visitor, I want a small graphic that shows the life cycle of a star so that I
-can see what stars turn into and what they are made of
-[U] As a visitor, I would like to know some of the biggest or smallest stars in that
-we know of so that I can compare those stars to our Sun 
+* [E] Outside Solar System
+	* Information
+	* [U] As a visitor, I want to be able to learn information about things outside our	 	solar system.
+	* [U] As a visitor, I want some information of the Kuiper belt so that I can learn about what exists right outside our solar system
+	* [U] As a visitor, I want minimal information about the milky way galaxy to learn more about what exists outside our solar system
+* [E] Stars
+	* Information
+	* [U] As a visitor, I want a small graphic that shows the life cycle of a star so that I can see what stars turn into and what they are made of
+	* [U] As a visitor, I would like to know some of the biggest or smallest stars in that we know of so that I can compare those stars to our Sun 
 
 
 Corporation Information
-[E] SpaceX information
-Launch Profile
-		[U] As a user, I can view data about SpaceX launches so I can learn more about			 	them. 
-			[T] Get access to the api.
-			[T] Create controller functions to get data.
-			[T] Create javascript and ajax calls to get data.
-			[T] Create page to display data.
+* [E] SpaceX information
+	* Launch Profile
+	* [U] As a user, I can view data about SpaceX launches so I can learn more about them. 
+		* [T] Get access to the api.
+		* [T] Create controller functions to get data.
+		* [T] Create javascript and ajax calls to get data.
+		* [T] Create page to display data.
 
-SpaceX Missions Timeline
-		[U] As a user, I want to be able to see a timeline of the SpaceX launches so I can 			learn more about how missions have changed over time.
-			[T] Get access to the api.
-			[T] Create controller functions to get data.
-			[T] Create javascript and ajax calls to get data.
-			[T] Create page to display data.
+* [E] SpaceX Missions Timeline
+	* [U] As a user, I want to be able to see a timeline of the SpaceX launches so I can learn more about how missions have changed over time.
+		* [T] Get access to the api.
+		* [T] Create controller functions to get data.
+		* [T] Create javascript and ajax calls to get data.
+		* [T] Create page to display data.
 
 
-[E] Nasa Information
-Mission Information
-			[U] As a user, I want to be able to see information about Nasa launches				 so I can learn more about space missions.
-
-Mission Timeline
-			[U] As a user, I want to be able to see a timeline of Nasa’s missions so I				 can learn about the history of space missions
+* [E] Nasa Information
+	* Mission Information
+		* [U] As a user, I want to be able to see information about Nasa launches so I can learn more about space missions.
+	* Mission Timeline
+		* [U] As a user, I want to be able to see a timeline of Nasa’s missions so I can learn about the history of space missions
 		
 
 Interactive Components
-[E] Games:
-[U]: As a younger visitor, I want to play games related to space so that I can interact with the website instead of ONLY reading facts
-[U: As a visitor, I would like to see a list of scores so that I could improve my gameplay and hopefully out-perform some of the top scores
-[E] Quizzes
-		[U] As a user, I want to be able to test my knowledge and review the concepts			 	that I learned.
+*[E] Games:
+	* [U]: As a younger visitor, I want to play games related to space so that I can interact with the website instead of ONLY reading facts
+	* [U]: As a visitor, I would like to see a list of scores so that I could improve my gameplay and hopefully out-perform some of the top scores
+*[E] Quizzes
+	* [U] As a user, I want to be able to test my knowledge and review the concepts	that I learned.
 
 
 Other Features
 
 Administrator Account
-	[U] As an administrator, I want to be able to create an administrator account to be able to 	manage the website.
-		[T] Create a table for user accounts.
-		[T] Create a page for users to create accounts.
-		[T] Create a page for users to login to their accounts.
+	* [U] As an administrator, I want to be able to create an administrator account to be able to 	manage the website.
+		* [T] Create a table for user accounts.
+		* [T] Create a page for users to create accounts.
+		* [T] Create a page for users to login to their accounts.
 
 User Account
-	[U] As a user, I want to be able to create an account so I can record my data. 
-		[T] Create a table for user accounts.
-		[T] Create a page for users to create accounts.
-		[T] Create a page for users to login to their accounts.
+	* [U] As a user, I want to be able to create an account so I can record my data. 
+		* [T] Create a table for user accounts.
+		* [T] Create a page for users to create accounts.
+		* [T] Create a page for users to login to their accounts.
 
 Interactive Calendar:
-U: As a user, I want to see a calendar that shows any launches in previous or latter months so that I can keep track of launches.
-[T] Find api for calendar.
+	* [U]: As a user, I want to see a calendar that shows any launches in previous or latter months so that I can keep track of launches.
+		* [T] Find api for calendar.
 
 Fact of the day:
-U: As a user, I want to see a new “fact of the day” on the homepage, so I can learn something “new” when I first come onto the site
-[T] Create a table to store facts.
-[T] Add code to grab a fact from the database.
-[T] Create area on a page to display.
+	* [U]: As a user, I want to see a new “fact of the day” on the homepage, so I can learn something “new” when I first come onto the site
+		* [T] Create a table to store facts.
+		* [T] Add code to grab a fact from the database.
+		* [T] Create area on a page to display.
 
 
 
