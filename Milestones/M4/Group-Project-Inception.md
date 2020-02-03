@@ -114,23 +114,23 @@ Interactive Components
 
 Other Features
 
-Administrator Account
+*Administrator Account
 	* [U] As an administrator, I want to be able to create an administrator account to be able to 	manage the website.
 		* [T] Create a table for user accounts.
 		* [T] Create a page for users to create accounts.
 		* [T] Create a page for users to login to their accounts.
 
-User Account
+* User Account
 	* [U] As a user, I want to be able to create an account so I can record my data. 
 		* [T] Create a table for user accounts.
 		* [T] Create a page for users to create accounts.
 		* [T] Create a page for users to login to their accounts.
 
-Interactive Calendar:
+* Interactive Calendar:
 	* [U]: As a user, I want to see a calendar that shows any launches in previous or latter months so that I can keep track of launches.
 		* [T] Find api for calendar.
 
-Fact of the day:
+* Fact of the day:
 	* [U]: As a user, I want to see a new “fact of the day” on the homepage, so I can learn something “new” when I first come onto the site
 		* [T] Create a table to store facts.
 		* [T] Add code to grab a fact from the database.
