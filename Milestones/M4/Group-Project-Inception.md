@@ -105,10 +105,10 @@ Corporation Information
 		
 
 Interactive Components
-*[E] Games:
+* [E] Games:
 	* [U]: As a younger visitor, I want to play games related to space so that I can interact with the website instead of ONLY reading facts
 	* [U]: As a visitor, I would like to see a list of scores so that I could improve my gameplay and hopefully out-perform some of the top scores
-*[E] Quizzes
+* [E] Quizzes
 	* [U] As a user, I want to be able to test my knowledge and review the concepts	that I learned.
 
 
