@@ -46,9 +46,9 @@ For those interested in all things space who want to learn more about SpaceX and
 E: Epic  
 U: User Story  
 T: Task  
+CF: Core Feature
 
-
-Universe Information
+Universe Information (CF)
 * [E] The Sun
 	* Information
 	* [U] As a visitor, I want to be able to learn information about the sun.
@@ -61,7 +61,8 @@ Universe Information
 	* [U] As a visitor, I want to be able to learn information about the moon.
 
 * [E]MoonCalc Api
-	*[U] As a visitor, I would like to be able to see how the moon affects different areas at different times. 
+	* [U] As a visitor, I would like to be able to see how the moon affects different areas at different times.
+	* [U] As a visitor, I want to know the position of the moon at a certain time of day so that I can go outside and see it at that time.
 
 * [E] Solar System
 	* Information
@@ -80,7 +81,7 @@ Universe Information
 	* [U] As a visitor, I would like to know some of the biggest or smallest stars in that we know of so that I can compare those stars to our Sun 
 
 
-Corporation Information
+Corporation Information (CF)
 * [E] SpaceX information
 	* Launch Profile
 	* [U] As a user, I can view data about SpaceX launches so I can learn more about them. 
@@ -96,6 +97,9 @@ Corporation Information
 		* [T] Create javascript and ajax calls to get data.
 		* [T] Create page to display data.
 
+* [E] SpaceX Individual Mission timeline
+	* [U] As a user, I would like to see a vertical or horizontal timeline of a launch so that I can know what happened before and during a SpaceX launch.
+	* [U] As a user, I want to have multiple timelines of launches so that I could compare the timeline between SpaceX launches
 
 * [E] Nasa Information
 	* Mission Information
@@ -104,7 +108,7 @@ Corporation Information
 		* [U] As a user, I want to be able to see a timeline of Nasa’s missions so I can learn about the history of space missions
 		
 
-Interactive Components
+Interactive Components (CF)
 * [E] Games:
 	* [U]: As a younger visitor, I want to play games related to space so that I can interact with the website instead of ONLY reading facts
 	* [U]: As a visitor, I would like to see a list of scores so that I could improve my gameplay and hopefully out-perform some of the top scores
