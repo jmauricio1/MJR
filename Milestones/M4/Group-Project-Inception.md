@@ -10,7 +10,7 @@ For those interested in all things space who want to learn more about SpaceX and
 ## Initial Requirements Elaboration and Elicitation
 
 ### Questions
-	How should the admin accounts be given?
+* How should the admin accounts be given?
 
 ### Interviews
 
@@ -18,20 +18,20 @@ For those interested in all things space who want to learn more about SpaceX and
 
 ## List of Needs and Features
 
-A website with a visual design that appeals to people of any age and evokes the idea of space.
-Administrators should be able to have uniquely typed accounts that allow them to alter content on the website and edit or delete user comments. Additionally, they should be able to moderate non-administrator user accounts in case of malicious behavior.
-Visitors should be able to register for a user account that allows them to post comments, delete their own comments, have a basic profile page, and track the progress of certain website activities.
-We should be able to display detailed information about SpaceX mission launches, this data should be acquired through the SpaceX API (https://api.spacexdata.com/v3/launches).
-For both NASA and SpaceX sections, we should have timelines that show past events that when clicked on will display the information for that event.
-We should have embedded videos for mission launches where available, if videos of an event aren’t available then it isn’t expected for that specific mission.
-Users should be able to view data about how the sun is acting upon locations on earth through SunCalc’s API (https://www.torsten-hoffmann.de/apis/suncalcmooncalc/link_en.html)
-Users should be able to view data about how the moon is acting upon locations on earth through MoonCalc’s API
-(https://www.torsten-hoffmann.de/apis/suncalcmooncalc/link_en.html)
-Information should be available publicly available to any user covering a wide array of space related topics. This includes SpaceX, NASA, NASA rovers, space suits, the sun, the moon, the solar system, stars and the universe beyond our galaxy. 
-We should have a number of daily updating pieces of content so that the website never feels monotonous upon revisits. A picture of the day will be implemented through NASA’s APOD API (https://api.nasa.gov/planetary/apod). A fact of the day will be implemented through a database unless an API can be found to satisfy this condition. A “Today In History” will be implemented which will share historical events that occured on the same day/month in a year of the past. 
-Every major information component should have associated quizzes that users may take to test their knowledge. These quizzes should have varied difficulty levels which the user may dictate what difficulty of questions they wish to answer.
-There should be an event calendar that shows past events which is also interactable. Clicking on the event should redirect the user to the relevant page on the web site. 
-Simple games should be implemented to help break the monotony of information and allow visitors to interact with the website in a way that is designed solely for enjoyment. Every game should be space related and have relatively simple control schemes so that younger players may enjoy them as well. These should be done using HTML5 and Javascript so that they run effectively in a browser window.  
+* A website with a visual design that appeals to people of any age and evokes the idea of space.
+* Administrators should be able to have uniquely typed accounts that allow them to alter content on the website and edit or delete user comments. Additionally, they should be able to moderate non-administrator user accounts in case of malicious behavior.
+* Visitors should be able to register for a user account that allows them to post comments, delete their own comments, have a basic profile page, and track the progress of certain website activities.
+* We should be able to display detailed information about SpaceX mission launches, this data should be acquired through the SpaceX API (https://api.spacexdata.com/v3/launches).
+* For both NASA and SpaceX sections, we should have timelines that show past events that when clicked on will display the information for that event.
+* We should have embedded videos for mission launches where available, if videos of an event aren’t available then it isn’t expected for that specific mission.
+* Users should be able to view data about how the sun is acting upon locations on earth through SunCalc’s API (https://www.torsten-hoffmann.de/apis/suncalcmooncalc/link_en.html)
+* Users should be able to view data about how the moon is acting upon locations on earth through MoonCalc’s API
+* (https://www.torsten-hoffmann.de/apis/suncalcmooncalc/link_en.html)
+* Information should be available publicly available to any user covering a wide array of space related topics. This includes SpaceX, NASA, NASA rovers, space suits, the sun, the moon, the solar system, stars and the universe beyond our galaxy. 
+* We should have a number of daily updating pieces of content so that the website never feels monotonous upon revisits. A picture of the day will be implemented through NASA’s APOD API (https://api.nasa.gov/planetary/apod). A fact of the day will be implemented through a database unless an API can be found to satisfy this condition. A “Today In History” will be implemented which will share historical events that occured on the same day/month in a year of the past. 
+* Every major information component should have associated quizzes that users may take to test their knowledge. These quizzes should have varied difficulty levels which the user may dictate what difficulty of questions they wish to answer.
+* There should be an event calendar that shows past events which is also interactable. Clicking on the event should redirect the user to the relevant page on the web site. 
+* Simple games should be implemented to help break the monotony of information and allow visitors to interact with the website in a way that is designed solely for enjoyment. Every game should be space related and have relatively simple control schemes so that younger players may enjoy them as well. These should be done using HTML5 and Javascript so that they run effectively in a browser window.  
 
 ## Initial Modeling
 
@@ -49,12 +49,12 @@ T: Task
 
 
 Universe Information
-[E] The Sun
-		Information
-[U] As a visitor, I want to be able to learn information about the sun.
+* [E] The Sun
+	* Information
+	* [U] As a visitor, I want to be able to learn information about the sun.
 
-SunCalc Api
-[U] As a visitor, I would like to be able to see how the sun affects different areas			 at different times.
+* [E] SunCalc Api
+	* [U] As a visitor, I would like to be able to see how the sun affects different areas at different times.
 
 	[E] The Moon
 		Information
@@ -110,7 +110,7 @@ Mission Timeline
 Interactive Components
 [E] Games:
 [U]: As a younger visitor, I want to play games related to space so that I can interact with the website instead of ONLY reading facts
-[U]: As a visitor, I would like to see a list of scores so that I could improve my gameplay and hopefully out-perform some of the top scores
+[U: As a visitor, I would like to see a list of scores so that I could improve my gameplay and hopefully out-perform some of the top scores
 [E] Quizzes
 		[U] As a user, I want to be able to test my knowledge and review the concepts			 	that I learned.
 
