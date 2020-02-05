@@ -197,10 +197,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\AthleteDataTrackerDB.mdf" />
-    <Content Include="App_Data\AthleteDataTrackerDB_log.ldf">
-      <DependentUpon>AthleteDataTrackerDB.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\savedCode.sql" />
     <Content Include="App_Data\seed.sql" />
