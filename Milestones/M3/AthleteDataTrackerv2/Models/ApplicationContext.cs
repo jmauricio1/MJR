@@ -9,7 +9,7 @@ namespace AthleteDataTrackerv2.Models
     {
         public ApplicationContext()
        // : base("name=ApplicationContext")
-        : base("name=AthleteDataTrackerDB")
+        : base("name=ApplicationContext")
         {
         }
 
