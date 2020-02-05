@@ -1,4 +1,2 @@
-<<<<<<< HEAD
-=======
-D:\home\site\repository\Milestones\M3\AthleteDataTrackerv2\AthleteDataTrackerv2.sln
->>>>>>> efb6c6d135dadae8b8c32245afcf45a645bf9b09
+[config]
+project = AthleteDataTrackerv2/AthleteDataTrackerv2.csproj
