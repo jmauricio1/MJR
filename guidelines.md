@@ -1,42 +1,54 @@
-# MJR Software Solutions
-Welcome to the repository for MJR Software Solutions. We are a team built for Western Oregon University’s software engineering senior capstone sequence (CS461, CS462). Together we developed the space related learning tool, I Need My Space.
+# I Need My Space Project Guidelines
+Please follow the guidelines listed below when contributing code to this project. Please keep in mind that this project was started as a university class and some decisions have been made with students and teaching in mind.
 
-## Project Contents
-1. I Need My Space
-- This is the primary folder for the I Need My Space project
-2. Milestones for CS461
-- M1
-  - Created a business logo for MJR Software Solutions
-  - Created a business letterhead for MJR Software Solutions
-  - Created uniform resumes for all group members
-  - Generated project ideas for our future group project
-- M2
-  - Began inception phase on the Athlete Data Tracker class project
-  - Refined group project ideas further
-- M3
-  - Contains visual studio solution file for the Athlete Data Tracker project under the "AthleteDataTrackerV2" folder
-  - Inception phase tasks on the class project
-  - Used pivotal tracker for disciplined agile delivery of the class project
-- M4
-  - 1 week sprint iteration for the class project
-  - Continued inception phase for I Need My Space project
-- M5
-  - Class project sprint retrospective
-  - Completion of inception phase for I Need My Space project
+### Overall Guidelines
+- Code will be written in C# following the ASP.NET / MVC5 style. 
+  - Follow standard C# convetions which can be found [here](https://www.dofactory.com/reference/csharp-coding-standards).
+- Use RESTful style when creating new controllers (IE. A new controller for differentiable entities)
 
-## MJR Software Solutions Members 
-[Matthew Hibner](https://github.com/OmegaArmadillo)
+### Code
+- For consistencies sake, we ask that you please use place the curly bracket (brace) on a new line. 
+```
+public class NewClass
+{
+    if(something)
+    {
+        print(Hello World!)
+    }
+    else
+    {
+        print(Goodbye World!)
+    }
+}
+```
+- Please use clear and understandable / logical class names, method names and variable names. 
+- Frequent comments would be appreciated using either the */ text /* multine comment or //text single line comment.
+- A method should minimally be accompanied by a comment explaining what that method does. 
 
-[Joshua Jacob Mauricio](https://github.com/jmauricio1)
+### Git
+- Use branching methods as notated [here](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging). 
+- Commit often to create a steady flow of restore points in case something goes wrong. 
+- Verify that all code compiles before you commit the code.
+- Don't commit any auto-generated files. Use an appropriate visual studio .gitignore ([.gitignore example](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore)).
+- Resolve your own merge conflicts.
 
-[Robert Lochbaum](https://github.com/Bloodytrailz)
+### Javascript
+- Use external .js script files. We will not be writing any javascript within the views and we would ask that you don't either. 
 
-## I Need My Space Project
-This project is a website focused around teaching younger audiences about space related topics including our solar system, the universe, and missions conducted by major space related companies such as Nasa and SpaceX. Our goal is to make the website as interesting and engaging as possible to our target audience.
+### Styles
+- Use external CSS style sheets for the vast majority of formatting. 
+- Exceptions will be made for in-line CSS where we find acceptable (IE. Formatting a picture's width & height)
 
-#### Vision Statement
->For those interested in all things space who want to learn more about SpaceX and NASA missions and space itself, the Astronomical Learning Website is an informational system that will allow people of all ages to 
->learn about SpaceX, NASA and space in a variety of ways. Visitors will be able to see what missions SpaceX and NASA have completed and be able to view various information about each mission. The website will also 
->include other ways of teaching people about what goes into space missions and other aspects of space. This will include interactive media such as games and quizzes. Unlike SpaceX’s launch manifest (https://
->www.spacex.com/missions), our product will be able to deliver more detailed information about SpaceX missions and in a format that is more appealing to younger audiences alongside a much larger scope of topics.
+### Databases
+- If you create new tables please follow the naming convention for the ID of the table using TableNameID.
+- Please pluralize table names (Ie. 'Athlete' table should be 'Athletes').
+- Foreign keys will be EntityID.
+
+### Pull Requests
+1. Be sure you are pulling from upstream dev when you start working for the most up to date developement files. 
+2. Create your feature branches off of the dev branch.
+3. When you are ready to merge, checkout your dev branch and pull from upstream to make certain you have the current files. Now checkout your feature branch and merge your dev branch into it. Test at this point to assure that your merge was successful and that all features are working correctly still.
+4. Push your feature branch to your remote repository (push origin featureBranch)
+5. From your forked repository create a pull request, from your remote featureBranch to the upstreams dev branch, fill out information as necessary. [Instructions Here](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request)
+
 
