@@ -1,9 +1,7 @@
 # MJR Software Solutions
-======
 Welcome to the repository for MJR Software Solutions. We are a team built for Western Oregon University’s software engineering senior capstone sequence (CS461, CS462). Together we developed the space related learning tool, I Need My Space.
 
 ## Project Contents
-======
 1. I Need My Space
 - This is the primary folder for the I Need My Space project
 2. Milestones for CS461
@@ -27,13 +25,11 @@ Welcome to the repository for MJR Software Solutions. We are a team built for We
   Completion of inception phase for I Need My Space project
 
 ## MJR Software Solutions Members 
-======
 [Matthew Hibner](https://github.com/OmegaArmadillo)
 [Joshua Jacob Mauricio](https://github.com/jmauricio1)
 [Robert Lochbaum](https://github.com/Bloodytrailz)
 
 ## I Need My Space Project
-======
 This project is a website focused around teaching younger audiences about space related topics including our solar system, the universe, and missions conducted by major space related companies such as Nasa and SpaceX. Our goal is to make the website as interesting and engaging as possible to our target audience.
 
 #### Vision Statement
