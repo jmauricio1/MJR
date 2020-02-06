@@ -3,22 +3,27 @@
 }
 
 .navbar {
-    background-color: lightskyblue;
+    background: url(https://i.imgur.com/4anpMxm.png);
 }
 
 #mainImage {
-    width: 75%;
+    height: 275px;
+    width: 275px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 30px;
+    border: dotted 4px;
+}
+
+#subImage {
+    height: 275px;
+    width: 275px;
+    display: block;
+    margin-top: 3px;
     border: dotted 4px;
 }
 
 .nav.navbar-nav li a {
     color: black;
+    font-weight: bold;
 }
 
-.navbar-inverse .navbar-brand {
-    color: black;
-}

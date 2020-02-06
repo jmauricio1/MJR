@@ -5,26 +5,38 @@
 <link rel="stylesheet" href="~/Content/HomeStyle.css">
 
 <div class="row">
-    <div class="col">
-        <img src="https://images.unsplash.com/photo-1560090995-01632a28895b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80" id="mainImage" />
-    </div>
+    <div class="col-sm-6">
+        <div class="col-sm-6">
+            <img src="https://images.unsplash.com/photo-1560090995-01632a28895b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80" id="mainImage" />
+            <img src="https://lh5.googleusercontent.com/proxy/h1xMCXtDpg4TXwJM3BgNbW6VSpXUrGwbpxB26t1dPQe4LGO8Y3x606ApXFha_FgIjVbk9bnNa1pxAUj-Ba8C" id="subImage" />
+        </div>
+        <div class="col-sm-6">
+            <img src="https://www.finis.co.za/wp-content/uploads/2013/12/3x300M-Stopwatch-Usage-1.jpg" id="mainImage" />
+            <img src="https://ak0.picdn.net/shutterstock/videos/1011429830/thumb/1.jpg" id="subImage" />
+        </div>
 
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Find records for anyone</h2>
-        <p>
-            Our database has records for many athletes from high school to professional level in many different events.
-        </p>
     </div>
-    <div class="col-md-4">
-        <h2>See all the stats</h2>
+    <div class="col-sm-6">
+        <h3>
+            @Html.ActionLink("Find Athlete Records", "Search", "Home")
+            <img src="https://lh5.googleusercontent.com/proxy/1Ky5TeUZoTiBcxVzS-kiVbF9M_3rCoNG00RsDnK9jiVBXgTqV_sKOR6dxqa9EJjp2kTrmdZou7iT9ilKJROegDqSiees2xny4_BEzLpZ0QEN3swK_P2zvrt0xgwoUg" height="48" weight="48" />
+        </h3>
+        <p>Our database has records for many athletes from high school to professional level in many different events.</p>
+        <br />
+        <br />
+        <h3>
+            @Html.ActionLink("See All Race Statistics", "Index", "AthleteResults")
+            <img src="https://cdn.imgbin.com/24/12/12/imgbin-computer-icons-chart-data-analysis-statistics-computer-4epEZTJE6EU8YSiAusC9B6U6T.jpg" height="48" width="48" />
+
+        </h3>
         <p>Our data provides a multitude of different information for each of your athletes.</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Advanced Tools</h2>
-        <p>Use our advance tools to be able to predict your athlete's performace over time. </p>
+        <br />
+        <br />
+        <h3>
+            <strike>Advanced Tools</strike>
+            <img src="https://icons.iconarchive.com/icons/alecive/flatwoken/512/Apps-Development-icon.png" height="48" width="48" />
+        </h3>
+        <p>Use our advance tools to be able to predict your athlete's performace over time. (In Developement)</p>
+
     </div>
 </div>
-

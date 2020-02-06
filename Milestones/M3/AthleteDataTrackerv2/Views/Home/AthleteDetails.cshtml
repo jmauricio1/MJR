@@ -1,0 +1,71 @@
+﻿@model AthleteDataTrackerv2.Models.AthleteDataViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Athlete Profile</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+
+        <dt>
+            Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LName)
+        </dd>
+
+        <dt>
+            Gender
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+    </dl>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Event</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Time</th>
+    </tr>
+
+    @foreach (var result in Model.Results)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => result.Event.EventName)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => result.Location.Name)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => result.EventDate)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => result.RaceTime)
+    </td>
+</tr>
+    }
+
+</table>
+

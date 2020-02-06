@@ -183,6 +183,7 @@
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\Athlete.cs" />
+    <Compile Include="Models\AthleteDataViewModel.cs" />
     <Compile Include="Models\AthleteEvent.cs" />
     <Compile Include="Models\AthleteResult.cs" />
     <Compile Include="Models\Coach.cs" />
@@ -261,6 +262,8 @@
     <Content Include="Views\AthleteResults\Details.cshtml" />
     <Content Include="Views\AthleteResults\Edit.cshtml" />
     <Content Include="Views\AthleteResults\Index.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\AthleteDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
