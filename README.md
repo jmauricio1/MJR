@@ -6,27 +6,29 @@ Welcome to the repository for MJR Software Solutions. We are a team built for We
 - This is the primary folder for the I Need My Space project
 2. Milestones for CS461
 - M1
-  Created a business logo for MJR Software Solutions
-  Created a business letterhead for MJR Software Solutions
-  Created uniform resumes for all group members
-  Generated project ideas for our future group project
+  - Created a business logo for MJR Software Solutions
+  - Created a business letterhead for MJR Software Solutions
+  - Created uniform resumes for all group members
+  - Generated project ideas for our future group project
 - M2
-  Began inception phase on the Athlete Data Tracker class project
-  Refined group project ideas further
+  - Began inception phase on the Athlete Data Tracker class project
+  - Refined group project ideas further
 - M3
-  Contains visual studio solution file for the Athlete Data Tracker project under the "AthleteDataTrackerV2" folder
-  Inception phase tasks on the class project
-  Used pivotal tracker for disciplined agile delivery of the class project
+  - Contains visual studio solution file for the Athlete Data Tracker project under the "AthleteDataTrackerV2" folder
+  - Inception phase tasks on the class project
+  - Used pivotal tracker for disciplined agile delivery of the class project
 - M4
-  1 week sprint iteration for the class project
-  Continued inception phase for I Need My Space project
+  - 1 week sprint iteration for the class project
+  - Continued inception phase for I Need My Space project
 - M5
-  Class project sprint retrospective
-  Completion of inception phase for I Need My Space project
+  - Class project sprint retrospective
+  - Completion of inception phase for I Need My Space project
 
 ## MJR Software Solutions Members 
 [Matthew Hibner](https://github.com/OmegaArmadillo)
+
 [Joshua Jacob Mauricio](https://github.com/jmauricio1)
+
 [Robert Lochbaum](https://github.com/Bloodytrailz)
 
 ## I Need My Space Project
