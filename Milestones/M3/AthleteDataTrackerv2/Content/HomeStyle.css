@@ -1,0 +1,29 @@
+﻿body {
+    background-color: lightcyan;
+}
+
+.navbar {
+    background: url(https://i.imgur.com/4anpMxm.png);
+}
+
+#mainImage {
+    height: 275px;
+    width: 275px;
+    display: block;
+    margin-top: 30px;
+    border: dotted 4px;
+}
+
+#subImage {
+    height: 275px;
+    width: 275px;
+    display: block;
+    margin-top: 3px;
+    border: dotted 4px;
+}
+
+.nav.navbar-nav li a {
+    color: black;
+    font-weight: bold;
+}
+

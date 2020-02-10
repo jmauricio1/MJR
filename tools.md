@@ -1,0 +1,17 @@
+# Tools Used
+- Git (Version Control)
+- C#
+- ASP.NET
+- MVC5
+- Javascript / Jquery Library
+- JSON / AJAX
+- HTML5 / CSS
+- Bootstrap 3 (CSS)
+- Visual Studio 2019 (Community Edition) IDE
+- SQL Server Management Studio
+- SQL Server in Azure (Deployed Site)
+- Database on Azure Server (Deployed Database)
+- SpaceX API (https://api.spacexdata.com/v3/launches)
+- NASA’s APOD API (https://api.nasa.gov/planetary/apod)
+- SunCalc API, MoonCalc API (https://www.torsten-hoffmann.de/apis/suncalcmooncalc/link_en.html)
+- Client using web browser
