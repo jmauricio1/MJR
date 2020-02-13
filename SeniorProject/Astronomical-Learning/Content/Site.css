@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: black;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +23,24 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#thyNav{
+    background-color: black;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 75%;
+    color: white;
+}
+
+#dropdowns{
+    background: none;
+    color: white;
+}
+
+.dropdown-item{
+    color: white;
+}
+
