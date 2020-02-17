@@ -1,7 +1,11 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: black;
+    /* background-color: black; */
+    background-image: url(../Images/GalaxyBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,15 +28,25 @@ textarea {
     max-width: 280px;
 }
 
+#astronomical-logo{
+    width: 25%;
+    height: auto;
+}
+
 #thyNav{
-    background-color: black;
+    background-color: transparent;
 }
 
 footer{
     position: absolute;
     bottom: 0;
-    width: 75%;
+    width: 100%;
     color: white;
+    background-color: black;
+}
+
+#test{
+    background-color: black;
 }
 
 #dropdowns{
@@ -44,3 +58,11 @@ footer{
     color: white;
 }
 
+#img-logo{
+    width: 30%;
+    height: auto;
+}
+
+#copyright{
+    font-size: 8pt;
+}
