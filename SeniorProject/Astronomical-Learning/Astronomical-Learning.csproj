@@ -189,6 +189,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Astronomical-Logo1.png" />
+    <Content Include="Images\GalaxyBackground.jpg" />
+    <Content Include="Images\mjr-transparent.png" />
+    <Content Include="Images\mjr-transparent2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
