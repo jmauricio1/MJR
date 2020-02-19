@@ -14,17 +14,17 @@ namespace Astronomical_Learning.Controllers
             return View();
         }
 
-<<<<<<< HEAD
+
         public ActionResult Moon_Information()
         {
             return View();
         }
-=======
+
         public ActionResult Sun_Information()
         {
             return View();
         }
 
->>>>>>> 8b0dab78fa4ebff9d8f66251f7282f91b155fffb
+
     }
 }
