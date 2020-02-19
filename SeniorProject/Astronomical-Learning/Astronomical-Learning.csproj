@@ -239,7 +239,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\SolarSystem\Moon_Information.cshtml" />
+=======
+    <Content Include="Views\SolarSystem\Sun_Information.cshtml" />
+>>>>>>> 8b0dab78fa4ebff9d8f66251f7282f91b155fffb
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
