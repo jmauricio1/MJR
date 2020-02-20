@@ -174,11 +174,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OuterSystemController.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\SolarSystemController.cs" />
     <Compile Include="Controllers\SpaceCompaniesController.cs" />
-=======
->>>>>>> 38b7a6892f79daa61b4f92fcf02a30fd10385655
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,14 +246,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\SolarSystem\Moon_Information.cshtml" />
     <Content Include="Views\SolarSystem\Sun_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\SpaceX.cshtml" />
     <Content Include="Views\OuterSystem\Andromeda_Information.cshtml" />
-=======
     <Content Include="Views\OuterSystem\MilkyWay.cshtml" />
->>>>>>> 38b7a6892f79daa61b4f92fcf02a30fd10385655
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
