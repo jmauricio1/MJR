@@ -18,5 +18,10 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+
+        public ActionResult SpaceDebris_Information()
+        {
+            return View();
+        }
     }
 }
