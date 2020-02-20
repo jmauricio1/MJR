@@ -1,11 +1,12 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 20px;
     /* background-color: black; */
     background-image: url(../Images/GalaxyBackground.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -34,12 +35,16 @@ textarea {
 }
 
 #thyNav{
-    background-color: transparent;
+    background-color: black;
 }
 
+#nav-mjr{
+    max-width: 75px;
+    height: auto;
+}
 footer{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: -500px;
     width: 100%;
     color: white;
     background-color: black;
@@ -50,8 +55,9 @@ footer{
 }
 
 #dropdowns{
-    background: none;
+    background: black;
     color: white;
+    width: 100%;
 }
 
 .dropdown-item{
@@ -65,4 +71,11 @@ footer{
 
 #copyright{
     font-size: 8pt;
+}
+
+.information-paragraphs{
+    color: white;
+}
+#spacexjmbo{
+    background-color: black;
 }
