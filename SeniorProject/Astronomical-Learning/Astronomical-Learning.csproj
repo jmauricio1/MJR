@@ -247,11 +247,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\SolarSystem\Moon_Information.cshtml" />
     <Content Include="Views\SolarSystem\Sun_Information.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\SpaceCompanies\SpaceX.cshtml" />
-=======
     <Content Include="Views\OuterSystem\Andromeda_Information.cshtml" />
->>>>>>> dfacd4fe532d95e2dfa21af195e97f0a1f2879c0
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
