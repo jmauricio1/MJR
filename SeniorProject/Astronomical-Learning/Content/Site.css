@@ -35,12 +35,16 @@ textarea {
 }
 
 #thyNav{
-    background-color: transparent;
+    background-color: black;
 }
 
+#nav-mjr{
+    max-width: 75px;
+    height: auto;
+}
 footer{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: -250px;
     width: 100%;
     color: white;
     background-color: black;
@@ -51,8 +55,9 @@ footer{
 }
 
 #dropdowns{
-    background: none;
+    background: black;
     color: white;
+    width: 100%;
 }
 
 .dropdown-item{

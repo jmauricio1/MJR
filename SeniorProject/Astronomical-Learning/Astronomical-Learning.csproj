@@ -196,6 +196,7 @@
     <Content Include="Images\Astronomical-Logo1.png" />
     <Content Include="Images\GalaxyBackground.jpg" />
     <Content Include="Images\mjr-transparent.png" />
+    <Content Include="Images\mjr-transparent2.1.png" />
     <Content Include="Images\mjr-transparent2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
