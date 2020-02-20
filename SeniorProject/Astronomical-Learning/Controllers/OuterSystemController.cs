@@ -13,5 +13,10 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+
+        public ActionResult Andromeda_Information()
+        {
+            return View();
+        }
     }
 }
