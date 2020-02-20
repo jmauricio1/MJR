@@ -9,7 +9,7 @@ namespace Astronomical_Learning.Controllers
     public class OuterSystemController : Controller
     {
         // GET: OuterSystem
-        public ActionResult Index()
+        public ActionResult MilkyWay()
         {
             return View();
         }
