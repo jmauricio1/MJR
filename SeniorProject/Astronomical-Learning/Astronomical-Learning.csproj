@@ -200,6 +200,7 @@
     <Content Include="Images\mjr-transparent.png" />
     <Content Include="Images\mjr-transparent2.1.png" />
     <Content Include="Images\mjr-transparent2.png" />
+    <Content Include="Images\us-map.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
