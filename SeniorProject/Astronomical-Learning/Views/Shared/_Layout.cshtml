@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" id="thyNav">
-        <img src="~/Images/mjr-transparent2.1.png" id="nav-mjr"/>
+        <img src="~/Images/mjr-transparent2.1.png" id="nav-mjr" />
         <div class="container">
             <div class="navbar-header">
                 <img src="~/Images/Astronomical-Logo1.png" />
@@ -28,22 +28,26 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Solar System
                         </a>
-
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
                             <div class="container">
                                 <a class="dropdown-item" href="~/SolarSystem/Sun_Information">The Sun</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="~/SolarSystem/Moon_Information">The Moon</a>
                                 <div class="dropdown-divider"></div>
-
-
                             </div>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            SpaceX</a>
+                            SpaceX
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                            <div class="container">
+                                <a class="dropdown-item" href="~/SpaceCompanies/SpaceX">About SpaceX</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </div>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,12 +56,8 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
                             <div class="container">
-                                <a class="dropdown-item" href="~/SpaceCompanies/SpaceX">About SpaceX</a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="~/OuterSystem/Andromeda_Information">Andromeda Galaxy</a>
                                 <div class="dropdown-divider"></div>
-
-
                             </div>
                         </div>
                     </li>
@@ -72,7 +72,7 @@
                             <div class="container">
                                 <a class="dropdown-item" href="~/OuterSystem/MilkyWay">The Milky Way</a>
                                 <div class="dropdown-divider"></div>
-                             </div>
+                            </div>
                         </div>
                     </li>
 
@@ -80,9 +80,13 @@
 
 
 
+
+
+
+
                 <!-- @Html.Partial("_LoginPartial")
-            We will uncomment this when we are ready to make accounts
-            -->
+                We will uncomment this when we are ready to make accounts
+                -->
             </div>
         </div>
     </div>
@@ -99,13 +103,13 @@
                     <p id="copyright">"Major problems require major solutions."</p>
                 </div>
                 <div class="col-lg-4" id="footer-cp">
-                    <p id="copyright">&copy; @DateTime.Now.Year - MJR Software Solutions</p
+                    <p id="copyright">&copy; @DateTime.Now.Year - MJR Software Solutions</p>
                 </div>
                 <div class="col-lg-4"> </div>
             </div>
         </div>
     </footer>
-     <!--
+    <!--
     <footer>
         <div class="container-fluid padding">
             <div class="row text-center">
