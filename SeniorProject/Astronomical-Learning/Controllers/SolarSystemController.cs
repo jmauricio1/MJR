@@ -9,12 +9,6 @@ namespace Astronomical_Learning.Controllers
     public class SolarSystemController : Controller
     {
         // GET: SolarSystem
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-
         public ActionResult Moon_Information()
         {
             return View();
@@ -25,6 +19,9 @@ namespace Astronomical_Learning.Controllers
             return View();
         }
 
-
+        public ActionResult SpaceDebris_Information()
+        {
+            return View();
+        }
     }
 }
