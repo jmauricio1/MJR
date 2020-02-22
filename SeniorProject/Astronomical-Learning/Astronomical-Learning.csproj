@@ -252,7 +252,7 @@
     <Content Include="Views\SolarSystem\Sun_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\SpaceX.cshtml" />
     <Content Include="Views\OuterSystem\Andromeda_Information.cshtml" />
-    <Content Include="Views\OuterSystem\MilkyWay.cshtml" />
+    <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
