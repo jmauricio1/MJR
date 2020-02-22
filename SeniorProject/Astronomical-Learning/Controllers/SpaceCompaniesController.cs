@@ -13,5 +13,10 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+
+        public ActionResult NASA()
+        {
+            return View();
+        }
     }
 }
