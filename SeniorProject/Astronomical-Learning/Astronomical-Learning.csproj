@@ -208,6 +208,7 @@
     <Content Include="Images\us-map.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\astronomicaldev - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -258,10 +259,8 @@
     <Content Include="Views\SpaceCompanies\SpaceX.cshtml" />
     <Content Include="Views\OuterSystem\Andromeda_Information.cshtml" />
     <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
-    <Content Include="Views\OuterSystem\MilkyWay.cshtml" />
     <Content Include="Views\SpaceCompanies\NASA.cshtml" />
     <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
-    <Content Include="Views\OuterSystem\MilkyWay.cshtml" />
     <Content Include="Views\SpaceCompanies\NASA.cshtml" />
   </ItemGroup>
   <ItemGroup>
