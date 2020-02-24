@@ -88,3 +88,7 @@ footer{
 #starman-img{
     width: 350px;
 }
+
+.dark-bkr{
+    background-color: rgba(0, 0, 0, .5);
+}
