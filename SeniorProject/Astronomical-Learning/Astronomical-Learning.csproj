@@ -196,13 +196,19 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Astronomical-Logo1.png" />
+    <Content Include="Images\DwightDEisenhower.jpg" />
+    <Content Include="Images\Elon-Musk.jpg" />
     <Content Include="Images\GalaxyBackground.jpg" />
+    <Content Include="Images\JimBridenstine.jpg" />
     <Content Include="Images\mjr-transparent.png" />
     <Content Include="Images\mjr-transparent2.1.png" />
     <Content Include="Images\mjr-transparent2.png" />
+    <Content Include="Images\NASA-Facilities.png" />
+    <Content Include="Images\starman-img.jpg" />
     <Content Include="Images\us-map.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\astronomicaldev - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -252,7 +258,10 @@
     <Content Include="Views\SolarSystem\Sun_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\SpaceX.cshtml" />
     <Content Include="Views\OuterSystem\Andromeda_Information.cshtml" />
-    <Content Include="Views\OuterSystem\MilkyWay.cshtml" />
+    <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
+    <Content Include="Views\SpaceCompanies\NASA.cshtml" />
+    <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
+    <Content Include="Views\SpaceCompanies\NASA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
