@@ -23,5 +23,10 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+
+        public ActionResult Our_Planets()
+        {
+            return View();
+        }
     }
 }
