@@ -79,3 +79,20 @@ footer{
 #spacexjmbo{
     background-color: black;
 }
+
+#elon-musk-img {
+    width: 300px;
+    border-radius: 150px;
+}
+
+#starman-img{
+    width: 350px;
+}
+
+.dark-bkr{
+    /*
+    background-color: rgba(0, 0, 0, .8);
+    padding: 20px;
+    border-radius: 30px;
+        */
+}
