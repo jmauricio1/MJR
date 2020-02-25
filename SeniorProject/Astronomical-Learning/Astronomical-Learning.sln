@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astronomical-Learning", "Astronomical-Learning.csproj", "{90143E61-4402-4E48-8F0C-331FDAB0EAA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90143E61-4402-4E48-8F0C-331FDAB0EAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90143E61-4402-4E48-8F0C-331FDAB0EAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90143E61-4402-4E48-8F0C-331FDAB0EAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90143E61-4402-4E48-8F0C-331FDAB0EAA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1F1752D-1366-46A0-9ED9-BE23EF3FCF1A}
+	EndGlobalSection
+EndGlobal
