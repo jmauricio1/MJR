@@ -1,0 +1,98 @@
+﻿body {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    /* background-color: black; */
+    background-image: url(../Images/GalaxyBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#astronomical-logo{
+    width: 25%;
+    height: auto;
+}
+
+#thyNav{
+    background-color: black;
+}
+
+#nav-mjr{
+    max-width: 75px;
+    height: auto;
+}
+footer{
+    position: relative;
+    bottom: -500px;
+    width: 100%;
+    color: white;
+    background-color: black;
+}
+
+#test{
+    background-color: black;
+}
+
+#dropdowns{
+    background: black;
+    color: white;
+    width: 100%;
+}
+
+.dropdown-item{
+    color: white;
+}
+
+#img-logo{
+    width: 30%;
+    height: auto;
+}
+
+#copyright{
+    font-size: 8pt;
+}
+
+.information-paragraphs{
+    color: white;
+}
+#spacexjmbo{
+    background-color: black;
+}
+
+#elon-musk-img {
+    width: 300px;
+    border-radius: 150px;
+}
+
+#starman-img{
+    width: 350px;
+}
+
+.dark-bkr{
+    /*
+    background-color: rgba(0, 0, 0, .8);
+    padding: 20px;
+    border-radius: 30px;
+        */
+}
