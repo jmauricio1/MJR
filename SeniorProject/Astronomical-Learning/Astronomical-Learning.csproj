@@ -265,11 +265,8 @@
     <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\NASA.cshtml" />
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\OuterSystem\Stars_Information.cshtml" />
-=======
     <Content Include="Views\SpaceCompanies\SpaceXLaunches.cshtml" />
->>>>>>> SpaceXLaunches
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
