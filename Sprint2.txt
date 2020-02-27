@@ -1,2 +1,6 @@
 Mergint the accepted features from Sprint 1 and calling this the start of Sprint 2.
+<<<<<<< HEAD
 --
+=======
+Getting dev branch ready for Sprint 2.
+>>>>>>> 9eaffd0404ac274aba8b0fcdf9ae54c45410e1ce
