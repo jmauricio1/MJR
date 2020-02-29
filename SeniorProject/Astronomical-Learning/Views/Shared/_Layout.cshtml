@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" id="thyNav">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="~/Images/Astronomical-Logo1.png" />
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Our Solar System
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                            <div class="container">
+                                <a class="dropdown-item" href="~/SolarSystem/Sun_Information">The Sun</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/SolarSystem/Moon_Information">The Moon</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/SolarSystem/Our_Planets">The Planets</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/SolarSystem/SpaceDebris_Information">Space Debris</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Outside Our Solar System
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                            <div class="container">
+                                <a class="dropdown-item" href="~/OuterSystem/MilkyWay_Information">The Milky Way</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/OuterSystem/Andromeda_Information">Andromeda Galaxy</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/OuterSystem/Stars_Information">Stars</a>
+                                <div class="dropdown-divider"></div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            SpaceX
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                            <div class="container">
+                                <a class="dropdown-item" href="~/SpaceCompanies/SpaceX">About SpaceX</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="~/SpaceCompanies/SpaceXLaunches">SpaceX Launches</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            NASA
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                            <div class="container">
+                                <a class="dropdown-item" href="~/SpaceCompanies/NASA">About NASA</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </div>
+                    </li>
+
+
+
+                </ul>
+                <!-- @Html.Partial("_LoginPartial")
+                We will uncomment this when we are ready to make accounts
+                -->
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+    <footer>
+        <br />
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-lg-4">
+                    <img src="~/Images/mjr-transparent2.png" id="img-logo" />
+                    <p id="copyright">"Major problems require major solutions."</p>
+                </div>
+                <div class="col-lg-4" id="footer-cp">
+                    <p id="copyright">&copy; @DateTime.Now.Year - MJR Software Solutions</p>
+                </div>
+                <div class="col-lg-4"> </div>
+            </div>
+        </div>
+    </footer>
+    <!--
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <p> thing </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        -->
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
