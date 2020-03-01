@@ -163,12 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\FilterConfig2.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -222,7 +219,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\something.js" />
-    <Content Include="Scripts\spacex-main.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -265,8 +261,6 @@
     <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\NASA.cshtml" />
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
-    <Content Include="Views\OuterSystem\Stars_Information.cshtml" />
-    <Content Include="Views\SpaceCompanies\SpaceXLaunches.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
