@@ -257,7 +257,6 @@
     <Content Include="Views\SpaceCompanies\SpaceX.cshtml" />
     <Content Include="Views\OuterSystem\Andromeda_Information.cshtml" />
     <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
-    <Content Include="Views\SpaceCompanies\NASA.cshtml" />
     <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\NASA.cshtml" />
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
