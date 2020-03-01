@@ -23,5 +23,15 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+
+        public ActionResult Stars_Constellations()
+        {
+            return View();
+        }
+
+        public ActionResult Interstellar_Space()
+        {
+            return View();
+        }
     }
 }
