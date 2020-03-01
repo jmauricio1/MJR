@@ -13,11 +13,6 @@ namespace Astronomical_Learning
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "SpaceXLaunchList",
-                url: "api/spacex-launchlist",
-                defaults: new { controller = "SpaceCompanies", action = "SpaceXLaunchList"}
-            );
 
             routes.MapRoute(
                 name: "Default",
