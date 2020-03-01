@@ -11,39 +11,36 @@
 
 <style>
     .tooltipNew {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted white;
-    font-size: 15px
-}
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted white;
+        font-size: 15px
+    }
 
-    .tooltipNew .tooltiptextNew {
-        visibility: hidden;
-        width: 120px;
-        background-color: white;
-        color: black;
+        .tooltipNew .tooltiptextNew {
+            visibility: hidden;
+            width: 120px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 105%;
+        }
+
+        .tooltipNew:hover .tooltiptextNew {
+            visibility: visible;
+        }
+
+
+    .infoItem {
+        height: 40px;
         text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        /* Position the tooltip */
-        position: absolute;
-        z-index: 1;
-        top: -5px;
-        left: 105%;
     }
-
-    .tooltipNew:hover .tooltiptextNew {
-        visibility: visible;
-    }
-
-
-    .infoItem
-    {
-        height:40px;
-        text-align: center;
-    }
-
-
 </style>
 
 
@@ -97,19 +94,19 @@
 
     <div>
         <div>
-            
+
             <div>
                 <h3>How big is The Sun?</h3>
                 The sun is about 864,938 miles (1.392 million km) wide. This is over 100 times bigger than the width of the earth. [<a href="#ref4">4</a>]<br>
                 The total volume of the sun is 1.4 x 10^27cubic meters. This means that the sun could fit about 1.3 million Earths inside it. [<a href="#ref4">4</a>]<br>
                 The mass of the sun is 1.989 x 10^30 kilograms which is about 333,000 times larger than Earth’s mass. [<a href="#ref4">4</a>]
-                   <span class="tooltipNew">
-                         *<br>
-                          <span class="tooltiptextNew">
-                              This means that The Sun on its own accounts for 99.86% of the total mass in the Solar System. [<a href="#ref5">5</a>]
-                          </span>
-                    </span><br>
-                
+                <span class="tooltipNew">
+                    *<br>
+                    <span class="tooltiptextNew">
+                        This means that The Sun on its own accounts for 99.86% of the total mass in the Solar System. [<a href="#ref5">5</a>]
+                    </span>
+                </span><br>
+
                 Below is an image that gives a decent idea of the scale of the distance between the Sun and Earth and how their sizes compare. <a href="https://commons.wikimedia.org/wiki/File:Solar-system.png">Source</a><br><br>
 
 
@@ -196,7 +193,7 @@
                 It is important to remeber that even though some of the Sun is blocked it does not mean that it is safe to look at it without protection. [<a href="#ref10">10</a>]
             </span>
         </div>
-       
+
 
     </div>
     <div onclick="sunShowImageSources()">Click to Show Image Sources</div>
