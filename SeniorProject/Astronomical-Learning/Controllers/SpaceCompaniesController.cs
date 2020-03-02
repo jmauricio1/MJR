@@ -44,6 +44,16 @@ namespace Astronomical_Learning.Controllers
             return View();
         }
 
+        public ActionResult NASAMissions()
+        {
+            return View();
+        }
+
+        public ActionResult ISS()
+        {
+            return View();
+        }
+
         private string SendRequest(string uri)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
