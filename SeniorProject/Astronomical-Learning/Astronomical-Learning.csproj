@@ -265,12 +265,9 @@
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
     <Content Include="Views\OuterSystem\Stars_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\SpaceXLaunches.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
-=======
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
     <Content Include="Views\SpaceCompanies\ISS.cshtml" />
->>>>>>> 6584b2db3ce65e7395b00d9c422b7c3a596c685d
+    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
