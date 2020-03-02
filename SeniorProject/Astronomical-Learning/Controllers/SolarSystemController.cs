@@ -28,5 +28,10 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+
+        public ActionResult Mars_Research()
+        {
+            return View();
+        }
     }
 }
