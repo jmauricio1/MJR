@@ -267,6 +267,7 @@
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
     <Content Include="Views\OuterSystem\Stars_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\SpaceXLaunches.cshtml" />
+    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
