@@ -1,9 +1,9 @@
 # MJR Software Solutions
-Welcome to the repository for MJR Software Solutions. We are a team built for Western Oregon University’s software engineering senior capstone sequence (CS461, CS462). Together we developed the space related learning tool, I Need My Space.
+Welcome to the repository for MJR Software Solutions. We are a team built for Western Oregon University’s software engineering senior capstone sequence (CS461, CS462). Together we developed the space related learning tool, Astronomical Learning.
 
 ## Project Contents
-1. I Need My Space
-- This is the primary folder for the I Need My Space project
+1. Astronomical Learning
+- This is the primary folder for the Astronoical Learning project
 2. Milestones for CS461
 - M1
   - Created a business logo for MJR Software Solutions
@@ -19,10 +19,10 @@ Welcome to the repository for MJR Software Solutions. We are a team built for We
   - Used pivotal tracker for disciplined agile delivery of the class project
 - M4
   - 1 week sprint iteration for the class project
-  - Continued inception phase for I Need My Space project
+  - Continued inception phase for Astronomical Learning project
 - M5
   - Class project sprint retrospective
-  - Completion of inception phase for I Need My Space project
+  - Completion of inception phase for Astronomical Learning project
 
 ## MJR Software Solutions Members 
 [Matthew Hibner](https://github.com/OmegaArmadillo)
@@ -31,7 +31,7 @@ Welcome to the repository for MJR Software Solutions. We are a team built for We
 
 [Robert Lochbaum](https://github.com/Bloodytrailz)
 
-## I Need My Space Project
+## Astronomical Learning Project
 This project is a website focused around teaching younger audiences about space related topics including our solar system, the universe, and missions conducted by major space related companies such as Nasa and SpaceX. Our goal is to make the website as interesting and engaging as possible to our target audience.
 
 ### Vision Statement
@@ -44,7 +44,7 @@ This project is a website focused around teaching younger audiences about space 
 If you wish to contribute further to this project here's how you may do so:
 
 1. Fork the repository by clicking "Fork" on github. [Instructions Here](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
-  - We would ask that you use INeedMySpace_yourname to make pulls easier to identify.
+  - We would ask that you use AstronomicalLearning_yourname to make pulls easier to identify.
 2. Clone the repository to your local machine. [Instructions Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 3. Create a remote to upstream for pulling the most recent developement (dev) branch.
   - git remote add upstream https://github.com/jmauricio1/MJR  (in git command line)
@@ -56,7 +56,7 @@ We respectfully ask that all contributors attempt to follow our guidelines as cl
 [View our guidelines here.](https://github.com/jmauricio1/MJR/blob/master/guidelines.md)
 
 ### Software Construction
-For the I Need My Space project we followed the Disciplined Agile Delivery work process specifically using Scrum workflow. Our sprints were set to two week iterations and used a 1,2,4,8 effort point scale.
+For the Astronomical Learning project we followed the Disciplined Agile Delivery work process specifically using Scrum workflow. Our sprints were set to two week iterations and used a 1,2,4,8 effort point scale.
 
 ### Tools used
 For a list of tools we used while constructing this project click [HERE!](https://github.com/jmauricio1/MJR/blob/master/tools.md). Ideally if you wish to contribute attempt to use compatible tools with the ones we have used for the project. 

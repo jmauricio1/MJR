@@ -1,4 +1,4 @@
-# I Need My Space Project Guidelines
+# Astronomical Learning Project Guidelines
 Please follow the guidelines listed below when contributing code to this project. Please keep in mind that this project was started as a university class and some decisions have been made with students and teaching in mind.
 
 ### Overall Guidelines
