@@ -28,7 +28,12 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
         public ActionResult KuiperBelt()
+=======
+
+        public ActionResult Mars_Research()
+>>>>>>> MarsResearch
         {
             return View();
         }
