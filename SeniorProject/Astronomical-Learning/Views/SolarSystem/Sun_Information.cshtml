@@ -41,10 +41,11 @@
         height: 40px;
         text-align: center;
     }
+
 </style>
 
 
-<div class="container information-paragraphs" style="background-color:black;">
+<div class="container information-paragraphs dark-bkr">
 
 
 
@@ -70,7 +71,7 @@
                 <h3>How far away is The Sun?</h3>
                 The Sun on average is 150 million kilometres (93 million miles) away from earth. [<a href="#ref3">3</a>]
                 <div class="tooltipNew">
-                    *
+                    [*]
                     <span class="tooltiptextNew">
                         This is equal to 1 astronomical unit or AU which is commonly used as a measurement of distance for objects in space. [<a href="#ref3">3</a>]
                     </span>
@@ -86,7 +87,7 @@
                 An image of the sun. <a href="https://sdo.gsfc.nasa.gov/assets/img/browse/2010/08/19/20100819_003221_4096_0304.jpg">Source</a>
             </div>
 
-        </div>
+        </div> 
     </div>
 
 
@@ -101,7 +102,7 @@
                 The total volume of the sun is 1.4 x 10^27cubic meters. This means that the sun could fit about 1.3 million Earths inside it. [<a href="#ref4">4</a>]<br>
                 The mass of the sun is 1.989 x 10^30 kilograms which is about 333,000 times larger than Earth’s mass. [<a href="#ref4">4</a>]
                 <span class="tooltipNew">
-                    *<br>
+                    [*]<br>
                     <span class="tooltiptextNew">
                         This means that The Sun on its own accounts for 99.86% of the total mass in the Solar System. [<a href="#ref5">5</a>]
                     </span>
@@ -147,7 +148,7 @@
 
 
 
-        </div> 
+        </div>
 
 
 
@@ -196,13 +197,8 @@
 
 
     </div>
-    <div onclick="sunShowImageSources()">Click to Show Image Sources</div>
-    <div id="sunSources" style="display:none;">
-        Total Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_(36450742744).jpg">source</a><br>
-        Annular Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_(1).jpg">source</a><br>
-        Partial Solar Eclipse: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg">source</a><br>
-        Hybrid Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:D.C._eclipsed_in_hybrid_solar_event_(10696089826).jpg">source</a>
-    </div>
+
+
 
 
     <div style="width:50%; height:500px" class="container">
@@ -252,6 +248,16 @@
     </div>
 
 
+    <button class="btn-primary" onclick="sunShowImageSources()">Click to Show Image Sources</button>
+    <div id="sunSources" style="display:none;">
+
+        Total Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_(36450742744).jpg">source</a>,
+        Annular Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_(1).jpg">source</a>,
+        Partial Solar Eclipse: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg">source</a>,
+        Hybrid Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:D.C._eclipsed_in_hybrid_solar_event_(10696089826).jpg">source</a>
+    </div>
+
+
     <div>
         <h3>Other Facts</h3>
         Click on a topic below to learn more about it.
@@ -264,9 +270,9 @@
 
             <div class="col-lg-3">
 
-                <div class="infoItem" onclick="changeFactInfoCenter()">Center of the Universe</div>
-                <div class="infoItem" onclick="changeFactInfoDial()">Sun Dial</div>
-                <div class="infoItem" onclick="changeFactInfoReligion()">Religous Uses</div>
+                <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoCenter()">Center of the Universe</button></div>
+                <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoDial()">Sun Dial</button></div>
+                <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoReligion()">Religous Uses</button></div>
 
             </div>
 
