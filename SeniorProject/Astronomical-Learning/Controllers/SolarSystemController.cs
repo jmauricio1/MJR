@@ -28,5 +28,9 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+        public ActionResult KuiperBelt()
+        {
+            return View();
+        }
     }
 }
