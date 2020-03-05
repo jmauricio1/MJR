@@ -90,7 +90,6 @@ footer{
 }
 
 
-
 .dark-bkr{
     
     background-color: rgba(0, 0, 0, .8);
@@ -99,7 +98,64 @@ footer{
 
 }
 
+.rotate-icon {
+    max-width: 75px;
+    border-radius: 50%;
+}
+.rotate-icon:hover {
+    animation: rotation 5s infinite linear;
+}
 
+.rotate{
+    animation: rotation 5s infinite linear;
+}
 
+@keyframes rotation{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
 
+.moon-gif{
+    max-width: 75px;
+    border-radius: 37.5px;
+}
+
+#moon-icon{
+    position: absolute;
+}
+
+#moon-icon:hover{
+    opacity: 0;
+}
+
+.rocket-icon{
+
+}
+
+.rocket-icon:hover{
+    animation: slideright 6s infinite linear;
+}
+
+.translateX {
+    animation: slideright 6s infinite linear;
+}
+
+@keyframes slideright{
+    0%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    50%{
+        transform: translate(200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
 

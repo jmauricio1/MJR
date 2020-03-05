@@ -4,88 +4,76 @@
 
 
 <div style="color:white">
-    <div class="row">
-        <h3>Solar System</h3>
+    <div class="row text-center">
+        <h2>Solar System</h2>
         <div class="col-lg-4">
-            <h4>The Sun</h4>
+            <h3>The Sun</h3>
+            <img class="rotate-icon" src="~/Images/icons/sun-icon.png" />
             <div>
                 Learn more about the ball in the center of the Solar System that lights up all of our days. <a href="~/SolarSystem/Sun_Information">Learn More</a>
             </div>
-            <br />
-            <h4>Space Debris</h4>
-            <div>
-                Learn more about the debris travelling in space, Asteroids, Comets and Meteoroids. <a href="~/SolarSystem/SpaceDebris_Information">Learn More</a>
-            </div>
         </div>
         <div class="col-lg-4">
-            <h4>The Moon</h4>
+            <h3>The Moon</h3>
+            <img class="moon-gif" src="~/Images/m1.png"  id="moon-icon" />
+            <img class="moon-gif active" src="~/Images/icons/moon-icon.gif"/>
+            <br />
             <div>
                 Learn more about that big white sphere in the night sky. <a href="~/SolarSystem/Moon_Information">Learn More</a>
             </div>
         </div>
         <div class="col-lg-4">
-            <h4>Our Planets</h4>
+            <h3>Our Planets</h3>
             <div>
                 Learn more about the planets and dwarf planets that are in our solar system.<a href="~/SolarSystem/Our_Planets">Learn More</a>
             </div>
         </div>
     </div>
-    <br />
-    <div class="row">
-        <h3>Solar System</h3>
+    <div class="row text-center">
+        <div class="col-lg-2"></div>
         <div class="col-lg-4">
-            <h4>The Sun</h4>
-            <div>
-                Learn more about the ball in the center of the Solar System that lights up all of our days. <a href="~/SolarSystem/Sun_Information">Learn More</a>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <h4>The Moon</h4>
-            <div>
-                Learn more about that big white sphere in the night sky. <a href="~/SolarSystem/Moon_Information">Learn More</a>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <h4>Our Planets</h4>
-            <div>
-                Learn more about the planets and dwarf planets that are in our solar system.<a href="~/SolarSystem/Our_Planets">Learn More</a>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <h4>Space Debris</h4>
+            <h3>Space Debris</h3>
             <div>
                 Learn more about the debris travelling in space, Asteroids, Comets and Meteoroids. <a href="~/SolarSystem/SpaceDebris_Information">Learn More</a>
             </div>
         </div>
-        <div class="col-lg-6">
-            <h4>Research on Mars</h4>
+        <div class="col-lg-4">
+            <h3>Research on Mars</h3>
             <div>
                 Get more details on the planet, Mars.<a href="~/SolarSystem/Mars_Research">Learn More</a>
             </div>
         </div>
-
-        <br>
     </div>
-    <div class="row">
-        <h3>Outside Our Solar System</h3>
+    <br>
+    <div class="row text-center">
+        <h2>Outside Our Solar System</h2>
         <div class="col-lg-4">
-            <h4>The Milky Way</h4>
+            <h3>The Milky Way</h3>
+            <img class="rotate-icon" src="~/Images/icons/spiral-one.png" />
             <div>
                 Learn more about the galaxy in which Earth resides. <a href="~/OuterSystem/MilkyWay_Information">Learn More</a>
             </div>
         </div>
         <div class="col-lg-4">
-            <h4>Stars</h4>
+            <h3>Andromeda</h3>
+            <img class="rotate-icon" src="~/Images/icons/spiral-two.png" />
+            <div>
+                Learn more about our closest galactic neighbor. <a href="~/OuterSystem/Andromeda_Information">Learn More</a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <h3>Stars</h3>
             <div>
                 Learn more about the lights in the night sky. <a href="~/OuterSystem/Stars_Information">Learn More</a>
             </div>
         </div>
     </div>
     <br />
-    <div class="row">
+    <div class="row text-center">
         <h3>Space Companies</h3>
         <div class="col-lg-6">
-            <h4>SpaceX</h4>
+            <h3>SpaceX</h3>
+            <img class="rocket-icon" src="~/Images/icons/spacex-rocket-icon.png"/>
             <div>
                 Learn more about launches conducted by SpaceX. @Html.ActionLink("Learn More", "SpaceXLaunches", "SpaceCompanies")
                 <br /><br />
@@ -93,7 +81,8 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <h4>NASA</h4>
+            <h3>NASA</h3>
+            <img class="rocket-icon" src="~/Images/icons/nasa-rocket-icon.png" />
             <div>
                 Learn more about NASA's past missions. @Html.ActionLink("Learn More", "Nasa", "NASAMissions")
                 <br /><br />

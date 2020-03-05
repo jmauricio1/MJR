@@ -202,7 +202,15 @@
     <Content Include="Images\DwightDEisenhower.jpg" />
     <Content Include="Images\Elon-Musk.jpg" />
     <Content Include="Images\GalaxyBackground.jpg" />
+    <Content Include="Images\icons\moon-icon.gif" />
+    <Content Include="Images\icons\nasa-rocket-icon.png" />
+    <Content Include="Images\icons\Publication1.png" />
+    <Content Include="Images\icons\spacex-rocket-icon.png" />
+    <Content Include="Images\icons\spiral-one.png" />
+    <Content Include="Images\icons\spiral-two.png" />
+    <Content Include="Images\icons\sun-icon.png" />
     <Content Include="Images\JimBridenstine.jpg" />
+    <Content Include="Images\m1.png" />
     <Content Include="Images\mjr-transparent.png" />
     <Content Include="Images\mjr-transparent2.1.png" />
     <Content Include="Images\mjr-transparent2.png" />
