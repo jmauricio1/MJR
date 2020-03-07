@@ -97,8 +97,40 @@ footer{
     padding: 20px;
     border-radius: 30px;
 
+        
 }
 
+
+
+.tooltipNew {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted white;
+    font-size: 15px
+}
+
+    .tooltipNew .tooltiptextNew {
+        visibility: hidden;
+        background-color: white;
+        color: black;
+        text-align: center;
+        border: 6px solid white;
+        padding: 5px 0;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 105%;
+    }
+
+    .tooltipNew:hover .tooltiptextNew {
+        visibility: visible;
+    }
+
+.infoItem {
+    height: 40px;
+    text-align: center;
+}
 
 
 
