@@ -172,15 +172,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ISSController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OuterSystemController.cs" />
     <Compile Include="Controllers\SolarSystemController.cs" />
     <Compile Include="Controllers\SpaceCompaniesController.cs" />
+    <Compile Include="Controllers\SpaceSuitsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Launch.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -219,8 +222,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\something.js" />
+    <Content Include="Scripts\spacex-main.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -260,9 +265,22 @@
     <Content Include="Views\OuterSystem\Andromeda_Information.cshtml" />
     <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\NASA.cshtml" />
-    <Content Include="Views\SolarSystem\SpaceDebris_Information.cshtml" />
-    <Content Include="Views\SpaceCompanies\NASA.cshtml" />
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
+    <Content Include="Views\OuterSystem\Stars_Information.cshtml" />
+    <Content Include="Views\SpaceCompanies\SpaceXLaunches.cshtml" />
+    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
+    <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
+    <Content Include="Views\SpaceCompanies\ISS.cshtml" />
+    <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
+    <Content Include="Views\SpaceCompanies\ISS.cshtml" />
+    <Content Include="Views\ISS\InternationalSpaceStation.cshtml" />
+    <Content Include="Views\SolarSystem\KuiperBelt.cshtml" />
+    <Content Include="Views\OuterSystem\Stars_Constellations.cshtml" />
+    <Content Include="Views\SpaceSuits\SpaceAndFlightSuits.cshtml" />
+    <Content Include="Views\OuterSystem\Interstellar_Space.cshtml" />
+    <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
+    <Content Include="Views\SpaceCompanies\ISS.cshtml" />
+    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
