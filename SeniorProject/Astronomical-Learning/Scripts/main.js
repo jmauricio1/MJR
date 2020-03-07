@@ -1,4 +1,6 @@
+
 ﻿function sunShowImageSources() {
+
     var x = document.getElementById("sunSources");
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -73,4 +75,5 @@ function changeFactInfoTemp() {
     document.getElementById("moonFactText").innerHTML = "The Moon's temperature can vary wildly from 107 degrees Celsius (225 F) during the day to -153 degrees Celsius (-174 F) at night.[<a href='#ref9'>9</a>] <br>  The above image has cold areas as blue and warm areas as red.";
 
 }
+
 
