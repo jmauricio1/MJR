@@ -3,10 +3,18 @@
     ViewBag.Title = "Moon_Information";
 }
 
+<head>
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
 
-    <body style="color:white">
-        <h2>Moon Information</h2>
 
+
+<div class="container information-paragraphs dark-bkr">
+    <div style="text-align: center;"><h2>The Moon</h2></div>
+
+    <div class="col-lg-5">
         <div>
             <h3>Where does The Moon's name come from?</h3>
             The moon’ name comes from the proto-germanic word Menon. [<a href="#ref1">1</a>]
@@ -17,74 +25,193 @@
             It is hypothesized that the moon was created after a planet about the size of Mars impacted the earth. [<a href="#ref2">2</a>]<br>
             Debris from the impact eventually came together to form what we know as the Moon. [<a href="#ref2">2</a>]
         </div>
+    </div>
 
+    <div class="col-lg-7">
         <div>
-            <h3>How far away is The Moon?</h3>
-            The distance from the Earth to Moon is 238,855 miles away from Earth which is equal to about 30 Earths. [<a href="#ref3">3</a>]
+            <img style="width:400px; height:400px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Full_moon.jpeg/600px-Full_moon.jpeg" alt="Alternate Text" />
+
         </div>
+        An image of the moon. <a href="https://commons.wikimedia.org/wiki/File:Full_moon.jpeg">Source</a>
+    </div>
 
-        <div>
-            <h3>How big is The Moon</h3>
-            The moon's diameter is around  2,159.2 miles (3,475 km), making it less than a third the width of Earth. [<a href="#ref4">4</a>]<br>
-            The moon's mass is 7.35 x 10^22 kg which is 81 times smaller than the Earth. [<a href="#ref4">4</a>]
-        </div>
+    <div>
+        <h3>How far away is The Moon?</h3>
+        The distance from the Earth to Moon is 238,855 miles away from Earth which is equal to about 30 Earths. [<a href="#ref3">3</a>]<br>
+        Below is an image to scale showing the distance between The Moon and Earth. <a href="https://commons.wikimedia.org/wiki/File:PIA00559_The_Earth_and_Moon_As_Seen_by_2001_Mars_Odyssey%27s_Thermal_Emission_Imaging_System.jpg">Source</a>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/PIA00559_The_Earth_and_Moon_As_Seen_by_2001_Mars_Odyssey%27s_Thermal_Emission_Imaging_System.jpg/800px-PIA00559_The_Earth_and_Moon_As_Seen_by_2001_Mars_Odyssey%27s_Thermal_Emission_Imaging_System.jpg" alt="Alternate Text" />
 
-        <div>
-            <h3>What is The Moon made out of?</h3>
-            The moon itself is mostly made of rock and has three layers: the crust, mantle and core. [<a href="#ref5">5</a>]
-        </div>
+    <div>
+        <h3>How big is The Moon</h3>
+        The moon's diameter is around  2,159.2 miles (3,475 km), making it less than a third the width of Earth. [<a href="#ref4">4</a>]<br>
+        The moon's mass is 7.35 x 10^22 kg which is 81 times smaller than the Earth. [<a href="#ref4">4</a>]<br>
+        Below is an image that compares The Moon's size to Earth along with one of Saturn's moons Titan <a href="https://en.wikipedia.org/wiki/File:Earth-Titan-Moon_size_comparison.PNG">Source</a>
+        <span class="tooltipNew">
+            [*]<br>
+            <span class="tooltiptextNew">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/SolarSystem_OrdersOfMagnitude_Sun-Jupiter-Earth-Moon.jpg/480px-SolarSystem_OrdersOfMagnitude_Sun-Jupiter-Earth-Moon.jpg" alt="Alternate Text" />
+                 This is an image showing the size of The Moon compared to Earth, Jupiter, and the Sun. <a href="https://commons.wikimedia.org/wiki/File:SolarSystem_OrdersOfMagnitude_Sun-Jupiter-Earth-Moon.jpg">source</a>
+            </span>
+        </span><br>
+    </div>
 
-        <div>
-            <h3>Why is The Moon important</h3>
-            The Moon is very important to Earth as the Moon is the reason that we have tides but it also helps keeps the Earth’s rotation in check. [<a href="#ref6">6</a>]
-        </div>
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Earth-Titan-Moon_size_comparison.PNG" alt="Alternate Text" />
 
-        <div>
-            <h3>What important missions have humans had to The Moon</h3>
-            There have also been many groundbreaking missions with the moon. [<a href="#ref7">7</a>]<br>
-            On September 13 1959 the Luna 2 launched by the USSR was the first spacecraft to impact the Moon’s surface. [<a href="#ref7">7</a>]<br>
-            On October 6 1959 the USSR were the first to get pictures of the Moon’s other side. [<a href="#ref7">7</a>]<br>
-            On July 20 1969 the Apollo 11 mission from the USA was the first mission to land humans on the Moon’s surface. [<a href="#ref7">7</a>]
-        </div>
+    <div>
+        <h3>What is The Moon made out of?</h3>
+        The moon itself is mostly made of rock and has three layers: the crust, mantle and core. [<a href="#ref5">5</a>]<br>
+        The first image below shows an example of what The Moon's surface looks like. <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA23210">Source</a><br>
+        The second is an image showing the layers of the moon along with some other features. <a href="https://commons.wikimedia.org/wiki/File:Return_of_the_moon_diagram.svg">Source</a>
+    </div>
 
-        <div>
-            <h3>What is a Lunar Eclipse</h3>
-            A lunar eclipse happens when the Earth gets between the Moon and the Sun which casts a shadow on the Moon. [<a href="#ref8">8</a>]<br>
-            The reason we do not have monthly solar eclipses is because The Moon's movment around The Earth is tilted compared to Earth's rotation around The Sun. [<a href="#ref8">8</a>]
-        </div>
+    <img style="width:40%; height:40%" src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23210_hires.jpg" alt="Alternate Text" />
 
-        <div>
-            <h3>Other Facts about The Moon</h3>
-            The Moon's gravity is about 1/5 of the Earth's. [<a href="#ref9">9</a>]<br>
-            The Moon's temperature can vary wildly from 107 degrees Celsius (225 F) during the day to -153 degrees Celsius (-174 F) at night. [<a href="#ref9">9</a>]
-        </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Return_of_the_moon_diagram.svg/640px-Return_of_the_moon_diagram.svg.png" alt="Alternate Text" />
 
-        <div>
-            <h3>References</h3>
-            <ol>
-                <li><a id="ref1" href="https://gizmodo.com/how-the-moon-got-its-name-1696701328"> https://gizmodo.com/how-the-moon-got-its-name-1696701328</a></li>
-                <li><a id="ref2" href="https://www.space.com/19275-moon-formation.html">https://www.space.com/19275-moon-formation.html</a></li>
-                <li><a id="ref3" href="https://spaceplace.nasa.gov/moon-distance/en/">https://spaceplace.nasa.gov/moon-distance/en/</a></li>
-                <li><a id="ref4" href="https://www.space.com/18135-how-big-is-the-moon.html"> https://www.space.com/18135-how-big-is-the-moon.html</a></li>
-                <li><a id="ref5" href="https://www.space.com/19582-moon-composition.html">https://www.space.com/19582-moon-composition.html</a></li>
-                <li><a id="ref6" href="https://solarsystem.nasa.gov/moons/earths-moon/overview/">https://solarsystem.nasa.gov/moons/earths-moon/overview/</a></li>
-                <li><a id="ref7" href="http://www.sciencekids.co.nz/sciencefacts/space/moon.html">http://www.sciencekids.co.nz/sciencefacts/space/moon.html</a></li>
-                <li><a id="ref8" href="https://spaceplace.nasa.gov/eclipses/en/">https://spaceplace.nasa.gov/eclipses/en/</a></li>
-                <li><a id="ref9" href="http://www.sciencekids.co.nz/sciencefacts/space/moon.html">http://www.sciencekids.co.nz/sciencefacts/space/moon.html</a></li>
-                
+    <div>
+        <h3>Why is The Moon important</h3>
+        The Moon is very important to Earth as the Moon is the reason that we have tides but it also helps keeps the Earth’s rotation in check. [<a href="#ref6">6</a>]
+    </div>
+
+    <div>
+        <h3>What important missions have humans had to The Moon</h3>
+        All information comes from here. [<a href="#ref7">7</a>]
+    </div>
+
+
+
+    <div style="width:50%; height:500px" class="container">
+        <div id="moonCarousel" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="moonCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="moonCarousel" data-slide-to="1"></li>
+                <li data-target="moonCarousel" data-slide-to="2"></li>
+
             </ol>
 
+            <div class="carousel-inner">
+                <div class="item active">
+                    <h4>Luna 2</h4>
+                    On September 13 1959 the Luna 2 launched by the USSR was the first spacecraft to impact the Moon’s surface.<br>
+                    <img style="display: block; margin-left: auto; margin-right: auto; height:400px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Block-E_rocket_stage.png/285px-Block-E_rocket_stage.png" alt="Alternate Text" />
+                </div>
 
-            
-            
-            
-            
-            
-            
-            
-            
+                <div class="item">
+                    <h4>Luna 3</h4>
+                    On October 6 1959 the luna 3 USSR were the first to get pictures of the Moon’s other side.<br>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Luna-3_%28Memorial_Museum_of_Astronautics%29.JPG/800px-Luna-3_%28Memorial_Museum_of_Astronautics%29.JPG" alt="Alternate Text" />
+                </div>
+
+                <div class="item">
+                    <h4>Apollo 11</h4>
+                    On July 20 1969 the Apollo 11 mission from the USA was the first mission to land humans on the Moon’s surface.
+                    <img style="display: block; margin-left: auto; margin-right: auto; height:400px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/477px-Aldrin_Apollo_11_original.jpg" alt="Alternate Text" />
+                </div>
+
+
+            </div>
+
+
+            <a class="left carousel-control" href="#moonCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#moonCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
-    </body>
+    </div>
+
+
+
+
+    <button class="btn-primary" onclick="moonShowImageSources()">Click to Show Image Sources</button>
+    <div id="moonSources" style="display:none;">
+
+        Luna 2: <a href="https://commons.wikimedia.org/wiki/File:Block-E_rocket_stage.png">source, </a>
+        Luna 3: <a href="https://commons.wikimedia.org/wiki/File:Luna-3_(Memorial_Museum_of_Astronautics).JPG">source, </a>
+        Apollo 11: <a href="https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11_original.jpg">source</a>
+    </div>
+
+
+
+
+
+    <div>
+        <h3>What is a Lunar Eclipse</h3>
+        A lunar eclipse happens when the Earth gets between the Moon and the Sun which casts a shadow on the Moon. [<a href="#ref8">8</a>]
+        <span class="tooltipNew">
+            [*]<br>
+               <span class="tooltiptextNew">
+                   These can include total, partial, or penumbral were the moon is in the faint shadow of The Moon called the penumbra.[<a href="#ref8">8</a>]
+               </span>
+        </span><br>
+        The reason we do not have monthly solar eclipses is because The Moon's movment around The Earth is tilted compared to Earth's rotation around The Sun. [<a href="#ref8">8</a>]<br>
+        Below is a diagram showing how a lunar eclipse works. <a href="https://commons.wikimedia.org/wiki/File:Geometry_of_a_Lunar_Eclipse.svg">source</a>
+    </div>
+
+    <img style="display: block; margin-left: auto; margin-right: auto; width:50%; height:50%" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Geometry_of_a_Lunar_Eclipse.svg" alt="Alternate Text" />
+
+    <div>
+        <h3>Other Facts about The Moon</h3>
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoGravity()">Center of the Universe</button></div>
+            <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoTemp()">Sun Dial</button></div>
+
+        </div>
+
+
+        <div class="col-lg-7">
+            <div>
+                <img style="height:50%;width:50%; display: block; margin-left: auto; margin-right: auto;" id="moonFactImage" src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16587_hires.jpg" alt="Alternate Text" />
+            </div>
+
+            <div id="moonFactSource">
+                <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA16587">Source</a>
+            </div>
+
+            <div id="moonFactText">
+                The Moon's gravity is about 1/5 of the Earth's. [<a href="#ref9">9</a>]<br>
+                The above image shows a map of The Moon's surface were red is places of higher gravity and blue is places of lower gravity.
+            </div>
+
+
+        </div>
+    </div>
+
+    <div>
+        <h3>References</h3>
+        <ol>
+            <li><a id="ref1" href="https://gizmodo.com/how-the-moon-got-its-name-1696701328"> https://gizmodo.com/how-the-moon-got-its-name-1696701328</a></li>
+            <li><a id="ref2" href="https://www.space.com/19275-moon-formation.html">https://www.space.com/19275-moon-formation.html</a></li>
+            <li><a id="ref3" href="https://spaceplace.nasa.gov/moon-distance/en/">https://spaceplace.nasa.gov/moon-distance/en/</a></li>
+            <li><a id="ref4" href="https://www.space.com/18135-how-big-is-the-moon.html"> https://www.space.com/18135-how-big-is-the-moon.html</a></li>
+            <li><a id="ref5" href="https://www.space.com/19582-moon-composition.html">https://www.space.com/19582-moon-composition.html</a></li>
+            <li><a id="ref6" href="https://solarsystem.nasa.gov/moons/earths-moon/overview/">https://solarsystem.nasa.gov/moons/earths-moon/overview/</a></li>
+            <li><a id="ref7" href="https://moon.nasa.gov/exploration/moon-missions/">https://moon.nasa.gov/exploration/moon-missions/</a></li>
+            <li><a id="ref8" href="https://spaceplace.nasa.gov/eclipses/en/">https://spaceplace.nasa.gov/eclipses/en/</a></li>
+            <li><a id="ref9" href="http://www.sciencekids.co.nz/sciencefacts/space/moon.html">http://www.sciencekids.co.nz/sciencefacts/space/moon.html</a></li>
+
+        </ol>
+
+
+
+    </div>
+
+</div>
+
+<script src="~/Scripts/main.js">
+</script>
 
 
