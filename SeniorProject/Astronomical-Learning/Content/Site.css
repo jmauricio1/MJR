@@ -34,6 +34,10 @@ textarea {
     height: auto;
 }
 
+.home-bkr{
+    background-color: rgba(0, 0, 0, .5);
+}
+
 #thyNav{
     background-color: black;
 }
@@ -76,6 +80,7 @@ footer{
 .information-paragraphs{
     color: white;
 }
+
 #spacexjmbo{
     background-color: black;
 }
@@ -119,6 +124,19 @@ footer{
     }
 }
 
+.planets-gif{
+    max-height: 80px;
+    border-radius: 100px;
+}
+
+#planet-icon{
+    position: absolute;
+}
+
+#planet-icon:hover{
+    opacity: 0;
+}
+
 .moon-gif{
     max-width: 75px;
     border-radius: 37.5px;
@@ -129,6 +147,34 @@ footer{
 }
 
 #moon-icon:hover{
+    opacity: 0;
+}
+
+.sd-gif {
+    max-height: 80px;
+}
+
+#sd-icon{
+    position: absolute;
+}
+
+#sd-icon:hover{
+    opacity: 0;
+}
+
+#star-icon{
+    position: absolute;
+}
+
+#star-icon:hover{
+    opacity: 0;
+}
+
+#mars-icon{
+    position: absolute;
+}
+
+#mars-icon:hover{
     opacity: 0;
 }
 
