@@ -34,6 +34,10 @@ textarea {
     height: auto;
 }
 
+.home-bkr{
+    background-color: rgba(0, 0, 0, .5);
+}
+
 #thyNav{
     background-color: black;
 }
@@ -76,6 +80,7 @@ footer{
 .information-paragraphs{
     color: white;
 }
+
 #spacexjmbo{
     background-color: black;
 }
@@ -88,7 +93,6 @@ footer{
 #starman-img{
     width: 350px;
 }
-
 
 
 .dark-bkr{
@@ -185,6 +189,16 @@ footer{
                 left: 0px;
             }
 
+        
+
+
+.rotate-icon {
+    max-width: 75px;
+    border-radius: 50%;
+}
+.rotate-icon:hover {
+    animation: rotation 5s infinite linear;
+}
             .timeline .timeline-item .timeline-badge.primary {
                 background-color: #1f9eba;
             }
@@ -324,6 +338,127 @@ footer{
 
 
 
+.rotate{
+    animation: rotation 5s infinite linear;
+}
 
+@keyframes rotation{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
 
+.planets-gif{
+    max-height: 80px;
+    border-radius: 100px;
+}
+
+#planet-icon{
+    position: absolute;
+}
+
+#planet-icon:hover{
+    opacity: 0;
+}
+
+.moon-gif{
+    max-width: 75px;
+    border-radius: 37.5px;
+}
+
+#moon-icon{
+    position: absolute;
+}
+
+#moon-icon:hover{
+    opacity: 0;
+}
+
+.sd-gif {
+    max-height: 80px;
+}
+
+#sd-icon{
+    position: absolute;
+}
+
+#sd-icon:hover{
+    opacity: 0;
+}
+
+#star-icon{
+    position: absolute;
+}
+
+#star-icon:hover{
+    opacity: 0;
+}
+
+#mars-icon{
+    position: absolute;
+}
+
+#mars-icon:hover{
+    opacity: 0;
+}
+
+.rocket-icon{
+
+}
+
+.tooltipNew {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted white;
+    font-size: 15px
+}
+
+    .tooltipNew .tooltiptextNew {
+        visibility: hidden;
+        background-color: white;
+        color: black;
+        text-align: center;
+        border: 6px solid white;
+        padding: 5px 0;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 105%;
+    }
+
+    .tooltipNew:hover .tooltiptextNew {
+        visibility: visible;
+    }
+
+.infoItem {
+    height: 40px;
+    text-align: center;
+}
+
+.rocket-icon:hover{
+    animation: slideright 6s infinite linear;
+}
+
+.translateX {
+    animation: slideright 6s infinite linear;
+}
+
+@keyframes slideright{
+    0%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    50%{
+        transform: translate(200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
 
