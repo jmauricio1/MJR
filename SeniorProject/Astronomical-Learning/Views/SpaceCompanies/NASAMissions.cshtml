@@ -3,9 +3,192 @@
     ViewBag.Title = "NASAMissions";
 }
 
+<script>
+function showHideTimeline() {
+  var x = document.getElementById("timeline");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<div class="buttonContainer">
+    <button id="toggleTimeline" onclick="showHideTimeline()">Show/Hide Timeline</button>
+</div>
+
+<!-- Timeline code from: https://bootsnipp.com/snippets/a3BjR -->
+<div class="horizontalTimeline" id="timeline">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="display:inline-block;width:100%;overflow-y:auto;">
+                    <ul class="timeline timeline-horizontal">
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Explorer 1 Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>January 31, 1958</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first artificial satellite launched into Earth's lower orbit by NASA.</p>
+                                    <br />
+                                    <a href="#explorer1">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Mercury-Redstone 3 // Freedom 7</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>May 5, 1961</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first American mission that involved a human being put into Earth's orbit.</p>
+                                    <br />
+                                    <a href="#freedom7">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Apollo 8 Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>December 21, 1968</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first American astronauts to visit the moon, making a 1 day lunar orbit.</p>
+                                    <br />
+                                    <a href="#apollo8">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Apollo 11 Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>July 16, 1969</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>One of the most monumental missions in space history. Humankind steps their first steps on the lunar surface.</p>
+                                    <br />
+                                    <a href="#apollo11">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Viking 1 & 2 Missions</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>August 20, 1975</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Twin orbiter & landers that offered our first real surveys and images of Mars.</p>
+                                    <br />
+                                    <a href="#vikings">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Voyager 1 & 2 Missions</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>September 5, 1977</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Twin robotic probes that were designed to study Jupiter & Saturn but are now in interstellar space.</p>
+                                    <br />
+                                    <a href="#voyagers">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">The Hubble Telescope</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>April 24, 1990</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>One of the largest and most versatile telescopes is put into Earth's orbit to contribute towards scientific study.</p>
+                                    <br />
+                                    <a href="#hubble">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Mars Pathfinder Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>December 4, 1996</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first Mars rover, Sojourner, is sent on its way to Mars for scientific surface studies.</p>
+                                    <br />
+                                    <a href="#pathfinder">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">International Space Station</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>November 20, 1998</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>An international effort puts one of humankinds greatest engineering feats into orbit.</p>
+                                    <br />
+                                    <a href="#iss">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Spirit And Opportunity Missions</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>June 10, 2003</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Twin Mars rovers are sent to the surface of Mars to look for potential signs of past or present life.</p>
+                                    <br />
+                                    <a href="#spiritOpportunity">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Curiosity Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>November 26, 2011</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Another Mars rover designed to Mars' climate and geology as well as the potential for microbial life forms.</p>
+                                    <br />
+                                    <a href="#curiosity">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="information-paragraphs dark-bkr">
     <div>
-        <h2>Explorer 1 Mission</h2>
+        <a id="explorer1"><h2>Explorer 1 Mission</h2></a>
         <p>
             The Explorer 1 mission was NASA's first great success and marked the first artificial satellite launched into Earth's orbit by the United States on January 31st,
             1958 which followed the success of the Russian's Sputnik satellite on October 4, 1957. The U.S. Army Ballistic Missile Agency was directed to launch
@@ -20,7 +203,7 @@
             <br /><br />
             Explorer 1 orbited Earth in an elliptical pattern coming as close as 220 miles away and being as far as 1,563 miles from Earth. The payload would orbit Earth
             once every 114.8 minutes per day, or a total of 12.54 orbits per day. The Explorer 1 made its final data transmission on May 23, 1958, however it kept orbiting
-            Earth until March 31, 1970 when it entered Earth's atmosphere and burned up upon entry. 
+            Earth until March 31, 1970 when it entered Earth's atmosphere and burned up upon entry.
             [<a href="https://www.nasa.gov/mission_pages/explorer/explorer-overview.html">REF</a>]
             <br /><br />
 
@@ -42,7 +225,7 @@
     </div>
 
     <div>
-        <h2>Mercury-Redstone 3 // Freedom 7 Mission</h2>
+        <a id="freedom7"><h2>Mercury-Redstone 3 // Freedom 7 Mission</h2></a>
         <p>
             The Mercury-Redstone 3 or Freedom 7 mission was the first mission by the United States that involved human spaceflight. On May 5, 1961, astronaut
             Alan Shepard became the first American put into orbit around Earth and then returned safely. The mission was a suborbital flight with a 15 minute
@@ -78,7 +261,7 @@
     </div>
 
     <div>
-        <h2>Apollo 8 Mission</h2>
+        <a id="apollo8"><h2>Apollo 8 Mission</h2></a>
         <p>
             The Apollo 8 mission was the second crewed mission of the Apollo program and it was monumentally the first mission that would bring humans to the
             moon. The mission launched on Dec 21, 1968, with its crew of Frank Bormnan, Jim Lovell and Bill Anders. The flight included a day orbiting the moon
@@ -123,7 +306,7 @@
     </div>
 
     <div>
-        <h2>Apollo 11 Mission</h2>
+        <a id="apollo11"><h2>Apollo 11 Mission</h2></a>
         <p>
             The Apollo 11 mission is one of, if not the single most iconic space travel missions ever. It's the mission that landed mankind on the moon, and the
             mission in which we got the iconic quote "One small step for man, one giant leap for mankind" by astronaut Neil Armstrong, alongside "The Eagle has landed".
@@ -164,7 +347,7 @@
         </p><br />
 
         <div>
-            <h2>Viking 1 and Viking 2 Missions</h2>
+            <a id="vikings"><h2>Viking 1 and Viking 2 Missions</h2></a>
             <p>
                 The Viking 1 and Viking 2 were twin orbiter & lander combinations designed to survey Mars. Viking 1 was launched August 20th, 1975 reaching Mars orbit on
                 June 19, 1976 while the Viking 2 was launched September 9, 1975 and made Mars orbit on August 7, 1976. The twins were the first U.S. spacecraft to safely
@@ -185,7 +368,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <img src="https://astrobiology.nasa.gov/uploads/filer_public_thumbnails/filer_public/5c/43/5c4368a6-b2af-4c63-bd3d-a396c1651f8b/585497main_pia09703_full.jpg__1240x510_q85_crop_subsampling-2.jpg" width="240" height="240" />
-                        Pictured Above: The lander component of the Viking 1 and Viking 2 orbiter and lander combination. 
+                        Pictured Above: The lander component of the Viking 1 and Viking 2 orbiter and lander combination.
                     </div>
                     <div class="col-lg-3">
                         Pictured below: The orbiter component of the Viking 1 and Viking 2 orbiter and lander combination.
@@ -201,7 +384,7 @@
     </div>
 
     <div>
-        <h2>Voyager 1 and Voyager 2 Mission</h2>
+        <a id="voyagers"><h2>Voyager 1 and Voyager 2 Mission</h2></a>
         <p>
             The Voyager program aimed to launch two robotic probes that were originally intended to study Jupiter and Saturn. The Voyager 1, launched on September 5,
             1977 and its twin, Voyager 2 which launched 16 days earlier on August 20, 1977, these dates were chosen specifically to utilize the Alignment of Jupiter,
@@ -226,7 +409,7 @@
                     Pictured Above: One of the two twin Voyager probes launched in 1977 that are still travelling space to this day.
                 </div>
                 <div class="col-lg-3">
-                    Pictured below: The overall flight path that Voyager 1 and Voyager 2 travelled between 1977 and 1990 when they reached their outermost planet, Neptune. 
+                    Pictured below: The overall flight path that Voyager 1 and Voyager 2 travelled between 1977 and 1990 when they reached their outermost planet, Neptune.
                     <img src="https://www.jpl.nasa.gov/edu/images/news/voyager_trajectories.png" width="240" height="240" />
                 </div>
                 <div class="col-lg-6">
@@ -238,7 +421,7 @@
     </div>
 
     <div>
-        <h2>The Hubble Telescope</h2>
+        <a id="hubble"><h2>The Hubble Telescope</h2></a>
         <p>
             The Hubble Space Telescope (HST) is a space telescope that was launched into Earth's lower orbit on April 24, 1990 but as of 2020, is still in operation.
             The Hubble Telescope was not the first of NASA's lower orbit telescopes but it's one of the largest and most versatile telescopes that has ever been put
@@ -277,7 +460,7 @@
     </div>
 
     <div>
-        <h2>International Space Station (ISS)</h2>
+        <a id="iss"><h2>International Space Station (ISS)</h2></a>
         <p>
             The International Space Station is an engineering marvel that was a tremendous multinational effort to get into orbit. On November 20, 1998 the ISS
             was launched into orbit with planning, design and construction being done by a collaborative effort of U.S.A's NASA, Canada's CSA, Russia's Roscosmos
@@ -296,7 +479,7 @@
                 <div class="col-lg-3">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/ISS_emblem.png" width="240" height="240" />
                     Pictured Above: A graphic that shows the flags of all the countries that have participated with the International Space Station and the design
-                    of the space station itself. 
+                    of the space station itself.
                 </div>
                 <div class="col-lg-3">
                     Pictured below: The actual International Space Station floating in Earth's Orbit looking down upon us, this image is from 2010 just after the
@@ -313,7 +496,7 @@
 
     <div>
         <h2>The Mars Rovers</h2>
-        <h4>Pathfinder</h4>
+        <a id="pathfinder"><h4>Pathfinder</h4></a>
         <ul style="list-style-type:none">
             <li>
                 The Pathfinder was launched on December 4, 1996 and made its Mars landing in the Ares Vallis location on July 4, 1997. Pathfinder was a technological
@@ -333,7 +516,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pathfinder_Air_Bags_-_GPN-2000-000484.jpg/1280px-Pathfinder_Air_Bags_-_GPN-2000-000484.jpg" width="240" height="240" />
-                        Pictured Above: A demonstration of the Airbag system that landed the Mars rover and lander safely on the surface of the Martian planet. 
+                        Pictured Above: A demonstration of the Airbag system that landed the Mars rover and lander safely on the surface of the Martian planet.
                     </div>
                     <div class="col-lg-3">
                         Pictured below: The Pathfinder lander and Sojourner rover on the surface of Mars after the airbags deflated, the beginning of our first real glimpse
@@ -347,7 +530,7 @@
                 </div>
             </li>
         </ul><br />
-        <h4>Spirit and Opportunity</h4>
+        <a id="spiritOpportunity"><h4>Spirit and Opportunity</h4></a>
         <ul style="list-style-type:none">
             <li>
                 The Mars Exploration Rovers (MERs) mission aimed to send another pair of rovers to Mars. The paired rovers Spirit and Opportunity. The primary objective for
@@ -375,15 +558,15 @@
                 strong indications at Endeavor Crater of ancient water repositories. The Opportunity was not without its own issues during its 15 year mission on the
                 red planet, ultimately succumbing to a severe planet wide dust storm that blanketed its location in June 2018. The final transmission received by the
                 Opportunity Rover was on June 10, 2018 when it delivered its famous final message "My battery is low and it's getting dark" (although realistically this was a
-                little bit embellished). After an extensive 8 month attempted recovery period that involved over 1,000 commands being sent to Opportunity the mission was 
+                little bit embellished). After an extensive 8 month attempted recovery period that involved over 1,000 commands being sent to Opportunity the mission was
                 officially terminated on February 13, 2019 ending Opportunity's reign but securing its legacy by surpassing its life expectancy 60 times over.
                 [<a href="https://www.nasa.gov/press-release/nasas-record-setting-opportunity-rover-mission-on-mars-comes-to-end">REF</a>]
                 <br /><br />
                 <div class="row">
                     <div class="col-lg-3">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/NASA_Mars_Rover.jpg" width="240" height="240" />
-                        Pictured Above: The overall design of the twin rovers Spirit and Opportunity. Rather than having a solar panel top, these rovers had an 
-                        array of solar power petals that they deployed shortly after landing on Mars. 
+                        Pictured Above: The overall design of the twin rovers Spirit and Opportunity. Rather than having a solar panel top, these rovers had an
+                        array of solar power petals that they deployed shortly after landing on Mars.
                     </div>
                     <div class="col-lg-3">
                         Pictured below: Three generations of Mars rovers. In front, the Pathfinders Sojourner rover, on the left, one of the two twins, Opportunity and Spirit
@@ -397,7 +580,7 @@
                 </div>
             </li>
         </ul><br />
-        <h4>Curiosity</h4>
+        <a id="curiosity"><h4>Curiosity</h4></a>
         <ul style="list-style-type:none">
             <li>
                 The Curiosity rover was a car-sized Mars rover that was launched on November 26, 2011 and made Mars landfall on August 6, 2012. It's designated
