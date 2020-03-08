@@ -9,44 +9,10 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 
-<style>
-    .tooltipNew {
-        position: relative;
-        display: inline-block;
-        border-bottom: 1px dotted white;
-        font-size: 15px
-    }
 
-        .tooltipNew .tooltiptextNew {
-            visibility: hidden;
-            width: 120px;
-            background-color: white;
-            color: black;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-            top: -5px;
-            left: 105%;
-        }
-
-        .tooltipNew:hover .tooltiptextNew {
-            visibility: visible;
-        }
-
-
-    .infoItem {
-        height: 40px;
-        text-align: center;
-    }
-
-</style>
 
 
 <div class="container information-paragraphs dark-bkr">
-
 
 
     <div style="text-align: center;"><h2>The Sun</h2></div>
@@ -87,8 +53,12 @@
                 An image of the sun. <a href="https://sdo.gsfc.nasa.gov/assets/img/browse/2010/08/19/20100819_003221_4096_0304.jpg">Source</a>
             </div>
 
-        </div> 
-    </div>
+
+        </div>
+
+     </div> 
+
+
 
 
 
@@ -188,7 +158,10 @@
         <h3>What are Solar Eclipses?</h3>
         The Sun will also periodically have a solar eclipse which happens when the moon gets between the Earth and the Sun which casts a shadow on the Earth. [<a href="#ref10">10</a>]<br>
         Solar eclipses come in one of four forms being either total, annular, partial, and hybrid each having a different amount of the sun being blocked. [<a href="#ref10">10</a>]<br>
-        <div class="tooltipNew">
+        The image below shows a diagram of a solar eclipse. <a href="https://commons.wikimedia.org/wiki/File:Solar_eclipse.png">Source</a><br>
+
+        <div class="tooltipNew"> 
+
             Important!!!
             <span class="tooltiptextNew">
                 It is important to remeber that even though some of the Sun is blocked it does not mean that it is safe to look at it without protection. [<a href="#ref10">10</a>]
@@ -196,9 +169,12 @@
         </div>
 
 
+
+
+    <div>
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Solar_eclipse.png" alt="Alternate Text" />
+
     </div>
-
-
 
 
     <div style="width:50%; height:500px" class="container">
@@ -248,6 +224,13 @@
     </div>
 
 
+
+
+
+
+    </div>
+
+
     <button class="btn-primary" onclick="sunShowImageSources()">Click to Show Image Sources</button>
     <div id="sunSources" style="display:none;">
 
@@ -256,6 +239,7 @@
         Partial Solar Eclipse: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg">source</a>,
         Hybrid Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:D.C._eclipsed_in_hybrid_solar_event_(10696089826).jpg">source</a>
     </div>
+
 
 
     <div>
