@@ -3,7 +3,7 @@ Welcome to the repository for MJR Software Solutions. We are a team built for We
 
 ## Project Contents
 1. Astronomical Learning
-- This is the primary folder for the Astronoical Learning project
+- This is the primary folder for the Astronomical Learning project
 2. Milestones for CS461
 - M1
   - Created a business logo for MJR Software Solutions
@@ -44,7 +44,7 @@ This project is a website focused around teaching younger audiences about space 
 If you wish to contribute further to this project here's how you may do so:
 
 1. Fork the repository by clicking "Fork" on github. [Instructions Here](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
-  - We would ask that you use AstronomicalLearning_yourname to make pulls easier to identify.
+  - We would ask that you use Astronomical-Learning_yourname to make pulls easier to identify.
 2. Clone the repository to your local machine. [Instructions Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 3. Create a remote to upstream for pulling the most recent developement (dev) branch.
   - git remote add upstream https://github.com/jmauricio1/MJR  (in git command line)
@@ -54,6 +54,7 @@ If you wish to contribute further to this project here's how you may do so:
 We respectfully ask that all contributors attempt to follow our guidelines as closely as possible. 
 
 [View our guidelines here.](https://github.com/jmauricio1/MJR/blob/master/guidelines.md)
+[View our guidelines here.](https://github.com/jmauricio1/MJR/blob/master/guidelines.md)
 
 ### Software Construction
 For the Astronomical Learning project we followed the Disciplined Agile Delivery work process specifically using Scrum workflow. Our sprints were set to two week iterations and used a 1,2,4,8 effort point scale.
@@ -62,5 +63,5 @@ For the Astronomical Learning project we followed the Disciplined Agile Delivery
 For a list of tools we used while constructing this project click [HERE!](https://github.com/jmauricio1/MJR/blob/master/tools.md). Ideally if you wish to contribute attempt to use compatible tools with the ones we have used for the project. 
 
 ### Continuously Deployed Website
-You may view our continually deployed website [HERE!](http://athletedatatracker.azurewebsites.net/)
+You may view our continually deployed website [HERE!](http://astronomicaldev.azurewebsites.net/)
 
