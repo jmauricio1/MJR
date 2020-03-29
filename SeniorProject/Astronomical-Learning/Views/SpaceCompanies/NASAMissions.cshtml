@@ -1,0 +1,625 @@
+﻿
+@{
+    ViewBag.Title = "NASAMissions";
+}
+
+<script>
+function showHideTimeline() {
+  var x = document.getElementById("timeline");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<div class="buttonContainer">
+    <button id="toggleTimeline" onclick="showHideTimeline()">Show/Hide Timeline</button>
+</div>
+
+<!-- Timeline code from: https://bootsnipp.com/snippets/a3BjR -->
+<div class="horizontalTimeline" id="timeline">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="display:inline-block;width:100%;overflow-y:auto;">
+                    <ul class="timeline timeline-horizontal">
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Explorer 1 Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>January 31, 1958</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first artificial satellite launched into Earth's lower orbit by NASA.</p>
+                                    <br />
+                                    <a href="#explorer1">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Mercury-Redstone 3 // Freedom 7</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>May 5, 1961</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first American mission that involved a human being put into Earth's orbit.</p>
+                                    <br />
+                                    <a href="#freedom7">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Apollo 8 Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>December 21, 1968</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first American astronauts to visit the moon, making a 1 day lunar orbit.</p>
+                                    <br />
+                                    <a href="#apollo8">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Apollo 11 Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>July 16, 1969</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>One of the most monumental missions in space history. Humankind steps their first steps on the lunar surface.</p>
+                                    <br />
+                                    <a href="#apollo11">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Viking 1 & 2 Missions</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>August 20, 1975</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Twin orbiter & landers that offered our first real surveys and images of Mars.</p>
+                                    <br />
+                                    <a href="#vikings">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Voyager 1 & 2 Missions</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>September 5, 1977</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Twin robotic probes that were designed to study Jupiter & Saturn but are now in interstellar space.</p>
+                                    <br />
+                                    <a href="#voyagers">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">The Hubble Telescope</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>April 24, 1990</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>One of the largest and most versatile telescopes is put into Earth's orbit to contribute towards scientific study.</p>
+                                    <br />
+                                    <a href="#hubble">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Mars Pathfinder Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>December 4, 1996</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>The first Mars rover, Sojourner, is sent on its way to Mars for scientific surface studies.</p>
+                                    <br />
+                                    <a href="#pathfinder">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">International Space Station</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>November 20, 1998</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>An international effort puts one of humankinds greatest engineering feats into orbit.</p>
+                                    <br />
+                                    <a href="#iss">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Spirit And Opportunity Missions</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>June 10, 2003</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Twin Mars rovers are sent to the surface of Mars to look for potential signs of past or present life.</p>
+                                    <br />
+                                    <a href="#spiritOpportunity">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Curiosity Mission</h4>
+                                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>November 26, 2011</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Another Mars rover designed to Mars' climate and geology as well as the potential for microbial life forms.</p>
+                                    <br />
+                                    <a href="#curiosity">Move to Section</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="information-paragraphs dark-bkr">
+    <div>
+        <a id="explorer1"><h2>Explorer 1 Mission</h2></a>
+        <p>
+            The Explorer 1 mission was NASA's first great success and marked the first artificial satellite launched into Earth's orbit by the United States on January 31st,
+            1958 which followed the success of the Russian's Sputnik satellite on October 4, 1957. The U.S. Army Ballistic Missile Agency was directed to launch
+            a satellite using it's Jupiter C rocket under the direction of Dr. Wernher von Braun. The Jet Propulsion Labratory (JPL) was given the assignment to
+            design, build and operate the artificial satellite that would serve as the Jupiter C's payload. The JPL completed this assignment in under less than
+            three months!
+            <br /><br />
+            The primary scientific instrument on the payload was a cosmic ray detector designed by Dr. James Van Allen meant to measure the amount of radiation
+            environment in Earth's lower orbit. The device found much lower amounts of radiation than expected leading to a theory by Van Allen that the instrument
+            may have been saturated by high amounts of radiation from a belt of charged particles trapped in space by Earth's magnetic field. This theory was confirmed
+            two months later during another satellite mission and they became known as the Van Allen Belts in honor of Dr. Van Allen.
+            <br /><br />
+            Explorer 1 orbited Earth in an elliptical pattern coming as close as 220 miles away and being as far as 1,563 miles from Earth. The payload would orbit Earth
+            once every 114.8 minutes per day, or a total of 12.54 orbits per day. The Explorer 1 made its final data transmission on May 23, 1958, however it kept orbiting
+            Earth until March 31, 1970 when it entered Earth's atmosphere and burned up upon entry.
+            [<a href="https://www.nasa.gov/mission_pages/explorer/explorer-overview.html">REF</a>]
+            <br /><br />
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="https://www.nasa.gov/sites/default/files/1958_january_explorer_01_team_0.jpg" width="240" height="240" />
+                </div>
+                <div class="col-lg-3">
+                    Pictured Left: The Explorer 1 mission also lead to one of the most iconic pictures in space travel history. The picture includes Dr. William H. Pickering (left most), former director
+                    of the JPL, Dr. James Van Allen (centre), the designer of the cosmic ray detector and Dr. Wernher von Braun (right most), leader of the Army's Redstone Arsenal team who developed
+                    the rocket that launched Explorer 1 into space. Image Credit to NASA.
+                </div>
+                <div class="col-lg-6">
+                    <i>Video Credit: NASA's Jet Propulsion Labratory</i><br />
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WT39gTs9X7k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </p><br />
+    </div>
+
+    <div>
+        <a id="freedom7"><h2>Mercury-Redstone 3 // Freedom 7 Mission</h2></a>
+        <p>
+            The Mercury-Redstone 3 or Freedom 7 mission was the first mission by the United States that involved human spaceflight. On May 5, 1961, astronaut
+            Alan Shepard became the first American put into orbit around Earth and then returned safely. The mission was a suborbital flight with a 15 minute
+            duration with the objective of demonstrating the bodies ability to withstand high g-forces of launch and orbital re-entry.
+            <br /><br />
+            It was pilot Alan Shepard himself that named the space capsule the Freedom 7, which would set a precedent for the naming of the future Mercury
+            missions to come, although the 7 was included in all crewed Mercury flights as an honor to NASA's first group of seven astronauts. The spacecraft
+            was launched with a Redstone MRLV MR-7 rocket and reached an altitude of 101.2 nautical miles and traveled a downrange distance of 263.1 nautical
+            miles.
+            <br /><br />
+            During the flight, Alan Shepard observed the Earth and tested the Freedom 7 capsule's altitude control system, turning the capsule around in midflight
+            so that the heat shields were pointed correctly for atmospheric re-entry. Shepard was also responsible for testing systems such as the retro rockets that
+            would return later missions from orbit. After atmospheric re-entry the Freedom 7 capsule landed in the North Atlantic ocean off the Bahamas island. Shepard
+            and the capsule were then picked up by helicopter and delivered to a U.S. Naval aircraft carrier.
+            [<a href="https://en.wikipedia.org/wiki/Mercury-Redstone_3">REF</a>]
+            <br /><br />
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Alan_Shepard_during_Mercury-Redstone_3.jpg/520px-Alan_Shepard_during_Mercury-Redstone_3.jpg" width="240" height="240" />
+                    Pictured Above: Alan Shepard, astronaut and pilot of the Freedom 7 capsule. This still frame picture was taken by a motion capture camera onboard the
+                    Freedom 7 capsule during the mission.
+                </div>
+                <div class="col-lg-3">
+                    Pictured below: The Mercury Capsule 15B that astronaut Alan Shepard used for his suborbital flight during the Freedom 7 mission.
+                    <img src="https://farm2.staticflickr.com/1876/44468664062_f4700b7c3e_b.jpg" width="240" height="240" />
+                </div>
+                <div class="col-lg-6">
+                    <i>Video Credit: Matthew Travis</i><br />
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bKFQClij1cc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </p><br />
+    </div>
+
+    <div>
+        <a id="apollo8"><h2>Apollo 8 Mission</h2></a>
+        <p>
+            The Apollo 8 mission was the second crewed mission of the Apollo program and it was monumentally the first mission that would bring humans to the
+            moon. The mission launched on Dec 21, 1968, with its crew of Frank Bormnan, Jim Lovell and Bill Anders. The flight included a day orbiting the moon
+            during which the astronauts captured the "Earthrise" photograph, another one of space exploration histories most famous and iconic pictures.
+            <br /><br />
+            Considering NASA's relative history of careful planning and execution, Apollo 8 was born of a different desire. United States and Russia were still in
+            the prime of the space race and the United States wanted to lay claim to bringing the moon closer to humanity. Of the Apollo programs past missions, only
+            one mission even included an orbit and it was orbitting Earth. This rush also included the decision to use a more powerful Saturn V rocket which had never
+            been tested on a crewed mission before.
+            <br /><br />
+            After Apollo 8 had settled into Earth's Orbit, the crew performed their final checks and received the "go" ahead from NASA for trans-lunar injection, meaning
+            they were cleared to fire up their main engines and aim for the moon. However, unforseen consequences almost cost the mission when Commander Borman fell violently
+            ill after the 18th hour of the mission. Fortunately for the sake of the mission and the future of space exploration, Borman was on the mend after getting some
+            much needed sleep. After a radio medical consultion with NASA, the agency catiously gave the approval to continue with the mission as planned.
+            <br /><br />
+            Placing the Apollo 8 into lunar orbit is no small task, compouding the difficulty of the monumental task was that the engine firing, which would put the shuttle
+            in the correct spot to enter orbit, had to be done with no ground based communication due to the shuttle being on the far side of the moon. However, the crew
+            performed immaculately and guided the Apollo 8 into lunar orbit right on schedule.
+            <br /><br />
+            On that same christmas eve the crew had a chance to share their impressions with the world via a public broadcast. Commander Borman called the moon
+            "a vast, lonely, forbidding type of existence" while Lovell paid tribute to Earth's "grand ovation to the vastness of space". Mission controllers
+            waited anxiously for the trip home as the Apollo 8 crew re-ignited their engines on the far side of the moon. As they re-emerged, Lovell called out
+            "Please be informed, there is a santa claus", signalling the ships course back to earth. The crew successfully landed back on Earth on December 27.
+            [<a href="https://www.space.com/17362-apollo-8.html">REF</a>]
+            <br /><br />
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/apollo08_earthrise.jpg" width="240" height="240" />
+                    Pictured Above: The iconic "Earthrise" picture that was taken during the Apollo 8 mission, captured while the Apollo 8 was in the lunar orbit.
+                </div>
+                <div class="col-lg-3">
+                    Pictured below: The Apollo 8 Command Module that housed the three astronauts during their lunar orbit. The astronauts lived within the confines
+                    of the module for a total of 6 days.
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Apollo_8_command_module.jpg" width="240" height="240" />
+                </div>
+                <div class="col-lg-6">
+                    <i> Video Credit: Dan Beaumont Space Museum</i>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Vn00BvWwke0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </p><br />
+    </div>
+
+    <div>
+        <a id="apollo11"><h2>Apollo 11 Mission</h2></a>
+        <p>
+            The Apollo 11 mission is one of, if not the single most iconic space travel missions ever. It's the mission that landed mankind on the moon, and the
+            mission in which we got the iconic quote "One small step for man, one giant leap for mankind" by astronaut Neil Armstrong, alongside "The Eagle has landed".
+            The Apollo 11 launched on July 16, 1969 carrying Commander Neil Armstrong, Command Module Pilot Michael Collins and Lunar Module Pilot Edwin "Buzz" Aldrin.
+            On July 20, 1969 at 20:17 UTC the Apollo Lunar Module "Eagle" landed on the surface of the moon, while Collins flew the Command Module Columbia alone
+            in lunar orbit while his crewmates were on the surface of the moon.
+            <br /><br />
+            On July 21, 1969 at 02:56 UTC, Neil Armstrong took the first step onto the moon and delivered his immortal quote, joined 19 minutes later by Aldrin. The
+            two spent a little over two hours on the surface of the moon collecting 47.5 pounds of lunar material for scientific study. Armstrong and Aldrin spent 21
+            hours and 36 minutes on the surface of the moon at a site they named "Tranquility Base" before departing the surface and rejoining the Columbia command
+            module in lunar orbit.
+            <br /><br />
+            Like the Apollo 8, the Apollo 11 was launched with a Saturn V rocket containing three modules, the command module (CM), the service module (SM) and the
+            lunar module (LM). Of the three modules, the only one that made it back to earth was the command module which housed the astronauts. The service module
+            supported the command module with propulsion, electrical power, water and oxygen during the mission. The lunar module was a two stage module that contained
+            the thrusters necessary to make it to the surface of the moon and back again to lunar orbit.
+            <br /><br />
+            Armstrong's first steps onto the moon were broadcast on live television to a global audience. The Apollo 11 mission effectively ended the 14 year old space
+            race between the United States and Russia and fulfilled a national goal proposed in 1961 by president John F. Kennedy "before this decade is out, of landing
+            a man on the Moon and returning him to Earth."
+            [<a href="https://en.wikipedia.org/wiki/Apollo_11">REF</a>]
+            <br /><br />
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Apollo_11_Lunar_Lander_-_5927_NASA.jpg" width="240" height="240" />
+                    Pictured Above: The lunar module "Eagle" that housed astronauts Neil Armstrong and Buzz Aldrin for 21 hours on the surface of the moon.
+                </div>
+                <div class="col-lg-3">
+                    Pictured below: The bootprint left impressed upon the moon by astronaut Edwin "Buzz" Aldrin. Although its been long since swept away, it remains
+                    an iconic image of one of mankind's greatest successes.
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Apollo_11_bootprint.jpg" width="240" height="240" />
+                </div>
+                <div class="col-lg-6">
+                    <i>Video Credit: CBS News</i><br />
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OSPyXTjIrnk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </p><br />
+
+        <div>
+            <a id="vikings"><h2>Viking 1 and Viking 2 Missions</h2></a>
+            <p>
+                The Viking 1 and Viking 2 were twin orbiter & lander combinations designed to survey Mars. Viking 1 was launched August 20th, 1975 reaching Mars orbit on
+                June 19, 1976 while the Viking 2 was launched September 9, 1975 and made Mars orbit on August 7, 1976. The twins were the first U.S. spacecraft to safely
+                land on the surface of mars and returned images of the surface of Mars. Each orbiter & lander pair flew to Mars together before the lander seperated and made
+                their way to the surface, leaving the orbiters in orbit. The Viking 1 touched down on the western slope of an area called Chryse Planitia (the plains of gold)
+                while Viking 2 landed in an area known as Utopia Planitia.
+                <br /><br />
+                The two landers not only took surface images, but they also collected other scientific data and even conducted three of their own experiments to test for signs
+                of life on the Martian surface. These experiements discovered unexpected and enigmatic chemical activity in the soil near their respective landing sites, but
+                provided no clear evidence for the presence of life. Scientists believed that the ultraviolet radiation that satures the planet's surface, along with the extreme
+                dryness and oxidizing nature of the soil's chemistry likely preventing the forming of living organisms on the surface.
+                <br /><br />
+                The Viking mission was only planned to continue for 90 days after their landing but each orbiter and lander pair lasted far longer than expected. Viking 1 operated
+                for four years and made made 1,489 orbits around Mars, concluding its mission August 7, 1980. Viking 2 functioned until June 25, 1978. The Viking 1 made it's final
+                transmission to Earth on November 11, 1982 while the last data from the Viking 2 was received on April 11, 1980.
+                [<a href="https://mars.nasa.gov/mars-exploration/missions/viking-1-2/">REF</a>]
+                <br /><br />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="https://astrobiology.nasa.gov/uploads/filer_public_thumbnails/filer_public/5c/43/5c4368a6-b2af-4c63-bd3d-a396c1651f8b/585497main_pia09703_full.jpg__1240x510_q85_crop_subsampling-2.jpg" width="240" height="240" />
+                        Pictured Above: The lander component of the Viking 1 and Viking 2 orbiter and lander combination.
+                    </div>
+                    <div class="col-lg-3">
+                        Pictured below: The orbiter component of the Viking 1 and Viking 2 orbiter and lander combination.
+                        <img src="https://astrobiology.nasa.gov/uploads/filer_public_thumbnails/filer_public/fc/16/fc167b33-5ee6-473e-be13-13f81b94b085/261003main_02_viking1_full.jpg__1240x510_q85_crop_subsampling-2.jpg" width="240" height="240" />
+                    </div>
+                    <div class="col-lg-6">
+                        <i>Video Credit: Dan Beaumont Space Museum</i>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gZjCfNvx9m8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </p><br />
+        </div>
+    </div>
+
+    <div>
+        <a id="voyagers"><h2>Voyager 1 and Voyager 2 Mission</h2></a>
+        <p>
+            The Voyager program aimed to launch two robotic probes that were originally intended to study Jupiter and Saturn. The Voyager 1, launched on September 5,
+            1977 and its twin, Voyager 2 which launched 16 days earlier on August 20, 1977, these dates were chosen specifically to utilize the Alignment of Jupiter,
+            Saturn, Uranus and Neptune. Although the original plan was to only study Jupiter and Saturn both probes continued on to study Neptune and Saturn as well.
+            The only close up pictures of either Uranus or Neptune have so far, only been taken by the Voyager 2.
+            <br /><br />
+            Amazingly, both of these probes are still actively contributing meaningful data for scientific discovery over 40 years later. On Auguest 25, 2012 the data
+            returned from Voyager 1 indicated that it was the first man-made object to achieve interstellar space travel, having travelled farther than anyone or anything
+            in our known history. On November 5, 2018 the Voyager 2 also reached interstellar space alongside its twin probe. Interstellar space is a region of outer space
+            that is beyond the gravitational influence of our Solar System.
+            <br /><br />
+            Data and photographs collected be the twin Voyagers cameras and instruments have revealed unknown details about each of the four gas giant planets and their moons.
+            Close up imagery from the spacecrafts charted Jupiter's complex cloud forms, winds and storm systems and also discovered volcanic activity on Jupiter's moon Io.
+            Saturn's rings were found to have enigmatic braids, kinks and spokes that were accompanied by "ringlets". At Uranus, Voyager 2 discovered a substantial magnetic
+            field around the planet and TEN additional moons we had known about! During its flyby of Neptune, Voyager 2 uncovered three rings and six unknown moons, a planetary
+            magnetic field and complex, widely distributed auroras.
+            [<a href="https://en.wikipedia.org/wiki/Voyager_program">REF</a>]
+            <br /><br />
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="https://voyager.jpl.nasa.gov/assets/images/news/PIA17462_top.jpg" width="240" height="240" />
+                    Pictured Above: One of the two twin Voyager probes launched in 1977 that are still travelling space to this day.
+                </div>
+                <div class="col-lg-3">
+                    Pictured below: The overall flight path that Voyager 1 and Voyager 2 travelled between 1977 and 1990 when they reached their outermost planet, Neptune.
+                    <img src="https://www.jpl.nasa.gov/edu/images/news/voyager_trajectories.png" width="240" height="240" />
+                </div>
+                <div class="col-lg-6">
+                    <i>Video Credit: NASA's Jet Propulsion Laboratory</i>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/C1UBg4TPqX4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </p><br />
+    </div>
+
+    <div>
+        <a id="hubble"><h2>The Hubble Telescope</h2></a>
+        <p>
+            The Hubble Space Telescope (HST) is a space telescope that was launched into Earth's lower orbit on April 24, 1990 but as of 2020, is still in operation.
+            The Hubble Telescope was not the first of NASA's lower orbit telescopes but it's one of the largest and most versatile telescopes that has ever been put
+            into lower orbit and is well known as both a vital research tool and as a public relations boon for astronomical discovery. The telescope was named after
+            American Astronomer Edwin Hubble and is considered to be one of NASA's "Great Observatories" alongside 3 other observatories and telescopes.
+            <br /><br />
+            The Hubble Telescope features a 7.9 foot long mirror lens and its four primary instruments are capable of observing in the ultraviolet, visible and near
+            infrared regions of the electromagnetic spectrum. The telescopes orbit outside of the distortion of Earth's atmosphere allows it to capture extremely high
+            resolution images with substantially lower background light than ground-based telescopes. The Hubble Telescope has recorded some of the most detailed visible
+            light images, allowing for a deeper view into space. Many of the Hubble observations have led to breakthroughs in the astrophysics field, such as determining
+            the rate of expansion of the universe.
+            <br /><br />
+            The Hubble Telescope has a unique feature, it was the only low orbit telescope designed to be maintained in space by astronauts. As of 2020, there have been
+            five seperate service missions that have repaired, upgraded or replaced systems on the telescope, including all of the main instruments. The successor to the
+            Hubble Telescope is the James Webb Space Telescope, which is currently scheduled to launch in March 2021. Despite its successors anticipated launch date, it's
+            expected that the Hubble Telescope will remain in service until somewhere between 2030 to 2040, although no certain decommission date exists as of yet.
+            [<a href="https://en.wikipedia.org/wiki/Hubble_Space_Telescope">REF</a>]
+            <br /><br />
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="https://live.staticflickr.com/3727/9461026706_0f12b3e603_b.jpg" width="240" height="240" />
+                    Pictured Above: The Hubble Space Telescope as pictured in Earth's lower orbit. The telescope has already spent 30 years orbiting earth with no signs of
+                    stopping just yet.
+                </div>
+                <div class="col-lg-3">
+                    Pictured below: One of the most famous pictures taken by the Hubble Telescope. The "Pillars of Creation" photograph shows towering pillars of cosmic dust
+                    gas that are part of an active star-forming region within the Eagle Nebula and hides newborn stars within its wispy columns.
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg/982px-Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg" width="240" height="240" />
+                </div>
+                <div class="col-lg-6">
+                    <i>Video Credit: Shuttlesource</i>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/on7_7WZmdgI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </p><br />
+    </div>
+
+    <div>
+        <a id="iss"><h2>International Space Station (ISS)</h2></a>
+        <p>
+            The International Space Station is an engineering marvel that was a tremendous multinational effort to get into orbit. On November 20, 1998 the ISS
+            was launched into orbit with planning, design and construction being done by a collaborative effort of U.S.A's NASA, Canada's CSA, Russia's Roscosmos
+            (Pockocmoc in Russian language), Japan's JAXA and the participating countries of the European Space Agency (ESA). As of February 2020 there have been
+            18 different countries that have sent astronauts to the ISS. The ISS brings together international flight crews, multiple launch vehicles, globally
+            distributed launch operations, trainig, engineering and development facilities.
+            <br /><br />
+            NASA and many other U.S based companies played a large role in the construction phase of the ISS. NASA continues to run ISS Training Program Management Mission
+            Control alongside a pair of telescience support centers and 1 of the 3 launch control locations. As of March, 2019 there have been 236 astronaut visitors
+            to the ISS, of which 149 were representing the U.S.A and NASA. NASA also already has a plan for the de-orbiting of the ISS which is currently slated for 2024.
+            [<a href="https://www.nasa.gov/mission_pages/station/cooperation/index.html">REF</a>]
+            <br /><br />
+            For more information about the ISS visit: @Html.ActionLink("Our ISS Page.", "ISS", "SpaceCompanies")
+            <br /><br />
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/ISS_emblem.png" width="240" height="240" />
+                    Pictured Above: A graphic that shows the flags of all the countries that have participated with the International Space Station and the design
+                    of the space station itself.
+                </div>
+                <div class="col-lg-3">
+                    Pictured below: The actual International Space Station floating in Earth's Orbit looking down upon us, this image is from 2010 just after the
+                    STS-132 NASA space mission had undocked from the space station.
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/International_Space_Station_after_undocking_of_STS-132.jpg" width="240" height="240" />
+                </div>
+                <div class="col-lg-6">
+                    <i>Video Credit: Julian Danzer</i>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/sSvPhDynSrA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </p>
+    </div>
+
+    <div>
+        <h2>The Mars Rovers</h2>
+        <a id="pathfinder"><h4>Pathfinder</h4></a>
+        <ul style="list-style-type:none">
+            <li>
+                The Pathfinder was launched on December 4, 1996 and made its Mars landing in the Ares Vallis location on July 4, 1997. Pathfinder was a technological
+                demonstration of a new way to deliver an instrumented lander and the first ever robotic rover to Mars. Pathfinder not only accomplished this goal but it also
+                returned an unprecedented amount of data for scientific research but it also outlived its primary designs life expectancy, the lander lasts 3 times longer than expected
+                while the rover lasted 12 times longer than expected.
+                <br /><br />
+                Both the rover and the lander it flew to Mars on carried scientific observational equipment and instruments to provide engineering data on the new technologies
+                to the planet. Some of these instruments included instruments to analyze the Martian atmosphere, climate, geology and the chemical composition of its rocks and soils.
+                Pathfinder used an innovative method of directly entering the atmosphere and used a combination of parachutes and airbags to land safely on the planet's surface.
+                <br /><br />
+                From its landing until its final data transmission on September 27, 1977 the Pathfinder duo returned 2.3 gigabits worth of information which included 16,500 images
+                supplies by the lander and another 550 images from the rover itself on the surface. The rover also returned more than 15 chemical analyses of the rocks on mars and
+                data on Mars' harsh winds and other weather factors.
+                [<a href="https://mars.nasa.gov/mars-exploration/missions/pathfinder/">REF</a>]
+                <br /><br />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pathfinder_Air_Bags_-_GPN-2000-000484.jpg/1280px-Pathfinder_Air_Bags_-_GPN-2000-000484.jpg" width="240" height="240" />
+                        Pictured Above: A demonstration of the Airbag system that landed the Mars rover and lander safely on the surface of the Martian planet.
+                    </div>
+                    <div class="col-lg-3">
+                        Pictured below: The Pathfinder lander and Sojourner rover on the surface of Mars after the airbags deflated, the beginning of our first real glimpse
+                        onto the surface of the red planet.
+                        <img src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA00621_hires.jpg" width="240" height="240" />
+                    </div>
+                    <div class="col-lg-6">
+                        <i>Video Credit: AP Archive</i>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Wo96XXpVl1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </li>
+        </ul><br />
+        <a id="spiritOpportunity"><h4>Spirit and Opportunity</h4></a>
+        <ul style="list-style-type:none">
+            <li>
+                The Mars Exploration Rovers (MERs) mission aimed to send another pair of rovers to Mars. The paired rovers Spirit and Opportunity. The primary objective for
+                this mission was to search for a range of rocks and soil types and then look for clues for past water activity on Mars. They were sent to opposite sides of
+                the red planet that were suspected to have been affected by liquid water in the past. Each rover is approximately the size of a golf cart and weighs in at 7
+                times heavier than the Sojourner rover that was used for the Pathfinder mission.
+                <br />
+                <h4>Spirit</h4>
+                Spirit was the first of the two rovers that launched. Spirit was launched on June 10, 2003 and made its Martian landing on Jan 4, 2004 after 4 course corrections
+                during its flight to Mars. The landing was about 8 miles off the planned target and ended up inside the Gusev Crater and established its landing site known as
+                "Columbia Memorial Station" to honor the seven lives lost just a year earlier when a shuttle broke apart upon atmospheric re-entry. About an hour-and-a-half after
+                landing the rover deployed its solar petals and immediately began transmitting spectacular images back to Earth. The original mission was only intended to last 90
+                days but mission planners were able to repeatedly formulate reasons for continuing the mission. On May 1, 2009 the Spirit rover became stuck in soft soil and by
+                late January 2010 mission planners declared Spirit as a stationary science platform. After March 22, 2010 the mission controllers were unable to make contact with
+                Spirit. Despite more than 1300 commands to Spirit, NASA officially concluded its recovery efforts on May 25, 2011 but it operated 25 times longer
+                than it's anticipated operation time.
+                [<a href="https://solarsystem.nasa.gov/missions/spirit/in-depth/">REF</a>]
+                <br />
+                <h4>Opportunity</h4>
+                The second of the two rovers, Opportunity, was launched on July 7, 2003 and made its Martian landing on January 25, 2004. The Opportunity would prove
+                to be one of the most successful interplanetary exploration vessels ever put into service. Like its twin, it was also designed to last 90 days and travel
+                1,100 yards on the Mars surface. The Opportunity set a one-day driving record on mars when it traveled 721 feet on March 20, 2005. Opportunity returned over
+                217,000 images including 15 panoramic 360 degree colored images. Opportunity exposed the surfaces of 52 different rocks and brushed clear another 72 targets
+                to prepare them for scientific study. Opportunity found signs of hematite a mineral that forms in water, at its landing site and further discovered
+                strong indications at Endeavor Crater of ancient water repositories. The Opportunity was not without its own issues during its 15 year mission on the
+                red planet, ultimately succumbing to a severe planet wide dust storm that blanketed its location in June 2018. The final transmission received by the
+                Opportunity Rover was on June 10, 2018 when it delivered its famous final message "My battery is low and it's getting dark" (although realistically this was a
+                little bit embellished). After an extensive 8 month attempted recovery period that involved over 1,000 commands being sent to Opportunity the mission was
+                officially terminated on February 13, 2019 ending Opportunity's reign but securing its legacy by surpassing its life expectancy 60 times over.
+                [<a href="https://www.nasa.gov/press-release/nasas-record-setting-opportunity-rover-mission-on-mars-comes-to-end">REF</a>]
+                <br /><br />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/NASA_Mars_Rover.jpg" width="240" height="240" />
+                        Pictured Above: The overall design of the twin rovers Spirit and Opportunity. Rather than having a solar panel top, these rovers had an
+                        array of solar power petals that they deployed shortly after landing on Mars.
+                    </div>
+                    <div class="col-lg-3">
+                        Pictured below: Three generations of Mars rovers. In front, the Pathfinders Sojourner rover, on the left, one of the two twins, Opportunity and Spirit
+                        and on the right, the Curiosity
+                        <img src="https://mars.nasa.gov/mer/gallery/press/opportunity/20120117a/PIA15279_3rovers-stand_D2011_1215_D521_br.jpg" width="240" height="240" />
+                    </div>
+                    <div class="col-lg-6">
+                        <i>Video Credit: AiirSource Military</i>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/sd2Uxnuzgps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </li>
+        </ul><br />
+        <a id="curiosity"><h4>Curiosity</h4></a>
+        <ul style="list-style-type:none">
+            <li>
+                The Curiosity rover was a car-sized Mars rover that was launched on November 26, 2011 and made Mars landfall on August 6, 2012. It's designated
+                location was the Gale Crater in the Aeolis Palus region of Mars and it landed only 1.5 miles away from its touchdown target. The Curiosity's primary
+                goals included investigation of the Mars climate and geology and to determine if the selected landsite offered environmental conditions favorable to
+                sustain microbial lifeforms. The initial time of operation for Curiosity was much longer than its predecessors at a 2 year expectancy, however in December
+                2012 the mission expectancy was extended to an indefinite amount of time. The Curiosity rover is still fully operational as of March 1, 2020 on the surface
+                of Mars, having been in operation 2,763 days. The design of Curiosity serves as the basis for the next Mars rover that is expected to be launched in July, 2020.
+                The overall goals of the Curiosity rover cover 8 objectives ranging between bioligical, geleogical, geochemical, planetary processing and surface radiation
+                measurements.
+                [<a href="https://en.wikipedia.org/wiki/Curiosity_(rover)">REF</a>]
+                <br /><br />
+                It is believed that the Curiosity has enough power capabilities to survive on mars for at least another 14 years, but is more likely to fail in other manners
+                before the power source gives out, such as the drive trains for the wheels failing to work, effectively immobilizing the rover, as happened to Spirit rover.
+                [<a href="https://www.spaceanswers.com/space-exploration/when-will-curiosity-stop-working/">REF</a>]
+                <br /><br />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="https://www.jpl.nasa.gov/images/msl/20190128/PIA22960-16.jpg" width="240" height="240" />
+                        Pictured Above: The Curiosity rover on the surface of Mars.
+                    </div>
+                    <div class="col-lg-3">
+                        Pictured below: The current trajectory map (as of mid 2019) for the Curiosity Rover. The solid line represents where it has already travelled
+                        while the dotted line shows its planned future travels.
+                        <img src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23412_hires.jpg" width="240" height="240" />
+                    </div>
+                    <div class="col-lg-6">
+                        <i>Video Credit: NASA's Kennedy Space Center</i>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/1QCNsKricls" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <br /><br /><br /><br /><br />
+        <div style="text-align:center">
+            <h2>LEARN ABOUT MORE OF NASA'S MISSION ACTIVITIES</h2>
+            <a href="https://www.nasa.gov/missions">CLICK HERE TO LEARN MORE ABOUT NASA'S MISSIONS! (NASA'S OFFICIAL SITE)</a><br />
+            <a href="https://www.nasa.gov/mission_pages/station/expeditions/index.html">CLICK HERE TO LEARN ABOUT NASA'S EXPEDITIONS! (NASA'S OFFICIAL SITE)</a>
+        </div>
+    </div>
+</div>
+
