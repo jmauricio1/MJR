@@ -1,3 +1,1 @@
-Mergint the accepted features from Sprint 1 and calling this the start of Sprint 2.
-Getting dev branch ready for Sprint 2.
-Dev branch is now ready for Sprint 2.
+
