@@ -8,7 +8,7 @@ namespace Astronomical_Learning.DAL
     public partial class ALContext : DbContext
     {
         public ALContext()
-            : base("name=ALContext1")
+            : base("name=AzureALDB")
         {
         }
 
