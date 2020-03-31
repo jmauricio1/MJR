@@ -47,8 +47,6 @@ textarea {
     height: auto;
 }
 footer{
-    position: relative;
-    bottom: -500px;
     width: 100%;
     color: white;
     background-color: black;
