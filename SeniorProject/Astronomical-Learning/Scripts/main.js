@@ -77,3 +77,17 @@ function changeFactInfoTemp() {
 }
 
 
+
+
+
+function homeShowPictureInfo() {
+
+    var x = document.getElementById("pictureInfo");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
