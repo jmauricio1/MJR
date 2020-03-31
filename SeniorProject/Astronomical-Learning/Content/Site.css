@@ -460,4 +460,11 @@ footer{
         transform: translateX(0px);
         opacity: 1;
     }
-}    
+}
+
+
+.homepageCard {
+    background-color: black;
+    border-radius: 25px;
+    color: white;
+}
