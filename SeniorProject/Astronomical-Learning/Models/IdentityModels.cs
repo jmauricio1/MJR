@@ -27,7 +27,7 @@ namespace Astronomical_Learning.Models
     {
         public ApplicationDbContext()
             //: base("DefaultConnection", throwIfV1Schema: false)
-            : base("ALContext", throwIfV1Schema: false)
+            : base("AzureALDB", throwIfV1Schema: false)
         {
             Database.SetInitializer<ApplicationDbContext>(null);
         }
