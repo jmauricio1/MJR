@@ -2,6 +2,44 @@
     ViewBag.Title = "Home Page";
 }
 <div class="information-paragraphs home-bkr">
+    
+    <div style="background-color:black; width:90%; border-radius: 25px; display: block; margin-left: auto; margin-right: auto;">
+
+        <div style="text-align: center " class="row">
+            <h2>Information Of The Day</h2>
+        </div>
+
+
+        <div class="row">
+            <img style="width:50%; height:50%; display: block; margin-left: auto; margin-right: auto;" src="@ViewBag.pictureUrl" alt="Alternate Text" />
+        </div>
+
+        <div style="text-align:center" class="row">
+            <h3>@ViewBag.pictureTitle</h3>
+
+            <button class="btn-primary" onclick="homeShowPictureInfo()">Click for a description of this image.</button>
+        </div>
+
+
+
+        <div style="margin-left: 10px; margin-right: 10px; margin-top: 10px; display:none" class="row" id="pictureInfo">
+            @ViewBag.pictureExplanation
+        </div>
+
+        <div style="text-align:center;" class="row">
+            Picture and picture information is obtained through Nasa's Astronomy Picture of the Day<br>
+        </div>
+
+        <div style="height:20px"></div>
+
+
+    </div>
+    
+    
+    <div style="height:20px"></div>
+    
+    
+    
     <div class="row text-center">
         <h2>Solar System</h2>
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -203,3 +241,6 @@
         </div>
     </div>
 </div>
+
+<script src="~/Scripts/main.js">
+</script>
