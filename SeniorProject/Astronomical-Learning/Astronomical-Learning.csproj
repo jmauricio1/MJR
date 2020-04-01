@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -175,10 +177,19 @@
     <Compile Include="Controllers\SolarSystemController.cs" />
     <Compile Include="Controllers\SpaceCompaniesController.cs" />
     <Compile Include="Controllers\SpaceSuitsController.cs" />
+    <Compile Include="DAL\ALContext.cs" />
+    <Compile Include="DAL\AspNetRole.cs" />
+    <Compile Include="DAL\AspNetUser.cs" />
+    <Compile Include="DAL\AspNetUserClaim.cs" />
+    <Compile Include="DAL\AspNetUserLogin.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Launch.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -186,6 +197,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\down.sql" />
+    <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -196,6 +209,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Astronomical-Logo1.png" />
+    <Content Include="Images\Backgrounds\login-planets.png" />
+    <Content Include="Images\Backgrounds\register-rocket.png" />
     <Content Include="Images\DwightDEisenhower.jpg" />
     <Content Include="Images\Elon-Musk.jpg" />
     <Content Include="Images\GalaxyBackground.jpg" />
@@ -297,9 +312,7 @@
     <Content Include="Views\SpaceCompanies\ISS.cshtml" />
     <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
