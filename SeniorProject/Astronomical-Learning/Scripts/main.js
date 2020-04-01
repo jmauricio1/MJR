@@ -91,3 +91,23 @@ function homeShowPictureInfo() {
 }
 
 
+function starsChangeInfo(image, source, info)
+{
+    document.getElementById("starsTypesImage").src = image;
+
+    document.getElementById("starsTypesSource").href = source;
+
+    document.getElementById("starsTypesInfo").innerHTML = info;
+
+}
+
+function showDiv(name) {
+
+    var x = document.getElementById(name);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
