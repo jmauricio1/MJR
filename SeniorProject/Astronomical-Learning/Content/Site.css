@@ -462,3 +462,21 @@ footer {
         opacity: 1;
     }
 }    
+
+/* SpaceX Details Classes*/
+.launch-module{
+    max-height: 200px;
+    background-color: rgb(116, 116, 116);
+}
+
+.success-text{
+    color: rgb(79, 193, 0);
+}
+
+.unsuccessful-text{
+    color: rgb(209, 0, 0);
+}
+
+.neutral-text{
+    color: rgb(159, 159, 159);
+}

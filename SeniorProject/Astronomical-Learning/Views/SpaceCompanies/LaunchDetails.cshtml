@@ -1,0 +1,102 @@
+﻿@model Astronomical_Learning.Models.Launches.SingleLaunchViewModel
+
+@{
+    ViewBag.Title = "LaunchDetails";
+}
+
+<div class="container dark-bkr">
+    <div class="information-paragraphs">
+        <h2>LaunchDetails</h2>
+
+        <div>
+            <h4>SingleLaunchViewModel</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.flightNum)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.flightNum)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.missName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.missName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.missID)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.missID)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.launchSuccess)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.launchSuccess)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.launchYear)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.launchYear)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.launchDateUnix)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.launchDateUnix)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.launchDateUTC)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.launchDateUTC)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.launchDateLocal)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.launchDateLocal)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tent)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tent)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tentMaxPrecise)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tentMaxPrecise)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
