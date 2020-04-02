@@ -192,6 +192,16 @@
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Launch.cs" />
+    <Compile Include="Models\Launches\FirstStage.cs" />
+    <Compile Include="Models\Launches\LaunchCustomers.cs" />
+    <Compile Include="Models\Launches\LaunchLinks.cs" />
+    <Compile Include="Models\Launches\LaunchSite.cs" />
+    <Compile Include="Models\Launches\LaunchTimeline.cs" />
+    <Compile Include="Models\Launches\MainLaunchInformation.cs" />
+    <Compile Include="Models\Launches\Orbit.cs" />
+    <Compile Include="Models\Launches\RocketInformation.cs" />
+    <Compile Include="Models\Launches\SecondStage.cs" />
+    <Compile Include="Models\Launches\SingleLaunchViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -311,6 +321,7 @@
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
     <Content Include="Views\SpaceCompanies\ISS.cshtml" />
     <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
+    <Content Include="Views\SpaceCompanies\LaunchDetails.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

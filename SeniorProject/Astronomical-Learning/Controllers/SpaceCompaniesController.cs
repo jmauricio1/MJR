@@ -1,4 +1,5 @@
 ﻿using Astronomical_Learning.Models;
+using Astronomical_Learning.Models.Launches;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,45 @@ namespace Astronomical_Learning.Controllers
                 Launch launch = new Launch();
                 launch.missionName = (string)data[i]["mission_name"];
                 launch.missionDate = (string)data[i]["launch_date_utc"];
+                launch.launchSuccess = (string)data[i]["launch_success"];
+                launch.flightNum = (int)data[i]["flight_number"];
                 list.Add(launch);
             }
 
             return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult LaunchDetails(int? id)
+        {
+            string json = SendRequest("https://api.spacexdata.com/v3/launches");
+            JArray data = JArray.Parse(json);
+
+            MainLaunchInformation mainInfo = new MainLaunchInformation();
+
+            id--;
+            mainInfo.flightNum = (int)data[id]["flight_number"];
+            mainInfo.missName = (string)data[id]["mission_name"];
+            var tempID = data[id]["mission_id"];
+            if (tempID.Count() == 0)
+            {
+                mainInfo.missID = "No ID available";
+            }
+            else
+            {
+                mainInfo.missID = (string)data[id]["mission_id"][0];
+            }
+
+            mainInfo.launchSuccess = (string)data[id]["launch_success"];
+
+            mainInfo.launchYear = (int)data[id]["launch_year"];
+            mainInfo.launchDateUnix = (string)data[id]["launch_date_unix"];
+            mainInfo.launchDateUTC = (string)data[id]["launch_date_utc"];
+            mainInfo.launchDateLocal = (string)data[id]["launch_date_local"];
+            mainInfo.tent = (string)data[id]["is_tentative"];
+            mainInfo.tentMaxPrecise = (string)data[id]["tentative_max_precision"];
+
+            SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo);
+            return View(viewModel);
         }
 
         public ActionResult NASA()
