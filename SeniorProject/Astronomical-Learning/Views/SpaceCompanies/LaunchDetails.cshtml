@@ -4,99 +4,283 @@
     ViewBag.Title = "LaunchDetails";
 }
 
-<div class="container dark-bkr">
-    <div class="information-paragraphs">
-        <h2>LaunchDetails</h2>
+<h2>LaunchDetails</h2>
 
-        <div>
-            <h4>SingleLaunchViewModel</h4>
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.flightNum)
-                </dt>
+<div>
+    <h4>SingleLaunchViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.flightNum)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.flightNum)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.flightNum)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.missName)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.missName)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.missName)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.missName)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.missID)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.missID)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.missID)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.missID)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.launchSuccess)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.launchSuccess)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.launchSuccess)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.launchSuccess)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.launchYear)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.launchYear)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.launchYear)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.launchYear)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.launchDateUnix)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.launchDateUnix)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.launchDateUnix)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.launchDateUnix)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.launchDateUTC)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.launchDateUTC)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.launchDateUTC)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.launchDateUTC)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.launchDateLocal)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.launchDateLocal)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.launchDateLocal)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.launchDateLocal)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.tent)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.tent)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.tent)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.tent)
+        </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.tentMaxPrecise)
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.tentMaxPrecise)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.tentMaxPrecise)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.tentMaxPrecise)
+        </dd>
 
-            </dl>
-        </div>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+        <dt>
+            @Html.DisplayNameFor(model => model.rocketID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rocketID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rocketName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rocketName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rocketType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rocketType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coreSerial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coreSerial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.block)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.block)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gridfins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gridfins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.legs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.legs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reused)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reused)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.landSuccess)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.landSuccess)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.landIntent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.landIntent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.landType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.landType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.landVeh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.landVeh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.block2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.block2)
+        </dd>
+        @foreach (var thing in Model.payloads)
+        {
+            <dt>
+                <h3>
+                    Payload ID
+                </h3>
+            </dt>
+            <dd>
+                @thing.payloadID
+            </dd>
+            <dt>
+                Semi major axis in km
+            </dt>
+            <dd>
+                @thing.orbit.semiMajorAxisKM
+            </dd>
+            <dt>
+                Eccentricity
+            </dt>
+            <dd>
+                @thing.orbit.eccentricity
+            </dd>
+            <dt>
+                Periapsis (km)
+            </dt>
+            <dd>
+                @thing.orbit.periKm
+            </dd>
+            <dt>
+                Apoapsis (km)
+            </dt>
+            <dd>
+                @thing.orbit.apoKm
+            </dd>
+            <dt>
+                Inclination Degree
+            </dt>
+            <dd>
+                @thing.orbit.inclinDeg
+            </dd>
+            <dt>
+                Period Min
+            </dt>
+            <dd>
+                @thing.orbit.periodMin
+            </dd>
+            <dt>
+                Epoch
+            </dt>
+            <dd>
+                @thing.orbit.epoch
+            </dd>
+            <dt>
+                Mean Motion
+            </dt>
+            <dd>
+                @thing.orbit.meanMotion
+            </dd>
+            <dt>
+                raan
+            </dt>
+            <dd>
+                @thing.orbit.raan
+            </dd>
+            <dt>
+                Arg of Pericenter
+            </dt>
+            <dd>
+                @thing.orbit.argPericenter
+            </dd>
+            <dt>
+                Mean Anomoly
+            </dt>
+            <dd>
+                @thing.orbit.meanAnomoly
+            </dd>
+        }
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

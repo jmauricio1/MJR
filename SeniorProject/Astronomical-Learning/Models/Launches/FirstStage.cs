@@ -10,11 +10,11 @@ namespace Astronomical_Learning.Models.Launches
         public string coreSerial;
         public int flight;
         public int block;
-        public bool gridfins;
-        public bool legs;
-        public bool reused;
-        public bool landSuccess;
-        public bool landIntent;
+        public string gridfins;
+        public string legs;
+        public string reused;
+        public string landSuccess;
+        public string landIntent;
         public string landType;
         public string landVeh;
     }

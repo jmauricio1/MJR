@@ -12,24 +12,26 @@ namespace Astronomical_Learning.Models.Launches
         public string refSys;
         public string regime;
         //longitude
-        public double semiMajorAxisKM;
-        public double eccentricity;
-        public double periKm;
-        public double apoKm;
-        public double inclinDeg;
-        public double periodMin;
+        public string semiMajorAxisKM;
+        public string eccentricity;
+        public string periKm;
+        public string apoKm;
+        public string inclinDeg;
+        public string periodMin;
         //lifespan
         public string epoch;
-        public double meanMotion;
-        public double raan;
-        public double argPericenter;
-        public double meanAnomoly;
+        public string meanMotion;
+        public string raan;
+        public string argPericenter;
+        public string meanAnomoly;
         //mass returned
         //mass returned lb
-        public int flightTime; //Seconds
+        /*
+        public string flightTime; //Seconds
         public string uid; //IDK if i should add this
 
         public string ships; //list
         public string telemetry; //Link to flightclub
+        */
     }
 }

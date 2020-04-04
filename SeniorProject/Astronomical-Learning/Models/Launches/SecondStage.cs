@@ -9,14 +9,6 @@ namespace Astronomical_Learning.Models.Launches
     {
         public int block2;
         //Payloads List
-        public string payloadID;
-        public int noradID; //List
-        public string capSerial;
-        public string customers; //List
-        public string nationality;
-        public string manufac;
-        public string payloadType;
-        public double plmkg;
-        public double plmlb;
+        public List<Payload> payloads = new List<Payload>();
     }
 }
