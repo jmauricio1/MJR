@@ -4,32 +4,115 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div class="container" style="color: white;">
+    <div class="container information-paragraphs dark-bkr">
         <br />
-        <h2>Space Debris Information</h2>
+        <div style="text-align: center;"><h2>Space Debris Information</h2></div>
         <p>
             <h2> What are the different forms of space debris in our solar system?</h2>
+        </p>
 
-            <ul style="list-style-type: none;">
-                <h4>Asteroids</h4>
-                Asteroids are small, rocklike objects that orbit the sun like any other planet in the solar system. They are primarily found in the asteroid belt between
-                Mars and Jupiter, although not exclusively, as they have been known to wander all over the solar system. Asteroids are the leftover debris from when our
-                solar system was formed.
-                [<a href="#ref1">1</a>]
+        <div class="row">
+            <div class="col-lg-3">
+                <div style="padding-left: 2em">
+                    <h4>Asteroids</h4>
+                    <div style="padding-left: 1em">
+                        Asteroids are small, rocklike objects that orbit the sun like any other planet in the solar system. They are primarily found in the asteroid belt between
+                        Mars and Jupiter, although not exclusively, as they have been known to wander all over the solar system. Asteroids are the leftover debris from when our
+                        solar system was formed.
+                        [<a href="https://spaceplace.nasa.gov/asteroid/en/">REF</a>]
+                    </div>
 
-                <h4>Comets</h4>
-                Much like asteroids, comets also orbit around our sun, however rather than being made of rock, they are instead composed of ice. When a comet gets close to
-                the sun, it gets heated up by the sun causing dust and gases to release from the comet. This expulsion of gas and dust is what creates the signature tail of
-                the comet that can stretch on for millions of miles.
-                [<a href="#ref2">2</a>]
+                    <h4>Comets</h4>
+                    <div style="padding-left: 1em">
+                        Much like asteroids, comets also orbit around our sun, however rather than being made of rock, they are instead composed of ice. When a comet gets close to
+                        the sun, it gets heated up by the sun causing dust and gases to release from the comet. This expulsion of gas and dust is what creates the signature tail of
+                        the comet that can stretch on for millions of miles.
+                        [<a href="https://solarsystem.nasa.gov/asteroids-comets-and-meteors/comets/overview/">REF</a>]
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-lg-4">
+                <div style="width:100%; height:50%; padding-top: 35%" class="container">
+                    <div id="spaceDebrisCarousel" class="carousel slide" data-ride="carousel">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#spaceDebrisCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="spaceDebrisCarousel" data-slide-to="1"></li>
+                            <li data-target="spaceDebrisCarousel" data-slide-to="2"></li>
+                            <li data-target="spaceDebrisCarousel" data-slide-to="3"></li>
+                            <li data-target="spaceDebrisCarousel" data-slide-to="4"></li>
+                            <li data-target="spaceDebrisCarousel" data-slide-to="5"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="https://www.jpl.nasa.gov/images/dawn/20150331/vesta20150331.jpg" alt="Asteroid Vesta" style="height:300px; width:100%;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>An Asteroid (Vesta)</h3>
+                                </div>
+                            </div>
+
+                            <div class="item">                               
+                                <img src="https://live.staticflickr.com/7210/6967153925_9716066eca_z.jpg" alt="Halley's Comet" style="height:300px; width:100%;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>Halley's Comet</h3>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://media.nationalgeographic.org/assets/photos/000/257/25715.jpg" alt="A Meteoroid" style="height:300px; width:100%;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>A Meteoroid</h3>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Leonid_Meteor.jpg" alt="2019 Leonid Meteor" style="height:300px; width:100%;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>2019 - Leonid Meteor</h3>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/2013_Chelyabinsk_meteor_trace.jpg" alt="2013 Chelyabinsk Fireball" style="height:300px; width:100%;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>2013 - Chelyabinsk Meteor Fireball</h3>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://live.staticflickr.com/764/23189600013_e640254fa0_z.jpg" alt="2000 Fukang Meteorite" style="height:300px; width:100%;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>2000 - Fukang Meteorite</h3>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <a class="left carousel-control" href="#spaceDebrisCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#spaceDebrisCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-5">
                 <h4>Meteoroids</h4>
-                Meteoroids are chunks of rock and metallic debris that travel through space. Meteoroids tend to range in size from just grains of sand to small pebbles,
-                typically, but they have known to be much larger as well. They travel around the sun in a variety of orbits and at varying speeds, with the fastest known
-                speeds being around 26 miles per second.  Meteroids are known by many names, but what they technically depends on their current actions.
-                [<a href="#ref3">3</a>]
+                <div style="padding-left: 1em">
+                    Meteoroids are chunks of rock and metallic debris that travel through space. Meteoroids tend to range in size from just grains of sand to small pebbles,
+                    typically, but they have known to be much larger as well. They travel around the sun in a variety of orbits and at varying speeds, with the fastest known
+                    speeds being around 26 miles per second.  Meteroids are known by many names, but what they technically depends on their current actions.
+                    [<a href="https://www.firstpeople.us/FP-Html-Legends/HowTheMilkyWayCameToBe-Cherokee.html">REF</a>]
+                </div>
 
-                <ul style="list-style-type: none">
+                <div style="padding-left: 2em">
                     <h5>Meteors</h5>
                     When a meteoroid enters Earth's atmosphere it becomes known as a meteor, also commonly known as a shooting star or falling star. The orbital entry is
                     what causes the large trail of light behind the meteor. If a cluster of meteors arrive in close vicinity we call them a meteor shower.
@@ -43,183 +126,377 @@
                     Rarely, a meteor large enough and dense enough will survive orbital entry and collide with Earth. It is far more common that a meteroid is burned to
                     nothingness while attempting to enter Earth's atmosphere but the occasionaly lucky meteroids touch down. We classify the fragment of the meteroid that
                     actually makes landfall as a meteorite, they are often highly sought after collectors items as well.
-                    [<a href="#ref4">4</a>]
-                </ul>
-            </ul>
-        </p>
+                    [<a href="https://i.pinimg.com/originals/69/49/ea/6949eaba58c8ea5fa5b78c2e5bfd43a4.gif">REF</a>]
+                </div>
+            </div>
+        </div>
+        <br />
+        <img src="https://www.universetoday.com/wp-content/uploads/2013/02/8477905866_f60ba4e72b_c.jpg" style="display: block; margin-left: auto; margin-right: auto; height: 40%; width: 40%;" />
+
 
         <h2>Asteroids</h2>
-        <ul style="list-style-type: none">
-            <h4>Size</h4>
-            The first ever discovered asteroid in 1801 was also the largest ever, Ceres, at 588 miles in diameter. However, in 2006, Ceres was re-classified to a dwarf planet. Nowadays, the
-            largest known asteroid, Vesta, resides in the asteroid belt between Mars and Jupiter and sizes in at 329 miles in diameter. The smallest asteroids tend to be have
-            approximately a 33 foot diameter. Although many more asteroids are estimated to exist, the current known and confirmed count of around 934,000 asteroids, although it's believed
-            that multiple milions exist, if you were to put them all together, they still would have less mass than Earth's Moon.
-            [<a href="#ref5">5</a>]
+        <div style="padding-left: 1em">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h4>Size</h4>
+                    <div style="padding-left: 1em">
+                        The first ever discovered asteroid in 1801 was also the largest ever, Ceres, at 588 miles in diameter. However, in 2006, Ceres was re-classified to a dwarf planet. Nowadays, the
+                        largest known asteroid, Vesta, resides in the asteroid belt between Mars and Jupiter and sizes in at 329 miles in diameter. The smallest asteroids tend to be have
+                        approximately a 33 foot diameter. Although many more asteroids are estimated to exist, the current known and confirmed count of around 934,000 asteroids, although it's believed
+                        that multiple milions exist, if you were to put them all together, they still would have less mass than Earth's Moon.
+                        [<a href="https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/in-depth/">REF</a>]
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/The_Four_Largest_Asteroids.jpg" alt="Four Largest Asteroids" style="height: 100%; width: 100%" />
+                </div>
+            </div>
+
 
             <h4>Composition and Structure</h4>
-            Asteroids come in three broad composition classes, C-type, M-type and S-type. The C-type or chondrite asteroids are among the most common type of asteroids.
-            They consist of clay and silicate rock and are often dark in appearance. Alongside the planets themselves, they are among some of the most ancient objects in
-            the solar system. The M-type or metallic type are composed of nickel and iron. The compositional difference between M-types is a result of how far away from the
-            Sun the asteroid was formed. The S-types fit right in the middle, formed from a mixture of nickel-iron and silicate.
-            [<a href="#ref5">5</a>]
+            <div class="row">
+                <div class="col-lg-8" style="height: 400px">
+                    <img src="https://i.imgur.com/yQKyWD2.png" alt="Asteroid Compositions" style="height: 100%; width: 100%;" />
+                </div>
+                <div class="col-lg-4">
+                    <div style="padding-left: 1em">
+                        Asteroids come in three broad composition classes, C-type, M-type and S-type. The C-type or chondrite asteroids are among the most common type of asteroids.
+                        They consist of clay and silicate rock and are often dark in appearance. Alongside the planets themselves, they are among some of the most ancient objects in
+                        the solar system. The M-type or metallic type are composed of nickel and iron. The compositional difference between M-types is a result of how far away from the
+                        Sun the asteroid was formed. The S-types fit right in the middle, formed from a mixture of nickel-iron and silicate.
+                        [<a href="https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/in-depth/">REF</a>]
+                    </div>
+                </div>
+            </div>
 
             <h4>Earth Impact and Near Impact Events</h4>
-            <ul style="list-style-type: none">
-                The last time an asteroid with a a diameter of 6 miles struck the earth it caused our most recent extinction level event, 66 million years ago. This was the event
-                that lead to the downfall of dinosaurs and to the rise of mammals as we relatively know them today.
-                [<a href="#ref6">6</a>]
-                <br />
-                <br />
+            <div class="row">
+                <div class="col-lg-8">
+                    <div style="padding-left: 1em">
+                        The last time an asteroid with a a diameter of 6 miles struck the earth it caused our most recent extinction level event, 66 million years ago. This was the event
+                        that lead to the downfall of dinosaurs and to the rise of mammals as we relatively know them today. This asteroid collision created the Chicxulub Crater just outside
+                        the Yucatan Peninsula.
+                        [<a href="https://www.psi.edu/epo/ktimpact/ktimpact.html">REF</a>]
+                        <br />
+                        <br />
 
-                The only notable asteroid impact of the last 3,000 years occured in approximately 1800 a.d. in Saudi Arabia. Known as the Wabar Craters, it was originally discovered
-                in 1932, by Harry St John Philby. The site covers an area of about 500 by 1,000 meters in the Arabian desert. Modern mapping tools show that there are three very
-                prominent and roughly circular craters. The sands near the crater have turned into black glass, containing approximately 90% Earth sands and 10% meteoric iron and
-                nickel. It's been calculated that the asteroids total mass must have been in excess of 3,500 tonnes and had been travelling approximately 11-17 km / s upon impact.
-                [<a href="#ref7">7</a>]
-                <br />
-                <br />
+                        The only notable asteroid impact of the last 3,000 years occured in approximately 1800 a.d. in Saudi Arabia. Known as the Wabar Craters, it was originally discovered
+                        in 1932, by Harry St John Philby. The site covers an area of about 500 by 1,000 meters in the Arabian desert. Modern mapping tools show that there are three very
+                        prominent and roughly circular craters. The sands near the crater have turned into black glass, containing approximately 90% Earth sands and 10% meteoric iron and
+                        nickel. It's been calculated that the asteroids total mass must have been in excess of 3,500 tonnes and had been travelling approximately 11-17 km / s upon impact.
+                        [<a href="https://en.wikipedia.org/wiki/Wabar_craters">REF</a>]
+                        <br />
+                        <br />
 
-                One of the most well known near impacts occurred on June 30th, 1903 at the Tunguska River in Sibera (Now, Russia). An asteroid made near landfall but exploded in
-                the air, 5 to 10 kilometers above in what's known as an 'airburst'. The explosion felled and uprooted trees for up to 2,000 kilometers away. Recent research estimates
-                that the Tunguskan Asteroid may have been as large as a 5 story tall building. To show its importance, an annual 'Asteroid Day' is celebrated globally and is sanctioned
-                by the United Nations, the date it occurs every year... June 30th... the Tunguska events anniversary.
-                [<a href="#ref8">8</a>]
-            </ul>
+                        One of the most well known near impacts occurred on June 30th, 1903 at the Tunguska River in Sibera (Now, Russia). An asteroid made near landfall but exploded in
+                        the air, 5 to 10 kilometers above in what's known as an 'airburst'. The explosion felled and uprooted trees for up to 2,000 kilometers away. Recent research estimates
+                        that the Tunguskan Asteroid may have been as large as a 5 story tall building. To show its importance, an annual 'Asteroid Day' is celebrated globally and is sanctioned
+                        by the United Nations, the date it occurs every year... June 30th... the Tunguska events anniversary.
+                        [<a href="https://earthsky.org/space/what-is-the-tunguska-explosion">REF</a>]
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="width:100%; height:50%; padding-top: 5%;" class="container">
+                        <div id="asteroidImpactCarousel" class="carousel slide" data-ride="carousel">
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#asteroidImpactCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="asteroidImpactCarousel" data-slide-to="1"></li>
+                                <li data-target="asteroidImpactCarousel" data-slide-to="2"></li>
+                                <li data-target="asteroidImpactCarousel" data-slide-to="3"></li>
+                                <li data-target="asteroidImpactCarousel" data-slide-to="4"></li>
+                                <li data-target="asteroidImpactCarousel" data-slide-to="5"></li>
+                            </ol>
+
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="https://static01.nyt.com/images/2016/11/18/science/18TB-CRATER-1479408746987xx/18TB-CRATER-1479408746987-superJumbo.jpg" alt="Chicxulub Crater" style="height:300px; width:100%;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>Chicxulub Crater</h3>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://cdn.iflscience.com/images/263368e5-5639-501f-9678-8d460d106e04/extra_large-1464355132-645-ancient-asteroid-impact-dwarfs-the-one-that-wiped-out-dinosaurs.jpg" alt="Asteroid Comparisons" style="height:300px; width:100%;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>Asteroid Comparisons</h3>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Widmanstatten_patterns_1.jpg/220px-Widmanstatten_patterns_1.jpg" alt="Wabar Crater Top Down" style="height:300px; width:100%;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>Aerial View - Wabar Craters</h3>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Wabar_craters.jpg/260px-Wabar_craters.jpg" alt="Wabar Craters" style="height:300px; width:100%;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>Wabar Craters</h3>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://cdn.arstechnica.net/wp-content/uploads/2019/07/tunguskaTOP.jpg" alt="Tunguska Crater (1927)" style="height:300px; width:100%;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>2013 - Tunguska Crater</h3>
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://www.thesun.co.uk/wp-content/uploads/2020/03/NINTCHDBPICT000568293337.jpg?strip=all&w=720&quality=100" alt="Tunguska Crater (Now)" style="height:300px; width:100%;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>Tunguska Crater (Now)</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="left carousel-control" href="#asteroidImpactCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#asteroidImpactCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
 
             <h4>Unique features</h4>
+            [<a href="https://www.space.com/51-asteroids-formation-discovery-and-exploration.html">REF</a>]
             <ul>
                 <li>Nearly all asteroids are irregularly shaped although several of the largest are nearly spherical in shape.</li>
                 <li>Some asteroids have their own asteroid rings similar to Saturn, some even have tails with one recorded as having six tails.</li>
                 <li>It's believed that asteroids (alongside comets) may have been what brought the water and carbons necessary for life, to our planet.</li>
-                [<a href="#ref10">9</a>]
-
             </ul>
+
 
 
             <h4>Origin of the Name</h4>
-            The name "asteroid" was originally coined by German-British astronomer William Herschel in 1802, however at this time, many scientests referred to them as minor
-            planets. By 1851, there was 15 known asteroids and the naming convention still used today developed with numerals alongside the name of the asteroid.
-            [<a href="#ref10">9</a>]
-        </ul>
+            <div class="row">
+                <div class="col-lg-4" style="height: 300px">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/William_Herschel01.jpg/837px-William_Herschel01.jpg" alt="William Herschel" style="height: 100%; width: 100%;" />
+                </div>
 
+                <div class="col-lg-8">
+                    <div style="padding-left: 1em">
+                        The name "asteroid" was originally coined by German-British astronomer William Herschel in 1802, however at this time, many scientests referred to them as minor
+                        planets. By 1851, there was 15 known asteroids and the naming convention still used today developed with numerals alongside the name of the asteroid.
+                        [<a href="https://www.space.com/51-asteroids-formation-discovery-and-exploration.html">REF</a>]
+                    </div>
+                </div>
+            </div>
 
-        <h2>Comets</h2>
-        <ul style="list-style-type: none">
-            <h4>Size</h4>
-            Most comets have a nucleus, or central core, of a 6 mile diameter or less. However, the size of a comet varies based on its current proximity to the sun. As a comet nears the
-            sun, it begins to vaporize and create a cloud that can expand up to 50,000 miles. More impressive yet is the size of a comets tail which can reach lengths up to 600,000 miles long!
-            [<a href="#ref11">10</a>]
+            <h2>Comets</h2>
+            <div style="padding-left: 1em">
+                <h4>Size</h4>
+                <div style="padding-left: 1em">
+                    Most comets have a nucleus, or central core, of a 6 mile diameter or less. However, the size of a comet varies based on its current proximity to the sun. As a comet nears the
+                    sun, it begins to vaporize and create a cloud that can expand up to 50,000 miles. More impressive yet is the size of a comets tail which can reach lengths up to 600,000 miles long!
+                    [<a href="http://coolcosmos.ipac.caltech.edu/ask/182-What-is-the-size-of-a-comet">REF</a>]
+                </div>
 
-            <h4>Composition and Structure</h4>
-            Comets are comprised of 4 major components.
-            <ul>
-                <li>Nucleus - this is the relatively stable core of a comet, mostly formed of ice and gas with a small amount of dust and other solids.</li>
-                <li>
-                    Coma - this is the dense atmosphere surrounding the nucleus, mostly formed by a cloud of water, dust, carbon dioxide and other natural gases. The coma is
-                    formed by the nucleus being heated by the Sun.
-                </li>
-                <li>Dust Tail - this is the most prominent part of the comet, composed of smoke sized dust particles driven off the nucleus from escaping gases.</li>
-                <li>Ion Tail - this tail is composed of plasma and is laced with rays and tracers caused by solar winds.</li>
-                [<a href="#ref12">11</a>]
-            </ul>
+                <h4>Composition and Structure</h4>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div style="padding-left: 1em">
+                            Comets are comprised of 4 major components.
+                            [<a href="http://spaceguard.rm.iasf.cnr.it/NScience/neo/neo-what/com-compo.html">REF</a>]
+                            <ul>
+                                <li>Nucleus - this is the relatively stable core of a comet, mostly formed of ice and gas with a small amount of dust and other solids.</li>
+                                <li>
+                                    Coma - this is the dense atmosphere surrounding the nucleus, mostly formed by a cloud of water, dust, carbon dioxide and other natural gases. The coma is
+                                    formed by the nucleus being heated by the Sun.
+                                </li>
+                                <li>Dust Tail - this is the most prominent part of the comet, composed of smoke sized dust particles driven off the nucleus from escaping gases.</li>
+                                <li>Ion Tail - this tail is composed of plasma and is laced with rays and tracers caused by solar winds.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <img src="https://i.imgur.com/JB2TVTi.png" alt="Comet composition" style="height: 100%; width: 100%;" />
+                    </div>
+                </div>
 
-            <h4>Earth Impact or Near Impact Events</h4>
-            Although we have never observed a comet entering Earth's atmosphere, recent evidence suggests that there may have been a comet strike, 28 million years ago in Egypt.
-            The resulting blast wave of 3600 degrees fahrenheit melted the sands of the Sahara desert, creating yellow silica glass over 2,300 miles of the desert. The evidence
-            was found in a peculiar place, a scarab brooch, made of the silica glass, owned by the famed Pharaoh, Tutankhamen. Within the silica glass, observers noticed a black
-            stone in the middle of it, which when put under an isotopic analysis showed that the pebble contained the unique chemical signatures of a comet.
-            [<a href="#red13">12</a>]
+                <h4>Earth Impact or Near Impact Events</h4>
+                <div style="padding-left: 1em">
+                    Although we have never observed a comet entering Earth's atmosphere, recent evidence suggests that there may have been a comet strike, 28 million years ago in Egypt.
+                    The resulting blast wave of 3600 degrees fahrenheit melted the sands of the Sahara desert, creating yellow silica glass over 2,300 miles of the desert. The evidence
+                    was found in a peculiar place, a scarab brooch, made of the silica glass, owned by the famed Pharaoh, Tutankhamen. Within the silica glass, observers noticed a black
+                    stone in the middle of it, which when put under an isotopic analysis showed that the pebble contained the unique chemical signatures of a comet.
+                    [<a href="https://www.nationalgeographic.com/news/2013/10/131011-first-comet-impact-egypt-fragment-science-space/">REF</a>]
+                </div>
 
-            <h4>Unique Features</h4>
-            <ul>
-                <li>Comets orbit the Sun in an elliptical pattern, just like the planets.</li>
-                <li>There's only about 3,600 known comets, however it's believed that there are billions in their place of origin, the Kuiper Belt and Oort Cloud.</li>
-                <li>Halley's comet makes a visible pass by Earth every 76 years and has been tracked since at least 240 B.C.</li>
-                <li>A "great comet" is one that is visible from Earth without a telescope. This happens approximately once every ten years.</li>
-                [<a href="#ref14">13</a>]
-            </ul>
-
-            <h4>Origin of the Name</h4>
-            Comets were named sometime around 500 B.C. by greek natural philosophers who called them "kometes" or "a head with long hair" believedly due to their central core and
-            very long tails.
-            [<a href="#ref15">14</a>]
-        </ul>
-
-        <h2>Meteoroids</h2>
-        <ul style="list-style-type">
-            <h4>Size</h4>
-            Meteoroids tend to be anywhere from the size of a particle larger than a molecule to as large as 10 meters in diameter. Objects larger than this become classified as an
-            asteroid. Many of the smaller meteroids are released from comets as they orbit the sun.
-            [<a href="#ref16">15</a>]
-
-            <h4>Composition and Structure</h4>
-            Meteroids are typically formed from three different substances, nickel, iron and stone but how much of each varies from meteor to meteor. Meteors that are primarily made of iron
-            are known as "irons", while ones primarily made of stone are known as "stones". The mix and the middle ground of the two are known as "stony irons".
-            [<a href="#ref17">16</a>]
-
-            <h4>Earth Impact or Near Earth Impact Events</h4>
-            <ul style="list-style-type: none">
-                In relatively recent case on February 15th, 2013 an airbust meteor occured in Chelyabinsk, Russia. This meteor, unlike the Tunguskan airbust, was near
-                civilation and injured over 1,500 people, many due to shattered glass, the first asteroid to ever do so. The meteor is believed to be as large if not slightly larger than the Tunguskan meteor.
-                The blast that occurred contained the explosive energy equivalent to around 30 or so WW2-era atomic bombs.
-                [<a href="#ref17">17</a>]
-                <br />
                 <br />
 
-                Although it occurred 2 billion years ago, before life as we know it existed on Earth, the Vredefort Dome crater in South Africa comes in at a massive 186 miles in diameter.
-                Although it's heavily eroded nowadays, it servers as a terrifying reminder to what can happen to our planet when space attacks.
-                [<a href="#ref18">18</a>]
-                <br />
-                <br />
+                <div class="infoItem">
+                    <button class="btn-primary" onclick="changeFactInfoDesert()">Desert of Glass</button>
+                    <button class="btn-primary" onclick="changeFactInfoYellowGlass()">Yellow Silicate Glass</button>
+                    <button class="btn-primary" onclick="changeFactInfoScarab()">Glass Scarab</button>
+                </div>
 
-                The meteorite that crashed down and is responsible for the Chicxulub Crater in the Yucatan Peninsula is one of the most well known impact events. In other words, this
-                was the meteorite that ended the reight of dinosaurs, and wiped out 75% of known life along with them when it touched down. The KT extinction event that occurred due
-                to this impact was the most recent of Earth's 5 mass extinction event, 65 million years ago.
-                [<a href="#ref18">18</a>]
-            </ul>
+                <div>
+                    <img style="height:300px; width: 300px; display: block; margin-left: auto; margin-right: auto;" id="cometImage" src="https://i.pinimg.com/originals/66/ef/a2/66efa2297100fff8b1f69b31f9221caa.jpg" alt="Alternate Text" />
+                </div>
 
-            <h4>Unique Features</h4>
-            <ul>
-                <li>The majority of meteroids are broken off smaller pieces of asteroids.</li>
-                <li>During intense meteor showers you can see upwards of 100 per hour in the night sky.</li>
-                <li>Earth is constantly bombarded by tiny meteoroids each die, in the millions enter Earth's atmosphere with no harm done.</li>
-                <li>Approximately 500 meteorites are believed to hit Earth yearly but only around 1% of these are recovered for scientific study.</li>
-                <li>Fun Fact: Only one human being has ever been confirmed to be have been hit by a meteorite, in 1954.</li>
-                [<a href="#ref19">19</a>]
-            </ul>
+                <div id="cometImageDescription" style="text-align: center">
+                    A picture of the Libyan Desert where the comet is believed to have impacted. Note the yellow glass strewn across the desert.
+                </div>
 
-            <h4>Origin of the Name</h4>
-            Like many other cosmic entities, the name was derived from Greek philosphers, the root word is "meteoros" which means "high up in the air".
-            [<a href="#ref20">20</a>]
-        </ul>
+                <h4>Unique Features</h4>
+                [<a href="https://theplanets.org/comets/">REF</a>]
+                <ul>
+                    <li>Comets orbit the Sun in an elliptical pattern, just like the planets.</li>
+                    <li>There's only about 3,600 known comets, however it's believed that there are billions in their place of origin, the Kuiper Belt and Oort Cloud.</li>
+                    <li>Halley's comet makes a visible pass by Earth every 76 years and has been tracked since at least 240 B.C.</li>
+                    <li>A "great comet" is one that is visible from Earth without a telescope. This happens approximately once every ten years.</li>
+                </ul>
+
+                <h4>Origin of the Name</h4>
+                <div style="padding-left: 1em">
+                    Comets were named sometime around 500 B.C. by greek natural philosophers who called them "kometes" or "a head with long hair" believedly due to their central core and
+                    very long tails.
+                    [<a href="https://www.npr.org/2010/12/17/132141801/science-diction-the-origin-of-the-word-comet">REF</a>]
+                </div>
+            </div>
+
+            <h2>Meteoroids</h2>
+            <div style="padding-left: 1em">
+                <div class="row">
+                    <div class="col-lg-6" style="text-align: center">
+                        <h4>Size</h4>
+                        <div style="padding-left: 1em;">
+                            Meteoroids tend to be anywhere from the size of a particle larger than a molecule to as large as 10 meters in diameter. Objects larger than this become classified as an
+                            asteroid. Many of the smaller meteroids are released from comets as they orbit the sun.
+                            [<a href="http://www.sciencekids.co.nz/sciencefacts/space/meteoroids.html">REF</a>]
+                        </div>
+
+                        <img src="https://cdn1.byjus.com/wp-content/uploads/2018/11/physics/2016/11/26114016/asteroid-vs-meteoroid.png" alt="Asteroids vs Meteroids" style="height:300px; width: 300px; display: block; margin-left: auto; margin-right: auto;" />
+                    </div>
+
+                    <div class="col-lg-6" style="text-align: center">
+                        <h4>Composition and Structure</h4>
+                        <div style="padding-left: 1em;">
+                            Meteroids are typically formed from three different substances, nickel, iron and stone but how much of each varies from meteor to meteor. Meteors that are primarily made of iron
+                            are known as "irons", while ones primarily made of stone are known as "stones". The mix and the middle ground of the two are known as "stony irons". There are other
+                            chemicals involved as well that can change their burning color during atmospheric entry.
+                            [<a href="https://study.com/academy/lesson/meteoroid-definition-facts.html">REF</a>]
+                        </div>
 
 
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <h2>References:</h2>
-        <p>
-            <ol>
-                <li><a id="ref1" href="https://spaceplace.nasa.gov/asteroid/en/"> https://spaceplace.nasa.gov/asteroid/en/ </a></li>
-                <li><a id="ref2" href="https://solarsystem.nasa.gov/asteroids-comets-and-meteors/comets/overview/"> https://solarsystem.nasa.gov/asteroids-comets-and-meteors/comets/overview/ </a></li>
-                <li><a id="ref3" href="https://www.firstpeople.us/FP-Html-Legends/HowTheMilkyWayCameToBe-Cherokee.html"> https://www.firstpeople.us/FP-Html-Legends/HowTheMilkyWayCameToBe-Cherokee.html </a></li>
-                <li><a id="ref4" href="https://i.pinimg.com/originals/69/49/ea/6949eaba58c8ea5fa5b78c2e5bfd43a4.gif"> https://i.pinimg.com/originals/69/49/ea/6949eaba58c8ea5fa5b78c2e5bfd43a4.gif </a></li>
-                <li><a id="ref5" href="https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/in-depth/ "> https://solarsystem.nasa.gov/asteroids-comets-and-meteors/asteroids/in-depth/ </a></li>
-                <li><a id="ref6" href="https://www.psi.edu/epo/ktimpact/ktimpact.html "> https://www.psi.edu/epo/ktimpact/ktimpact.html </a></li>
-                <li><a id="ref7" href="https://en.wikipedia.org/wiki/Wabar_craters"> https://en.wikipedia.org/wiki/Wabar_craters </a></li>
-                <li><a id="ref8" href="https://earthsky.org/space/what-is-the-tunguska-explosion "> https://earthsky.org/space/what-is-the-tunguska-explosion </a></li>
-                <li><a id="ref9" href="https://www.space.com/51-asteroids-formation-discovery-and-exploration.html"> https://www.space.com/51-asteroids-formation-discovery-and-exploration.html </a></li>
-                <li><a id="ref10" href="http://coolcosmos.ipac.caltech.edu/ask/182-What-is-the-size-of-a-comet"> http://coolcosmos.ipac.caltech.edu/ask/182-What-is-the-size-of-a-comet </a></li>
-                <li><a id="ref11" href="http://spaceguard.rm.iasf.cnr.it/NScience/neo/neo-what/com-compo.htm"> http://spaceguard.rm.iasf.cnr.it/NScience/neo/neo-what/com-compo.htm </a></li>
-                <li><a id="ref12" href="https://www.nationalgeographic.com/news/2013/10/131011-first-comet-impact-egypt-fragment-science-space/"> https://www.nationalgeographic.com/news/2013/10/131011-first-comet-impact-egypt-fragment-science-space/ </a></li>
-                <li><a id="ref13" href="https://theplanets.org/comets/"> https://theplanets.org/comets/ </a></li>
-                <li><a id="ref14" href="https://www.npr.org/2010/12/17/132141801/science-diction-the-origin-of-the-word-comet"> https://www.npr.org/2010/12/17/132141801/science-diction-the-origin-of-the-word-comet </a></li>
-                <li><a id="ref15" href="http://www.sciencekids.co.nz/sciencefacts/space/meteoroids.html"> http://www.sciencekids.co.nz/sciencefacts/space/meteoroids.html </a></li>
-                <li><a id="ref16" href="https://study.com/academy/lesson/meteoroid-definition-facts.html"> https://study.com/academy/lesson/meteoroid-definition-facts.html </a></li>
-                <li><a id="ref17" href="https://en.wikipedia.org/wiki/Chelyabinsk_meteor "> https://en.wikipedia.org/wiki/Chelyabinsk_meteor </a></li>
-                <li><a id="ref18" href="https://www.newscientist.com/article/2127788-earths-greatest-hits-six-of-the-biggest-meteorites-in-history/ "> https://www.newscientist.com/article/2127788-earths-greatest-hits-six-of-the-biggest-meteorites-in-history/ </a></li>
-                <li><a id="ref19" href="https://theplanets.org/meteorites/"> https://theplanets.org/meteorites/ </a></li> 
-                <li><a id="ref20" href="https://en.wikipedia.org/wiki/Meteoroid"> https://en.wikipedia.org/wiki/Meteoroid </a></li>
-            </ol>
-        </p>
+                        <img src="https://wordpress.accuweather.com/wp-content/uploads/2016/12/meteor-shower-colors-2.jpg?w=1536" alt="Meteor Colors" style="height:300px; width: 300px; display: block; margin-left: auto; margin-right: auto;" />
+                    </div>
+                </div>
+                <h4>Earth Impact or Near Earth Impact Events</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div style="width:100%; height:50%; padding-top: 5%;" class="container">
+                            <div id="meteorImpactCarousel" class="carousel slide" data-ride="carousel">
+
+                                <ol class="carousel-indicators">
+                                    <li data-target="#meteorImpactCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="meteorImpactCarousel" data-slide-to="1"></li>
+                                    <li data-target="meteorImpactCarousel" data-slide-to="2"></li>
+                                    <li data-target="meteorImpactCarousel" data-slide-to="3"></li>
+                                    <li data-target="meteorImpactCarousel" data-slide-to="4"></li>
+                                </ol>
+
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="https://www.universetoday.com/wp-content/uploads/2014/02/Chelyabinsk-fireball-dashcam-best.jpg" alt="Chelyabisnk Meteor" style="height:300px; width:100%;">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h3>2013 - Chelyabinsk Meteor</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="https://i.ytimg.com/vi/dpmXyJrs7iU/maxresdefault.jpg" alt="2013 - Chelyabinsk Meteor" style="height:300px; width:100%;">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h3>2013 - Chelyabinsk Meteor</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="https://i.dailymail.co.uk/i/pix/scaled/2013/10/23/article-2473083-18EBB69E00000578-678_636x382.jpg" alt="Chelyabinsk Meteorite" style="height:300px; width:100%;">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h3>Chelyabinsk Meteorite</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="https://geology.com/articles/images/vredefort-crater.jpg" alt="Vredefort Map" style="height:300px; width:100%;">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h3>Vredefort Map, Impact vs. Crater</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="https://i.pinimg.com/474x/d3/6f/72/d36f72823dc66c754beb484056655823.jpg" alt="Vredefort Crater" style="height:300px; width:100%;">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h3>Vredefort Crater</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <a class="left carousel-control" href="#meteorImpactCarousel" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#meteorImpactCarousel" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div style="padding-left: 1em">
+                            In relatively recent case on February 15th, 2013 an airbust meteor occured in Chelyabinsk, Russia. This meteor, unlike the Tunguskan airbust, was near
+                            civilation and injured over 1,500 people, many due to shattered glass, the first asteroid to ever do so. The meteor is believed to be as large if not slightly larger than the Tunguskan meteor.
+                            The blast that occurred contained the explosive energy equivalent to around 30 or so WW2-era atomic bombs.
+                            [<a href="https://en.wikipedia.org/wiki/Chelyabinsk_meteor">REF</a>]
+                            <br />
+                            <br />
+
+                            Although it occurred 2 billion years ago, before life as we know it existed on Earth, the Vredefort Dome crater in South Africa comes in at a massive 186 miles in diameter.
+                            Although it's heavily eroded nowadays, it servers as a terrifying reminder to what can happen to our planet when space attacks.
+                            [<a href="https://www.newscientist.com/article/2127788-earths-greatest-hits-six-of-the-biggest-meteorites-in-history/">REF</a>]
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Unique Features</h4>
+                <div class="row">
+                    <div class="col-lg-7">
+                        [<a href="https://theplanets.org/meteorites/">REF</a>]
+                        <ul>
+                            <li>The majority of meteroids are broken off smaller pieces of asteroids.</li>
+                            <li>During intense meteor showers you can see upwards of 100 per hour in the night sky.</li>
+                            <li>Earth is constantly bombarded by tiny meteoroids each die, in the millions enter Earth's atmosphere with no harm done.</li>
+                            <li>Approximately 500 meteorites are believed to hit Earth yearly but only around 1% of these are recovered for scientific study.</li>
+                            <li>Fun Fact: Only one human being has ever been confirmed to be have been hit by a meteorite, in 1954.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <img src="https://sm.mashable.com/t/mashable_in/photo/default/perseid-meteor-shower-2019_mhsw.960.jpg" alt="Perseid's Meteor Shower" style="height: 100%; width: 100%;" />
+                    </div>
+                </div>
+                <h4>Origin of the Name</h4>
+                <div style="padding-left: 1em">
+                    Like many other cosmic entities, the name was derived from Greek philosphers, the root word is "meteoros" which means "high up in the air".
+                    [<a href="https://en.wikipedia.org/wiki/Meteoroid">REF</a>]
+                </div>
+            </div>
+        </div>
     </div>
 
+<script src="~/Scripts/main.js">
+</script>
