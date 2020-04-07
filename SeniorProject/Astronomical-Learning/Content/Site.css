@@ -517,6 +517,14 @@ footer {
     background-color: rgb(0, 47, 72);
 }
 
+.details-row-beg {
+    padding-top: 20px;
+}
+
+.details-row-end {
+    padding-bottom: 40px;
+}
+
 .details-row {
     padding-top: 20px;
     padding-bottom: 40px;

@@ -9,7 +9,7 @@ namespace Astronomical_Learning.Models.Launches
     public class SingleLaunchViewModel
     {
         public SingleLaunchViewModel(MainLaunchInformation mainLaunchInfo, RocketInformation rocketInfo,
-            FirstStage firstStage, SecondStage secondStage, LaunchSite launchSite, LaunchLinks launchLinks)
+            FirstStage firstStage, SecondStage secondStage, LaunchSite launchSite, LaunchLinks launchLinks, Fairing fairing)
         {
             //Main Launch Information
             flightNum = mainLaunchInfo.flightNum;
@@ -23,6 +23,8 @@ namespace Astronomical_Learning.Models.Launches
             launchDateLocal = mainLaunchInfo.launchDateLocal;
             tent = mainLaunchInfo.tent;
             tentMaxPrecise = mainLaunchInfo.tentMaxPrecise;
+
+            crew = mainLaunchInfo.crew;
 
             //Rocket Information
             rocketID = rocketInfo.rocketID;
@@ -65,6 +67,11 @@ namespace Astronomical_Learning.Models.Launches
             upcoming = launchLinks.upcoming;
             statFireDateUTC = launchLinks.statFireDateUTC;
             statFireDateUnix = launchLinks.statFireDateUnix;
+
+            //Fairings Information
+            fairReused = fairing.fairReused;
+            recAtt = fairing.recAtt;
+            recovered = fairing.recovered;
         }
 
         //Main Launch Information
@@ -79,6 +86,8 @@ namespace Astronomical_Learning.Models.Launches
         public string launchDateLocal { get; set; }
         public string tent { get; set; }
         public string tentMaxPrecise { get; set; }
+
+        public string crew { get; set; }
 
         //Rocket Information
         public string rocketID { get; set; }
@@ -122,5 +131,10 @@ namespace Astronomical_Learning.Models.Launches
         //Launch Site Information
         public string siteID { get; set; }
         public string locLong { get; set; }
+
+        //Fairings Information
+        public string fairReused { get; set; }
+        public string recAtt { get; set; }
+        public string recovered { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace Astronomical_Learning.Controllers
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
             JArray data = JArray.Parse(json);
 
-            if(id == null)
+            if (id == null)
             {
                 id = 1;
             }
@@ -59,9 +59,10 @@ namespace Astronomical_Learning.Controllers
             SecondStage secondStage = GetSecondStageInformation(ref data, id);
             LaunchSite launchSite = GetLaunchSiteInformation(ref data, id);
             LaunchLinks launchLinks = GetLinksInformation(ref data, id);
+            Fairing fairings = GetFairingsInformation(ref data, id);
 
-            SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation, 
-                firstStage, secondStage, launchSite,launchLinks);
+            SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation,
+                firstStage, secondStage, launchSite, launchLinks, fairings);
             return View(viewModel);
         }
 
@@ -74,7 +75,7 @@ namespace Astronomical_Learning.Controllers
             var tempID = data[id]["mission_id"];
             if (tempID.Count() == 0)
             {
-                mainInfo.missID = "No ID available";
+                mainInfo.missID = "-";
             }
             else
             {
@@ -89,6 +90,15 @@ namespace Astronomical_Learning.Controllers
             mainInfo.launchDateLocal = (string)data[id]["launch_date_local"];
             mainInfo.tent = (string)data[id]["is_tentative"];
             mainInfo.tentMaxPrecise = (string)data[id]["tentative_max_precision"];
+
+            if((string)data[id]["crew"] == null)
+            {
+                mainInfo.crew = "-";
+            }
+            else
+            {
+                mainInfo.crew = (string)data[id]["crew"];
+            }
 
             return mainInfo;
         }
@@ -108,54 +118,53 @@ namespace Astronomical_Learning.Controllers
         {
             FirstStage firstStage = new FirstStage();
 
-            firstStage.coreSerial = (string)data[id]["rocket"]["first_stage"]["cores"][0]["cores_serial"];
+            var temp = data[id]["rocket"]["first_stage"]["cores"][0];
+
+            firstStage.coreSerial = GetFirstStageString(ref data, id, "core_serial");
             firstStage.flight = (int)data[id]["rocket"]["first_stage"]["cores"][0]["flight"];
 
-            if ((string)data[id]["rocket"]["first_stage"]["cores"][0]["block"] == null)
+            if ((string)temp["block"] == null)
             {
                 firstStage.block = 0;
             }
             else
             {
-                firstStage.block = (int)data[id]["rocket"]["first_stage"]["cores"][0]["block"];
+                firstStage.block = (int)temp["block"];
             }
 
-            firstStage.gridfins = (string)data[id]["rocket"]["first_stage"]["cores"][0]["gridfins"];
-            firstStage.legs = (string)data[id]["rocket"]["first_stage"]["cores"][0]["legs"];
-            firstStage.reused = (string)data[id]["rocket"]["first_stage"]["cores"][0]["reused"];
+            firstStage.gridfins = GetFirstStageString(ref data, id, "gridfins");
+            firstStage.legs = GetFirstStageString(ref data, id, "legs");
+            firstStage.reused = GetFirstStageString(ref data, id, "reused");
 
-            if((string)data[id]["rocket"]["first_stage"]["cores"][0]["land_success"] == null)
+            if ((string)temp["land_success"] == null)
             {
-                firstStage.landSuccess = "Null";
+                firstStage.landSuccess = "-";
             }
             else
             {
-                firstStage.landSuccess = (string)data[id]["rocket"]["first_stage"]["cores"][0]["land_success"];
+                firstStage.landSuccess = (string)temp["land_success"];
             }
 
-            firstStage.landIntent = (string)data[id]["rocket"]["first_stage"]["cores"][0]["landing_intent"];
-
-            var tempLT = (string)data[id]["rocket"]["first_stage"]["cores"][0]["landing_type"];
-            if (tempLT == null)
-            {
-                firstStage.landType = "No landing type available.";
-            }
-            else
-            {
-                firstStage.landType = tempLT;
-            }
-
-            var tempLV = (string)data[id]["rocket"]["first_stage"]["cores"][0]["landing_vehicle"];
-            if (tempLV == null)
-            {
-                firstStage.landVeh = "No landing vehicle available";
-            }
-            else
-            {
-                firstStage.landVeh = tempLV;
-            }
+            firstStage.landIntent = GetFirstStageString(ref data, id, "landing_intent");
+            firstStage.landType = GetFirstStageString(ref data, id, "landing_type");
+            firstStage.landVeh = GetFirstStageString(ref data, id, "landing_vehicle");
 
             return firstStage;
+        }
+
+        public string GetFirstStageString(ref JArray data, int? id, string name)
+        {
+            var temp = (string)data[id]["rocket"]["first_stage"]["cores"][0][name];
+            string value = "";
+            if (temp == null)
+            {
+                value = "-";
+            }
+            else
+            {
+                value = temp;
+            }
+            return value;
         }
 
         public SecondStage GetSecondStageInformation(ref JArray data, int? id)
@@ -166,7 +175,7 @@ namespace Astronomical_Learning.Controllers
 
             secondStage.block2 = (int)temp["block"];
             List<Payload> payloads = new List<Payload>();
-            for(int i = 0; i < data[id]["rocket"]["second_stage"]["payloads"].Count(); i++)
+            for (int i = 0; i < data[id]["rocket"]["second_stage"]["payloads"].Count(); i++)
             {
                 Payload current = new Payload();
 
@@ -177,13 +186,22 @@ namespace Astronomical_Learning.Controllers
                 current.nationality = (string)temp["payloads"][i]["nationality"];
                 current.manufac = (string)temp["payloads"][i]["manufacturer"];
                 current.payloadType = (string)temp["payloads"][i]["payload_type"];
-                current.plmkg = 0.0;
-                current.plmlb = 0.0;
+
+                if((string)temp["payloads"][i]["payload_mass_kg"] == null)
+                {
+                    current.plmkg = 0.0;
+                }
+                else
+                {
+                    current.plmkg = (double)temp["payloads"][i]["payload_mass_kg"];
+                    current.plmlb = (double)temp["payloads"][i]["payload_mass_lbs"];
+                }
 
                 payloads.Add(current);
             }
 
-            for (int j = 0; j < (int)temp["payloads"].Count(); j++){
+            for (int j = 0; j < (int)temp["payloads"].Count(); j++)
+            {
                 payloads[j].orbit = GetPayloadOrbit(ref data, id, j);
             }
 
@@ -221,9 +239,9 @@ namespace Astronomical_Learning.Controllers
         {
             var temp = (string)data[id]["rocket"]["second_stage"]["payloads"][num]["orbit_params"][name];
             string value = "";
-            if(temp == null)
+            if (temp == null)
             {
-                value = "None";
+                value = "-";
             }
             else
             {
@@ -281,6 +299,18 @@ namespace Astronomical_Learning.Controllers
                 value = temp;
             }
             return value;
+        }
+
+        public Fairing GetFairingsInformation(ref JArray data, int? id)
+        {
+            Fairing current = new Fairing();
+            var temp = data[id]["rocket"]["fairings"];
+
+            current.fairReused = (string)temp["reused"];
+            current.recAtt = (string)temp["recovery_attempt"];
+            current.recovered = (string)temp["recovered"];
+
+            return current;
         }
 
         public ActionResult NASA()

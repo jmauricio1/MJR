@@ -192,6 +192,7 @@
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Launch.cs" />
+    <Compile Include="Models\Launches\Fairing.cs" />
     <Compile Include="Models\Launches\FirstStage.cs" />
     <Compile Include="Models\Launches\LaunchCustomers.cs" />
     <Compile Include="Models\Launches\LaunchLinks.cs" />

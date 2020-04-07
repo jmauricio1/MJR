@@ -18,5 +18,7 @@ namespace Astronomical_Learning.Models.Launches
         public string launchDateLocal;
         public string tent;
         public string tentMaxPrecise;
+
+        public string crew;
     }
 }
