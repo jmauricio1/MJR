@@ -20,10 +20,10 @@ namespace Astronomical_Learning.Models.Launches
         public string videoLink;
         public string ytID;
 
-        public List<string> images;
+        //public List<string> images;
         public string details;
-        public bool upcoming;
+        public string upcoming;
         public string statFireDateUTC;
-        public string statFireDaeUnix;
+        public string statFireDateUnix;
     }
 }

@@ -48,13 +48,20 @@ namespace Astronomical_Learning.Controllers
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
             JArray data = JArray.Parse(json);
 
+            if(id == null)
+            {
+                id = 1;
+            }
             id--;
             MainLaunchInformation mainInfo = GetMainLaunchInfo(ref data, id);
             RocketInformation rocketInformation = GetRocketInformation(ref data, id);
             FirstStage firstStage = GetFirstStageInformation(ref data, id);
             SecondStage secondStage = GetSecondStageInformation(ref data, id);
+            LaunchSite launchSite = GetLaunchSiteInformation(ref data, id);
+            LaunchLinks launchLinks = GetLinksInformation(ref data, id);
 
-            SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation, firstStage, secondStage);
+            SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation, 
+                firstStage, secondStage, launchSite,launchLinks);
             return View(viewModel);
         }
 
@@ -217,6 +224,57 @@ namespace Astronomical_Learning.Controllers
             if(temp == null)
             {
                 value = "None";
+            }
+            else
+            {
+                value = temp;
+            }
+            return value;
+        }
+
+        public LaunchSite GetLaunchSiteInformation(ref JArray data, int? id)
+        {
+            LaunchSite current = new LaunchSite();
+
+            current.siteID = (string)data[id]["launch_site"]["site_id"];
+            current.locLong = (string)data[id]["launch_site"]["site_name_long"];
+
+            return current;
+        }
+
+        public LaunchLinks GetLinksInformation(ref JArray data, int? id)
+        {
+            LaunchLinks current = new LaunchLinks();
+
+            current.patch = GetLinkString(ref data, id, "mission_patch");
+            current.patchSmall = GetLinkString(ref data, id, "mission_patch_small");
+            current.redditCampaign = GetLinkString(ref data, id, "reddit_campaign");
+            current.redditLaunch = GetLinkString(ref data, id, "reddit_launch");
+            current.redditRecovery = GetLinkString(ref data, id, "reddit_recovery");
+            current.redditMedia = GetLinkString(ref data, id, "reddit_media");
+            current.presskit = GetLinkString(ref data, id, "presskit");
+            current.articleLink = GetLinkString(ref data, id, "article_link");
+            current.wikipedia = GetLinkString(ref data, id, "wikipedia");
+            current.videoLink = GetLinkString(ref data, id, "video_link");
+            current.ytID = GetLinkString(ref data, id, "youtube_id");
+
+            var temp = data[id];
+
+            current.details = (string)temp["details"];
+            current.upcoming = (string)temp["upcoming"];
+            current.statFireDateUTC = (string)temp["static_fire_date_utc"];
+            current.statFireDateUnix = (string)temp["static_fire_date_unix"];
+
+            return current;
+        }
+
+        public string GetLinkString(ref JArray data, int? id, string name)
+        {
+            var temp = (string)data[id]["links"][name];
+            string value;
+            if (temp == null)
+            {
+                value = "#";
             }
             else
             {

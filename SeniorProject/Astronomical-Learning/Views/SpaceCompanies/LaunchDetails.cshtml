@@ -4,283 +4,486 @@
     ViewBag.Title = "LaunchDetails";
 }
 
-<h2>LaunchDetails</h2>
+<div class="container launch-details">
+    <br />
+    <br />
+    <br />
+    <h1 class="mission-name text-center" alt="Misson Name">
+        @Html.DisplayFor(model => model.missName)
+    </h1>
+    <div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Flight Number
+                    </dt>
 
-<div>
-    <h4>SingleLaunchViewModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.flightNum)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.flightNum)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.flightNum)
-        </dd>
+                    <dt>
+                        Mission ID
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.missName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.missID)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.missName)
-        </dd>
+                    <dt>
+                        Launch Year
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.missID)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.launchYear)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.missID)
-        </dd>
+                    <dt>
+                        Launch Date (Unix)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.launchSuccess)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.launchDateUnix)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.launchSuccess)
-        </dd>
+                    <dt>
+                        Launch Date (UTC)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.launchYear)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.launchDateUTC)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.launchYear)
-        </dd>
+                    <dt>
+                        Launch Date (Local Time)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.launchDateUnix)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.launchDateLocal)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.launchDateUnix)
-        </dd>
+                    <dt>
+                        Tent
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.launchDateUTC)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.tent)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.launchDateUTC)
-        </dd>
+                    <dt>
+                        Text Max Precise
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.launchDateLocal)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.tentMaxPrecise)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-lg-5">
+                <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.launchDateLocal)
-        </dd>
+                    <dt>
+                        Site ID
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tent)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.siteID)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.tent)
-        </dd>
+                    <dt>
+                        Location Name
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tentMaxPrecise)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.locLong)
+                    </dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>
+                        Rocket ID
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tentMaxPrecise)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.rocketID)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.rocketID)
-        </dt>
+                    <dt>
+                        Rocket Name
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.rocketID)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.rocketName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.rocketName)
-        </dt>
+                    <dt>
+                        Rocket Type
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.rocketName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.rocketType)
+                    </dd>
+                    <dt>
+                        Static fire date (UTC)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.rocketType)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.statFireDateUTC)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.rocketType)
-        </dd>
+                    <dt>
+                        Static fire date (Unix)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.coreSerial)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.statFireDateUnix)
+                    </dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>
+                        Launch Success
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.coreSerial)
-        </dd>
+                    @if (Model.launchSuccess == "True")
+                    {
+                        <dd class="success-text">
+                            @Html.DisplayFor(model => model.launchSuccess)
+                        </dd>
+                    }
+                    else
+                    {
+                        <dd class="unsuccessful-text">
+                            @Html.DisplayFor(model => model.launchSuccess)
+                        </dd>
+                    }
+                    <dt>
+                        Upcoming
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.flight)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.upcoming)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <hr class="light-hr"/>
+        <h2 class="mission-sub text-center">First Stage</h2>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Core Serial
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.flight)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.coreSerial)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.block)
-        </dt>
+                    <dt>
+                        Flight
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.block)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.flight)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.gridfins)
-        </dt>
+                    <dt>
+                        Block
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.gridfins)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.block)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.legs)
-        </dt>
+                    <dt>
+                        Gridfins
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.legs)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.gridfins)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.reused)
-        </dt>
+                    <dt>
+                        Legs
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.reused)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.legs)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.landSuccess)
-        </dt>
+                    <dt>
+                        Reused
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.landSuccess)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.reused)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-lg-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Landing Success
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.landIntent)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.landSuccess)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.landIntent)
-        </dd>
+                    <dt>
+                        Landing Intent
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.landType)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.landIntent)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.landType)
-        </dd>
+                    <dt>
+                        Landing Type
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.landVeh)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.landType)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.landVeh)
-        </dd>
+                    <dt>
+                        Landing Vehicle
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.block2)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.landVeh)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row details-row">
+            <h2 class="text-center mission-sub">Second Stage</h2>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Block
+                        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.block2)
-        </dd>
-        @foreach (var thing in Model.payloads)
-        {
-            <dt>
-                <h3>
-                    Payload ID
-                </h3>
-            </dt>
-            <dd>
-                @thing.payloadID
-            </dd>
-            <dt>
-                Semi major axis in km
-            </dt>
-            <dd>
-                @thing.orbit.semiMajorAxisKM
-            </dd>
-            <dt>
-                Eccentricity
-            </dt>
-            <dd>
-                @thing.orbit.eccentricity
-            </dd>
-            <dt>
-                Periapsis (km)
-            </dt>
-            <dd>
-                @thing.orbit.periKm
-            </dd>
-            <dt>
-                Apoapsis (km)
-            </dt>
-            <dd>
-                @thing.orbit.apoKm
-            </dd>
-            <dt>
-                Inclination Degree
-            </dt>
-            <dd>
-                @thing.orbit.inclinDeg
-            </dd>
-            <dt>
-                Period Min
-            </dt>
-            <dd>
-                @thing.orbit.periodMin
-            </dd>
-            <dt>
-                Epoch
-            </dt>
-            <dd>
-                @thing.orbit.epoch
-            </dd>
-            <dt>
-                Mean Motion
-            </dt>
-            <dd>
-                @thing.orbit.meanMotion
-            </dd>
-            <dt>
-                raan
-            </dt>
-            <dd>
-                @thing.orbit.raan
-            </dd>
-            <dt>
-                Arg of Pericenter
-            </dt>
-            <dd>
-                @thing.orbit.argPericenter
-            </dd>
-            <dt>
-                Mean Anomoly
-            </dt>
-            <dd>
-                @thing.orbit.meanAnomoly
-            </dd>
-        }
-    </dl>
+                        <dd>
+                            @Html.DisplayFor(model => model.block2)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <h2 class="text-center payloads-heading">Payloads</h2>
+            @foreach (var thing in Model.payloads)
+            {
+                if (Model.payloads.Count == 1)
+                {
+                    <div class="2"></div>
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                Payload ID
+                            </dt>
+                            <dd>
+                                @thing.payloadID
+                            </dd>
+                            <dt>
+                                Semi major axis in km
+                            </dt>
+                            <dd>
+                                @thing.orbit.semiMajorAxisKM
+                            </dd>
+                            <dt>
+                                Eccentricity
+                            </dt>
+                            <dd>
+                                @thing.orbit.eccentricity
+                            </dd>
+                            <dt>
+                                Periapsis (km)
+                            </dt>
+                            <dd>
+                                @thing.orbit.periKm
+                            </dd>
+                            <dt>
+                                Apoapsis (km)
+                            </dt>
+                            <dd>
+                                @thing.orbit.apoKm
+                            </dd>
+                            <dt>
+                                Inclination Degree
+                            </dt>
+                            <dd>
+                                @thing.orbit.inclinDeg
+                            </dd>
+                            <dt>
+                                Period Min
+                            </dt>
+                            <dd>
+                                @thing.orbit.periodMin
+                            </dd>
+                            <dt>
+                                Epoch
+                            </dt>
+                            <dd>
+                                @thing.orbit.epoch
+                            </dd>
+                            <dt>
+                                Mean Motion
+                            </dt>
+                            <dd>
+                                @thing.orbit.meanMotion
+                            </dd>
+                            <dt>
+                                raan
+                            </dt>
+                            <dd>
+                                @thing.orbit.raan
+                            </dd>
+                            <dt>
+                                Arg of Pericenter
+                            </dt>
+                            <dd>
+                                @thing.orbit.argPericenter
+                            </dd>
+                            <dt>
+                                Mean Anomoly
+                            </dt>
+                            <dd>
+                                @thing.orbit.meanAnomoly
+                            </dd>
+                        </dl>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-4">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                Payload ID
+                            </dt>
+                            <dd>
+                                @thing.payloadID
+                            </dd>
+                            <dt>
+                                Semi major axis in km
+                            </dt>
+                            <dd>
+                                @thing.orbit.semiMajorAxisKM
+                            </dd>
+                            <dt>
+                                Eccentricity
+                            </dt>
+                            <dd>
+                                @thing.orbit.eccentricity
+                            </dd>
+                            <dt>
+                                Periapsis (km)
+                            </dt>
+                            <dd>
+                                @thing.orbit.periKm
+                            </dd>
+                            <dt>
+                                Apoapsis (km)
+                            </dt>
+                            <dd>
+                                @thing.orbit.apoKm
+                            </dd>
+                            <dt>
+                                Inclination Degree
+                            </dt>
+                            <dd>
+                                @thing.orbit.inclinDeg
+                            </dd>
+                            <dt>
+                                Period Min
+                            </dt>
+                            <dd>
+                                @thing.orbit.periodMin
+                            </dd>
+                            <dt>
+                                Epoch
+                            </dt>
+                            <dd>
+                                @thing.orbit.epoch
+                            </dd>
+                            <dt>
+                                Mean Motion
+                            </dt>
+                            <dd>
+                                @thing.orbit.meanMotion
+                            </dd>
+                            <dt>
+                                raan
+                            </dt>
+                            <dd>
+                                @thing.orbit.raan
+                            </dd>
+                            <dt>
+                                Arg of Pericenter
+                            </dt>
+                            <dd>
+                                @thing.orbit.argPericenter
+                            </dd>
+                            <dt>
+                                Mean Anomoly
+                            </dt>
+                            <dd>
+                                @thing.orbit.meanAnomoly
+                            </dd>
+                        </dl>
+                    </div>
+                }
+            }
+        </div>
+        <div class="row details-row blue-bkr">
+            <h2 class="mission-sub text-center">Launch Details</h2>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <p class="launch-details-paragraph">
+                    @Html.DisplayFor(model => model.details)
+                </p>
+            </div>
+        </div>
+        <div class="text-center">
+            <img class="patch-image" src="@Html.DisplayFor(model => model.patch)" />
+        </div>
+        <br />
+        <div class="row resource-row">
+            <h2 class="mission-sub text-center">More Resources</h2>
+            <br />
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2 text-center">
+                <h4 class="link-header">Presskit</h4>
+                <a class="details-link" href="@Html.DisplayFor(model => model.presskit)">Presskit PDF</a>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h4 class="link-header">Articles</h4>
+                <a class="details-link" href="@Html.DisplayFor(model => model.articleLink)">Mission Summary</a>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h4 class="link-header">Reddit</h4>
+                <a class="details-link" href="@Html.DisplayFor(model => model.redditCampaign)">Campaign</a>
+                <br />
+                <a class="details-link" href="@Html.DisplayFor(model => model.redditLaunch)">Launch</a>
+                <br />
+                <a class="details-link" href="@Html.DisplayFor(model => model.redditRecovery)">Recovery</a>
+                <br />
+                <a class="details-link" href="@Html.DisplayFor(model => model.redditMedia)">Media</a>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h4 class="link-header">Wikipedia</h4>
+                <a class="details-link" href="@Html.DisplayFor(model => model.wikipedia)">Wikipedia link</a>
+            </div>
+            <div class="col-lg-2 text-center">
+                <h4 class="link-header">Videos</h4>
+                <a class="details-link" href="@Html.DisplayFor(model => model.videoLink)">Youtube</a>
+            </div>
+            <div class="col-lg-"></div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
