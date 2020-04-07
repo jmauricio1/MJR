@@ -73,11 +73,18 @@
                     </dd>
 
                     <dt>
-                        Text Max Precise
+                        Tent Max Precise
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.tentMaxPrecise)
+                    </dd>
+
+                    <dt>
+                        Crew
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.crew)
                     </dd>
                 </dl>
             </div>
@@ -167,7 +174,7 @@
                 </dl>
             </div>
         </div>
-        <hr class="light-hr"/>
+        <hr class="light-hr" />
         <h2 class="mission-sub text-center">First Stage</h2>
         <div class="row">
             <div class="col-lg-2"></div>
@@ -258,7 +265,7 @@
                 </dl>
             </div>
         </div>
-        <div class="row details-row">
+        <div class="row details-row-beg">
             <h2 class="text-center mission-sub">Second Stage</h2>
             <div class="row">
                 <div class="col-lg-4"></div>
@@ -291,7 +298,53 @@
                                 @thing.payloadID
                             </dd>
                             <dt>
-                                Semi major axis in km
+                                Customers
+                            </dt>
+                            <dd>
+                                @thing.customers
+                            </dd>
+                            <dt>
+                                Nationality
+                            </dt>
+                            <dd>
+                                @thing.nationality
+                            </dd>
+                            <dt>
+                                Manufacturer
+                            </dt>
+                            <dd>
+                                @thing.manufac
+                            </dd>
+                            <dt>
+                                Payload Type
+                            </dt>
+                            <dd>
+                                @thing.payloadType
+                            </dd>
+                            <dt>
+                                Payload Mass (kg)
+                            </dt>
+                            <dd>
+                                @thing.plmkg
+                            </dd>
+                            <dt>
+                                Payload Mass (lb)
+                            </dt>
+
+                            <dd>
+                                @thing.plmlb
+                            </dd>
+                        </dl>
+                        <h4 class="payloads-heading text-center">Orbit Information</h4>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                Orbit
+                            </dt>
+                            <dd>
+                                @thing.orbit.orbit
+                            </dd>
+                            <dt>
+                                Semi Major Axis (km)
                             </dt>
                             <dd>
                                 @thing.orbit.semiMajorAxisKM
@@ -370,6 +423,46 @@
                                 @thing.payloadID
                             </dd>
                             <dt>
+                                Customers
+                            </dt>
+                            <dd>
+                                @thing.customers
+                            </dd>
+                            <dt>
+                                Nationality
+                            </dt>
+                            <dd>
+                                @thing.nationality
+                            </dd>
+                            <dt>
+                                Manufacturer
+                            </dt>
+                            <dd>
+                                @thing.manufac
+                            </dd>
+                            <dt>
+                                Payload Type
+                            </dt>
+                            <dd>
+                                @thing.payloadType
+                            </dd>
+                            <dt>
+                                Payload Mass (kg)
+                            </dt>
+                            <dd>
+                                @thing.plmkg
+                            </dd>
+                            <dt>
+                                Payload Mass (lb)
+                            </dt>
+
+                            <dd>
+                                @thing.plmlb
+                            </dd>
+                        </dl>
+                        <h4 class="payloads-heading text-center">Orbit Information</h4>
+                        <dl class="dl-horizontal">
+                            <dt>
                                 Semi major axis in km
                             </dt>
                             <dd>
@@ -440,6 +533,31 @@
                 }
             }
         </div>
+        <div class="row details-row-end">
+            <h2 class="payloads-heading text-center">Fairings</h2>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Reused
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.fairReused)
+                    </dd>
+                    <dt>
+                        Recovery Attempt
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.recAtt)
+                    <dt>
+                        Recovered
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.recovered)
+                    </dd>
+                </dl>
+            </div>
+        </div>
         <div class="row details-row blue-bkr">
             <h2 class="mission-sub text-center">Launch Details</h2>
             <div class="col-lg-1"></div>
@@ -458,6 +576,7 @@
             <br />
             <div class="col-lg-1"></div>
             <div class="col-lg-2 text-center">
+
                 <h4 class="link-header">Presskit</h4>
                 <a class="details-link" href="@Html.DisplayFor(model => model.presskit)">Presskit PDF</a>
             </div>
