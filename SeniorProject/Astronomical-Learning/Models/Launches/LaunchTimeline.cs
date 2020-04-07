@@ -23,6 +23,7 @@ namespace Astronomical_Learning.Models.Launches
         public int meco;
         public int stageSep;
         public int secStageIgnition;
+        //public int firstStageBoostBackBurn;
         public int firstStageEntryBurn;
         public int seco1;
         public int firstStageLandingBurn;

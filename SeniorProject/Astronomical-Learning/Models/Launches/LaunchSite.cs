@@ -8,7 +8,7 @@ namespace Astronomical_Learning.Models.Launches
     public class LaunchSite
     {
         public string siteID;
-        public string locName;
+        //public string locName;
         public string locLong;
     }
 }

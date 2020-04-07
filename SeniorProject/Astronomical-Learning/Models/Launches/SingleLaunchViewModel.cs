@@ -9,7 +9,7 @@ namespace Astronomical_Learning.Models.Launches
     public class SingleLaunchViewModel
     {
         public SingleLaunchViewModel(MainLaunchInformation mainLaunchInfo, RocketInformation rocketInfo,
-            FirstStage firstStage, SecondStage secondStage)
+            FirstStage firstStage, SecondStage secondStage, LaunchSite launchSite, LaunchLinks launchLinks)
         {
             //Main Launch Information
             flightNum = mainLaunchInfo.flightNum;
@@ -44,6 +44,27 @@ namespace Astronomical_Learning.Models.Launches
             //Second Stage Information
             block2 = secondStage.block2;
             payloads = secondStage.payloads;
+
+            //Launch Site Information
+            siteID = launchSite.siteID;
+            locLong = launchSite.locLong;
+
+            //Launch Links Information
+            patch = launchLinks.patch;
+            patchSmall = launchLinks.patchSmall;
+            redditCampaign = launchLinks.redditCampaign;
+            redditLaunch = launchLinks.redditLaunch;
+            redditRecovery = launchLinks.redditRecovery;
+            redditMedia = launchLinks.redditMedia;
+            presskit = launchLinks.presskit;
+            articleLink = launchLinks.articleLink;
+            wikipedia = launchLinks.wikipedia;
+            videoLink = launchLinks.videoLink;
+            ytID = launchLinks.ytID;
+            details = launchLinks.details;
+            upcoming = launchLinks.upcoming;
+            statFireDateUTC = launchLinks.statFireDateUTC;
+            statFireDateUnix = launchLinks.statFireDateUnix;
         }
 
         //Main Launch Information
@@ -80,5 +101,26 @@ namespace Astronomical_Learning.Models.Launches
         public int block2 { get; set; }
         public List<Payload> payloads { get; set; }
 
+        //Launch Links Information
+        //Links
+        public string patch { get; set; }
+        public string patchSmall { get; set; }
+        public string redditCampaign { get; set; }
+        public string redditLaunch { get; set; }
+        public string redditRecovery { get; set; }
+        public string redditMedia { get; set; }
+        public string presskit { get; set; }
+        public string articleLink { get; set; }
+        public string wikipedia { get; set; }
+        public string videoLink { get; set; }
+        public string ytID { get; set; }
+        public string details { get; set; }
+        public string upcoming { get; set; }
+        public string statFireDateUTC { get; set; }
+        public string statFireDateUnix { get; set; }
+
+        //Launch Site Information
+        public string siteID { get; set; }
+        public string locLong { get; set; }
     }
 }
