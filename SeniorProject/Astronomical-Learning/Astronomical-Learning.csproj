@@ -199,9 +199,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ALtempDB.mdf" />
-    <Content Include="App_Data\ALtempDB_log.ldf">
-      <DependentUpon>ALtempDB.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
