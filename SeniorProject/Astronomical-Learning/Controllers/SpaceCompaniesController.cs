@@ -60,9 +60,11 @@ namespace Astronomical_Learning.Controllers
             LaunchSite launchSite = GetLaunchSiteInformation(ref data, id);
             LaunchLinks launchLinks = GetLinksInformation(ref data, id);
             Fairing fairings = GetFairingsInformation(ref data, id);
+            LaunchTimeline timeline = GetTimelineInformation(ref data, id);
+            Ship ships = GetShipsInformation(ref data, id);
 
             SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation,
-                firstStage, secondStage, launchSite, launchLinks, fairings);
+                firstStage, secondStage, launchSite, launchLinks, fairings, timeline, ships);
             return View(viewModel);
         }
 
@@ -91,7 +93,7 @@ namespace Astronomical_Learning.Controllers
             mainInfo.tent = (string)data[id]["is_tentative"];
             mainInfo.tentMaxPrecise = (string)data[id]["tentative_max_precision"];
 
-            if((string)data[id]["crew"] == null)
+            if ((string)data[id]["crew"] == null)
             {
                 mainInfo.crew = "-";
             }
@@ -173,7 +175,7 @@ namespace Astronomical_Learning.Controllers
 
             var temp = data[id]["rocket"]["second_stage"];
 
-            secondStage.block2 = (int)temp["block"];
+            secondStage.block2 = (int?)temp["block"];
             List<Payload> payloads = new List<Payload>();
             for (int i = 0; i < data[id]["rocket"]["second_stage"]["payloads"].Count(); i++)
             {
@@ -187,7 +189,7 @@ namespace Astronomical_Learning.Controllers
                 current.manufac = (string)temp["payloads"][i]["manufacturer"];
                 current.payloadType = (string)temp["payloads"][i]["payload_type"];
 
-                if((string)temp["payloads"][i]["payload_mass_kg"] == null)
+                if ((string)temp["payloads"][i]["payload_mass_kg"] == null)
                 {
                     current.plmkg = 0.0;
                 }
@@ -275,6 +277,14 @@ namespace Astronomical_Learning.Controllers
             current.wikipedia = GetLinkString(ref data, id, "wikipedia");
             current.videoLink = GetLinkString(ref data, id, "video_link");
             current.ytID = GetLinkString(ref data, id, "youtube_id");
+            if((string)data[id]["telemetry"]["flight_club"] != null)
+            {
+                current.telemetry = (string)data[id]["telemetry"]["flight_club"];
+            }
+            else
+            {
+                current.telemetry = "#";
+            }
 
             var temp = data[id];
 
@@ -306,13 +316,102 @@ namespace Astronomical_Learning.Controllers
             Fairing current = new Fairing();
             var temp = data[id]["rocket"]["fairings"];
 
-            current.fairReused = (string)temp["reused"];
-            current.recAtt = (string)temp["recovery_attempt"];
-            current.recovered = (string)temp["recovered"];
+            if(temp.HasValues == false)
+            {
+                
+            }
+            else
+            {
+                current.fairReused = (string)temp["reused"];
+                current.recAtt = (string)temp["recovery_attempt"];
+                current.recovered = (string)temp["recovered"];
+            }
 
             return current;
         }
 
+        public LaunchTimeline GetTimelineInformation(ref JArray data, int? id)
+        {
+            LaunchTimeline current = new LaunchTimeline();
+            if(data[id]["timeline"].HasValues == false)
+            {
+
+            }
+            else
+            {
+                current.webcastLiftoff = TimelineHelper(ref data, id, "webcast_liftoff");
+                current.goForPropLoading = TimelineHelper(ref data, id, "go_for_prop_loading");
+                current.rp1Load = TimelineHelper(ref data, id, "rp1_loading");
+                current.s1rp1load = TimelineHelper(ref data, id, "stage1_rp1_loading");
+                current.s2rp1load = TimelineHelper(ref data, id, "stage2_rp1_loading");
+                current.s1LoxLoad = TimelineHelper(ref data, id, "stage1_lox_loading");
+                current.s2LoxLoad = TimelineHelper(ref data, id, "stage2_lox_loading");
+                current.engineChill = TimelineHelper(ref data, id, "engine_chill");
+                current.prelaunchCheck = TimelineHelper(ref data, id, "prelaunch_checks");
+                current.propellantPressurization = TimelineHelper(ref data, id, "propellant_pressurization");
+                current.goForLaunch = TimelineHelper(ref data, id, "go_for_launch");
+                current.ignition = TimelineHelper(ref data, id, "ignition");
+                current.liftoff = TimelineHelper(ref data, id, "liftoff");
+                current.maxq = TimelineHelper(ref data, id, "maxq");
+                current.beco = TimelineHelper(ref data, id, "beco");//In later launch
+                current.meco = TimelineHelper(ref data, id, "meco");
+                current.stageSep = TimelineHelper(ref data, id, "stage_sep");
+                current.secStageIgnition = TimelineHelper(ref data, id, "second_stage_ignition");
+
+                current.firstStageBoostBackBurn = TimelineHelper(ref data, id, "first_stage_boostback_burn");
+                current.firstStageEntryBurn = TimelineHelper(ref data, id, "first_stage_entry_burn");
+                current.seco1 = TimelineHelper(ref data, id, "seco-1");
+                current.firstStageLandingBurn = TimelineHelper(ref data, id, "first_stage_landing_burn");
+                current.firstStageLanding = TimelineHelper(ref data, id, "first_stage_landing");
+
+                current.dragonSeparation = TimelineHelper(ref data, id, "dragon_separation");
+                current.dragonSolarDep = TimelineHelper(ref data, id, "dragon_solar_deploy");
+                current.dragonBay = TimelineHelper(ref data, id, "dragon_bay_door_deploy");
+
+                current.seco2 = TimelineHelper(ref data, id, "seco-2");
+                current.payloadDep = TimelineHelper(ref data, id, "payload_deploy");
+                current.fairingDep = TimelineHelper(ref data, id, "fairing_deploy");
+                current.payDep1 = TimelineHelper(ref data, id, "payload_deploy_1");
+                current.payDep2 = TimelineHelper(ref data, id, "payload_deploy_2");
+                current.secRestart = TimelineHelper(ref data, id, "second_stage_restart");
+                current.seco3 = TimelineHelper(ref data, id, "seco-3");
+                current.seco4 = TimelineHelper(ref data, id, "seco-4");
+
+                current.sideSep = TimelineHelper(ref data, id, "side_core_sep");
+                current.sideBoost = TimelineHelper(ref data, id, "side_core_boostback");
+                current.centerSep = TimelineHelper(ref data, id, "center_stage_sep");
+                current.centerBoost = TimelineHelper(ref data, id, "center_core_boostback");
+                current.sideEntry = TimelineHelper(ref data, id, "side_core_entry_burn");
+                current.centerEntry = TimelineHelper(ref data, id, "center_core_entry_burn");
+                current.sideLand = TimelineHelper(ref data, id, "side_core_landing");
+                current.centerLand = TimelineHelper(ref data, id, "center_core_landing");
+            }
+
+            return current;
+        }
+
+        public int? TimelineHelper(ref JArray data, int? id, string name)
+        {
+            int? value;
+
+            value = (int?)data[id]["timeline"][name];
+
+            return value;
+        }
+
+        public Ship GetShipsInformation(ref JArray data, int? id)
+        {
+            Ship list = new Ship();
+
+            string temp = "";
+            for(int i = 0; i < data[id]["ships"].Count(); i++)
+            {
+                temp = (string)data[id]["ships"][i];
+                list.ships.Add(temp);
+            }
+
+            return list;
+        }
         public ActionResult NASA()
         {
             return View();

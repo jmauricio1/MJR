@@ -5,10 +5,8 @@ using System.Web;
 
 namespace Astronomical_Learning.Models.Launches
 {
-    public class SecondStage
+    public class Ship
     {
-        public int? block2;
-        //Payloads List
-        public List<Payload> payloads = new List<Payload>();
+        public List<string> ships = new List<string>();
     }
 }

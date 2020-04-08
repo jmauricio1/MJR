@@ -283,6 +283,9 @@
                 <div class="col-lg-4"></div>
             </div>
             <h2 class="text-center payloads-heading">Payloads</h2>
+            @{
+                int num = 0;
+            }
             @foreach (var thing in Model.payloads)
             {
                 if (Model.payloads.Count == 1)
@@ -415,13 +418,8 @@
                 else
                 {
                     <div class="col-lg-4">
+                        <h3 class=" text-center payloads-heading">@thing.payloadID</h3>
                         <dl class="dl-horizontal">
-                            <dt>
-                                Payload ID
-                            </dt>
-                            <dd>
-                                @thing.payloadID
-                            </dd>
                             <dt>
                                 Customers
                             </dt>
@@ -463,7 +461,7 @@
                         <h4 class="payloads-heading text-center">Orbit Information</h4>
                         <dl class="dl-horizontal">
                             <dt>
-                                Semi major axis in km
+                                Semi Major Axis (km)
                             </dt>
                             <dd>
                                 @thing.orbit.semiMajorAxisKM
@@ -530,6 +528,12 @@
                             </dd>
                         </dl>
                     </div>
+                    num = num + 1;
+                    if ((num % 3) == 0)
+                    {
+                        <div class="clearfix"></div>
+                    }
+
                 }
             }
         </div>
@@ -571,10 +575,400 @@
             <img class="patch-image" src="@Html.DisplayFor(model => model.patch)" />
         </div>
         <br />
+
+        <div class="row">
+            <h2 class="mission-sub text-center">Timeline</h2>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        Webcast Liftoff
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.webcastLiftoff)
+                    </dd>
+                    @if (Model.goForPropLoading.HasValue == true)
+                    {
+                        <dt>
+                            Go for Prop Loading
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.goForPropLoading)
+                        </dd>
+                        <dt>
+                            RP1 Loading
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.rp1Load)
+                        </dd>
+                        if (Model.s1rp1load.HasValue == true)
+                        {
+                            <dt>
+                                Stage 1 RP1 Loading
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.s1rp1load)
+                            </dd>
+                        }
+                        <dt>
+                            Stage 1 LOX Loading
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.s1LoxLoad)
+                        </dd>
+                        if (Model.s2rp1load.HasValue == true)
+                        {
+                            <dt>
+                                Stage 2 RP1 Loading
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.s2rp1load)
+                            </dd>
+                        }
+                        <dt>
+                            Stage 2 LOX Loading
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.s2LoxLoad)
+                        </dd>
+                        <dt>
+                            Engine Chill
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.engineChill)
+                        </dd>
+                        <dt>
+                            Prelaunch Checks
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.prelaunchCheck)
+                        </dd>
+                        <dt>
+                            Propellant Pressurization
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.propellantPressurization)
+                        </dd>
+                        <dt>
+                            Go for Launch
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.goForLaunch)
+                        </dd>
+                        <dt>
+                            Ignition
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.ignition)
+                        </dd>
+                        <dt class="ignition-bkr">
+                            Liftoff
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.liftoff)
+                        </dd>
+                        if (Model.maxq.HasValue == true)
+                        {
+                            <dt>
+                                Maxq
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.maxq)
+                            </dd>
+                        }
+                        if (Model.beco.HasValue == true)
+                        {
+                            <dt>
+                                Beco
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.beco)
+                            </dd>
+                        }
+                        if (Model.sideSep.HasValue == true)
+                        {
+                            <dt>
+                                Side Core Separation
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.sideSep)
+                            </dd>
+                            <dt>
+                                Side Core Boostback
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.sideBoost)
+                            </dd>
+                        }
+                        <dt>
+                            Meco
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.meco)
+                        </dd>
+                        if (Model.stageSep.HasValue == true)
+                        {
+                            <dt>
+                                Stage Separation
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.stageSep)
+                            </dd>
+                        }
+                        if (Model.centerSep.HasValue == true)
+                        {
+                            <dt>
+                                Center Stage Separation
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.centerSep)
+                            </dd>
+                        }
+                        <dt>
+                            Second Stage Ignition
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.secStageIgnition)
+                        </dd>
+                        if (Model.centerBoost.HasValue == true)
+                        {
+                            <dt>
+                                Center Core Boostback
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.centerBoost)
+                            </dd>
+                        }
+                        if (Model.fairingDep.HasValue == true)
+                        {
+                            <dt>
+                                Fairing Deploy
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.fairingDep)
+                            </dd>
+                        }
+                        if (Model.sideEntry.HasValue == true)
+                        {
+                            <dt>
+                                Side Core Entry Burn
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.sideEntry)
+                            </dd>
+                        }
+                        if (Model.centerEntry.HasValue == true)
+                        {
+                            <dt>
+                                Center Core Entry Burn
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.centerEntry)
+                            </dd>
+                        }
+                        if (Model.sideLand.HasValue == true)
+                        {
+                            <dt>
+                                Side Core Landing
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.sideLand)
+                            </dd>
+                        }
+                        if (Model.centerLand.HasValue == true)
+                        {
+                            <dt>
+                                Center Core Landing
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.centerLand)
+                            </dd>
+                        }
+                        if (Model.firstStageBoostBackBurn.HasValue == true)
+                        {
+                            <dt>
+                                First Stage Boostback Burn
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.firstStageBoostBackBurn)
+                            </dd>
+                        }
+                        if (Model.firstStageEntryBurn.HasValue == true)
+                        {
+                            <dt>
+                                First stage Entry Burn
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.firstStageEntryBurn)
+                            </dd>
+                        }
+                        if ((Model.firstStageLanding.HasValue == true) && (Model.seco1.HasValue == true))
+                        {
+                            if (Model.firstStageLanding.Value < Model.seco1.Value)
+                            {
+                                <dt>
+                                    First Stage Landing
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.firstStageLanding)
+                                </dd>
+                            }
+                        }
+                        if (Model.seco1.HasValue == true)
+                        {
+                            <dt>
+                                Seco 1
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.seco1)
+                            </dd>
+                        }
+                        if (Model.secRestart.HasValue == true)
+                        {
+                            <dt>
+                                Second Stage Restart
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.secRestart)
+                            </dd>
+                        }
+                        if (Model.firstStageLandingBurn.HasValue == true)
+                        {
+                            <dt>
+                                First Stage Landing burn
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.firstStageLandingBurn)
+                            </dd>
+                        }
+                        if ((Model.firstStageLanding.HasValue == true) && (Model.seco1.HasValue == true))
+                        {
+                            if (Model.firstStageLanding.Value >= Model.seco1.Value)
+                            {
+                                <dt>
+                                    First Stage Landing
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.firstStageLanding)
+                                </dd>
+
+                            }
+                        }
+                        else if ((Model.firstStageLanding.HasValue == true) && (Model.seco1.HasValue == false))
+                        {
+                            <dt>
+                                First Stage Landing
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.firstStageLanding)
+                            </dd>
+
+                        }
+                        if (Model.seco2.HasValue == true)
+                        {
+                            <dt>
+                                Seco 2
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.seco2)
+                            </dd>
+                        }
+                        if (Model.dragonSeparation.HasValue == true)
+                        {
+                            <dt>
+                                Dragon Separation
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.dragonSeparation)
+                            </dd>
+                        }
+                        if (Model.dragonSolarDep.HasValue == true)
+                        {
+                            <dt>
+                                Dragon Solar Deploy
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.dragonSolarDep)
+                            </dd>
+                            <dt>
+                                Dragon Bay Door Deploy
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.dragonBay)
+                            </dd>
+                        }
+                        if (Model.payloadDep.HasValue == true)
+                        {
+                            <dt>
+                                Payload Deploy
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.payloadDep)
+                            </dd>
+                        }
+                        if (Model.payDep1.HasValue == true)
+                        {
+                            <dt>
+                                Payload 1 Deploy
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.payDep1)
+                            </dd>
+                        }
+                        if (Model.payDep2.HasValue == true)
+                        {
+                            <dt>
+                                Payload 2 Deploy
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.payDep2)
+                            </dd>
+                        }
+                        if (Model.seco3.HasValue == true)
+                        {
+                            <dt>
+                                Seco 3
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.seco3)
+                            </dd>
+                        }
+                        if (Model.seco4.HasValue == true)
+                        {
+                            <dt>
+                                Seco 4
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.seco4)
+                            </dd>
+                        }
+                    }
+                    <dt>
+
+                    </dt>
+                </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h2 class="text-center payloads-heading">Ships</h2>
+                @if(Model.ships.Count() > 0)
+                {
+                    foreach(var something in Model.ships)
+                    {
+                        <h4 class="payloads-heading text-center">@something</h4>
+                    }
+                }
+                else
+                {
+                    <h4 class="payloads-heading text-center">None</h4>
+                }
+            </div>
+        </div>
         <div class="row resource-row">
             <h2 class="mission-sub text-center">More Resources</h2>
             <br />
-            <div class="col-lg-1"></div>
             <div class="col-lg-2 text-center">
 
                 <h4 class="link-header">Presskit</h4>
@@ -602,7 +996,10 @@
                 <h4 class="link-header">Videos</h4>
                 <a class="details-link" href="@Html.DisplayFor(model => model.videoLink)">Youtube</a>
             </div>
-            <div class="col-lg-"></div>
+            <div class="col-lg-2 text-center">
+                <h4 class="link-header">Telemetry</h4>
+                <a class="details-link" href="@Html.DisplayFor(model => model.telemetry)">Flight Club</a>
+            </div>
         </div>
     </div>
 </div>

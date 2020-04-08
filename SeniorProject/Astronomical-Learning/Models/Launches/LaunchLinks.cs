@@ -19,6 +19,7 @@ namespace Astronomical_Learning.Models.Launches
         public string wikipedia;
         public string videoLink;
         public string ytID;
+        public string telemetry;
 
         //public List<string> images;
         public string details;
