@@ -91,3 +91,42 @@ function homeShowPictureInfo() {
 }
 
 
+function starsChangeInfo(image, source, info)
+{
+    document.getElementById("starsTypesImage").src = image;
+
+    document.getElementById("starsTypesSource").href = source;
+
+    document.getElementById("starsTypesInfo").innerHTML = info;
+
+}
+
+function showDiv(name) {
+
+    var x = document.getElementById(name);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+
+function changeFactInfoDesert() {
+    document.getElementById("cometImage").src = "https://i.pinimg.com/originals/66/ef/a2/66efa2297100fff8b1f69b31f9221caa.jpg";
+
+    document.getElementById("cometImageDescription").innerHTML = "A picture of the Libyan Desert where the comet is believed to have impacted. Note the yellow glass strewn across the desert.";
+}
+
+function changeFactInfoYellowGlass() {
+    document.getElementById("cometImage").src = "https://upload.wikimedia.org/wikipedia/commons/5/59/Libyan_Desert_Glass.jpg";
+
+    document.getElementById("cometImageDescription").innerHTML = "A single piece of yellow silicate glass obtained from the Libyan Desert.";
+}
+
+function changeFactInfoScarab() {
+    document.getElementById("cometImage").src = "https://assets.catawiki.nl/assets/2016/12/8/0/2/f/02f0496a-bd2c-11e6-9e69-ee7b79227db6.jpg";
+
+    document.getElementById("cometImageDescription").innerHTML = "Pharaoh Tutankhamen's scarab crafted from the yellow silicate glass of the Libyan Desert";
+}

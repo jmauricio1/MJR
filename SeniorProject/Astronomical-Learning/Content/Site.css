@@ -461,6 +461,7 @@ footer {
         transform: translateX(0px);
         opacity: 1;
     }
+
 }    
 
 /* SpaceX Details Classes*/
@@ -593,4 +594,13 @@ dd{
 
 .ignition-bkr{
     background-color: #7c7c7c;
+}
+
+}
+
+
+.homepageCard {
+    background-color: black;
+    border-radius: 25px;
+    color: white;
 }
