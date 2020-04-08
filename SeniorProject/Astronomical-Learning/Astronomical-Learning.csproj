@@ -190,6 +190,8 @@
     <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\FactOfTheDay.cs" />
+    <Compile Include="DAL\FactOfTheDayContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Launch.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -197,7 +199,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ALtempDB.mdf" />
+    <Content Include="App_Data\ALtempDB_log.ldf">
+      <DependentUpon>ALtempDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\down.sql" />
+    <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
+    <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
+    <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
