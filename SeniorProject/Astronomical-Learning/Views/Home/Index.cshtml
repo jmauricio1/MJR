@@ -19,23 +19,31 @@
                 <h2>Information Of The Day</h2>
             </div>
 
+            <hr>
+
             <div class="row" style="text-align:center">
-                <h3>@ViewBag.fact [<a href="@ViewBag.factSource">REF</a>]</h3>  
+                <h3>Fact of the Day</h3>
+                <h4>@ViewBag.fact [<a href="@ViewBag.factSource">REF</a>]</h4>
             </div>
 
-       
+            <hr>
+
+            <div class="row" style="text-align:center">
+                <h3>Picture of the Day</h3>
+            </div>
 
             <div class="row">
                 <img style="width:50%; height:50%; display: block; margin-left: auto; margin-right: auto;" src="@ViewBag.pictureUrl" alt="Alternate Text" />
             </div>
             <div style="text-align:center" class="row">
-                <h3>@ViewBag.pictureTitle</h3>
+                <h4>@ViewBag.pictureTitle</h4>
 
                 <button class="btn-primary" onclick="homeShowPictureInfo()">Click for a description of this image.</button>
             </div>
             <div style="margin-left: 10px; margin-right: 10px; margin-top: 10px; display:none" class="row" id="pictureInfo">
                 @ViewBag.pictureExplanation
             </div>
+            <hr>
             <div style="text-align:center;" class="row">
                 This picture and picture information is obtained through Nasa's Astronomy Picture of the Day<br>
             </div>
