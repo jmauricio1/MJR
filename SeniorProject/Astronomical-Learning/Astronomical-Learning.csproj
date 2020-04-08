@@ -203,6 +203,7 @@
     <Compile Include="Models\Launches\Payload.cs" />
     <Compile Include="Models\Launches\RocketInformation.cs" />
     <Compile Include="Models\Launches\SecondStage.cs" />
+    <Compile Include="Models\Launches\Ship.cs" />
     <Compile Include="Models\Launches\SingleLaunchViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
