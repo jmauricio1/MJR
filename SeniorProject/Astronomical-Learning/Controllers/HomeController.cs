@@ -31,7 +31,6 @@ namespace Astronomical_Learning.Controllers
             
             //get the information and remove the end that is not relevant
             string explanation = (string)potdData["explanation"];
-            explanation = explanation.Remove(explanation.Length - "Activities: NASA Science at Home".Length);
             ViewBag.pictureExplanation = explanation;
             
             
@@ -55,7 +54,7 @@ namespace Astronomical_Learning.Controllers
         }
 
         //the method the gets the nasa picture of the day information using the web config key
-        private string getAPOD(string key)
+        public string getAPOD(string key)
         {
             //create the url and request the information
             string url = "https://api.nasa.gov/planetary/apod?api_key=";
@@ -79,5 +78,6 @@ namespace Astronomical_Learning.Controllers
 
     }
 
+   
 
 }
