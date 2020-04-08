@@ -6,12 +6,16 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Astronomical_Learning.DAL;
+using Astronomical_Learning.Models;
 using Newtonsoft.Json.Linq;
 
 namespace Astronomical_Learning.Controllers
 {
     public class HomeController : Controller
     {
+       // private FactOfTheDayContext db = new FactOfTheDayContext();
+        private ALContext db = new ALContext();
         public ActionResult Index()
         {
             //get the picture of the day key from the web config
@@ -29,6 +33,20 @@ namespace Astronomical_Learning.Controllers
             string explanation = (string)potdData["explanation"];
             explanation = explanation.Remove(explanation.Length - "Activities: NASA Science at Home".Length);
             ViewBag.pictureExplanation = explanation;
+
+            //get the number of facts in the database
+            var factCount = db.FactOfTheDays.Count();
+       
+            //select one based on the current day of the year
+            DateTime currentDate = DateTime.Now;
+            int dayOfYear = currentDate.DayOfYear;
+
+            //the fact-1 and the final +1 is so the answer is from 1 to the final amount of facts and would not return 0
+            int chosenSpot = (dayOfYear % (factCount-1)) + 1;
+            var selectedFact = db.FactOfTheDays.Find(chosenSpot);
+            
+            ViewBag.fact = selectedFact.Text;
+            ViewBag.factSource = selectedFact.Source;
 
             return View();
         }

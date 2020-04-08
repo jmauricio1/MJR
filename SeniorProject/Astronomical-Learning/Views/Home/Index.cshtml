@@ -9,47 +9,238 @@
 
     
 
-<div class="container information-paragraphs home-bkr">
+    <div class="container information-paragraphs home-bkr">
 
+        
 
-    <div style="background-color:black; width:90%; border-radius: 25px; display: block; margin-left: auto; margin-right: auto;">
+        <div style="background-color:black; width:90%; border-radius: 25px; display: block; margin-left: auto; margin-right: auto;">
 
-        <div style="text-align: center " class="row">
-            <h2>Information Of The Day</h2>
-        </div>
-        <div class="row">
-            <img style="width:50%; height:50%; display: block; margin-left: auto; margin-right: auto;" src="@ViewBag.pictureUrl" alt="Alternate Text" />
-        </div>
-        <div style="text-align:center" class="row">
-            <h3>@ViewBag.pictureTitle</h3>
+            <div style="text-align: center " class="row">
+                <h2>Information Of The Day</h2>
+            </div>
 
-            <button class="btn-primary" onclick="homeShowPictureInfo()">Click for a description of this image.</button>
-        </div>
-        <div style="margin-left: 10px; margin-right: 10px; margin-top: 10px; display:none" class="row" id="pictureInfo">
-            @ViewBag.pictureExplanation
-        </div>
-        <div style="text-align:center;" class="row">
-            This picture and picture information is obtained through Nasa's Astronomy Picture of the Day<br>
-        </div>
+            <div class="row" style="text-align:center">
+                <h3>@ViewBag.fact [<a href="@ViewBag.factSource">REF</a>]</h3>  
+            </div>
 
+       
+
+            <div class="row">
+                <img style="width:50%; height:50%; display: block; margin-left: auto; margin-right: auto;" src="@ViewBag.pictureUrl" alt="Alternate Text" />
+            </div>
+            <div style="text-align:center" class="row">
+                <h3>@ViewBag.pictureTitle</h3>
+
+                <button class="btn-primary" onclick="homeShowPictureInfo()">Click for a description of this image.</button>
+            </div>
+            <div style="margin-left: 10px; margin-right: 10px; margin-top: 10px; display:none" class="row" id="pictureInfo">
+                @ViewBag.pictureExplanation
+            </div>
+            <div style="text-align:center;" class="row">
+                This picture and picture information is obtained through Nasa's Astronomy Picture of the Day<br>
+            </div>
+
+            <div style="height:20px"></div>
+        </div>
         <div style="height:20px"></div>
-    </div>
-    <div style="height:20px"></div>
 
-         
-  
-            <div class="row text-center">
-                <h2>Solar System</h2>
-                <a href="~/SolarSystem/Sun_Information">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
+
+        <div class="row text-center">
+            <h2>Solar System</h2>
+            <a href="~/SolarSystem/Sun_Information">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>The Sun</h3>
+                        <img class="rotate-icon" src="~/Images/icons/sun-icon.png" />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about the ball in the center of the Solar System that lights up all of our days.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <a href="~/SolarSystem/Moon_Information">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>The Moon</h3>
+                        <img class="moon-gif" src="~/Images/m1.png" id="moon-icon" />
+                        <img class="moon-gif active" src="~/Images/icons/moon-icon.gif" />
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about that big white sphere in the night sky.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+
+            <a href="~/SolarSystem/Our_Planets">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>Our Planets</h3>
+                        <img class="planets-gif" src="~/Images/icons/28.png" id="planet-icon" />
+                        <img class="planets-gif active" src="~/Images/icons/planets-expand.gif" />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-8 col-sm-8 col-xs-10">
+                                <p>
+                                    Learn more about the planets and dwarf planets that are in our solar system.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="row text-center">
+            <div class="col-lg-2 "></div>
+
+            <a href="~/SolarSystem/SpaceDebris_Information">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="homepageCard">
+                        <h3>Space Debris</h3>
+                        <img class="sd-gif" src="~/Images/icons/1.png" id="sd-icon" />
+                        <img class="sd-gif active" src="~/Images/icons/sd-icon.gif" />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about the debris travelling in space, Asteroids, Comets and Meteoroids.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="~/SolarSystem/Mars_Research">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="homepageCard">
+                        <h3>Research on Mars</h3>
+                        <img class="sd-gif" src="~/Images/icons/35.png" id="mars-icon" />
+                        <img class="sd-gif active" src="~/Images/icons/mars-icon.gif" />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Get more details on the planet Mars, a planet with a lot of research going into it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <br>
+
+        <div class="row text-center">
+            <h2>Outside Our Solar System</h2>
+            <a href="~/OuterSystem/MilkyWay_Information">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>The Milky Way</h3>
+                        <img class="rotate-icon" src="~/Images/icons/spiral-one.png" />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about the galaxy in which Earth resides.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="~/OuterSystem/Andromeda_Information">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>Andromeda</h3>
+                        <img class="rotate-icon" src="~/Images/icons/spiral-two.png" />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about our closest spiral galactic neighbor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="~/OuterSystem/Stars_Information">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>Stars</h3>
+                        <img class="sd-gif" src="~/Images/icons/25.png" id="star-icon" />
+                        <img class="sd-gif active" src="~/Images/icons/stars.gif" />
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about the types of lights in the night sky.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <br />
+
+        <div class="row text-center">
+            <h2>Space Companies</h2>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+
+                <a href="~/SpaceCompanies/SpaceXLaunches">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                         <div class="homepageCard">
-                            <h3>The Sun</h3>
-                            <img class="rotate-icon" src="~/Images/icons/sun-icon.png" />
+                            <h3>SpaceX</h3>
+                            <img class="rocket-icon" src="~/Images/icons/spacex-rocket-icon.png" />
                             <div class="row">
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                     <p>
-                                        Learn more about the ball in the center of the Solar System that lights up all of our days.
+                                        Learn more about launches conducted by SpaceX.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <div style="height:20px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
+
+                <a href="~/SpaceCompanies/SpaceX">
+                    <div style="margin-left:30px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <div class="homepageCard">
+
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                    <p>
+                                        Learn more interesting information about SpaceX and its founder.
                                     </p>
                                 </div>
                             </div>
@@ -58,349 +249,166 @@
                 </a>
 
 
-                       <a href="~/SolarSystem/Moon_Information">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>The Moon</h3>
-                                    <img class="moon-gif" src="~/Images/m1.png" id="moon-icon" />
-                                    <img class="moon-gif active" src="~/Images/icons/moon-icon.gif" />
-                                    <br />
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about that big white sphere in the night sky.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </a>
-
-                        <a href="~/SolarSystem/Our_Planets">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>Our Planets</h3>
-                                    <img class="planets-gif" src="~/Images/icons/28.png" id="planet-icon" />
-                                    <img class="planets-gif active" src="~/Images/icons/planets-expand.gif" />
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-8 col-sm-8 col-xs-10">
-                                            <p>
-                                                Learn more about the planets and dwarf planets that are in our solar system.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                       </a>
             </div>
 
 
-                    <div class="row text-center">
-                        <div class="col-lg-2 "></div>
 
-                        <a href="~/SolarSystem/SpaceDebris_Information">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="homepageCard">
-                                    <h3>Space Debris</h3>
-                                    <img class="sd-gif" src="~/Images/icons/1.png" id="sd-icon" />
-                                    <img class="sd-gif active" src="~/Images/icons/sd-icon.gif" />
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"> 
-                                            <p>
-                                                Learn more about the debris travelling in space, Asteroids, Comets and Meteoroids.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 
-                        <a href="~/SolarSystem/Mars_Research">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="homepageCard">
-                                    <h3>Research on Mars</h3>
-                                    <img class="sd-gif" src="~/Images/icons/35.png" id="mars-icon" />
-                                    <img class="sd-gif active" src="~/Images/icons/mars-icon.gif" />
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Get more details on the planet Mars, a planet with a lot of research going into it.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
 
-                    <br>
-
-                    <div class="row text-center">
-                        <h2>Outside Our Solar System</h2>
-                        <a href="~/OuterSystem/MilkyWay_Information">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>The Milky Way</h3>
-                                    <img class="rotate-icon" src="~/Images/icons/spiral-one.png" />
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about the galaxy in which Earth resides.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="~/OuterSystem/Andromeda_Information">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>Andromeda</h3>
-                                    <img class="rotate-icon" src="~/Images/icons/spiral-two.png" />
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about our closest spiral galactic neighbor.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="~/OuterSystem/Stars_Information">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>Stars</h3>
-                                    <img class="sd-gif" src="~/Images/icons/25.png" id="star-icon" />
-                                    <img class="sd-gif active" src="~/Images/icons/stars.gif" />
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about the types of lights in the night sky.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-
-                    <br />
-
-                    <div class="row text-center">
-                        <h2>Space Companies</h2>
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-
-                            <a href="~/SpaceCompanies/SpaceXLaunches">
+                <a href="~/SpaceCompanies/NASAMissions">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <div class="homepageCard">
+                            <h3>NASA</h3>
+                            <img class="rocket-icon" src="~/Images/icons/nasa-rocket-icon.png" />
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                    <div class="homepageCard">
-                                        <h3>SpaceX</h3>
-                                        <img class="rocket-icon" src="~/Images/icons/spacex-rocket-icon.png" />
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                                <p>
-                                                    Learn more about launches conducted by SpaceX.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <p>
+                                        Learn more about NASA's major historical missions.
+                                    </p>
                                 </div>
-                            </a>
-
-                            <div style="height:20px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-
-                            <a href="~/SpaceCompanies/SpaceX">
-                                <div style="margin-left:30px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                    <div class="homepageCard">
-
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                                <p>
-                                                    Learn more interesting information about SpaceX and its founder.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-
+                            </div>
                         </div>
+                    </div>
+                </a>
 
+                <div style="height:20px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
 
+                <a href="~/SpaceCompanies/Nasa">
+                    <div style="margin-left:30px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <div class="homepageCard">
 
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-
-                            <a href="~/SpaceCompanies/NASAMissions">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                    <div class="homepageCard">
-                                        <h3>NASA</h3>
-                                        <img class="rocket-icon" src="~/Images/icons/nasa-rocket-icon.png" />
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                                <p>
-                                                    Learn more about NASA's major historical missions.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <p>
+                                        Learn more about NASA as a U.S. federal agency.
+                                    </p>
                                 </div>
-                            </a>
-
-                            <div style="height:20px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10"></div>
-
-                            <a href="~/SpaceCompanies/Nasa">
-                                <div style="margin-left:30px" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                    <div class="homepageCard">
-
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                                <p>
-                                                    Learn more about NASA as a U.S. federal agency.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-
+                            </div>
                         </div>
+                    </div>
+                </a>
+
+
+            </div>
 
 
 
+        </div>
+
+
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="row text-center">
+
+
+            <h2>Features Coming Soon!</h2>
+            <a href="~/ISS/InternationalSpaceStation">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>International Space Station</h3>
+
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about one of mankinds greatest collaborative engineering feats.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
+                </div>
+            </a>
+
+            <a href="~/SpaceSuits/SpaceAndFlightSuits">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>Space Suits and Flight Suits</h3>
 
 
-
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div class="row text-center">
-
-
-                        <h2>Features Coming Soon!</h2>
-                        <a href="~/ISS/InternationalSpaceStation">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>International Space Station</h3>
-
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about one of mankinds greatest collaborative engineering feats.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about the vital equipment that keeps astronauts safe in space and during space travel.
+                                </p>
                             </div>
-                        </a>
-
-                        <a href="~/SpaceSuits/SpaceAndFlightSuits">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>Space Suits and Flight Suits</h3>
-
-
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about the vital equipment that keeps astronauts safe in space and during space travel.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </a>
-
-                        <a href="~/SolarSystem/KuiperBelt">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>Kuiper Belt</h3>
-
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-8 col-sm-8 col-xs-10">
-                                            <p>
-                                                Learn more about the icy region of space beyond Neptune's orbit.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
+                        </div>
                     </div>
 
-                    <row class="row text-center">
-                        <a href="~/OuterSystem/Interstellar_Space">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>Interstellar Space</h3>
+                </div>
+            </a>
 
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about space beyond the influence of our Sun's magnetic field.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+            <a href="~/SolarSystem/KuiperBelt">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>Kuiper Belt</h3>
 
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-8 col-sm-8 col-xs-10">
+                                <p>
+                                    Learn more about the icy region of space beyond Neptune's orbit.
+                                </p>
                             </div>
-                        </a>
+                        </div>
+                    </div>
+                </div>
+            </a>
 
-                        <a href="~/OuterSystem/Stars_Constellations">
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <div class="homepageCard">
-                                    <h3>Star Constellations</h3>
+        </div>
 
+        <row class="row text-center">
+            <a href="~/OuterSystem/Interstellar_Space">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>Interstellar Space</h3>
 
-                                    <div class="row">
-                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <p>
-                                                Learn more about the star constellations that been seen in our night sky.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about space beyond the influence of our Sun's magnetic field.
+                                </p>
                             </div>
-                        </a>
+                        </div>
+                    </div>
 
-                    </row>
-           
-            
-      
-</div>
+                </div>
+            </a>
+
+            <a href="~/OuterSystem/Stars_Constellations">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="homepageCard">
+                        <h3>Star Constellations</h3>
+
+
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>
+                                    Learn more about the star constellations that been seen in our night sky.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+
+        </row>
+
+
+
+    </div>
 
 <script src="~/Scripts/main.js">
 </script>
