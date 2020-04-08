@@ -31,7 +31,6 @@ namespace Astronomical_Learning.Controllers
             
             //get the information and remove the end that is not relevant
             string explanation = (string)potdData["explanation"];
-            explanation = explanation.Remove(explanation.Length - "Activities: NASA Science at Home".Length);
             ViewBag.pictureExplanation = explanation;
             
             
