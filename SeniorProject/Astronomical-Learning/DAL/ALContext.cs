@@ -4,6 +4,7 @@ namespace Astronomical_Learning.DAL
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Astronomical_Learning.Models;
 
     public partial class ALContext : DbContext
     {
@@ -16,6 +17,8 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+
+        public virtual DbSet<FactOfTheDay> FactOfTheDays { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

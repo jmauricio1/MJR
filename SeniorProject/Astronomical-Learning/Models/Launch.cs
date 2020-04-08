@@ -9,5 +9,7 @@ namespace Astronomical_Learning.Models
     {
         public string missionName;
         public string missionDate;
+        public string launchSuccess;
+        public int flightNum;
     }
 }
