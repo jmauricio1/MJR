@@ -27,13 +27,13 @@ namespace Astronomical_Learning.Controllers
 
             //get the information from the data
             ViewBag.pictureUrl = potdData["url"];
-            ViewBag.pictureTitle = potdData["title"];
+            ViewBag.pictureTitle = potdData["title"]; 
             
             //get the information and remove the end that is not relevant
             string explanation = (string)potdData["explanation"];
-            explanation = explanation.Remove(explanation.Length - "Activities: NASA Science at Home".Length);
             ViewBag.pictureExplanation = explanation;
-
+            
+            
             //get the number of facts in the database
             var factCount = db.FactOfTheDays.Count();
        
@@ -47,12 +47,14 @@ namespace Astronomical_Learning.Controllers
             
             ViewBag.fact = selectedFact.Text;
             ViewBag.factSource = selectedFact.Source;
+            
+            
 
             return View();
         }
 
         //the method the gets the nasa picture of the day information using the web config key
-        private string getAPOD(string key)
+        public string getAPOD(string key)
         {
             //create the url and request the information
             string url = "https://api.nasa.gov/planetary/apod?api_key=";
@@ -76,5 +78,6 @@ namespace Astronomical_Learning.Controllers
 
     }
 
+   
 
 }

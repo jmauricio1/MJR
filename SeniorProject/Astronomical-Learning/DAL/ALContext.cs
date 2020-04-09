@@ -37,5 +37,6 @@ namespace Astronomical_Learning.DAL
                 .WithRequired(e => e.AspNetUser)
                 .HasForeignKey(e => e.UserId);
         }
+
     }
 }
