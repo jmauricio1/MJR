@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ProfilePage";
+}
+
+    <div class="information-paragraphs dark-bkr">
+        
+        <div   style="text-align:center"><h2>My Profile</h2></div>
+
+        <div class="row">
+            <div class="col-lg-3 homepageCard">
+                <div>
+                    <div style="height:20px"></div>
+                    <img style="width:100%; height:100%" src="~/Images/default-profile.png" alt="Profile Image" />
+                    <div style="height:20px"></div>
+                </div>
+
+                <div style="text-align:center; font-size:24px; word-wrap: break-word">
+                    @ViewBag.UserName<br>
+                   
+                                     <div style="font-size:18px">
+                                         @ViewBag.FirstName, @ViewBag.LastName<br>
+                                         @ViewBag.State<br>
+                                         @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                     </div>
+
+                </div>
+                
+            </div>
+
+            <div class="col-lg-8 " style="text-align:center">
+                
+            </div>
+        </div>
+    </div>
+
+
+

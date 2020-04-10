@@ -9,7 +9,8 @@ namespace Astronomical_Learning.DAL
     public partial class ALContext : DbContext
     {
         public ALContext()
-            : base("name=AzureALDB")
+          // :base("name=ALContext")
+             : base("name=AzureALDB")
         {
         }
 

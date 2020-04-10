@@ -39,6 +39,13 @@ namespace Astronomical_Learning.DAL
 
         public int AccessFailedCount { get; set; }
 
+
+        public string FirstName { get;  set; }
+        public string LastName { get; set; }
+        public string Country { get;  set; }
+        public string StateProvince { get; set; }
+
+
         [Required]
         [StringLength(256)]
         public string UserName { get; set; }
@@ -51,5 +58,6 @@ namespace Astronomical_Learning.DAL
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+        
     }
 }
