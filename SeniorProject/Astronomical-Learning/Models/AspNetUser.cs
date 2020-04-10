@@ -39,6 +39,11 @@ namespace Astronomical_Learning.Models
 
         public int AccessFailedCount { get; set; }
 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Country { get; set; }
+        public string StateProvince { get; set; }
+
         [Required]
         [StringLength(256)]
         public string UserName { get; set; }
