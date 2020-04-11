@@ -253,6 +253,13 @@
     <Content Include="Images\mjr-transparent2.1.png" />
     <Content Include="Images\mjr-transparent2.png" />
     <Content Include="Images\NASA-Facilities.png" />
+    <Content Include="Images\Planets\ert.jpg" />
+    <Content Include="Images\Planets\jup.jpg" />
+    <Content Include="Images\Planets\mars.jpg" />
+    <Content Include="Images\Planets\merc.jpg" />
+    <Content Include="Images\Planets\nep.jpg" />
+    <Content Include="Images\Planets\urn.jpg" />
+    <Content Include="Images\Planets\Venus.jpg" />
     <Content Include="Images\starman-img.jpg" />
     <Content Include="Images\us-map.png" />
     <Content Include="Scripts\bootstrap.js" />
