@@ -614,3 +614,60 @@ dd{
     border-radius: 25px;
     color: white;
 }
+
+/*Planets Page*/
+.planets-btn{
+    background-color: black;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.white-txt{
+    color: whitesmoke;
+}
+
+.carousel-container {
+    padding-top: 50px;
+    background-color: black;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.planets-btn-grp{
+    background-color: black;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 40px;
+    margin-top: -40px;
+}
+
+.planet-name{
+    font-size: 120px;
+    color: whitesmoke;
+    text-indent: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.get-right{
+    float: right;
+}
+
+.planet-paragraph{
+    color: white;
+    text-indent: 30px;
+}
+
+.planet-sub{
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.planet-img{
+    width: 600px;
+    float: right;
+    border-radius: 300px;
+}
