@@ -786,3 +786,12 @@ dd {
     margin-right: auto;
     
 }
+
+.btn-unique{
+    background-color: rgb(151, 0, 221);
+    color: white;
+}
+
+.btn-unique:hover{
+    background-color: rgb(120, 0, 221);
+}
