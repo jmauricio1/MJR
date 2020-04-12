@@ -9,6 +9,10 @@
 
 }
 
+.card-reg{
+    color: white;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -35,7 +39,7 @@ textarea {
 }
 
 .home-bkr{
-    background-color: rgba(0, 0, 0, .5);
+    background-color: black;
 }
 
 #thyNav{
@@ -466,8 +470,8 @@ footer {
 
 /* SpaceX Details Classes*/
 .launch-module{
-    max-height: 200px;
-    background-color: rgb(116, 116, 116);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .success-text{
@@ -480,6 +484,10 @@ footer {
 
 .neutral-text{
     color: rgb(159, 159, 159);
+}
+
+#launch-list{
+    background-color: black;
 }
 
 /* Launch Information/Details*/
@@ -596,9 +604,11 @@ dd{
     background-color: #7c7c7c;
 }
 
+.underlined{
+    text-decoration: underline;
 }
 
-
+/*Homepage Cards*/
 .homepageCard {
     background-color: black;
     border-radius: 25px;
