@@ -9,22 +9,64 @@ namespace UnitTestProject
     [TestClass]
     public class Sprint3_Tests
     {
-        //Matthew 
+        //Matthew's Test
         [TestMethod]
-        public void Add1to1ShouldEqual2()
+        public void MHibner_Add1to1ShouldEqual2()
         {
             int x = 1;
             int y = x + 1;
             Assert.AreEqual(x + 1, y); 
         }
 
+        //Rob's Tests
+        [TestMethod]
+        public void RLochbaum_Square100_IsEqual10000()
+        {
+            //Arrange
+            int x = 100;
+            int y;
+
+            //Act
+            y = x * x;
+
+            //Assert
+            Assert.AreEqual(y, 10000);
+        }
+
+        [TestMethod]
+        public void RLochbaum_Square100_IsNotEqual100()
+        {
+            //Arrange
+            int x = 100;
+            int y;
+
+            //Act
+            y = x * x;
+
+            //Assert
+            Assert.AreNotEqual(y, 100);
+        }
+
+        [TestMethod]
+        public void RLochbaum_Square100_AnswerExists()
+        {
+            //Arrange
+            int x = 100;
+            int y;
+
+            //Act
+            y = x * x;
+
+            //Assert
+            Assert.IsNotNull(y);
+        }
         /*
          * Joshua Jacob Mauricio
          * About: Testing for multiple scenarios when acquiring data from the SpaceX API.
          *        Each test has a JArray object that acts as the data acquired from API.
          */
         [TestMethod]
-        public void SpaceCompanies_TimelineHelper_WebcastExists_Test()
+        public void JMauricio_SpaceCompanies_TimelineHelper_WebcastExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
 
@@ -49,7 +91,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_TimelineHelper_WebcastNotExists_Test()
+        public void JMauricio_SpaceCompanies_TimelineHelper_WebcastNotExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
 
@@ -67,7 +109,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetRocketInformation_RocketIDExists_Test()
+        public void JMauricio_SpaceCompanies_GetRocketInformation_RocketIDExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
@@ -86,7 +128,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetRocketInformation_RocketIDNotExists_Test()
+        public void JMauricio_SpaceCompanies_GetRocketInformation_RocketIDNotExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
@@ -105,7 +147,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetFirstStageString_CoreSerialExists_Test()
+        public void JMauricio_SpaceCompanies_GetFirstStageString_CoreSerialExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
@@ -127,7 +169,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetFirstStageString_CoreSerialNotExists_Test()
+        public void JMauricio_SpaceCompanies_GetFirstStageString_CoreSerialNotExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
@@ -149,7 +191,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetOrbitStringValue_GeocentricExists_Test()
+        public void JMauricio_SpaceCompanies_GetOrbitStringValue_GeocentricExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
@@ -174,7 +216,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetOrbitStringValue_GeocentricNotExists_Test()
+        public void JMauricio_SpaceCompanies_GetOrbitStringValue_GeocentricNotExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
@@ -199,7 +241,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetLinkString_WikipediaExists_Test()
+        public void JMauricio_SpaceCompanies_GetLinkString_WikipediaExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
@@ -216,7 +258,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void SpaceCompanies_GetLinkString_WikipediaNotExists_Test()
+        public void JMauricio_SpaceCompanies_GetLinkString_WikipediaNotExists_Test()
         {
             SpaceCompaniesController controller = new SpaceCompaniesController();
             JArray data = new JArray();
