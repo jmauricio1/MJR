@@ -399,6 +399,7 @@ namespace Astronomical_Learning.Controllers
             return value;
         }
 
+
         public Ship GetShipsInformation(ref JArray data, int? id)
         {
             Ship list = new Ship();
