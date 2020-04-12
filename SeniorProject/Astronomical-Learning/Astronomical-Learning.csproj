@@ -257,9 +257,12 @@
     <Content Include="Images\Planets\cer.jpg" />
     <Content Include="Images\Planets\ert.jpg" />
     <Content Include="Images\Planets\jup.jpg" />
+    <Content Include="Images\Planets\jupio.jpg" />
     <Content Include="Images\Planets\mars.jpg" />
     <Content Include="Images\Planets\merc.jpg" />
     <Content Include="Images\Planets\nep.jpg" />
+    <Content Include="Images\Planets\newspot.png" />
+    <Content Include="Images\Planets\orbits.jpg" />
     <Content Include="Images\Planets\plu.jpg" />
     <Content Include="Images\Planets\sat.jpg" />
     <Content Include="Images\Planets\urn.jpg" />

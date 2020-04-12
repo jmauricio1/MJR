@@ -787,6 +787,16 @@ dd {
     
 }
 
+#orbits-img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-fluid{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
 .btn-unique{
     background-color: rgb(151, 0, 221);
     color: white;
@@ -794,4 +804,8 @@ dd {
 
 .btn-unique:hover{
     background-color: rgb(120, 0, 221);
+}
+
+#orbits-comp{
+    padding-bottom: 80px;
 }
