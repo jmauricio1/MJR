@@ -612,6 +612,7 @@ dd {
     background-color: black;
     border-radius: 25px;
     color: white;
+    border: 1px solid white;
 }
 
 /*Planets Page*/
