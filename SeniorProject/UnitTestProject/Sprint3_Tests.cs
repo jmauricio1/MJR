@@ -11,11 +11,11 @@ namespace UnitTestProject
     {
         //Matthew 
         [TestMethod]
-        public void Add1()
+        public void Add1to1ShouldEqual2()
         {
             int x = 1;
             int y = x + 1;
-            Assert.AreEqual(x + 1, y);
+            Assert.AreEqual(x + 1, y); 
         }
 
         /*
