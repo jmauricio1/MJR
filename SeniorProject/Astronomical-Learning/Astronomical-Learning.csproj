@@ -257,9 +257,13 @@
     <Content Include="Images\mjr-transparent2.png" />
     <Content Include="Images\NASA-Facilities.png" />
     <Content Include="Images\Planets\cer.jpg" />
+    <Content Include="Images\Planets\eris.PNG" />
     <Content Include="Images\Planets\ert.jpg" />
+    <Content Include="Images\Planets\hau.jpg" />
+    <Content Include="Images\Planets\hau.PNG" />
     <Content Include="Images\Planets\jup.jpg" />
     <Content Include="Images\Planets\jupio.jpg" />
+    <Content Include="Images\Planets\make.jpg" />
     <Content Include="Images\Planets\mars.jpg" />
     <Content Include="Images\Planets\merc.jpg" />
     <Content Include="Images\Planets\nep.jpg" />
