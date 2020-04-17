@@ -10,10 +10,10 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" id="thyNav">
+    <div class="navbar navbar-inverse navbar-fixed-top" id="thyNav" style="border-bottom: 1px solid white">
         <div class="container-fluid">
             <div class="navbar-header">
-                <img src="~/Images/Astronomical-Logo1.png"/>
+                <img src="~/Images/Astronomical-Logo1.png" />
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -22,9 +22,9 @@
             <div class="navbar-collapse collapse">
                 <div class="row">
                     <div class="col-sm-8">@Html.Partial("_LoginPartial")</div>
-                    
+
                 </div>
-                
+
                 <div class="row">
                     <div class="col-lg-9">
                         <ul class="nav navbar-nav">
@@ -131,17 +131,30 @@
                                 </div>
                             </li>
 
+
+
+
                         </ul>
                     </div>
 
-                    <input type="search" />
-                    <button class="btn-primary">Search</button>
+                    <div>
+                        <div style="height:10px">
+
+                        </div>
+
+                        <div>
+                            <input id="siteSearchBar" type="search" />
+                            <!--<button class="btn-primary" onclick="siteSearch()">Search</button>-->
+                            <button class="btn-primary" onclick="siteSearch()">Search</button>
+                        </div>
+                    </div>
                 </div>
 
 
-                
+
             </div>
         </div>
+      
     </div>
     <div class="body-content">
         @RenderBody()
@@ -179,5 +192,10 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/main.js">arguments
+    </script>
 </body>
+
+
+
 </html>
