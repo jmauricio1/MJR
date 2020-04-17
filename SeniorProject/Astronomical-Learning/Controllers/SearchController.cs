@@ -52,7 +52,7 @@ namespace Astronomical_Learning.Controllers
             var pages = db.SitePages.Where(x => pagesList.Contains(x.Id));
 
             ViewBag.pagesList = pages;
-            ViewBag.search = searchQuery.ToUpper();
+            ViewBag.search = searchQuery;
 
             return View();
 

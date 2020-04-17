@@ -22,6 +22,7 @@ CREATE TABLE [dbo].[SitePages]
     [Id]   INT IDENTITY (1,1) NOT NULL,
     [Name] NVARCHAR (256) NOT NULL,
     [Link] NVARCHAR (256) NOT NULL,
+    [Description] NVARCHAR (256) NOT NULL,
     CONSTRAINT [PK_dbo.SitePages] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 GO

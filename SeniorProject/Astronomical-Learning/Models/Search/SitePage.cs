@@ -20,5 +20,9 @@ namespace Astronomical_Learning.Models.Search
         [Required]
         [StringLength(256)]
         public string Link { get; set; }
+
+        [Required]
+        [StringLength(256)]
+        public string Description { get; set; }
     }
 }
