@@ -5,6 +5,7 @@ namespace Astronomical_Learning.DAL
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using Astronomical_Learning.Models;
+    using Astronomical_Learning.Models.Search;
 
     public partial class ALContext : DbContext
     {
@@ -20,6 +21,10 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
 
         public virtual DbSet<FactOfTheDay> FactOfTheDays { get; set; }
+
+        public virtual DbSet<SearchKeyword> SearchKeywords { get; set; }
+        public virtual DbSet<KeywordRelation> KeywordRelations { get; set; }
+        public virtual DbSet<SitePage> SitePages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -130,3 +130,12 @@ function changeFactInfoScarab() {
 
     document.getElementById("cometImageDescription").innerHTML = "Pharaoh Tutankhamen's scarab crafted from the yellow silicate glass of the Libyan Desert";
 }
+
+
+function siteSearch()
+{
+   
+    var query = document.getElementById("siteSearchBar").value;
+
+    location.href = '/Search/searchPage' + '?searchQuery=' + query;
+}
