@@ -183,6 +183,7 @@
     <Compile Include="DAL\AspNetUser.cs" />
     <Compile Include="DAL\AspNetUserClaim.cs" />
     <Compile Include="DAL\AspNetUserLogin.cs" />
+    <Compile Include="DAL\AvatarPath.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,12 +212,28 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <!--
+    <Compile Include="TempDAL\AspNetRole.cs" />
+    <Compile Include="TempDAL\AspNetUser.cs" />
+    <Compile Include="TempDAL\AspNetUserClaim.cs" />
+    <Compile Include="TempDAL\AspNetUserLogin.cs" />
+    <Compile Include="TempDAL\AvatarPath.cs" />
+    <Compile Include="TempDAL\FactOfTheDay.cs" />
+    <Compile Include="TempDAL\TempContext.cs" />
+    -->
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
+    <Content Include="App_Data\profile-seed.sql" />
+    <!--
+    <Content Include="App_Data\Temporary.mdf" />
+    <Content Include="App_Data\Temporary_log.ldf">
+      <DependentUpon>Temporary.mdf</DependentUpon>
+    </Content>
+    -->
     <Content Include="App_Data\up.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -273,6 +290,14 @@
     <Content Include="Images\Planets\sat.jpg" />
     <Content Include="Images\Planets\urn.jpg" />
     <Content Include="Images\Planets\Venus.jpg" />
+    <Content Include="Images\Profile\avatars\astronaut-a.png" />
+    <Content Include="Images\Profile\avatars\comet-a.png" />
+    <Content Include="Images\Profile\avatars\const-a.png" />
+    <Content Include="Images\Profile\avatars\default-profile.png" />
+    <Content Include="Images\Profile\avatars\moon-a.png" />
+    <Content Include="Images\Profile\avatars\rocket-a.png" />
+    <Content Include="Images\Profile\avatars\saturn-a.png" />
+    <Content Include="Images\Profile\avatars\star-a.png" />
     <Content Include="Images\starman-img.jpg" />
     <Content Include="Images\us-map.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -352,6 +377,7 @@
     <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
     <Content Include="Views\SpaceCompanies\LaunchDetails.cshtml" />
     <Content Include="Views\Profile\ProfilePage.cshtml" />
+    <Content Include="Views\Manage\ChangeProfileAvatar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
