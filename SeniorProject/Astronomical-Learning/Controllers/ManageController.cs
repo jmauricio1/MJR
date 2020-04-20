@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Astronomical_Learning.Models;
-using Astronomical_Learning.TempDAL;
+//using Astronomical_Learning.TempDAL;
 using Astronomical_Learning.DAL;
 
 namespace Astronomical_Learning.Controllers
