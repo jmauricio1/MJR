@@ -9,8 +9,7 @@ namespace Astronomical_Learning.DAL
     public partial class ALContext : DbContext
     {
         public ALContext()
-          // :base("name=ALContext")
-             : base("name=AzureALDB")
+            : base("name=ALContext")
         {
         }
 
@@ -18,8 +17,8 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
-
         public virtual DbSet<FactOfTheDay> FactOfTheDays { get; set; }
+        public virtual DbSet<UserComment> UserComments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -38,6 +37,5 @@ namespace Astronomical_Learning.DAL
                 .WithRequired(e => e.AspNetUser)
                 .HasForeignKey(e => e.UserId);
         }
-
     }
 }
