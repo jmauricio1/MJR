@@ -9,12 +9,14 @@ using System.Web.Mvc;
 using Astronomical_Learning.DAL;
 using Astronomical_Learning.Models;
 using Newtonsoft.Json.Linq;
+using Astronomical_Learning.TempDAL;
 
 namespace Astronomical_Learning.Controllers
 {
     public class HomeController : Controller
     {
-       // private FactOfTheDayContext db = new FactOfTheDayContext();
+        // private FactOfTheDayContext db = new FactOfTheDayContext();
+        //private ALContext db = new ALContext();
         private ALContext db = new ALContext();
         public ActionResult Index()
         {

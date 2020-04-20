@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Astronomical_Learning.Models;
+using Astronomical_Learning.TempDAL;
+using Astronomical_Learning.DAL;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -242,6 +244,30 @@ namespace Astronomical_Learning.Controllers
             }
             AddErrors(result);
             return View(model);
+        }
+
+        private ALContext db = new ALContext();
+        public ActionResult ChangeProfileAvatar()
+        {
+            ViewBag.AID = new SelectList(db.AvatarPaths, "ID", "AvatarName");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangeProfileAvatar(ChangeProfileAvt model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = User.Identity.GetUserId();
+                var user = db.AspNetUsers.Find(userId);
+                user.AID = (int)model.value;
+                db.SaveChanges();
+                return RedirectToAction("ProfilePage", "Profile");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         //

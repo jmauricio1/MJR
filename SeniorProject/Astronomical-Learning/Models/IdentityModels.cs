@@ -13,6 +13,7 @@ namespace Astronomical_Learning.Models
         public string LastName { get; internal set; }
         public string Country { get; internal set; }
         public string StateProvince { get; internal set; }
+        public int AID { get; internal set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -27,6 +28,7 @@ namespace Astronomical_Learning.Models
     {
         public ApplicationDbContext()
             //: base("DefaultConnection", throwIfV1Schema: false)
+            //: base("ALContext", throwIfV1Schema: false)
             : base("AzureALDB", throwIfV1Schema: false)
         {
             Database.SetInitializer<ApplicationDbContext>(null);
