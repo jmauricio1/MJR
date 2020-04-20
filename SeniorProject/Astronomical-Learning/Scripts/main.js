@@ -130,3 +130,21 @@ function changeFactInfoScarab() {
 
     document.getElementById("cometImageDescription").innerHTML = "Pharaoh Tutankhamen's scarab crafted from the yellow silicate glass of the Libyan Desert";
 }
+
+function submitComment() {
+    var comment = document.getElementById("commentBox").value;
+    var url = window.location.pathname;
+    var data = JSON.stringify({ 'comment': comment, 'url': url });
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "/SolarSystem/SubmitComment",
+        data: data,
+        success: showSuccess()
+    });
+}
+
+function showSuccess() {
+    alert("Your comment was submitted successfully! It will appear on this page as soon as an admin has reviewed and approved it.");
+    document.getElementById("commentBox").value = "";
+}
