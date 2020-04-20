@@ -183,7 +183,7 @@ function calculateQuiz1Score()
         document.getElementById("a4").innerHTML = "Incorrect";
     }
 
-    if (document.querySelector('input[name="q5"]:checked').value == 1) {
+    if (document.querySelector('input[name="q5"]:checked').value == 2) {
         totalScore = totalScore + 1;
         document.getElementById("a5").innerHTML = "Correct";
     }
