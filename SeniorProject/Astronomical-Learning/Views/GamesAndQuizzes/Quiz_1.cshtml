@@ -1,0 +1,370 @@
+﻿
+@{
+    ViewBag.Title = "Quiz_1";
+}
+
+    <div class="container information-paragraphs dark-bkr">
+
+        <div class="container-fluid planets-btn-grp">
+            <div class="btn-group btn-group-justified" role="group">
+                <a href="#" class="btn planets-btn active" data-target="#quiz1-carousel" data-slide-to="0">Start</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="1">1</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="2">2</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="3">3</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="4">4</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="5">5</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="6">6</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="7">7</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="8">8</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="9">9</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="10">10</a>
+                <a href="#" class="btn planets-btn" data-target="#quiz1-carousel" data-slide-to="11" onclick="calculateQuiz1Score()">Finish</a>
+            </div>
+        </div>
+
+        <div class="container-fluid carousel-container">
+            <div id="quiz1-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" style="height:400px">
+                    <div class="item active">
+                        
+
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Quiz 1: Our Solar System</h2>
+                                <h3>This quiz goes over information in the "Our Solar System" pages.</h3>
+                                <h3>Use the numbered buttons at the top of the page to change questions.</h3>
+                                <h3>You can use the "Finsih" button to see your scrore on the quiz.</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                  
+                                </div>
+
+                                <div class="col-lg-6">
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 1</h2>
+                                <h3>How old is The Sun?</h3>
+                                </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q1" value="1" checked="checked">3.8 Billion Years<br>
+                                        <input type="radio" name="q1" value="2"> 4.5 Billion Years<br>
+                                        <input type="radio" name="q1" value="3"> 4.5 Million Years<br>
+                                        <input type="radio" name="q" value="4"> 10.3 Billion Years<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="item">
+
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 2</h2>
+                                <h3>How does a solar eclipse happen?</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q2" value="1" checked="checked">When the Moon gets between the Earth and Sun<br>
+                                        <input type="radio" name="q2" value="2"> When the Sun gets between the Earth and Moon<br>
+                                        <input type="radio" name="q2" value="3"> When Mercury gets between the Sun and Earth<br>
+                                        <input type="radio" name="q2" value="3"> When an asteroid gets between the Sun and Earth<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 3</h2>
+                                <h3>What was the first mission to have humans land on The Moon?</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Full_moon.jpeg/600px-Full_moon.jpeg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q3" value="1" checked="checked">Apollo 12<br>
+                                        <input type="radio" name="q3" value="2">Luna 2<br>
+                                        <input type="radio" name="q3" value="3">Luna 3<br>
+                                        <input type="radio" name="q3" value="4">Apollo 11<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 4</h2>
+                                <h3>What are many of the features of Venus named after</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="~/Images/Planets/Venus.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q4" value="1" checked="checked"> Animals<br>
+                                        <input type="radio" name="q4" value="2"> Men<br>
+                                        <input type="radio" name="q4" value="3"> Women<br />
+                                        <input type="radio" name="q4" value="4"> Gods<br />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 5</h2>
+                                <h3>Is Pluto still considered a planet?</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="~/Images/Planets/plu.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q5" value="1" checked="checked"> Yes<br>
+                                        <input type="radio" name="q5" value="2"> No<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 6</h2>
+                                <h3>Has research found evidence of water once being on Mars?</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="~/Images/Planets/mars.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q6" value="1" checked="checked"> Yes<br>
+                                        <input type="radio" name="q6" value="2"> No<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 7</h2>
+                                <h3>What is the difference between a meteoroid and a meteor?</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="https://www.jpl.nasa.gov/images/dawn/20150331/vesta20150331.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q7" value="1" checked="checked"> Where they are located.<br>
+                                        <input type="radio" name="q7" value="2"> What they are made out of.<br>
+                                        <input type="radio" name="q7" value="3"> Both of 1 and 2.<br>
+                                        <input type="radio" name="q7" value="3"> THey are the same thing.<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 8</h2>
+                                <h3>What caused the most recent extinction event?</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="https://media.nationalgeographic.org/assets/photos/000/257/25715.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q8" value="1" checked="checked"> A meteor<br>
+                                        <input type="radio" name="q8" value="2"> An asteroid<br>
+                                        <input type="radio" name="q8" value="3"> A comet<br>
+                                        <input type="radio" name="q8" value="4"> A planet<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 9</h2>
+                                <h3>Why is Mars red?</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="~/Images/Planets/mars.jpg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q9" value="1" checked="checked"> The elements in the atmosphere of Mars<br>
+                                        <input type="radio" name="q9" value="2"> The rust on from the iron on its surface.<br>
+                                        <input type="radio" name="q9" value="3"> Our eyes interpret it as red because it is so far away.<br>
+                                        <input type="radio" name="q9" value="4"> The sun makes it appear as red even though it isn't.<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Question 10</h2>
+                                <h3>How much smaller is The Moon compared to earth.</h3>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img style="height:250px; width:250px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Full_moon.jpeg/600px-Full_moon.jpeg" alt="Alternate Text" />
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div style="height:20px"></div>
+                                    <form style="font-size:20px" action="">
+                                        <input type="radio" name="q10" value="1" checked="checked"> 400 times<br>
+                                        <input type="radio" name="q10" value="2"> 2 times.<br>
+                                        <input type="radio" name="q10" value="3"> 81 times<br>
+                                        <input type="radio" name="q10" value="4"> 67 times<br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-lg-2"></div>
+
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <h2>Quiz Results</h2> 
+                                
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button class="btn-primary" onclick="location.href = 'QuizSelection';">Click here to try a different quiz.</button>
+                                </div>
+
+                                <div class="col-lg-6">
+
+                                    <ol style="font-size:20px">
+                                        <li id="a1"></li>
+                                        <li id="a2"></li>
+                                        <li id="a3"></li>
+                                        <li id="a4"></li>
+                                        <li id="a5"></li>
+                                        <li id="a6"></li>
+                                        <li id="a7"></li>
+                                        <li id="a8"></li>
+                                        <li id="a9"></li>
+                                        <li id="a10"></li>
+                                    </ol>
+                                    <div style="font-size:20px" id="total"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+
+
+    </div>
+
+<script src="~/Scripts/main.js">
+</script>
