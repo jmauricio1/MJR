@@ -32,5 +32,6 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+        //
     }
 }
