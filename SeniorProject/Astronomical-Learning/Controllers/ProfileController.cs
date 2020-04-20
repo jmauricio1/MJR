@@ -7,12 +7,14 @@ using System.Web.Mvc;
 using Astronomical_Learning.DAL;
 using Astronomical_Learning.Models;
 using Microsoft.AspNet.Identity;
+//using Astronomical_Learning.TempDAL;
 
 namespace Astronomical_Learning.Controllers
 {
     public class ProfileController : Controller
     {
         private ALContext db = new ALContext();
+        //private TempContext db = new TempContext();
         
 
         // GET: Profile
@@ -25,6 +27,8 @@ namespace Astronomical_Learning.Controllers
             ViewBag.FirstName = user.FirstName;
             ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
             ViewBag.State = user.StateProvince;
+            ViewBag.Path = user.AvatarPath.Path.ToString();
+
             return View();
         }
     }

@@ -19,7 +19,7 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
-
+        public virtual DbSet<AvatarPath> AvatarPaths { get; set; }
         public virtual DbSet<FactOfTheDay> FactOfTheDays { get; set; }
 
         public virtual DbSet<SearchKeyword> SearchKeywords { get; set; }
@@ -42,6 +42,12 @@ namespace Astronomical_Learning.DAL
                 .HasMany(e => e.AspNetUserLogins)
                 .WithRequired(e => e.AspNetUser)
                 .HasForeignKey(e => e.UserId);
+
+            modelBuilder.Entity<AvatarPath>()
+                .HasMany(e => e.AspNetUsers)
+                .WithRequired(e => e.AvatarPath)
+                .HasForeignKey(e => e.AID)
+                .WillCascadeOnDelete(false);
         }
 
     }

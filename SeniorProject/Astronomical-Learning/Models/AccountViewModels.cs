@@ -61,6 +61,12 @@ namespace Astronomical_Learning.Models
         public bool RememberMe { get; set; }
     }
 
+    public class ChangeProfileAvt
+    {
+        [Required]
+        public int value { get; set;}
+    }
+
     public class RegisterViewModel
     {
         [Required]
