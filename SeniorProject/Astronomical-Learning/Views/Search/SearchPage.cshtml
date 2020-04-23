@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+    <div class=" container information-paragraphs dark-bkr">
+        <h2>Results for @ViewBag.search</h2>
+ 
+
+        @foreach (var x in ViewBag.pagesList)
+        {
+             <h3>
+                <a href="~/@x.Link">@x.Name</a><br>
+        
+             </h3>
+
+             <h4>@x.Description</h4>
+        }
+    </div>
+

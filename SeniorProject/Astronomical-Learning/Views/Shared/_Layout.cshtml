@@ -10,121 +10,163 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" id="thyNav">
+    <div class="navbar navbar-inverse navbar-fixed-top" id="thyNav" style="border-bottom: 1px solid white">
         <div class="container-fluid">
             <div class="navbar-header">
-                <img src="~/Images/Astronomical-Logo1.png"/>
+                <img src="~/Images/Astronomical-Logo1.png" />
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Our Solar System
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
-                            <div class="container">
-                                <a class="dropdown-item" href="~/SolarSystem/Sun_Information">The Sun</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/SolarSystem/Moon_Information">The Moon</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/SolarSystem/Our_Planets">The Planets</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/SolarSystem/Mars_Research">More of Mars</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/SolarSystem/SpaceDebris_Information">Space Debris</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/SolarSystem/KuiperBelt">Kuiper Belt</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
-                        </div>
-                    </li>
+                <div class="row">
+                    <div class="col-sm-8" id="loginPartial">@Html.Partial("_LoginPartial")</div>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Outside Our Solar System
-                        </a>
+                </div>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
-                            <div class="container">
-                                <a class="dropdown-item" href="~/OuterSystem/MilkyWay_Information">The Milky Way</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/OuterSystem/Andromeda_Information">Andromeda Galaxy</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/OuterSystem/Stars_Information">Stars</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/OuterSystem/Stars_Constellations">Star Constellations</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/OuterSystem/Interstellar_Space">Interstellar Space</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
-                        </div>
-                    </li>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <ul class="nav navbar-nav">
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            SpaceX
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
-                            <div class="container">
-                                <a class="dropdown-item" href="~/SpaceCompanies/SpaceX">About SpaceX</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/SpaceCompanies/SpaceXLaunches">SpaceX Launches</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
-                        </div>
-                    </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            NASA
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
-                            <div class="container">
-                                <a class="dropdown-item" href="~/SpaceCompanies/NASAMissions">NASA Missions</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="~/SpaceCompanies/NASA">About NASA</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ISS
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
-                            <div class="container">
-                                <a class="dropdown-item" href="~/ISS/InternationalSpaceStation">International Space Station</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
-                        </div>
-                    </li>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Our Solar System
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                                    <div class="container">
+                                        <a class="dropdown-item" href="~/SolarSystem/Sun_Information">The Sun</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/SolarSystem/Moon_Information">The Moon</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/SolarSystem/Our_Planets">The Planets</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/SolarSystem/Mars_Research">More of Mars</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/SolarSystem/SpaceDebris_Information">Space Debris</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/SolarSystem/KuiperBelt">Kuiper Belt</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                            </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Space Suits
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
-                            <div class="container">
-                                <a class="dropdown-item" href="~/SpaceSuits/SpaceAndFlightSuits">Space And Flight Suits</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Outside Our Solar System
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                                    <div class="container">
+                                        <a class="dropdown-item" href="~/OuterSystem/MilkyWay_Information">The Milky Way</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/OuterSystem/Andromeda_Information">Andromeda Galaxy</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/OuterSystem/Stars_Information">Stars</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/OuterSystem/Stars_Constellations">Star Constellations</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/OuterSystem/Interstellar_Space">Interstellar Space</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    SpaceX
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                                    <div class="container">
+                                        <a class="dropdown-item" href="~/SpaceCompanies/SpaceX">About SpaceX</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/SpaceCompanies/SpaceXLaunches">SpaceX Launches</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    NASA
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                                    <div class="container">
+                                        <a class="dropdown-item" href="~/SpaceCompanies/NASAMissions">NASA Missions</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/SpaceCompanies/NASA">About NASA</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ISS
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                                    <div class="container">
+                                        <a class="dropdown-item" href="~/ISS/InternationalSpaceStation">International Space Station</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Space Suits
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                                    <div class="container">
+                                        <a class="dropdown-item" href="~/SpaceSuits/SpaceAndFlightSuits">Space And Flight Suits</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Games and More
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdowns">
+                                    <div class="container">
+                                        <a class="dropdown-item" href="~/GamesAndQuizzes/QuizSelection">Quizzes</a>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div style="height:10px">
+
                         </div>
-                    </li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+
+                        <div>
+                            <input id="siteSearchBar" type="search" />
+                            <!--<button class="btn-primary" onclick="siteSearch()">Search</button>-->
+                            <button class="btn-primary" onclick="siteSearch()">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
+      
     </div>
     <div class="body-content">
         @RenderBody()
@@ -162,5 +204,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    @section scripts{
+        <script src="~/Scripts/main.js">
+    arguments
+        </script>
+        <script type="text/javascript" src="~/Scripts/ProfileUpdates.js"></script>
+    }
 </body>
+
+
+
 </html>

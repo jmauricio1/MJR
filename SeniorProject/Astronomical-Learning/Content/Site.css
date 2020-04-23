@@ -814,3 +814,26 @@ dd {
 .planets-img-src{
 
 }
+
+.choose-avatar{
+    height: 280px;
+    width: auto;
+    padding-bottom: 100px;
+}
+
+.avatar-list{
+    padding-left: 20px;
+}
+
+.edit-row{
+    margin-top: 40px;
+}
+
+.red-txt{
+    color: red;
+}
+
+.account-dropdown{
+    color: white;
+    text-align: right;
+}
