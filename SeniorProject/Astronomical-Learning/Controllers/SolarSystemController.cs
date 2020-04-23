@@ -19,24 +19,34 @@ namespace Astronomical_Learning.Controllers
         // GET: SolarSystem
         public ActionResult Moon_Information()
         {
-            return View();
+            List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Moon_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
+            ViewBag.URL = "/SolarSystem/SubmitComment";
+
+            return View(comments);
         }
 
         public ActionResult Sun_Information()
         {
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Sun_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
+            ViewBag.URL = "/SolarSystem/SubmitComment";
 
             return View(comments) ;
         }
 
         public ActionResult SpaceDebris_Information()
         {
-            return View();
+            List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/SpaceDebris_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
+            ViewBag.URL = "/SolarSystem/SubmitComment";
+
+            return View(comments);
         }
 
         public ActionResult Our_Planets()
         {
-            return View();
+            List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Our_Planets" && x.AcceptState == true && x.ReportCount < 5).ToList();
+            ViewBag.URL = "/SolarSystem/SubmitComment";
+
+            return View(comments);
         }
         public ActionResult KuiperBelt()
         {
@@ -45,25 +55,30 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult Mars_Research()
         {
-            return View();
+            List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Mars_Research" && x.AcceptState == true && x.ReportCount < 5).ToList();
+            ViewBag.URL = "/SolarSystem/SubmitComment";
+
+            return View(comments);
         }
 
         [HttpPost]
-        public void SubmitComment(string json)
+        public JsonResult SubmitComment([Bind(Exclude = "Id, PostDate, AcceptState")] UserComment comment)
         {
-            var data = JsonConvert.DeserializeObject(json);
+            /* Make sure the Model passed in is in a valid state before doing anything with it */
+            if (ModelState.IsValid)
+            {
+                /* Set the rest of the information of the comment */
+                comment.Username = User.Identity.Name;
+                comment.PostDate = DateTime.Now;
+                comment.AcceptState = true;
+                comment.ReportCount = 0;
 
-            UserComment newComment = new UserComment();
+                /* Add the comment to the UserComments table and save the changes to the database */
+                db.UserComments.Add(comment);
+                db.SaveChanges();
+            }
 
-            newComment.Username = User.Identity.Name;
-            newComment.PostDate = DateTime.Now;
-            newComment.PageFrom = "/SolarSystem/Sun_Information";   //should be data.url
-            newComment.AcceptState = true;
-            newComment.Comment = "This is a comment that is premade";   //should be data.comment
-            newComment.ReportCount = 0;
-            
-            db.UserComments.Add(newComment);
-            db.SaveChanges();
+            return Json(ModelState.IsValid, JsonRequestBehavior.AllowGet);
         }
     }
 }
