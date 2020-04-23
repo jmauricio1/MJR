@@ -26,7 +26,7 @@ namespace Astronomical_Learning.Controllers
 
             string dataBaseSearchQuery = searchQuery.ToLower();
 
-           var keywordList = db.SearchKeywords.ToArray();
+            var keywordList = db.SearchKeywords.ToArray();
 
             int keywordListSize = keywordList.Count();
 

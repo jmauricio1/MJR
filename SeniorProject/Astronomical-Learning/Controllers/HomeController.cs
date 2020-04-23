@@ -50,8 +50,6 @@ namespace Astronomical_Learning.Controllers
             ViewBag.fact = selectedFact.Text;
             ViewBag.factSource = selectedFact.Source;
 
-
-
             return View();
         }
 

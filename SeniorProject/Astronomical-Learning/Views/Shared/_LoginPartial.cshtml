@@ -12,7 +12,7 @@
             -->
                 <a class="navbar-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Hello @User.Identity.GetUserName()!
+                <p id="thing">Hello @User.Identity.GetUserName()!</p>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbaDropdown" id="dropdowns">
                 <div class="container">
@@ -37,4 +37,8 @@ else
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
+}
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/ProfileUpdates.js"></script>    
 }
