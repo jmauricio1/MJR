@@ -287,7 +287,7 @@ namespace Astronomical_Learning.Controllers
         [HttpPost]
         public ActionResult ChangeProfileDetails(ChangeProfileDts model)
         {
-            bool changed = false;
+            string changed = "false";
             if (ModelState.IsValid)
             {
                 var userId = User.Identity.GetUserId();
@@ -311,7 +311,7 @@ namespace Astronomical_Learning.Controllers
                         user.UserName = model.UserName;
                         db.SaveChanges();
                         //Check the database if it has the desired username
-                        changed = true;
+                        changed = "true";
                     }
                     else
                     {
@@ -325,9 +325,8 @@ namespace Astronomical_Learning.Controllers
                     db.SaveChanges();
                 }
             }
-            ViewBag.UsernameChanged = changed;
-            //return RedirectToAction("ProfilePage", "Profile");
-            return View();
+            return RedirectToAction("ProfilePage", "Profile", new { changedUsername = changed});
+            //return View();
         }
 
         public JsonResult UpdateUsernamePartial()

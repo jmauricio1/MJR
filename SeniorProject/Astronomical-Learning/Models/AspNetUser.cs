@@ -44,6 +44,9 @@ namespace Astronomical_Learning.Models
         public string Country { get; set; }
         public string StateProvince { get; set; }
 
+        [StringLength(256)]
+        public string Bio { get; set; }
+
         [Required]
         [StringLength(256)]
         public string UserName { get; set; }
