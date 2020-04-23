@@ -7,6 +7,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Astronomical_Learning.Models;
+//using Astronomical_Learning.TempDAL;
+using Astronomical_Learning.DAL;
+using System.Web.UI.WebControls;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -32,9 +35,9 @@ namespace Astronomical_Learning.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -242,6 +245,104 @@ namespace Astronomical_Learning.Controllers
             }
             AddErrors(result);
             return View(model);
+        }
+
+        private ALContext db = new ALContext();
+        public ActionResult ChangeProfileAvatar()
+        {
+            ViewBag.AID = new SelectList(db.AvatarPaths, "ID", "AvatarName");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangeProfileAvatar(ChangeProfileAvt model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = User.Identity.GetUserId();
+                var user = db.AspNetUsers.Find(userId);
+                user.AID = (int)model.value;
+                db.SaveChanges();
+                return RedirectToAction("ProfilePage", "Profile");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public ActionResult ChangeProfileDetails()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = db.AspNetUsers.Find(userId);
+
+            ViewBag.FN = user.FirstName;
+            ViewBag.LN = user.LastName;
+            //ViewBag.UN = user.UserName;
+            ViewBag.Details = user.Bio;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangeProfileDetails(ChangeProfileDts model)
+        {
+            string changed = "false";
+            if (ModelState.IsValid)
+            {
+                var userId = User.Identity.GetUserId();
+                var user = db.AspNetUsers.Find(userId);
+
+                if(model.FirstName != null)
+                {
+                    user.FirstName = model.FirstName;
+                    db.SaveChanges();
+                }
+                if(model.LastName != null)
+                {
+                    user.LastName = model.LastName;
+                    db.SaveChanges();
+                }
+                if(model.UserName != null)
+                {
+                    bool exists = db.AspNetUsers.Any(m => m.UserName == model.UserName);
+                    if(exists != true)
+                    {
+                        user.UserName = model.UserName;
+                        db.SaveChanges();
+                        //Check the database if it has the desired username
+                        changed = "true";
+                    }
+                    else
+                    {
+                        ViewBag.UsernameTaken = "Username already taken or unavailable.";
+                        return View();
+                    }
+                }
+                if(model.Bio != null)
+                {
+                    user.Bio = model.Bio;
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("ProfilePage", "Profile", new { changedUsername = changed});
+            //return View();
+        }
+
+        public JsonResult UpdateUsernamePartial()
+        {
+            //var userId = User.Identity.GetUserId();
+           // var user = db.AspNetUsers.Find(userId);
+
+            string username = User.Identity.GetUserName();
+
+            return Json(username, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public PartialViewResult RefereshLoginPartial()
+        {
+            return PartialView("_LoginPartial");
         }
 
         //

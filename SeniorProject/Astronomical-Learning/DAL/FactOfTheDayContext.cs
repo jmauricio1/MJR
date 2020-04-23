@@ -8,7 +8,7 @@ namespace Astronomical_Learning.Models
     public partial class FactOfTheDayContext : DbContext
     {
         public FactOfTheDayContext()
-            : base("name=ALContext")
+            : base("name=AzureALDB")
         {
         }
 

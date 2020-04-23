@@ -3,6 +3,14 @@
 -- #######################################
 
 -- ############# AspNetRoles #############
+CREATE TABLE [dbo].[AvatarPaths]
+(
+    [ID]            INT IDENTITY(1, 1)  NOT NULL,
+    [AvatarName]    NVARCHAR(64)        NOT NULL,
+    [Path]          NVARCHAR(128)       NOT NULL,
+    CONSTRAINT [PK_dbo.AvatarPaths] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
 CREATE TABLE [dbo].[AspNetRoles]
 (
     [Id]   NVARCHAR (128) NOT NULL,
@@ -32,7 +40,10 @@ CREATE TABLE [dbo].[AspNetUsers]
     [LockoutEndDateUtc]    DATETIME       NULL,
     [LockoutEnabled]       BIT            NOT NULL,
     [AccessFailedCount]    INT            NOT NULL,
-    CONSTRAINT [PK_dbo.AspNetUsers] PRIMARY KEY CLUSTERED ([Id] ASC)
+    [Bio]                  NVARCHAR(256)  NULL,
+    [AID]                  INT            NOT NULL,
+    CONSTRAINT [PK_dbo.AspNetUsers] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_dbo.AspNetUsers_dbo.AvatarPaths_ID] FOREIGN KEY ([AID]) REFERENCES [dbo].[AvatarPaths]([ID]) 
 );
 GO
 CREATE UNIQUE NONCLUSTERED INDEX [UserNameIndex] ON [dbo].[AspNetUsers]([UserName] ASC);
