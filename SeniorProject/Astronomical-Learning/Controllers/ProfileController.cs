@@ -28,6 +28,12 @@ namespace Astronomical_Learning.Controllers
             ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
             ViewBag.State = user.StateProvince;
             ViewBag.Path = user.AvatarPath.Path.ToString();
+            string temp = "";
+            if(user.Bio != null)
+            {
+                temp = user.Bio.ToString();
+            }
+            ViewBag.Description = temp;
 
             return View();
         }

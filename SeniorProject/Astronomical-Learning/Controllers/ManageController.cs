@@ -9,6 +9,7 @@ using Microsoft.Owin.Security;
 using Astronomical_Learning.Models;
 //using Astronomical_Learning.TempDAL;
 using Astronomical_Learning.DAL;
+using System.Web.UI.WebControls;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -34,9 +35,9 @@ namespace Astronomical_Learning.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -268,6 +269,81 @@ namespace Astronomical_Learning.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+        }
+
+        public ActionResult ChangeProfileDetails()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = db.AspNetUsers.Find(userId);
+
+            ViewBag.FN = user.FirstName;
+            ViewBag.LN = user.LastName;
+            //ViewBag.UN = user.UserName;
+            ViewBag.Details = user.Bio;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangeProfileDetails(ChangeProfileDts model)
+        {
+            bool changed = false;
+            if (ModelState.IsValid)
+            {
+                var userId = User.Identity.GetUserId();
+                var user = db.AspNetUsers.Find(userId);
+
+                if(model.FirstName != null)
+                {
+                    user.FirstName = model.FirstName;
+                    db.SaveChanges();
+                }
+                if(model.LastName != null)
+                {
+                    user.LastName = model.LastName;
+                    db.SaveChanges();
+                }
+                if(model.UserName != null)
+                {
+                    bool exists = db.AspNetUsers.Any(m => m.UserName == model.UserName);
+                    if(exists != true)
+                    {
+                        user.UserName = model.UserName;
+                        db.SaveChanges();
+                        //Check the database if it has the desired username
+                        changed = true;
+                    }
+                    else
+                    {
+                        ViewBag.UsernameTaken = "Username already taken or unavailable.";
+                        return View();
+                    }
+                }
+                if(model.Bio != null)
+                {
+                    user.Bio = model.Bio;
+                    db.SaveChanges();
+                }
+            }
+            ViewBag.UsernameChanged = changed;
+            //return RedirectToAction("ProfilePage", "Profile");
+            return View();
+        }
+
+        public JsonResult UpdateUsernamePartial()
+        {
+            //var userId = User.Identity.GetUserId();
+           // var user = db.AspNetUsers.Find(userId);
+
+            string username = User.Identity.GetUserName();
+
+            return Json(username, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public PartialViewResult RefereshLoginPartial()
+        {
+            return PartialView("_LoginPartial");
         }
 
         //

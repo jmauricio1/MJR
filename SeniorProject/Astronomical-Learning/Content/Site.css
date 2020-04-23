@@ -825,3 +825,15 @@ dd {
     padding-left: 20px;
 }
 
+.edit-row{
+    margin-top: 40px;
+}
+
+.red-txt{
+    color: red;
+}
+
+.account-dropdown{
+    color: white;
+    text-align: right;
+}

@@ -217,7 +217,6 @@
     <Compile Include="Models\Search\SitePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <!--
     <Compile Include="TempDAL\AspNetRole.cs" />
     <Compile Include="TempDAL\AspNetUser.cs" />
     <Compile Include="TempDAL\AspNetUserClaim.cs" />
@@ -225,7 +224,6 @@
     <Compile Include="TempDAL\AvatarPath.cs" />
     <Compile Include="TempDAL\FactOfTheDay.cs" />
     <Compile Include="TempDAL\TempContext.cs" />
-    -->
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\down.sql" />
@@ -233,12 +231,10 @@
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\profile-seed.sql" />
-    <!--
     <Content Include="App_Data\Temporary.mdf" />
     <Content Include="App_Data\Temporary_log.ldf">
       <DependentUpon>Temporary.mdf</DependentUpon>
     </Content>
-    -->
     <Content Include="App_Data\Search\downSearch.sql" />
     <Content Include="App_Data\Search\seedSarch.sql" />
     <Content Include="App_Data\Search\upSearch.sql" />
@@ -324,6 +320,7 @@
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\planets-js.js" />
+    <Content Include="Scripts\ProfileUpdates.js" />
     <Content Include="Scripts\something.js" />
     <Content Include="Scripts\spacex-main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -389,6 +386,7 @@
     <Content Include="Views\Search\SearchPage.cshtml" />
     <Content Include="Views\GamesAndQuizzes\QuizSelection.cshtml" />
     <Content Include="Views\GamesAndQuizzes\Quiz_1.cshtml" />
+    <Content Include="Views\Manage\ChangeProfileDetails.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

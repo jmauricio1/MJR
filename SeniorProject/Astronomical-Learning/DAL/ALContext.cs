@@ -11,7 +11,8 @@ namespace Astronomical_Learning.DAL
     {
         public ALContext()
           // :base("name=ALContext")
-             : base("name=AzureALDB")
+          //   : base("name=AzureALDB")
+          : base("name=TempContext")
         {
         }
 
