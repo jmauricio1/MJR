@@ -1,0 +1,60 @@
+﻿@model Astronomical_Learning.Models.ChangeProfileDts
+
+@{
+    ViewBag.Title = "ChangeProfileDetails";
+}
+
+    <div class="container edit-row dark-bkr">
+        @using (Html.BeginForm("ChangeProfileDetails", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <div class="row">
+                <h2 class="white-txt">Edit your profile details</h2>
+                <hr />
+                <div class="col-lg-1">
+
+                </div>
+                <div class="col-lg-9 white-txt">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.FirstName, new { placeholder = ViewBag.FN, @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LastName, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.LastName, new { placeholder = ViewBag.LN, @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.UserName, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.UserName, new { placeholder = ViewBag.UN, @class = "form-control" })
+                            <p class="red-txt">@ViewBag.UsernameTaken</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Bio, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(m => m.Bio, new { placeholder = ViewBag.Details, @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                    </div>
+                    <div class="col-lg-2">
+
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-md-offset-3 col-md-6">
+            <input type="submit" class="btn btn-success" value="Save Changes" id="profile-submit" />
+        </div>
+    </div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/ProfileUpdates.js"></script>    
+}

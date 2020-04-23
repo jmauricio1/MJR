@@ -21,7 +21,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <div class="row">
-                    <div class="col-sm-8">@Html.Partial("_LoginPartial")</div>
+                    <div class="col-sm-8" id="loginPartial">@Html.Partial("_LoginPartial")</div>
 
                 </div>
 
@@ -204,8 +204,12 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    <script src="~/Scripts/main.js">arguments
-    </script>
+    @section scripts{
+        <script src="~/Scripts/main.js">
+    arguments
+        </script>
+        <script type="text/javascript" src="~/Scripts/ProfileUpdates.js"></script>
+    }
 </body>
 
 
