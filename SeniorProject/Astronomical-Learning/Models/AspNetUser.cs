@@ -59,8 +59,6 @@ namespace Astronomical_Learning.Models
 
         public int AccessFailedCount { get; set; }
 
-<<<<<<< HEAD
-=======
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Country { get; set; }
@@ -73,7 +71,6 @@ namespace Astronomical_Learning.Models
         [StringLength(256)]
         public string UserName { get; set; }
 
->>>>>>> fbcafe51e9106a3068e49ce80736f1a8a01e906f
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
 
