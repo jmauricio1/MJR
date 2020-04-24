@@ -212,13 +212,10 @@
     <Compile Include="Models\Launches\Ship.cs" />
     <Compile Include="Models\Launches\SingleLaunchViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-<<<<<<< HEAD
     <Compile Include="Models\UserComment.cs" />
-=======
     <Compile Include="Models\Search\KeywordRelation.cs" />
     <Compile Include="Models\Search\SearchKeyword.cs" />
     <Compile Include="Models\Search\SitePage.cs" />
->>>>>>> fbcafe51e9106a3068e49ce80736f1a8a01e906f
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <!--
@@ -232,14 +229,11 @@
     -->
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="App_Data\ALtempDB.mdf" />
     <Content Include="App_Data\ALtempDB_log.ldf">
       <DependentUpon>ALtempDB.mdf</DependentUpon>
     </Content>
-=======
     <Content Include="App_Data\ChangesToDB.sql" />
->>>>>>> fbcafe51e9106a3068e49ce80736f1a8a01e906f
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
