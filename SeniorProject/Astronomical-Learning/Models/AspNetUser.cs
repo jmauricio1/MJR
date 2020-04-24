@@ -18,25 +18,65 @@ namespace Astronomical_Learning.Models
 
         public string Id { get; set; }
 
-        [Required]
-        [StringLength(128)]
-        public string FirstName { get; set; }
+        private string firstName;
 
-        [Required]
-        [StringLength(128)]
-        public string LastName { get; set; }
+        public string GetFirstName()
+        {
+            return firstName;
+        }
 
-        [Required]
-        [StringLength(256)]
-        public string UserName { get; set; }
+        public void SetFirstName(string value)
+        {
+            firstName = value;
+        }
 
-        [Required]
-        [StringLength(256)]
-        public string StateProvince { get; set; }
+        private string lastName;
 
-        [Required]
-        [StringLength(256)]
-        public string Country { get; set; }
+        public string GetLastName()
+        {
+            return lastName;
+        }
+
+        public void SetLastName(string value)
+        {
+            lastName = value;
+        }
+
+        private string userName;
+
+        public string GetUserName()
+        {
+            return userName;
+        }
+
+        public void SetUserName(string value)
+        {
+            userName = value;
+        }
+
+        private string stateProvince;
+
+        public string GetStateProvince()
+        {
+            return stateProvince;
+        }
+
+        public void SetStateProvince(string value)
+        {
+            stateProvince = value;
+        }
+
+        private string country;
+
+        public string GetCountry()
+        {
+            return country;
+        }
+
+        public void SetCountry(string value)
+        {
+            country = value;
+        }
 
         [StringLength(256)]
         public string Email { get; set; }
