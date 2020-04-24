@@ -61,6 +61,9 @@ namespace Astronomical_Learning.DAL
         [StringLength(256)]
         public string Country { get; set; }
 
+        [StringLength(256)]
+        public string Bio { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
 

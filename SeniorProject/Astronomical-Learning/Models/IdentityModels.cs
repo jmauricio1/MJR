@@ -14,6 +14,7 @@ namespace Astronomical_Learning.Models
         public string Country { get; internal set; }
         public string StateProvince { get; internal set; }
         public int AID { get; internal set; }
+        public string Bio { get; internal set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -29,7 +30,8 @@ namespace Astronomical_Learning.Models
         public ApplicationDbContext()
             //: base("DefaultConnection", throwIfV1Schema: false)
             //: base("ALContext", throwIfV1Schema: false)
-            : base("AzureALDB", throwIfV1Schema: false)
+              : base("AzureALDB", throwIfV1Schema: false)
+            //: base("TempContext", throwIfV1Schema: false) Josh's temporary DB
         {
             Database.SetInitializer<ApplicationDbContext>(null);
         }

@@ -228,6 +228,7 @@
     -->
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ChangesToDB.sql" />
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
@@ -324,6 +325,7 @@
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\planets-js.js" />
+    <Content Include="Scripts\ProfileUpdates.js" />
     <Content Include="Scripts\something.js" />
     <Content Include="Scripts\spacex-main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -389,6 +391,7 @@
     <Content Include="Views\Search\SearchPage.cshtml" />
     <Content Include="Views\GamesAndQuizzes\QuizSelection.cshtml" />
     <Content Include="Views\GamesAndQuizzes\Quiz_1.cshtml" />
+    <Content Include="Views\Manage\ChangeProfileDetails.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

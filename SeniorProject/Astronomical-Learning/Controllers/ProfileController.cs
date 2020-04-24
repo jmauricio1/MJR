@@ -16,9 +16,8 @@ namespace Astronomical_Learning.Controllers
         private ALContext db = new ALContext();
         //private TempContext db = new TempContext();
         
-
         // GET: Profile
-        public ActionResult ProfilePage()
+        public ActionResult ProfilePage(string changedUsername)
         {
             var userId = User.Identity.GetUserId();
             var user = db.AspNetUsers.Find(userId);
@@ -28,6 +27,13 @@ namespace Astronomical_Learning.Controllers
             ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
             ViewBag.State = user.StateProvince;
             ViewBag.Path = user.AvatarPath.Path.ToString();
+            string temp = "";
+            if(user.Bio != null)
+            {
+                temp = user.Bio.ToString();
+            }
+            ViewBag.Description = temp;
+            ViewBag.ChangedUsername = changedUsername;
 
             return View();
         }
