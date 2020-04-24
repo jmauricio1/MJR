@@ -20,6 +20,12 @@ namespace Astronomical_Learning
             );
 
             routes.MapRoute(
+                name: "UpdateUsernameNavbar",
+                url: "Manage/Update",
+                defaults: new { controller = "Manage", action = "UpdateUsernamePartial" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

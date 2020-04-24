@@ -243,3 +243,11 @@ function calculateQuiz1Score()
 
 
 }
+
+$(function () {
+    $('.button').on("click", function () {
+        $.post('@Url.Action("PostActionToUpdatePoints", "Home")').always(function () {
+            $('.target').load('/Home/UpdatePoints');
+        })
+    });
+}); 

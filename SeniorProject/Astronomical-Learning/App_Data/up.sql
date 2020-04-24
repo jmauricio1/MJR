@@ -40,6 +40,7 @@ CREATE TABLE [dbo].[AspNetUsers]
     [LockoutEndDateUtc]    DATETIME       NULL,
     [LockoutEnabled]       BIT            NOT NULL,
     [AccessFailedCount]    INT            NOT NULL,
+    [Bio]                  NVARCHAR(256)  NULL,
     [AID]                  INT            NOT NULL,
     CONSTRAINT [PK_dbo.AspNetUsers] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_dbo.AspNetUsers_dbo.AvatarPaths_ID] FOREIGN KEY ([AID]) REFERENCES [dbo].[AvatarPaths]([ID]) 
