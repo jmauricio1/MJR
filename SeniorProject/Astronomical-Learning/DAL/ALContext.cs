@@ -11,8 +11,9 @@ namespace Astronomical_Learning.DAL
     {
         public ALContext()
           // :base("name=ALContext")
-             : base("name=AzureALDB")
-          //: base("name=TempContext") //Josh's temp DB
+          // :base("name=ALContext")
+          // :base("name=TempContext") 
+             :base("name=AzureALDB")
         {
         }
 
@@ -22,6 +23,7 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AvatarPath> AvatarPaths { get; set; }
         public virtual DbSet<FactOfTheDay> FactOfTheDays { get; set; }
+        public virtual DbSet<UserComment> UserComments { get; set; }
 
         public virtual DbSet<SearchKeyword> SearchKeywords { get; set; }
         public virtual DbSet<KeywordRelation> KeywordRelations { get; set; }
@@ -50,6 +52,5 @@ namespace Astronomical_Learning.DAL
                 .HasForeignKey(e => e.AID)
                 .WillCascadeOnDelete(false);
         }
-
     }
 }
