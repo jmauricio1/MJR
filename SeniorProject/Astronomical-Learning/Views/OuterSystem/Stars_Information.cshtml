@@ -52,10 +52,12 @@
         The current estimate for the amount of stars in the universe is around 1 septillion/quadrillion but there is most likely many more than this.[<a href="https://www.space.com/26078-how-many-stars-are-there.html">REF</a>]
         <span class="tooltipNew">
             [*]<br>
+
                <span class="tooltiptextNew">
                    For perspective 1 septillion/quadrillion can also be written as 1,000,000,000,000,000,000,000,000.
                </span>
         </span>
+
         This is because it is very difficult to accurately count or estimate the amount of stars our galaxy or universe has due to the large amount of them.
 
     </div>
@@ -267,13 +269,13 @@
             A special kind of system is a Thorne-Zytkow object which is a red giant that is near binary neutron stars.
             The neutron stars will go into the red giant either turning into a black hole and absorbing the red giant or becoming a larger neutron star.
             <span class="tooltipNew">
-            [*]<br>
-               <span class="tooltiptextNew">
-                   This kind of event is only known to have happened once.
-               </span>
+                [*]<br>
+                <span class="tooltiptextNew">
+                    This kind of event is only known to have happened once.
+                </span>
             </span><br>
-            
-            
+
+
         </div>
 
         <div class="col-lg-6">
@@ -316,6 +318,55 @@
 
     </div>
 </div>
+
+<br />
+<br />
+<br />
+
+<h1 style="color: white; text-align: center">User Comments</h1>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="container information-paragraphs dark-bkr" style="border: 1px solid white; width: 50%">
+            <div id="usernameDateBox">
+                <p>@item.Username || @item.PostDate.ToShortDateString()</p>
+            </div>
+
+            <div id="userCommentBox">
+                <p>@item.Comment</p>
+            </div>
+        </div>
+        <br />
+    }
+}
+
+<br />
+<br />
+<br />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        <form>
+            <label for="commentBox" style="color: white">Type your comment. (1000 character limit)</label><br />
+            <textarea id="commentBox" maxlength="1000" style=" width: 100%; height: 150px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; font-size: 16px; resize: none; color: black;"></textarea>
+
+            <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                <button type="button" onclick="submitComment('@ViewBag.URL')" style="color: black;">Submit Your Comment</button>
+            </div>
+        </form>
+    </div>
+
+
+}
+else
+{
+    <div class="information-paragraphs dark-bkr" style="margin-left: 30%; width: 40%; text-align: center">
+        <h2>Please @Html.ActionLink("log in", "Login", "Account") to post a comment!</h2>
+    </div>
+}
 
 <script src="~/Scripts/main.js">
 </script>
