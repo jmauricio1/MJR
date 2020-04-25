@@ -288,15 +288,27 @@
     foreach (var item in Model)
     {
         <div class="container information-paragraphs dark-bkr" style="border: 1px solid white; width: 50%">
-            <div id="usernameDateBox">
-                <p>@item.Username || @item.PostDate.ToShortDateString()</p>
-            </div>
-
-            <div id="userCommentBox">
-                <p>@item.Comment</p>
-            </div>
+        <div id="usernameDateBox">
+            <p>@item.Username || @item.PostDate.ToShortDateString()</p>
         </div>
-        <br />
+
+        <div id="userCommentBox">
+            <p>@item.Comment</p>
+        </div>
+
+    @* @if (User.Identity.IsAuthenticated)
+        {
+    *@
+    <img src="https://i.ytimg.com/vi/0UfhaE3CMHM/hqdefault.jpg" style="width: 24px; height: 18px;" />
+    @Html.ActionLink("Report", "ReportComment", "SolarSystem", new { id = item.Id }, null)
+    <img src="https://i.ytimg.com/vi/0UfhaE3CMHM/hqdefault.jpg" style="width: 24px; height: 18px;" />
+
+    @*
+        }
+    *@
+
+    </div>
+    <br />
     }
 }
 
