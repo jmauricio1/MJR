@@ -251,3 +251,20 @@ $(function () {
         })
     });
 }); 
+
+
+function singleQuestionWrong(name) {
+
+    var x = document.getElementById(name);
+
+    x.innerHTML = "Incorrect";
+}
+
+
+function singleQuestionRight(name) {
+
+    var x = document.getElementById(name);
+
+    x.innerHTML = "Correct";
+}
+
