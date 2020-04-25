@@ -229,12 +229,16 @@
     -->
   </ItemGroup>
   <ItemGroup>
-  <!--
+    <!--
     <Content Include="App_Data\ALtempDB.mdf" />
     <Content Include="App_Data\ALtempDB_log.ldf">
       <DependentUpon>ALtempDB.mdf</DependentUpon>
     </Content>
     -->
+    <Content Include="App_Data\ALtempDB.mdf" />
+    <Content Include="App_Data\ALtempDB_log.ldf">
+      <DependentUpon>ALtempDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\ChangesToDB.sql" />
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
@@ -251,6 +255,7 @@
     <Content Include="App_Data\Search\seedSarch.sql" />
     <Content Include="App_Data\Search\upSearch.sql" />
     <Content Include="App_Data\up.sql" />
+    <Content Include="App_Data\UserComment\demoSeedScript.sql" />
     <Content Include="App_Data\UserComment\downUserComment.sql" />
     <Content Include="App_Data\UserComment\upUserComment.sql" />
     <Content Include="Content\bootstrap-theme.css" />
