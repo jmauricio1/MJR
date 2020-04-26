@@ -83,7 +83,7 @@ namespace Astronomical_Learning.Controllers
         }
 
         [HttpGet]
-        public ActionResult ReportComment(int? id)
+        public ActionResult ReportComment(int? id, string returnUrl)
         {
             if (id != null)
             {
@@ -94,10 +94,11 @@ namespace Astronomical_Learning.Controllers
                     UserComment newComment = originalComment;
                     newComment.ReportCount += 1;
                     db.Entry(originalComment).CurrentValues.SetValues(newComment);
+                    db.SaveChanges();
                 }
             };
 
-            return View();
+            return RedirectToAction(returnUrl);
         }
     }
 }

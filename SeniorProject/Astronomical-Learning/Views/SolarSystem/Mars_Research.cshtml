@@ -167,6 +167,13 @@
             <div id="userCommentBox">
                 <p>@item.Comment</p>
             </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <img src="https://i.ytimg.com/vi/0UfhaE3CMHM/hqdefault.jpg" style="width: 24px; height: 18px;" />
+                @Html.ActionLink("Report", "ReportComment", new { id = item.Id, returnURL = "Mars_Research" })
+                <img src="https://i.ytimg.com/vi/0UfhaE3CMHM/hqdefault.jpg" style="width: 24px; height: 18px;" />
+            }
         </div>
         <br />
     }

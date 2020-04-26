@@ -149,10 +149,6 @@ function showSuccess() {
     document.getElementById("commentBox").value = "";
 }
 
-function reportComment() {
-    alert("You submitted a report.");
-}
-
 function siteSearch()
 {
    
