@@ -64,5 +64,24 @@ namespace Astronomical_Learning.Controllers
 
             return Json(ModelState.IsValid, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public ActionResult ReportComment(int? id, string returnUrl)
+        {
+            if (id != null)
+            {
+                UserComment originalComment = db.UserComments.Where(x => x.Id == id).FirstOrDefault();
+
+                if (originalComment != null)
+                {
+                    UserComment newComment = originalComment;
+                    newComment.ReportCount += 1;
+                    db.Entry(originalComment).CurrentValues.SetValues(newComment);
+                    db.SaveChanges();
+                }
+            };
+
+            return RedirectToAction(returnUrl);
+        }
     }
 }
