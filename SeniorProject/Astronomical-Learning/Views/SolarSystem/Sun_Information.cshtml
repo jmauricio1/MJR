@@ -52,16 +52,10 @@
 
         </div>
 
-     </div> 
-
-
-    <div class="homepageCard" style="width:200px; text-align:center">
-        <h4>Quick Review</h4>
-        <div>
-            Is the Sun hot? <div id="answer"></div>
-        </div>
-        <button class="btn-primary" onclick="singleQuestionRight('answer')">Yes</button>   <button class="btn-primary" onclick="singleQuestionWrong('answer')">No</button>
     </div>
+
+
+
 
 
     <div>
@@ -93,8 +87,19 @@
     </div>
 
 
+
+
     <div class="row" style="height:50px;">
 
+    </div>
+    <div class="homepageCard" style="width:200px; text-align:center">
+        <h4>Quick Review</h4>
+        <div>
+            The name Helios comes from <div id="answer"></div>
+        </div>
+        <div id="q1Buttons">
+            <button class="btn-primary" onclick="singleQuestionRight('answer','q1Buttons')">Greek</button>   <button class="btn-primary" onclick="singleQuestionWrong('answer','q1Buttons')">Latin</button>
+        </div>
     </div>
 
     <div class="row">
@@ -161,7 +166,7 @@
         Solar eclipses come in one of four forms being either total, annular, partial, and hybrid each having a different amount of the sun being blocked. [<a href="https://www.space.com/15584-solar-eclipses.html">REF</a>]<br>
         The image below shows a diagram of a solar eclipse. <a href="https://commons.wikimedia.org/wiki/File:Solar_eclipse.png">Source</a><br>
 
-        <div class="tooltipNew"> 
+        <div class="tooltipNew">
 
             Important!!!
             <span class="tooltiptextNew">
@@ -172,57 +177,57 @@
 
 
 
-    <div>
-        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Solar_eclipse.png" alt="Alternate Text" />
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Solar_eclipse.png" alt="Alternate Text" />
 
-    </div>
-
-
-    <div style="width:50%; height:500px" class="container">
-        <div id="sunCarousel" class="carousel slide" data-ride="carousel">
-
-            <ol class="carousel-indicators">
-                <li data-target="#sunCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#sunCarousel" data-slide-to="1"></li>
-                <li data-target="#sunCarousel" data-slide-to="2"></li>
-                <li data-target="#sunCarousel" data-slide-to="3"></li>
-            </ol>
-
-            <div class="carousel-inner">
-                <div class="item active">
-                    <h4>Total Solar Eclipse</h4>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg/1024px-Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg" alt="Total Solar Eclipse" style="width:100%;">
-
-                </div>
-
-                <div class="item">
-                    <h4>Annular Solar Eclipse</h4>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg/1024px-Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg" alt="Annual Solar Eclipse" style="width:100%;">
-                </div>
-
-                <div class="item">
-                    <h4>Partial Solar Eclipse</h4>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg" alt="Annual Solar Eclipse" style="width:100%;">
-                </div>
-
-                <div class="item">
-                    <h4>Hybrid Solar Eclipse</h4>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/D.C._eclipsed_in_hybrid_solar_event_%2810696089826%29.jpg" alt="Hybrid Solar Eclipse" style="width:100%;">
-                </div>
-            </div>
-
-
-            <a class="left carousel-control" href="#sunCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#sunCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
 
-    </div>
+
+        <div style="width:50%; height:500px" class="container">
+            <div id="sunCarousel" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#sunCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#sunCarousel" data-slide-to="1"></li>
+                    <li data-target="#sunCarousel" data-slide-to="2"></li>
+                    <li data-target="#sunCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <h4>Total Solar Eclipse</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg/1024px-Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg" alt="Total Solar Eclipse" style="width:100%;">
+
+                    </div>
+
+                    <div class="item">
+                        <h4>Annular Solar Eclipse</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg/1024px-Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg" alt="Annual Solar Eclipse" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <h4>Partial Solar Eclipse</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg" alt="Annual Solar Eclipse" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <h4>Hybrid Solar Eclipse</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/D.C._eclipsed_in_hybrid_solar_event_%2810696089826%29.jpg" alt="Hybrid Solar Eclipse" style="width:100%;">
+                    </div>
+                </div>
+
+
+                <a class="left carousel-control" href="#sunCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#sunCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
 
 
 
@@ -240,7 +245,18 @@
         Partial Solar Eclipse: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg">source</a>,
         Hybrid Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:D.C._eclipsed_in_hybrid_solar_event_(10696089826).jpg">source</a>
     </div>
+    <div class="row" style="height:50px;">
 
+    </div>
+    <div class="homepageCard" style="width:200px; text-align:center">
+        <h4>Quick Review</h4>
+        <div>
+            The name Helios comes from <div id="answer2"></div>
+        </div>
+        <div id="q2Buttons">
+            <button class="btn-primary" onclick="singleQuestionRight('answer2','q2Buttons')">Greek</button>   <button class="btn-primary" onclick="singleQuestionWrong('answer2','q2Buttons')">Latin</button>
+        </div>
+    </div>
 
 
     <div>

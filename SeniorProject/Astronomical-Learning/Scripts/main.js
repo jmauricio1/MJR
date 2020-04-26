@@ -253,18 +253,26 @@ $(function () {
 }); 
 
 
-function singleQuestionWrong(name) {
+function singleQuestionWrong(aDiv,bDiv) {
 
-    var x = document.getElementById(name);
+    var x = document.getElementById(aDiv);
 
     x.innerHTML = "Incorrect";
+
+    var y = document.getElementById(bDiv);
+
+    y.style.display = "none";
 }
 
 
-function singleQuestionRight(name) {
+function singleQuestionRight(aDiv, bDiv) {
 
-    var x = document.getElementById(name);
+    var x = document.getElementById(aDiv);
 
     x.innerHTML = "Correct";
+
+    var y = document.getElementById(bDiv);
+
+    y.style.display = "none";
 }
 
