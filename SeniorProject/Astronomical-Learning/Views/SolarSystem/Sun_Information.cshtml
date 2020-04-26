@@ -18,7 +18,7 @@
         <div class="col-lg-5">
             <div>
                 <h3>Why is it called The Sun?</h3>
-                The Sun is the name of the star that is in the center of our solar system.  
+                The Sun is the name of the star that is in the center of our solar system.
                 Its name comes from the old english sonne which comes from the German word Sonne. [<a href="https://www.dictionary.com/browse/sun">REF</a>]
                 Other names include the Greek Helios and the Latin Sol. [<a href="https://www.dictionary.com/browse/sun">REF</a>]
             </div>
@@ -59,7 +59,6 @@
 
 
 
-
     <div>
         <div>
 
@@ -89,7 +88,22 @@
     </div>
 
 
-    <div class="row" style="height:50px;"></div>
+
+
+
+    <div class="row" style="height:50px;">
+
+    </div>
+    <div class="homepageCard" style="width:200px; text-align:center">
+        <h4>Quick Review</h4>
+        <div>
+            The name Helios comes from <div id="answer"></div>
+        </div>
+        <div id="q1Buttons">
+            <button class="btn-primary" onclick="singleQuestionRight('answer','q1Buttons')">Greek</button>   <button class="btn-primary" onclick="singleQuestionWrong('answer','q1Buttons')">Latin</button>
+        </div>
+    </div>
+
 
     <div class="row">
         <div class="col-lg-5">
@@ -146,138 +160,167 @@
 
 
     </div>
+
+    <div class="row" style="height:50px;">
+
+    </div>
+    <div class="homepageCard" style="width:200px; text-align:center">
+        <h4>Quick Review</h4>
+        <div>
+            How many times bigger is The Sun compared to The Earth <div id="answer2"></div>
+        </div>
+        <div id="q2Buttons">
+            <button class="btn-primary" onclick="singleQuestionWrong('answer2','q2Buttons')">1000</button> <button class="btn-primary" onclick="singleQuestionRight('answer2','q2Buttons')">100</button>
+        </div>
+    </div>
+
+
+    <h3>What are Solar Eclipses?</h3>
+    The Sun will also periodically have a solar eclipse which happens when the moon gets between the Earth and the Sun which casts a shadow on the Earth. [<a href="https://www.space.com/15584-solar-eclipses.html">REF</a>]
+    Solar eclipses come in one of four forms being either total, annular, partial, and hybrid each having a different amount of the sun being blocked. [<a href="https://www.space.com/15584-solar-eclipses.html">REF</a>]
+    The image below shows a diagram of a solar eclipse. <a href="https://commons.wikimedia.org/wiki/File:Solar_eclipse.png">Source</a><br>
+
+    <div class="tooltipNew">
+
+        Important!!!
+        <span class="tooltiptextNew">
+            It is important to remeber that even though some of the Sun is blocked it does not mean that it is safe to look at it without protection. [<a href="https://www.space.com/15584-solar-eclipses.html">REF</a>]
+        </span>
+    </div>
+
+
+
+
+
+
     <div>
-
-        <h3>What are Solar Eclipses?</h3>
-        The Sun will also periodically have a solar eclipse which happens when the moon gets between the Earth and the Sun which casts a shadow on the Earth. [<a href="https://www.space.com/15584-solar-eclipses.html">REF</a>]
-        Solar eclipses come in one of four forms being either total, annular, partial, and hybrid each having a different amount of the sun being blocked. [<a href="https://www.space.com/15584-solar-eclipses.html">REF</a>]
-        The image below shows a diagram of a solar eclipse. <a href="https://commons.wikimedia.org/wiki/File:Solar_eclipse.png">Source</a><br>
-
-        <div class="tooltipNew">
-
-            Important!!!
-            <span class="tooltiptextNew">
-                It is important to remeber that even though some of the Sun is blocked it does not mean that it is safe to look at it without protection. [<a href="https://www.space.com/15584-solar-eclipses.html">REF</a>]
-            </span>
-        </div>
-
-
-
-
-
-        <div>
-            <img style="display: block; margin-left: auto; margin-right: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Solar_eclipse.png" alt="A diagram of a solar eclipse." />
-        </div>
-
-
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Solar_eclipse.png" alt="A diagram of a solar eclipse." />
     </div>
 
-        <div style="width:50%; height:500px" class="container">
-            <div id="sunCarousel" class="carousel slide" data-ride="carousel">
-
-                <ol class="carousel-indicators">
-                    <li data-target="#sunCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#sunCarousel" data-slide-to="1"></li>
-                    <li data-target="#sunCarousel" data-slide-to="2"></li>
-                    <li data-target="#sunCarousel" data-slide-to="3"></li>
-                </ol>
 
 
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg/1024px-Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg" alt="Total Solar Eclipse" style="height:400px; width:100%;">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Total Solar Eclipse</h3>
-                        </div>
+
+
+
+    <div style="width:50%; height:500px" class="container">
+        <div id="sunCarousel" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="#sunCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#sunCarousel" data-slide-to="1"></li>
+                <li data-target="#sunCarousel" data-slide-to="2"></li>
+                <li data-target="#sunCarousel" data-slide-to="3"></li>
+            </ol>
+
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg/1024px-Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_%2836450742744%29.jpg" alt="Total Solar Eclipse" style="height:400px; width:100%;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Total Solar Eclipse</h3>
                     </div>
+                </div>
 
-                    <div class="item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg/1024px-Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg" alt="Annual Solar Eclipse" style="height:400px; width:100%;">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Annular Solar Eclipse</h3>
-                        </div>
+                <div class="item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg/1024px-Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_%281%29.jpg" alt="Annual Solar Eclipse" style="height:400px; width:100%;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Annular Solar Eclipse</h3>
                     </div>
+                </div>
 
-                    <div class="item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg" alt="Annual Solar Eclipse" style="height:400px; width:100%;">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Partial Solar Eclipse</h3>
-                        </div>
+                <div class="item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg" alt="Annual Solar Eclipse" style="height:400px; width:100%;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Partial Solar Eclipse</h3>
                     </div>
+                </div>
 
-                    <div class="item">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/D.C._eclipsed_in_hybrid_solar_event_%2810696089826%29.jpg" alt="Hybrid Solar Eclipse" style="height:400px; width:100%;">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h3>Hybrid Solar Eclipse</h3>
+                <div class="item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/D.C._eclipsed_in_hybrid_solar_event_%2810696089826%29.jpg" alt="Hybrid Solar Eclipse" style="height:400px; width:100%;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Hybrid Solar Eclipse</h3>
 
-                        </div>
                     </div>
-                </div> <!--carousel inner-->
+                </div>
+            </div> <!--carousel inner-->
 
-                <a class="left carousel-control" href="#sunCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#sunCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-
-
-            </div> <!--sun carousel -->
+            <a class="left carousel-control" href="#sunCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#sunCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
 
 
-        </div> <!--div containing the carousel-->
-
-
-        <button class="btn-primary" onclick="sunShowImageSources()">Click to Show Image Sources</button>
-        <div id="sunSources" style="display:none;">
-
-            Total Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_(36450742744).jpg">source</a>,
-            Annular Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_(1).jpg">source</a>,
-            Partial Solar Eclipse: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg">source</a>,
-            Hybrid Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:D.C._eclipsed_in_hybrid_solar_event_(10696089826).jpg">source</a>
-        </div>
+        </div> <!--sun carousel end-->
 
 
 
+
+
+    </div> <!--div containing the carousel-->
+
+
+    <button class="btn-primary" onclick="sunShowImageSources()">Click to Show Image Sources</button>
+    <div id="sunSources" style="display:none;">
+
+        Total Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Total_Solar_Eclipse_2017_-_Corona_and_Earthlight_(36450742744).jpg">source</a>,
+        Annular Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:Annular_Solar_Eclipse_in_Jaffna_-_26_December_2019_(1).jpg">source</a>,
+        Partial Solar Eclipse: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Partial_Solar_Eclipse_2017.jpg/1024px-Partial_Solar_Eclipse_2017.jpg">source</a>,
+        Hybrid Solar Eclipse: <a href="https://commons.wikimedia.org/wiki/File:D.C._eclipsed_in_hybrid_solar_event_(10696089826).jpg">source</a>
+    </div>
+
+
+    <div class="row" style="height:50px;">
+
+    </div>
+    <div class="homepageCard" style="width:200px; text-align:center">
+        <h4>Quick Review</h4>
         <div>
-            <h3>Other Facts</h3>
-            Click on a topic below to learn more about it.
+            A solar eclipse happens when The Moon gets between The Earth and The Sun <div id="answer3"></div>
+        </div>
+        <div id="q3Buttons">
+            <button class="btn-primary" onclick="singleQuestionWrong('answer3','q3Buttons')">False</button> <button class="btn-primary" onclick="singleQuestionRight('answer3','q3Buttons')">True</button>
+        </div>
+    </div>
 
-            <div class="row" style="height:20px;">
+     
+    <div>
+        <h3>Other Facts</h3>
+        Click on a topic below to learn more about it.
+        <div class="row">
+
+            <div class="col-lg-3">
+
+                <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoCenter()">Center of the Universe</button></div>
+                <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoDial()">Sun Dial</button></div>
+                <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoReligion()">Religous Uses</button></div>
 
             </div>
 
-            <div class="row">
 
-                <div class="col-lg-3">
+            <div class="col-lg-7">
+                <div>
+                    <img style="height:50%;width:50%; display: block; margin-left: auto; margin-right: auto;" id="sunFactImage" src="https://upload.wikimedia.org/wikipedia/commons/2/28/Copernican_heliocentrism_diagram-2.jpg" alt="Alternate Text" />
+                </div>
 
-                    <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoCenter()">Center of the Universe</button></div>
-                    <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoDial()">Sun Dial</button></div>
-                    <div class="infoItem"><button class="btn-primary" onclick="changeFactInfoReligion()">Religous Uses</button></div>
+                <div id="sunFactSource">
+                    <a href="https://commons.wikimedia.org/wiki/File:Copernican_heliocentrism_diagram-2.jpg">Source</a>
+                </div>
 
+                <div id="sunFactText">
+                    For a long time up until the 16th century it was widely regarded that Earth was the center of the Solar System until the Polish astronomer Nicolai Copernicus wrote a model that described why the Sun must be the center of our Solar System. [<a href="https://www.pas.rochester.edu/~blackman/ast104/copernican9.html">REF</a>]<br>
                 </div>
 
 
-                <div class="col-lg-7">
-                    <div>
-                        <img style="height:50%;width:50%; display: block; margin-left: auto; margin-right: auto;" id="sunFactImage" src="https://upload.wikimedia.org/wikipedia/commons/2/28/Copernican_heliocentrism_diagram-2.jpg" alt="Alternate Text" />
-                    </div>
-
-                    <div id="sunFactSource">
-                        <a href="https://commons.wikimedia.org/wiki/File:Copernican_heliocentrism_diagram-2.jpg">Source</a>
-                    </div>
-
-                    <div id="sunFactText">
-                        For a long time up until the 16th century it was widely regarded that Earth was the center of the Solar System until the Polish astronomer Nicolai Copernicus wrote a model that described why the Sun must be the center of our Solar System. [<a href="https://www.pas.rochester.edu/~blackman/ast104/copernican9.html">REF</a>]<br>
-                    </div>
-
-
-                </div>
             </div>
         </div>
     </div>
+
+
+</div>
 
 <br />
 <br />
