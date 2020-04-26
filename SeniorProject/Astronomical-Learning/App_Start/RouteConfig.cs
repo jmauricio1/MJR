@@ -20,6 +20,12 @@ namespace Astronomical_Learning
             );
 
             routes.MapRoute(
+                name: "Regions",
+                url: "getregions",
+                defaults: new { controller = "Account", action = "GetPlaces" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
