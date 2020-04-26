@@ -87,7 +87,8 @@
             2009 but it wasn't confirmable as a planet at the time. The planet is approximately 2.4 times larger than our own Earth and resides almost 600 light years away
             from Earth. It has a shorter orbit of around 290 days around its own G-type star (the same star type as our own Sun). Although surface conditions are unknown, this
             discovery representated a major milestone in the search to find planets that may sustain life.
-            [<a href="https://www.nasa.gov/mission_pages/kepler/news/kepscicon-briefing.html">REF</a>]
+            [
+            <a href="https://www.nasa.gov/mission_pages/kepler/news/kepscicon-briefing.html">REF</a>]
 
 
             <h4>Kepler-62f</h4>
@@ -95,7 +96,8 @@
             represented a much more Earth sized planet, coming it at only about 40% larger than Earth. Kepler-62f has an orbit cycle of 267 days. Modeling studies pointed towards the
             probablity that Kepler-62f is complete engulfed in water and led to questions and theories about what kind of life would evolve in a system where dry land was not an option.
             This was a big discovery because it represented the first time a planet at least closer to Earths size had been confirmed.
-            [<a href="https://www.space.com/24142-kepler-62f.html">REF</a>]
+            [
+            <a href="https://www.space.com/24142-kepler-62f.html">REF</a>]
 
             <h4>Kepler-186f</h4>
             Another great discovery came in July, 2015 when the discovery of the first confirmed Earth-sized planet within a habitable zone of a Sun-like star was made. Kepler-186f
@@ -103,21 +105,24 @@
             its sun, leaving it right on the edge of the habitable zone for its system. The Kepler-186 star system is approximately 500 light years from earth in the star constellation
             Cygnus. Much like Kepler-22b, the discovery of Kepler-186f presented an interesting milestone in exoplanet discover, for the first time, we had found a planet that very
             closely emulates the size and mass of our own earth, the greatest Earth-twin candidate to date.
-            [<a href="https://www.nasa.gov/ames/kepler/kepler-186f-the-first-earth-size-planet-in-the-habitable-zone">REF</a>]
+            [
+            <a href="https://www.nasa.gov/ames/kepler/kepler-186f-the-first-earth-size-planet-in-the-habitable-zone">REF</a>]
 
             <h4>Proxima Centauri B (Aka. Alpha Centauri)</h4>
             The closest known potentially life supporting planet was discovered in August 2016 and is only 4.2 light years away and goes by the name of Proxima Centauri B, within the
             centaurus constellation. Proxima Centauri B orbits a red dwarf star that happens to also be the closest star to our sun. It's precise size is unknown but its believed to
             be approximately 10% larger than earth with a 30% increased mass in comparison. A primary interest in Proxima Centauri B is that being the closest potentially habitable
             planet, it offers us the greatest potential to study with more precise tools such as robots and probes in the future.
-            [<a href="https://en.wikipedia.org/wiki/Proxima_Centauri_b">REF</a>]
+            [
+            <a href="https://en.wikipedia.org/wiki/Proxima_Centauri_b">REF</a>]
 
             <h4>TOI 700 D</h4>
             One of our most recent discoveries was made in January, 2020, a planet known as TOI 700 d. With a known rocky terrain, TOI 700 d is only 101 light years away from Earth and
             resides in the Dorado constellation. TOI 700 d is only 20% larger than Earth but has a much larger mass, more than 70% higher than Earth. The star that TOI 700 d orbits is
             also significantly smaller than our own sun at about 40% of the mass and size, while being 50% of our Sun's temperature. TOI 700 d was the first Earth-sized exoplanet
             discovered by NASA's Transiting Exoplanet Survey Satellite.
-            [<a href="https://www.nasa.gov/feature/goddard/2020/nasa-planet-hunter-finds-its-1st-earth-size-habitable-zone-world">REF</a>]
+            [
+            <a href="https://www.nasa.gov/feature/goddard/2020/nasa-planet-hunter-finds-its-1st-earth-size-habitable-zone-world">REF</a>]
         </ul>
     </p>
 
@@ -131,6 +136,59 @@
         <li>It's believed that about 7 new stars are born each year in the Milky Way galaxy.</li>
         <li>It's been calculated that the Milky Way travels about 343 miles per second through space.</li>
         <li>In the 4.6 billion years our solar system has existed, it's orbited the Milky Way less than 20 times.</li>
-        [<a href="https://www.factretriever.com/milky-way-facts">REF</a>]
+        [
+        <a href="https://www.factretriever.com/milky-way-facts">REF</a>]
     </ul>
 </div>
+
+
+<br />
+<br />
+<br />
+
+<h1 style="color: white; text-align: center">User Comments</h1>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="container information-paragraphs dark-bkr" style="border: 1px solid white; width: 50%">
+            <div id="usernameDateBox">
+                <p>@item.Username || @item.PostDate.ToShortDateString()</p>
+            </div>
+
+            <div id="userCommentBox">
+                <p>@item.Comment</p>
+            </div>
+        </div>
+        <br />
+    }
+}
+
+<br />
+<br />
+<br />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        <form>
+            <label for="commentBox" style="color: white">Type your comment. (1000 character limit)</label><br />
+            <textarea id="commentBox" maxlength="1000" style=" width: 100%; height: 150px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; font-size: 16px; resize: none; color: black;"></textarea>
+
+            <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                <button type="button" onclick="submitComment('@ViewBag.URL')" style="color: black;">Submit Your Comment</button>
+            </div>
+        </form>
+    </div>
+
+
+}
+else
+{
+    <div class="information-paragraphs dark-bkr" style="margin-left: 30%; width: 40%; text-align: center">
+        <h2>Please @Html.ActionLink("log in", "Login", "Account") to post a comment!</h2>
+    </div>
+}
+
+<script src="~/Scripts/main.js"></script>
