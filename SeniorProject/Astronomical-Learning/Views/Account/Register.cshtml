@@ -37,15 +37,24 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(m => m.StateProvince, new { @class = "col-md-3 control-label" })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.StateProvince, new { @class = "form-control" })
+                            @Html.LabelFor(m => m.Country, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-6" id="theCountries">
+                                <select id="country-select" class="form-control valid" data-val="true" data-val-required="The Country field is required." name="Country" >
+                                    <option>-- Select --</option>
+                                    @foreach( var thing in ViewBag.CountriesList)
+                                    {
+                                        <option>@thing</option>
+                                    }
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(m => m.Country, new { @class = "col-md-3 control-label" })
-                            <div class="col-md-6">
-                                @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
+                            @Html.LabelFor(m => m.StateProvince, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-6" id="theStateProvince">
+                                @Html.DropDownListFor(m => m.StateProvince, new List<SelectListItem>(), "-- Select --", new { @class = "form-control", @id = "stateprovince-select" })
+                                <!--
+                                @Html.TextBoxFor(m => m.StateProvince, new { @class = "form-control" })
+                                -->
                             </div>
                         </div>
                         <div class="form-group">
@@ -74,7 +83,7 @@
                     }
                 </div>
                 <div class="col-lg-6">
-                    <img src="~/Images/Backgrounds/register-rocket.png" style="float: right;"/>
+                    <img src="~/Images/Backgrounds/register-rocket.png" style="float: right;" />
                 </div>
             </div>
         </div>
@@ -83,4 +92,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/country-cascade.js"></script>
 }
