@@ -29,10 +29,11 @@
 
                 <div style="text-align:center; font-size:24px; word-wrap: break-word">
                     @ViewBag.UserName<br>
-
-                    <div style="font-size:20px">
-                        @ViewBag.FirstName, @ViewBag.LastName<br>
-                        @ViewBag.State<br>
+                        <div style="font-size:20px">
+                            @ViewBag.FirstName, @ViewBag.LastName<br>
+                            @ViewBag.State, @ViewBag.Country<br>
+                            @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                        </div>
 
                         @ViewBag.Description<br>
                         @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
