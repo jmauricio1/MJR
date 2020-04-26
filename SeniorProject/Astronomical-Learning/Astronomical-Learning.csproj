@@ -180,7 +180,6 @@
     <Compile Include="Controllers\SolarSystemController.cs" />
     <Compile Include="Controllers\SpaceCompaniesController.cs" />
     <Compile Include="Controllers\SpaceSuitsController.cs" />
-    <Compile Include="DAL\ALContext.cs" />
     <Compile Include="DAL\AspNetRole.cs" />
     <Compile Include="DAL\AspNetUser.cs" />
     <Compile Include="DAL\AspNetUserClaim.cs" />
@@ -190,6 +189,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="DAL\ALContext.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\AspNetUserClaim.cs" />
@@ -212,6 +212,7 @@
     <Compile Include="Models\Launches\Ship.cs" />
     <Compile Include="Models\Launches\SingleLaunchViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserComment.cs" />
     <Compile Include="Models\Search\KeywordRelation.cs" />
     <Compile Include="Models\Search\SearchKeyword.cs" />
     <Compile Include="Models\Search\SitePage.cs" />
@@ -228,6 +229,12 @@
     -->
   </ItemGroup>
   <ItemGroup>
+  <!--
+    <Content Include="App_Data\ALtempDB.mdf" />
+    <Content Include="App_Data\ALtempDB_log.ldf">
+      <DependentUpon>ALtempDB.mdf</DependentUpon>
+    </Content>
+    -->
     <Content Include="App_Data\ChangesToDB.sql" />
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
@@ -244,6 +251,8 @@
     <Content Include="App_Data\Search\seedSarch.sql" />
     <Content Include="App_Data\Search\upSearch.sql" />
     <Content Include="App_Data\up.sql" />
+    <Content Include="App_Data\UserComment\downUserComment.sql" />
+    <Content Include="App_Data\UserComment\upUserComment.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
