@@ -41,11 +41,14 @@
 
                 <div style="text-align:center; font-size:24px; word-wrap: break-word">
                     @ViewBag.UserName<br>
-                        <div style="font-size:20px">
-                            @ViewBag.FirstName, @ViewBag.LastName<br>
-                            @ViewBag.State, @ViewBag.Country<br>
-                            @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                        </div>
+                    <div style="font-size:20px">
+                        @ViewBag.FirstName, @ViewBag.LastName<br>
+                        @ViewBag.State, @ViewBag.Country<br>
+                        @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="col-lg-8 " style="text-align:center" id="yourComments">
             <h1 style="color: white; text-align: center">Your Comments</h1>
@@ -72,7 +75,7 @@
                     <br />
                 }
             }
-        </div>
+        </div>    
     </div>
 </div>
 
