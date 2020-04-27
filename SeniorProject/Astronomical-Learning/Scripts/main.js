@@ -149,6 +149,22 @@ function showSuccess() {
     document.getElementById("commentBox").value = "";
 }
 
+function deleteComment(commentId) {
+    var del = confirm("Are you sure you want to delete this comment?");
+
+    if (del == true) {
+        $.post("/Profile/DeleteComment?commentId=" + commentId, commentId, deleteSuccess(), 'int');
+    }
+}
+
+function deleteSuccess() {
+    alert("You've deleted the comment.");
+    
+    setTimeout(function () {
+        location.reload();
+    }, 350);
+}
+
 function siteSearch()
 {
    
