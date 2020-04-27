@@ -1,52 +1,77 @@
-﻿
+﻿@model IEnumerable<Astronomical_Learning.Models.UserComment>
+
 @{
     ViewBag.Title = "ProfilePage";
 }
 
-    <div class="information-paragraphs dark-bkr">
-        @if (ViewBag.ChangedUsername == "true")
-        {
-            <div class="container text-center">
-                <div class="alert alert-info" role="alert">
-                    <p>Username changed! Please log out and log back in to see full affect of changes.</p>
-                </div>
-            </div>
-        }
-        <div style="text-align:center"><h2>My Profile</h2></div>
-        <div style="height:20px"></div>
-
-        <div class="row">
-            <div class="col-lg-1">
-
-            </div>
-
-            <div class="col-sm-3 homepageCard">
-                <div>
-                    <div style="height:20px"></div>
-                    <img style="width:100%; height:100%" src=@ViewBag.Path alt="Profile Image" />
-                    <div style="height:20px"></div>
-                </div>
-
-                <div style="text-align:center; font-size:24px; word-wrap: break-word">
-                    @ViewBag.UserName<br>
-
-                    <div style="font-size:20px">
-                        @ViewBag.FirstName, @ViewBag.LastName<br>
-                        @ViewBag.State<br>
-
-                        @ViewBag.Description<br>
-                        @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-8 " style="text-align:center">
-
+<div class="information-paragraphs dark-bkr">
+    @if (ViewBag.ChangedUsername == "true")
+    {
+        <div class="container text-center">
+            <div class="alert alert-info" role="alert">
+                <p>Username changed! Please log out and log back in to see full affect of changes.</p>
             </div>
         </div>
+    }
+    <div style="text-align:center"><h2>My Profile</h2></div>
+    <div style="height:20px"></div>
+
+    <div class="row">
+        <div class="col-lg-1">
+
+        </div>
+
+        <div class="col-sm-3 homepageCard">
+            <div>
+                <div style="height:20px"></div>
+                <img style="width:100%; height:100%" src=@ViewBag.Path alt="Profile Image" />
+                <div style="height:20px"></div>
+            </div>
+
+            <div style="text-align:center; font-size:24px; word-wrap: break-word">
+                @ViewBag.UserName<br>
+
+                <div style="font-size:20px">
+                    @ViewBag.FirstName, @ViewBag.LastName<br>
+                    @ViewBag.State<br>
+
+                    @ViewBag.Description<br>
+                    @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-8 " style="text-align:center" id="yourComments">
+            <h1 style="color: white; text-align: center">Your Comments</h1>
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="container information-paragraphs dark-bkr" style="border: 1px solid white; width: 50%">
+                     
+                        <div id="userCommentBox">
+                            <p>@item.Comment</p>
+                        </div>
+
+                        
+                        <div id="usernameDateBox">
+                           <p>Date Posted: @item.PostDate.ToShortDateString()</p>
+                           <p>On page: @item.PageFrom</p>
+                        </div>
+
+                        <button type="button" style="color: black;" onclick="deleteComment(@item.Id)">Delete Comment</button>
+
+                    </div>
+                    <br />
+                }
+            }
+        </div>
     </div>
+</div>
 
-
+<script src="~/Scripts/main.js">
+</script>
 
