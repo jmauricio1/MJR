@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Astronomical_Learning.Models
 {
@@ -107,6 +108,7 @@ namespace Astronomical_Learning.Models
         [Required]
         [Display(Name = "Country")]
         public string Country { get; set; }
+        public IEnumerable<SelectListItem> CountryList { get; set; }
 
         [Required]
         [EmailAddress]
@@ -121,7 +123,7 @@ namespace Astronomical_Learning.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -140,7 +142,7 @@ namespace Astronomical_Learning.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

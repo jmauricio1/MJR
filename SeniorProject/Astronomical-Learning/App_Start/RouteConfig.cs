@@ -24,6 +24,12 @@ namespace Astronomical_Learning
                 url: "Manage/Update",
                 defaults: new { controller = "Manage", action = "UpdateUsernamePartial" }
             );
+            
+            routes.MapRoute(
+                name: "Regions",
+                url: "getregions",
+                defaults: new { controller = "Account", action = "GetPlaces" }
+            );
 
             routes.MapRoute(
                 name: "Default",
