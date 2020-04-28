@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminAbilitiesController.cs" />
     <Compile Include="Controllers\GamesAndQuizzesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ISSController.cs" />
@@ -408,6 +409,7 @@
     <Content Include="Views\GamesAndQuizzes\QuizSelection.cshtml" />
     <Content Include="Views\GamesAndQuizzes\Quiz_1.cshtml" />
     <Content Include="Views\Manage\ChangeProfileDetails.cshtml" />
+    <Content Include="Views\AdminAbilities\ReviewComments.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
