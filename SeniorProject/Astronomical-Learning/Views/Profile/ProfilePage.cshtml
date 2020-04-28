@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<Astronomical_Learning.Models.UserComment>
+
 @{
     ViewBag.Title = "ProfilePage";
 }
@@ -14,12 +15,10 @@
     }
     <div style="text-align:center"><h2>My Profile</h2></div>
     <div style="height:20px"></div>
-
     <div class="row">
         <div class="col-lg-1">
 
         </div>
-
         <div class="col-sm-3 homepageCard">
             <div>
                 <div style="height:20px"></div>
@@ -28,25 +27,46 @@
             </div>
 
             <div style="text-align:center; font-size:24px; word-wrap: break-word">
-                @ViewBag.UserName<br>
-                <div style="font-size:20px">
-                    @ViewBag.FirstName, @ViewBag.LastName<br>
-                    @ViewBag.State, @ViewBag.Country<br>
-                    @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+                <div style="text-align:center; font-size:24px; word-wrap: break-word">
+                    @ViewBag.UserName<br>
+                    <div style="font-size:20px">
+                        @ViewBag.FirstName, @ViewBag.LastName<br>
+                        @ViewBag.State, @ViewBag.Country<br>
+                        @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    </div>
                 </div>
-
-                @ViewBag.Description<br>
-                @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </div>
-
         </div>
 
-    </div>
+        <div class="col-lg-8 " style="text-align:center" id="yourComments">
+            <h1 style="color: white; text-align: center">Your Comments</h1>
 
-    <div class="col-lg-8 " style="text-align:center">
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="container information-paragraphs dark-bkr" style="border: 1px solid white; width: 50%">
 
+                        <div id="userCommentBox">
+                            <p>@item.Comment</p>
+                        </div>
+
+                        <div id="usernameDateBox">
+                            <p>Date Posted: @item.PostDate.ToShortDateString()</p>
+                            <p>On page: @item.PageFrom</p>
+                        </div>
+
+                        <button type="button" style="color: black;" onclick="deleteComment(@item.Id)">Delete Comment</button>
+
+                    </div>
+                    <br />
+                }
+            }
+        </div>
     </div>
 </div>
 
-
+<script src="~/Scripts/main.js">
+</script>
 

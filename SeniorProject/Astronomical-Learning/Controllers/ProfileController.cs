@@ -15,7 +15,7 @@ namespace Astronomical_Learning.Controllers
     {
         private ALContext db = new ALContext();
         //private TempContext db = new TempContext();
-        
+
         // GET: Profile
         public ActionResult ProfilePage(string changedUsername)
         {
@@ -29,14 +29,30 @@ namespace Astronomical_Learning.Controllers
             ViewBag.Country = user.Country;
             ViewBag.Path = user.AvatarPath.Path.ToString();
             string temp = "";
-            if(user.Bio != null)
+            if (user.Bio != null)
             {
                 temp = user.Bio.ToString();
             }
             ViewBag.Description = temp;
             ViewBag.ChangedUsername = changedUsername;
 
-            return View();
+
+            List<UserComment> comments = db.UserComments.Where(x => x.Username == User.Identity.Name && x.AcceptState == true && x.ReportCount < 5).ToList()
+;
+            return View(comments);
+        }
+
+        [HttpPost]
+        public void DeleteComment(int? commentId)
+        {
+            if(commentId != null) { 
+                UserComment comment = db.UserComments.Where(x => x.Id == commentId).FirstOrDefault();
+
+                if(comment != null) { 
+                    db.UserComments.Remove(comment);
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }
