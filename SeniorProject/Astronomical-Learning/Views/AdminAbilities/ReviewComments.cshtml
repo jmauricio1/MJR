@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Astronomical_Learning.Models.UserComment>
+
+@{
+    ViewBag.Title = "ReviewComments";
+}
+
+    <div class="information-paragraphs dark-bkr">
+        <div style="text-align:center"><h2>Review Comments for Approval</h2></div>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+    <div class="container information-paragraphs dark-bkr" style="border: 1px solid white; width: 50%">
+
+
+        <div style="height:40px;" id="usernameDateBox">
+            Posted by: @item.Username, Date Posted: @item.PostDate.ToShortDateString(), On page: @item.PageFrom
+            
+        </div>
+
+
+        <div id="userCommentBox">
+            <p>@item.Comment</p>
+        </div>
+
+        <div style="height:30px"></div>
+
+        <button type="button" style="color: black;" onclick="acceptComment(@item.Id)">Accept Comment</button>
+        <button type="button" style="color: black;" onclick="deleteComment(@item.Id)">Delete Comment</button>
+
+
+    </div>
+                <br />
+            }
+        }
+    </div>
+
+<script src="~/Scripts/main.js">
+</script>

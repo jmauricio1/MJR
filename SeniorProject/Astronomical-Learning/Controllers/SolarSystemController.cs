@@ -71,7 +71,7 @@ namespace Astronomical_Learning.Controllers
                 /* Set the rest of the information of the comment */
                 comment.Username = User.Identity.Name;
                 comment.PostDate = DateTime.Now;
-                comment.AcceptState = true;
+                comment.AcceptState = false;
                 comment.ReportCount = 0;
 
                 /* Add the comment to the UserComments table and save the changes to the database */
