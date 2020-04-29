@@ -410,6 +410,8 @@
     <Content Include="Views\GamesAndQuizzes\Quiz_1.cshtml" />
     <Content Include="Views\Manage\ChangeProfileDetails.cshtml" />
     <Content Include="Views\AdminAbilities\ReviewComments.cshtml" />
+    <Content Include="Views\AdminAbilities\AllUsers.cshtml" />
+    <Content Include="Views\AdminAbilities\BannedUsers.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

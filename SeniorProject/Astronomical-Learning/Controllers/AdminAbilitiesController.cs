@@ -53,5 +53,20 @@ namespace Astronomical_Learning.Controllers
                 }
             }
         }
+
+
+        public ActionResult AllUsers()
+        {
+            var allUsers = db.AspNetUsers;
+
+            return View(allUsers);
+        }
+
+        public ActionResult BannedUsers()
+        {
+            var bannedUsers = db.AspNetUsers.Where(x => x.LockoutEndDateUtc.HasValue);
+
+            return View(bannedUsers);
+        }
     }
 }

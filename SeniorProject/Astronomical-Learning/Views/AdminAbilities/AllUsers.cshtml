@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Astronomical_Learning.DAL.AspNetUser>
+
+@{
+    ViewBag.Title = "AllUsers";
+}
+
+    <div class="information-paragraphs dark-bkr">
+        <div style="text-align:center"><h2>All users</h2></div>
+
+
+        <p>
+            @Html.ActionLink("See the list of all banned users.", "BannedUsers", "AdminAbilities")
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+                </th>
+
+
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+                    </td>
+
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
