@@ -219,7 +219,7 @@
     <Compile Include="Models\Search\SitePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <!--
+    <!-- Remember to comment this out
     <Compile Include="TempDAL\AspNetRole.cs" />
     <Compile Include="TempDAL\AspNetUser.cs" />
     <Compile Include="TempDAL\AspNetUserClaim.cs" />
@@ -246,7 +246,7 @@
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\profile-seed.sql" />
-    <!--
+    <!-- Remember to comment this out 
     <Content Include="App_Data\Temporary.mdf" />
     <Content Include="App_Data\Temporary_log.ldf">
       <DependentUpon>Temporary.mdf</DependentUpon>
