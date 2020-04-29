@@ -5,20 +5,28 @@
 }
 
     <div class="information-paragraphs dark-bkr">
-        <div style="text-align:center"><h2>Banned Users </h2></div>
-
-
-        <p>
+        <div style="text-align:center">
+            <h2>Banned Users </h2>
             @Html.ActionLink("See the list of all users.", "AllUsers", "AdminAbilities")
-        </p>
+        </div>
+
+        <div style="text-align:center; justify-content:center">
+            <br />
+            <h4>Search for a banned user.</h4>
+            <form method="post">
+                <!--https://stackoverflow.com/questions/596444/html-actionlink-as-a-button-or-an-image-not-a-link-->
+                <input type="search" placeholder="search for a banned user" name="searchInput" style="color:black">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
 
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.UserName)
+                   Username
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+                   Banned Until
                 </th>
 
 

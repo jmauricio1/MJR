@@ -62,11 +62,25 @@ namespace Astronomical_Learning.Controllers
             return View(allUsers);
         }
 
+        [HttpPost]
+        public ActionResult AllUsers(string searchInput)
+        {
+            var searchedUsers = db.AspNetUsers.Where(x => x.UserName.Contains(searchInput));
+            return View(searchedUsers);
+        }
+
         public ActionResult BannedUsers()
         {
             var bannedUsers = db.AspNetUsers.Where(x => x.LockoutEndDateUtc.HasValue);
 
             return View(bannedUsers);
+        }
+
+        [HttpPost]
+        public ActionResult BannedUsers(string searchInput)
+        {
+            var searchedUsers = db.AspNetUsers.Where(y => y.LockoutEndDateUtc.HasValue).Where(x => x.UserName.Contains(searchInput));
+            return View(searchedUsers);
         }
     }
 }
