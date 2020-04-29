@@ -395,13 +395,6 @@ namespace Astronomical_Learning.Controllers
             return temp;
         }
 
-        public List<List<string>> GetListOfRegions()
-        {
-            List<List<string>> temp = new List<List<string>>();
-
-            return temp;
-        }
-
         List<string> countryList = new List<string>();
         //
         // GET: /Account/Register
