@@ -30,7 +30,7 @@
                 <div style="text-align:center; font-size:24px; word-wrap: break-word">
 
                     <div style="text-align:center; font-size:24px; word-wrap: break-word">
-                        @ViewBag.UserName<br>
+                        @ViewBag.UserName @ViewBag.Role<br>
                         <div style="font-size:20px">
                             @ViewBag.FirstName, @ViewBag.LastName<br>
                             @ViewBag.State, @ViewBag.Country<br>
@@ -43,18 +43,22 @@
 
             <div style="height:20px"></div>
 
+            @if (ViewBag.Role == "2" || ViewBag.Role == "3")
+            {
 
+                <div class="homepageCard">
+                    <div style="text-align:center; font-size:24px; word-wrap: break-word">
+                        Adminstrator Abilities
 
-            <div class="homepageCard">
-                <div style="text-align:center; font-size:24px; word-wrap: break-word">
-                    Adminstrator Abilites
-
-                    <div style="font-size:20px">
-                        @Html.ActionLink("Review Comments", "ReviewComments", "AdminAbilities")<br>
-                        @Html.ActionLink("Manage Users", "AllUsers", "AdminAbilities")
+                        <div style="font-size:20px">
+                            @Html.ActionLink("Review Comments", "ReviewComments", "AdminAbilities")<br>
+                            @Html.ActionLink("Manage Users", "AllUsers", "AdminAbilities")
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+
+
 
 
 

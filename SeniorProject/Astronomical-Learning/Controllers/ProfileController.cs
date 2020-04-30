@@ -39,7 +39,7 @@ namespace Astronomical_Learning.Controllers
 
             List<UserComment> comments = db.UserComments.Where(x => x.Username == User.Identity.Name && x.AcceptState == true && x.ReportCount < 5).ToList();
 
-            ViewBag.Role = db.AspNetUserRoles.Find(userId).RoleId;
+            ViewBag.Role = user.AspNetRoles.ElementAt(0).Id;
 
             return View(comments);
         }
