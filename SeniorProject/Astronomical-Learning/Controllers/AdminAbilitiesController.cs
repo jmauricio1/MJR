@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Astronomical_Learning.DAL;
 using Astronomical_Learning.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -19,6 +21,19 @@ namespace Astronomical_Learning.Controllers
         // GET: AdminAbilities
         public ActionResult ReviewComments()
         {
+
+            if(User.Identity.Name == "")
+            {
+                return Redirect("~/Home/Index");
+            }
+
+            string role = checkUserRole();
+
+            if (role == "1")
+            {
+                return Redirect("~/Home/Index");
+            }
+            
 
             var unreviewdComments = db.UserComments.Where(x => x.AcceptState == false);
 
@@ -59,6 +74,22 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult AllUsers()
         {
+
+
+            if (User.Identity.Name == "")
+            {
+                return Redirect("~/Home/Index");
+            }
+
+            string role = checkUserRole();
+
+            if (role == "1")
+            {
+                return Redirect("~/Home/Index");
+            }
+
+
+
             var allUsers = db.AspNetUsers.ToArray();
 
 
@@ -76,12 +107,14 @@ namespace Astronomical_Learning.Controllers
 
             return View(regularUsers);
 
-            return View(allUsers);
         }
 
         [HttpPost]
         public ActionResult AllUsers(string searchInput)
         {
+
+
+
             var searchedUsers = db.AspNetUsers.Where(x => x.UserName.Contains(searchInput)).ToArray();
 
             List<DAL.AspNetUser> regularUsers = new List<DAL.AspNetUser>();
@@ -101,6 +134,22 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult BannedUsers()
         {
+
+
+
+            if (User.Identity.Name == "")
+            {
+                return Redirect("~/Home/Index");
+            }
+
+            string role = checkUserRole();
+
+            if (role == "1")
+            {
+                return Redirect("~/Home/Index");
+            }
+
+
             var bannedUsers = db.AspNetUsers.Where(x => x.LockoutEndDateUtc.HasValue);
 
             return View(bannedUsers);
@@ -117,6 +166,21 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult EditUserBan(string id)
         {
+
+
+            if (User.Identity.Name == "")
+            {
+                return Redirect("~/Home/Index");
+            }
+
+            string role = checkUserRole();
+
+            if (role == "1")
+            {
+                return Redirect("~/Home/Index");
+            }
+
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -141,11 +205,18 @@ namespace Astronomical_Learning.Controllers
 
                 db.SaveChanges();
                 //return View(user);
-                
-            
-
+               
 
             return RedirectToAction("AllUsers");
+        }
+
+        public string checkUserRole()
+        {
+            string userId = User.Identity.GetUserId();
+            DAL.AspNetUser user = db.AspNetUsers.Find(userId);
+            string role = user.AspNetRoles.ElementAt(0).Id;
+
+            return role;
         }
 
     }
