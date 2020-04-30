@@ -789,6 +789,10 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult GetPlaces(string countryName)
         {
+            if(countryName == "-- Select --")
+            {
+                countryName = "Afghanistan";
+            }
             countryList = GetCountries(ref countryList);
             int index = countryList.IndexOf(countryName);
             List<List<string>> full = GetListOfRegions();

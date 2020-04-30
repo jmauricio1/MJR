@@ -395,13 +395,6 @@ namespace Astronomical_Learning.Controllers
             return temp;
         }
 
-        public List<List<string>> GetListOfRegions()
-        {
-            List<List<string>> temp = new List<List<string>>();
-
-            return temp;
-        }
-
         List<string> countryList = new List<string>();
         //
         // GET: /Account/Register
@@ -413,7 +406,7 @@ namespace Astronomical_Learning.Controllers
             //List<CountryState> theList = GetListOfCountriesRegions();
             ViewBag.CountriesList = countryList;
             Debug.WriteLine(countryList);
-            return View();
+            return View("Register");
         }
 
         private ALContext db = new ALContext();
