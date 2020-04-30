@@ -59,7 +59,22 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult AllUsers()
         {
-            var allUsers = db.AspNetUsers;
+            var allUsers = db.AspNetUsers.ToArray();
+
+
+            List<DAL.AspNetUser> regularUsers = new List<DAL.AspNetUser>();
+
+
+            for (int i = 0; i < allUsers.Length; i++)
+            {
+                if (allUsers[i].AspNetRoles.ElementAt(0).Id == "1")
+                {
+                    regularUsers.Add(allUsers[i]);
+                }
+            }
+
+
+            return View(regularUsers);
 
             return View(allUsers);
         }
@@ -67,8 +82,21 @@ namespace Astronomical_Learning.Controllers
         [HttpPost]
         public ActionResult AllUsers(string searchInput)
         {
-            var searchedUsers = db.AspNetUsers.Where(x => x.UserName.Contains(searchInput));
-            return View(searchedUsers);
+            var searchedUsers = db.AspNetUsers.Where(x => x.UserName.Contains(searchInput)).ToArray();
+
+            List<DAL.AspNetUser> regularUsers = new List<DAL.AspNetUser>();
+
+
+            for(int i = 0; i < searchedUsers.Length; i++)
+            {
+                if(searchedUsers[i].AspNetRoles.ElementAt(0).Id == "1")
+                {
+                    regularUsers.Add(searchedUsers[i]);
+                }
+            }
+
+
+            return View(regularUsers);
         }
 
         public ActionResult BannedUsers()
