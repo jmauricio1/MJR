@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Astronomical_Learning.DAL;
@@ -82,5 +84,41 @@ namespace Astronomical_Learning.Controllers
             var searchedUsers = db.AspNetUsers.Where(y => y.LockoutEndDateUtc.HasValue).Where(x => x.UserName.Contains(searchInput));
             return View(searchedUsers);
         }
+
+
+
+        public ActionResult EditUserBan(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DAL.AspNetUser aspNetUser = db.AspNetUsers.Find(id);
+            if (aspNetUser == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.AID = new SelectList(db.AvatarPaths, "ID", "AvatarName", aspNetUser.AID);
+            return View(aspNetUser);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditUserBan( DAL.AspNetUser aspNetUser)
+        {
+
+            var user = db.AspNetUsers.Find(aspNetUser.Id);
+            user.LockoutEndDateUtc = aspNetUser.LockoutEndDateUtc;
+
+
+                db.SaveChanges();
+                //return View(user);
+                
+            
+
+
+            return RedirectToAction("AllUsers");
+        }
+
     }
 }

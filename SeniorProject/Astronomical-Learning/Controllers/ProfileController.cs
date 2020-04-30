@@ -37,8 +37,10 @@ namespace Astronomical_Learning.Controllers
             ViewBag.ChangedUsername = changedUsername;
 
 
-            List<UserComment> comments = db.UserComments.Where(x => x.Username == User.Identity.Name && x.AcceptState == true && x.ReportCount < 5).ToList()
-;
+            List<UserComment> comments = db.UserComments.Where(x => x.Username == User.Identity.Name && x.AcceptState == true && x.ReportCount < 5).ToList();
+
+            ViewBag.Role = db.AspNetUserRoles.Find(userId).RoleId;
+
             return View(comments);
         }
 
