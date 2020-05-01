@@ -129,7 +129,7 @@ namespace Astronomical_Learning.Controllers
             }
 
 
-            return View(searchedUsers);
+            return View(regularUsers);
         }
 
         public ActionResult BannedUsers()
