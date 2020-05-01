@@ -64,14 +64,26 @@ namespace Astronomical_Learning.Controllers
 
             //read in the information
             string jsonString = null;
-            using (WebResponse response = request.GetResponse())
+
+            try
             {
-                Stream stream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(stream);
-                jsonString = reader.ReadToEnd();
-                reader.Close();
-                stream.Close();
+
+
+                using (WebResponse response = request.GetResponse())
+                {
+                    Stream stream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(stream);
+                    jsonString = reader.ReadToEnd();
+                    reader.Close();
+                    stream.Close();
+                }
             }
+            catch
+            {
+                jsonString = "{'copyright':'Astronomical','date':'2020 - 30 - 04','explanation':'There is currently an error with the system. Check again later ','hdurl':'https://www.publicdomainpictures.net/pictures/40000/velka/question-mark.jpg','media_type':'image','service_version':'v1','title':'Sorry there was an error with the picture','url':'https://www.publicdomainpictures.net/pictures/40000/velka/question-mark.jpg'}";
+            }
+
+            
 
             return jsonString;
         }

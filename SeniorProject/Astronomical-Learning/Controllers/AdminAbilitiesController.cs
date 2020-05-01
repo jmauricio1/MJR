@@ -98,7 +98,7 @@ namespace Astronomical_Learning.Controllers
 
             for (int i = 0; i < allUsers.Length; i++)
             {
-                if (allUsers[i].AspNetRoles.ElementAt(0).Id == "1")
+                if (allUsers[i].AspNetRoles.ElementAt(0).Id == "US")
                 {
                     regularUsers.Add(allUsers[i]);
                 }
@@ -122,14 +122,14 @@ namespace Astronomical_Learning.Controllers
 
             for(int i = 0; i < searchedUsers.Length; i++)
             {
-                if(searchedUsers[i].AspNetRoles.ElementAt(0).Id == "1")
+                if(searchedUsers[i].AspNetRoles.ElementAt(0).Id == "US")
                 {
                     regularUsers.Add(searchedUsers[i]);
                 }
             }
 
 
-            return View(regularUsers);
+            return View(searchedUsers);
         }
 
         public ActionResult BannedUsers()
