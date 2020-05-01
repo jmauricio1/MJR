@@ -396,13 +396,11 @@ namespace Astronomical_Learning.Controllers
         }
 
         List<string> countryList = new List<string>();
-       // SelectList countryList = new SelectList(new List<SelectListItem> { });
         //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
-            //countryList.Items
 
             countryList = GetCountries(ref countryList);
 
