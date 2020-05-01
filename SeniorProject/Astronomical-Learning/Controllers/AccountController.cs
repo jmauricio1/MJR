@@ -396,15 +396,20 @@ namespace Astronomical_Learning.Controllers
         }
 
         List<string> countryList = new List<string>();
+       // SelectList countryList = new SelectList(new List<SelectListItem> { });
         //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
+            //countryList.Items
+
             countryList = GetCountries(ref countryList);
 
+            SelectList countryList2 = new SelectList(countryList);
+
             //List<CountryState> theList = GetListOfCountriesRegions();
-            ViewBag.CountriesList = countryList;
+            ViewBag.CountriesList = countryList2;
             Debug.WriteLine(countryList);
             return View("Register");
         }
@@ -434,6 +439,8 @@ namespace Astronomical_Learning.Controllers
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
+                        UserManager.AddToRole(user.Id, "User");
+
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                         // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
