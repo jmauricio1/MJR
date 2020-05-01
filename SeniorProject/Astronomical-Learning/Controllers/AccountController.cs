@@ -401,10 +401,13 @@ namespace Astronomical_Learning.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+
             countryList = GetCountries(ref countryList);
 
+            SelectList countryList2 = new SelectList(countryList);
+
             //List<CountryState> theList = GetListOfCountriesRegions();
-            ViewBag.CountriesList = countryList;
+            ViewBag.CountriesList = countryList2;
             Debug.WriteLine(countryList);
             return View("Register");
         }
@@ -434,6 +437,8 @@ namespace Astronomical_Learning.Controllers
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
+                        UserManager.AddToRole(user.Id, "User");
+
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                         // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

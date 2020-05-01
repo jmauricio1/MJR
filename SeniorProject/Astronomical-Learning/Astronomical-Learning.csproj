@@ -170,6 +170,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminAbilitiesController.cs" />
+    <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\GamesAndQuizzesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ISSController.cs" />
@@ -246,6 +248,7 @@
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\profile-seed.sql" />
+    <Content Include="App_Data\Roles\upRoles.sql" />
     <!-- Remember to comment this out 
     <Content Include="App_Data\Temporary.mdf" />
     <Content Include="App_Data\Temporary_log.ldf">
@@ -408,8 +411,19 @@
     <Content Include="Views\GamesAndQuizzes\QuizSelection.cshtml" />
     <Content Include="Views\GamesAndQuizzes\Quiz_1.cshtml" />
     <Content Include="Views\Manage\ChangeProfileDetails.cshtml" />
+    <Content Include="Views\AdminAbilities\ReviewComments.cshtml" />
+    <Content Include="Views\AdminAbilities\AllUsers.cshtml" />
+    <Content Include="Views\AdminAbilities\BannedUsers.cshtml" />
+    <Content Include="Views\AdminAbilities\EditUserBan.cshtml" />
+    <Content Include="Views\AspNetUsers\Create.cshtml" />
+    <Content Include="Views\AspNetUsers\Delete.cshtml" />
+    <Content Include="Views\AspNetUsers\Details.cshtml" />
+    <Content Include="Views\AspNetUsers\Edit.cshtml" />
+    <Content Include="Views\AspNetUsers\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
