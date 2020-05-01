@@ -29,7 +29,7 @@ namespace Astronomical_Learning.Controllers
 
             string role = checkUserRole();
 
-            if (role == "1")
+            if (role == "US")
             {
                 return Redirect("~/Home/Index");
             }
@@ -83,7 +83,7 @@ namespace Astronomical_Learning.Controllers
 
             string role = checkUserRole();
 
-            if (role == "1")
+            if (role == "US")
             {
                 return Redirect("~/Home/Index");
             }
@@ -144,7 +144,7 @@ namespace Astronomical_Learning.Controllers
 
             string role = checkUserRole();
 
-            if (role == "1")
+            if (role == "US")
             {
                 return Redirect("~/Home/Index");
             }
@@ -175,7 +175,7 @@ namespace Astronomical_Learning.Controllers
 
             string role = checkUserRole();
 
-            if (role == "1")
+            if (role == "US")
             {
                 return Redirect("~/Home/Index");
             }
