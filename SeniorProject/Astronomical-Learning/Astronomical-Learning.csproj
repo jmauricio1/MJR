@@ -248,6 +248,7 @@
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\profile-seed.sql" />
+    <Content Include="App_Data\Roles\upRoles.sql" />
     <!-- Remember to comment this out 
     <Content Include="App_Data\Temporary.mdf" />
     <Content Include="App_Data\Temporary_log.ldf">

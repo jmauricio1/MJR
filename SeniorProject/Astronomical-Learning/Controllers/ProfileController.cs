@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Astronomical_Learning.DAL;
 using Astronomical_Learning.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 //using Astronomical_Learning.TempDAL;
 
 namespace Astronomical_Learning.Controllers
@@ -39,8 +40,16 @@ namespace Astronomical_Learning.Controllers
 
             List<UserComment> comments = db.UserComments.Where(x => x.Username == User.Identity.Name && x.AcceptState == true && x.ReportCount < 5).ToList();
 
-            ViewBag.Role = user.AspNetRoles.ElementAt(0).Id;
 
+            if(user.AspNetRoles.Count == 0)
+            {
+                UserManager.AddToRole(user.Id, "User");
+                db.SaveChanges();
+            }
+            
+
+
+            ViewBag.Role = user.AspNetRoles.ElementAt(0).Id;
             return View(comments);
         }
 
@@ -54,6 +63,19 @@ namespace Astronomical_Learning.Controllers
                     db.UserComments.Remove(comment);
                     db.SaveChanges();
                 }
+            }
+        }
+
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
             }
         }
     }
