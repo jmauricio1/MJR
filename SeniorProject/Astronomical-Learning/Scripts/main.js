@@ -131,6 +131,11 @@ function changeFactInfoScarab() {
     document.getElementById("cometImageDescription").innerHTML = "Pharaoh Tutankhamen's scarab crafted from the yellow silicate glass of the Libyan Desert";
 }
 
+
+
+
+
+
 function submitComment(url) {
     if ($('#commentBox').val().length >= 10) {
         // Build the comment
@@ -165,6 +170,12 @@ function deleteSuccess() {
     }, 350);
 }
 
+
+
+
+
+
+
 function siteSearch()
 {
    
@@ -172,6 +183,11 @@ function siteSearch()
 
     location.href = '/Search/searchPage' + '?searchQuery=' + query;
 }
+
+
+
+
+
 
 function calculateQuiz1Score()
 {
@@ -287,6 +303,10 @@ $(function () {
 
 
 
+
+
+
+
 function singleQuestionWrong(aDiv,bDiv) {
 
     var x = document.getElementById(aDiv);
@@ -310,3 +330,25 @@ function singleQuestionRight(aDiv, bDiv) {
     y.style.display = "none";
 }
 
+
+
+
+
+
+
+
+function acceptComment(commentId) {
+    var accept = confirm("Are you sure you want to accept this comment? All users will be able to see this comment after it is acccepted.");
+
+    if (accept == true) {
+        $.post("/AdminAbilities/AcceptComment?commentId=" + commentId, commentId, acceptSuccess(), 'int');
+    }
+}
+
+function acceptSuccess() {
+    alert("This comment has been accepted.");
+
+    setTimeout(function () {
+        location.reload();
+    }, 350);
+}
