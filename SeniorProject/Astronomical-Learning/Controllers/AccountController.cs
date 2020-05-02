@@ -136,7 +136,7 @@ namespace Astronomical_Learning.Controllers
                     return View(model);
             }
         }
-
+        #region Countries List
         public List<string> GetCountries(ref List<string> temp)
         {
             //A11
@@ -394,6 +394,7 @@ namespace Astronomical_Learning.Controllers
             Debug.WriteLine(temp[125] + temp[125].Count());
             return temp;
         }
+        #endregion
 
         List<string> countryList = new List<string>();
         //
@@ -404,11 +405,11 @@ namespace Astronomical_Learning.Controllers
 
             countryList = GetCountries(ref countryList);
 
-            SelectList countryList2 = new SelectList(countryList);
+            //SelectList countryList2 = new SelectList(countryList);
 
             //List<CountryState> theList = GetListOfCountriesRegions();
-            ViewBag.CountriesList = countryList2;
-            Debug.WriteLine(countryList);
+            ViewBag.CountriesList = countryList;
+            //Debug.WriteLine(countryList);
             return View("Register");
         }
 
