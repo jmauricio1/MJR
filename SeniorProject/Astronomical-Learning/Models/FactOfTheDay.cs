@@ -18,5 +18,13 @@ namespace Astronomical_Learning.Models
         [Required]
         [StringLength(256)]
         public string Source { get; set; }
+
+        public string AdminUsername { get; set; }
+
+        public DateTime DateSubmitted { get; set; }
+
+        public int DisplayCount { get; set; }
+
+        public DateTime LastDisplayed { get; set; }
     }
 }
