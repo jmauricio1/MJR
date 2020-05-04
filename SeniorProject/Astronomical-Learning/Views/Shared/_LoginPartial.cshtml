@@ -15,9 +15,16 @@
                 <p id="thing">Hello @User.Identity.GetUserName()!</p>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbaDropdown" id="dropdowns">
-                <div class="container">
+                <div class="">
+                    @if (this.User.IsInRole("Administrator") || this.User.IsInRole("Super Administrator"))
+                    {
+                        <div>
+                            @Html.ActionLink("Amdministrator Features", "AdminFeatures", "AdminAbilities", routeValues: null, htmlAttributes: new { @class = "account-dropdown" })
+                        </div>
+                        <div class="dropdown-divider"></div>
+                    }
                     <div>
-                        @Html.ActionLink("Your Profile", "ProfilePage", "Profile", routeValues: null, htmlAttributes: new { @class = "account-dropdown"})
+                        @Html.ActionLink("Your Profile", "ProfilePage", "Profile", routeValues: null, htmlAttributes: new { @class = "account-dropdown" })
                     </div>
                     <div class="dropdown-divider"></div>
                     <div>

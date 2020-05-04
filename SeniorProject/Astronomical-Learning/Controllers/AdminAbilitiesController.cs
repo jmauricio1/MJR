@@ -503,5 +503,42 @@ namespace Astronomical_Learning.Controllers
 
 
 
+
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public ActionResult AdminFeatures()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public ActionResult InputFact()
+        {
+            ViewBag.FactList = db.FactOfTheDays.Where(m => m.DisplayCount >= 0);
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public ActionResult InputFact(FactOfTheDay model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = db.AspNetUsers.Find(userId);
+
+            model.AdminUsername = user.UserName;
+            model.DateSubmitted = DateTime.Now;
+            model.DisplayCount = 0;
+
+            bool added = false;
+            if (ModelState.IsValid)
+            {
+                db.FactOfTheDays.Add(model);
+                db.SaveChanges();
+                added = true;
+            }
+            ViewBag.Added = added;
+            return View();
+        }
+
+
     }
 }
