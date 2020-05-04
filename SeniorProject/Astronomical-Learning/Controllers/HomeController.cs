@@ -48,6 +48,13 @@ namespace Astronomical_Learning.Controllers
             int chosenSpot = (dayOfYear % (factCount - 1)) + 1;
             var selectedFact = db.FactOfTheDays.Find(chosenSpot);
 
+            if(selectedFact.LastDisplayed.Date != DateTime.Now.Date)
+            {
+                selectedFact.DisplayCount += 1;
+                selectedFact.LastDisplayed = DateTime.Now;
+                db.SaveChanges();
+            }
+
             ViewBag.fact = selectedFact.Text;
             ViewBag.factSource = selectedFact.Source;
 

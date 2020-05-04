@@ -1,0 +1,65 @@
+﻿@model Astronomical_Learning.Models.FactOfTheDay
+
+@{
+    ViewBag.Title = "InputFact";
+}
+<div class="container-fluid dark-bkr">
+    @if (ViewBag.Added == true)
+    {
+        <div>
+            <h3 class=" alert alert-info">Fact was added to database!</h3>
+        </div>
+    }
+    <div class="container edit-row">
+        @using (Html.BeginForm("InputFact", "AdminAbilities", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <div class="row">
+                <h2 class="white-txt">Fact Input</h2>
+                <hr />
+                <div class="col-lg-12 white-txt">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Text, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-6">
+                            @Html.TextAreaFor(m => m.Text, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Source, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-6">
+                            @Html.TextAreaFor(m => m.Source, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-6">
+                            <input type="submit" class="btn btn-success" value="Save Changes" id="profile-submit" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <br />
+    </div>
+    <table class="table white-txt fact-table">
+        <tr>
+            <th>Fact</th>
+            <th>Source</th>
+            <th>Input By</th>
+            <th>Input Date</th>
+            <th>Display Count</th>
+        </tr>
+        @foreach (var fact in ViewBag.FactList)
+        {
+            <tr>
+                <td class="fact-td">@fact.Text</td>
+                <td class="fact-td"><a>@fact.Source</a></td>
+                <td class="fact-td">@fact.AdminUsername</td>
+                <td class="fact-td">@fact.DateSubmitted</td>
+                <td class="fact-td">@fact.DisplayCount</td>
+            </tr>
+        }
+    </table>
+</div>
+
+
