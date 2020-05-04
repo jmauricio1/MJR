@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "OurSolarSystem";
+}
+
+<head>
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>ShowHideAllDiv()</script>
+</head>
+
+<div class="information-paragraphs dark-bkr">
+    <h2> Our Solar System Trip Planner</h2>
+
+    <p> purpose goes here </p>
+
+    <h3> Instructions:</h3>
+    <p>instructions go here.</p>
+
+        <p>How many stops would you like to make on this trip?</p>
+        <input type="radio" id="zeroStops" name="numOfStops" value="0" checked onclick="ShowHideAllDiv()" />
+        <label for="zeroStops">Zero</label><br />
+        <input type="radio" id="oneStops" name="numOfStops" value="1" onclick="ShowHideStopOneDiv()" />
+        <label for="oneStops">One</label><br />
+        <input type="radio" id="twoStops" name="numOfStops" value="2" onclick="ShowHideStopTwoDiv()" />
+        <label for="twoStops">Two</label><br />
+        <input type="radio" id="threeStops" name="numOfStops" value="3" onclick="ShowHideStopThreeDiv()" />
+        <label for="threeStops">Three</label><br />
+        <input type="radio" id="fourStops" name="numOfStops" value="4" onclick="ShowHideStopFourDiv()" />
+        <label for="fourStops">Four</label>
+
+    <br /><br />
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="startPlanet">Choose a starting planet</label>
+
+            <select id="startPlanet" style="color: black">
+                <option selected disabled hidden>Choose here</option>
+                <option value="Sun">Sun</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+        </div>
+
+        <div class="col-lg-2">
+            <label for="endPlanet">Choose a destination planet</label>
+
+            <select id="endPlanet" style="color: black">
+                <option selected disabled hidden>Choose here</option>
+                <option value="Sun">Sun</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+        </div>
+
+        <div class="col-lg-2" id="stopOneDiv" style="visibility: hidden">
+            <label for="stopOne">Choose your first stop</label>
+
+            <select id="stopOne" style="color: black">
+                <option selected disabled hidden value="default">Choose here</option>
+                <option value="Sun">Sun</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+        </div>
+
+        <div class="col-lg-2" id="stopTwoDiv" style="visibility: hidden">
+            <label for="stopTwo">Choose your second stop</label>
+
+            <select id="stopTwo" style="color: black">
+                <option selected disabled hidden value="default">Choose here</option>
+                <option value="Sun">Sun</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+        </div>
+
+        <div class="col-lg-2" id="stopThreeDiv" style="visibility: hidden">
+            <label for="stopThree">Choose your third stop</label>
+
+            <select id="stopThree" style="color: black">
+                <option selected disabled hidden value="default">Choose here</option>
+                <option value="Sun">Sun</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+        </div>
+
+        <div class="col-lg-2" id="stopFourDiv" style="visibility: hidden">
+            <label for="stopFour">Choose your fourth stop</label>
+
+            <select id="stopFour" style="color: black">
+                <option selected disabled hidden value="default">Choose here</option>
+                <option value="Sun">Sun</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/main.js">
+</script>
+

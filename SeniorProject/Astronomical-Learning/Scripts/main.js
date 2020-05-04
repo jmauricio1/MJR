@@ -352,3 +352,51 @@ function acceptSuccess() {
         location.reload();
     }, 350);
 }
+
+
+
+
+function ShowHideAllDiv() {
+    document.getElementById('stopOneDiv').style.visibility = 'hidden';
+    document.getElementById('stopTwoDiv').style.visibility = 'hidden';
+    document.getElementById('stopThreeDiv').style.visibility = 'hidden';
+    document.getElementById('stopFourDiv').style.visibility = 'hidden';
+    $('#stopOne').val('default');
+    $('#stopTwo').val('default');
+    $('#stopThree').val('default');
+    $('#stopFour').val('default');
+}
+
+function ShowHideStopOneDiv() {
+    document.getElementById('stopOneDiv').style.visibility = 'visible';
+    document.getElementById('stopTwoDiv').style.visibility = 'hidden';
+    document.getElementById('stopThreeDiv').style.visibility = 'hidden';
+    document.getElementById('stopFourDiv').style.visibility = 'hidden';
+    $('#stopTwo').val('default');
+    $('#stopThree').val('default');
+    $('#stopFour').val('default');
+}
+
+function ShowHideStopTwoDiv() {
+    document.getElementById('stopOneDiv').style.visibility = 'visible';
+    document.getElementById('stopTwoDiv').style.visibility = 'visible';
+    document.getElementById('stopThreeDiv').style.visibility = 'hidden';
+    document.getElementById('stopFourDiv').style.visibility = 'hidden';
+    $('#stopThree').val('default');
+    $('#stopFour').val('default');
+}
+
+function ShowHideStopThreeDiv() {
+    document.getElementById('stopOneDiv').style.visibility = 'visible';
+    document.getElementById('stopTwoDiv').style.visibility = 'visible';
+    document.getElementById('stopThreeDiv').style.visibility = 'visible';
+    document.getElementById('stopFourDiv').style.visibility = 'hidden';
+    $('#stop').val('default');
+}
+
+function ShowHideStopFourDiv() {
+    document.getElementById('stopOneDiv').style.visibility = 'visible';
+    document.getElementById('stopTwoDiv').style.visibility = 'visible';
+    document.getElementById('stopThreeDiv').style.visibility = 'visible';
+    document.getElementById('stopFourDiv').style.visibility = 'visible';
+}
