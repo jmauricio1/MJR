@@ -20,22 +20,10 @@ namespace Astronomical_Learning.Controllers
         private ALContext db = new ALContext();
 
 
-        // GET: AdminAbilities
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult ReviewComments()
         {
 
-            if(User.Identity.Name == "")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-            string role = checkUserRole();
-
-            if (role == "US")
-            {
-                return Redirect("~/Home/Index");
-            }
-            
 
             var unreviewdComments = db.UserComments.Where(x => x.AcceptState == false);
 
@@ -44,6 +32,7 @@ namespace Astronomical_Learning.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public void AcceptComment(int? commentId)
         {
             if (commentId != null)
@@ -58,7 +47,9 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
+
         [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public void DeleteComment(int? commentId)
         {
             if (commentId != null)
@@ -74,22 +65,9 @@ namespace Astronomical_Learning.Controllers
         }
 
 
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AllUsers()
         {
-
-
-            if (User.Identity.Name == "")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-            string role = checkUserRole();
-
-            if (role == "US")
-            {
-                return Redirect("~/Home/Index");
-            }
-
 
 
             var allUsers = db.AspNetUsers.ToArray();
@@ -111,7 +89,9 @@ namespace Astronomical_Learning.Controllers
 
         }
 
+
         [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AllUsers(string searchInput)
         {
 
@@ -134,22 +114,10 @@ namespace Astronomical_Learning.Controllers
             return View(regularUsers);
         }
 
+
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult BannedUsers()
         {
-
-
-
-            if (User.Identity.Name == "")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-            string role = checkUserRole();
-
-            if (role == "US")
-            {
-                return Redirect("~/Home/Index");
-            }
 
 
             var allBanned = db.AspNetUsers.Where(x => x.LockoutEndDateUtc.HasValue).ToArray();
@@ -169,6 +137,7 @@ namespace Astronomical_Learning.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult BannedUsers(string searchInput)
         {
             var searchedUsers = db.AspNetUsers.Where(y => y.LockoutEndDateUtc.HasValue).Where(x => x.UserName.Contains(searchInput)).ToArray();
@@ -189,22 +158,9 @@ namespace Astronomical_Learning.Controllers
         }
 
 
-
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult EditUserBan(string id)
         {
-
-
-            if (User.Identity.Name == "")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-            string role = checkUserRole();
-
-            if (role == "US")
-            {
-                return Redirect("~/Home/Index");
-            }
 
 
             if (id == null)
@@ -222,6 +178,7 @@ namespace Astronomical_Learning.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult EditUserBan( DAL.AspNetUser aspNetUser)
         {
 
@@ -254,6 +211,7 @@ namespace Astronomical_Learning.Controllers
 
         // GET: /Account/Register
         [AllowAnonymous]
+        [Authorize(Roles = "Super Administrator")]
         public ActionResult AdminCreate()
         {
             
@@ -266,6 +224,7 @@ namespace Astronomical_Learning.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Super Administrator")]
         public async Task<ActionResult> AdminCreate(RegisterViewModel model)
         {
 
@@ -330,24 +289,9 @@ namespace Astronomical_Learning.Controllers
 
 
 
-
+        [Authorize(Roles = "Super Administrator")]
         public ActionResult AllAdmin()
         {
-
-
-            if (User.Identity.Name == "")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-            string role = checkUserRole();
-
-            if (role == "US" || role == "AD")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-
 
             var allUsers = db.AspNetUsers.ToArray();
 
@@ -369,6 +313,7 @@ namespace Astronomical_Learning.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Super Administrator")]
         public ActionResult AllAdmin(string searchInput)
         {
 
@@ -391,23 +336,9 @@ namespace Astronomical_Learning.Controllers
             return View(searchedAdmins);
         }
 
+        [Authorize(Roles = "Super Administrator")]
         public ActionResult BannedAdmin()
         {
-
-
-
-            if (User.Identity.Name == "")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-            string role = checkUserRole();
-
-            if (role == "US"|| role == "AD")
-            {
-                return Redirect("~/Home/Index");
-            }
-
 
             var allBanned = db.AspNetUsers.Where(x => x.LockoutEndDateUtc.HasValue).ToArray();
 
@@ -424,6 +355,7 @@ namespace Astronomical_Learning.Controllers
             return View(bannedAdmins);
         }
 
+        [Authorize(Roles = "Super Administrator")]
         [HttpPost]
         public ActionResult BannedAdmin(string searchInput)
         {
@@ -445,23 +377,9 @@ namespace Astronomical_Learning.Controllers
 
 
 
-
+        [Authorize(Roles = "Super Administrator")]
         public ActionResult EditAdminBan(string id)
         {
-
-
-            if (User.Identity.Name == "")
-            {
-                return Redirect("~/Home/Index");
-            }
-
-            string role = checkUserRole();
-
-            if (role == "US" || role == "AD")
-            {
-                return Redirect("~/Home/Index");
-            }
-
 
             if (id == null)
             {
@@ -477,6 +395,7 @@ namespace Astronomical_Learning.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Super Administrator")]
         [ValidateAntiForgeryToken]
         public ActionResult EditAdminBan(DAL.AspNetUser aspNetUser)
         {
