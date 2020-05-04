@@ -19,7 +19,7 @@
 
 
                 <div class="form-group">
-                    <div class="control-label col-md-2">Ban until (UTC)</div>
+                    <div class="control-label col-md-2">Ban Until (UTC)</div>
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.LockoutEndDateUtc, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.LockoutEndDateUtc, "", new { @class = "text-danger" })
