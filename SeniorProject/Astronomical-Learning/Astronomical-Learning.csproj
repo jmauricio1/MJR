@@ -427,6 +427,8 @@
     <Content Include="Views\AdminAbilities\EditAdminBan.cshtml" />
     <Content Include="Views\AdminAbilities\AdminFeatures.cshtml" />
     <Content Include="Views\AdminAbilities\InputFact.cshtml" />
+    <Content Include="Views\Home\Credits.cshtml" />
+    <Content Include="Views\Home\CustomError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
