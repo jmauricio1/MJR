@@ -209,13 +209,284 @@ namespace Astronomical_Learning.Controllers
 
 
 
+
+        #region Countries List
+        public List<string> GetCountries(ref List<string> temp)
+        {
+            //A11
+            temp.Add("Afghanistan");
+            temp.Add("Albania");
+            temp.Add("Algeria");
+            temp.Add("Andorra");
+            temp.Add("Angola");
+            temp.Add("Antigua and Barbuda");
+            temp.Add("Argentina");
+            temp.Add("Armenia");
+            temp.Add("Australia");
+            temp.Add("Austria");
+            temp.Add("Azerbaijan");
+
+            //B19
+            temp.Add("Bahamas, The");
+            temp.Add("Bahrain");
+            temp.Add("Bangladesh");
+            temp.Add("Barbados");
+            temp.Add("Belarus");
+            temp.Add("Belgium");
+            temp.Add("Belize");
+            temp.Add("Benin(Dahomey)");
+            temp.Add("Bermuda");
+            temp.Add("Bhutan");
+            temp.Add("Bolivia");
+            temp.Add("Bosnia and Herzegovina");
+            temp.Add("Botswana");
+            temp.Add("Brazil");
+            temp.Add("Brunei");
+            temp.Add("Bulgaria");
+            temp.Add("Burkina Faso");
+            temp.Add("Burma");
+            temp.Add("Burundi");
+
+            //C17
+            temp.Add("Cabo Verde");
+            temp.Add("Cambodia");
+            temp.Add("Cameroon");
+            temp.Add("Canada");
+            temp.Add("Cayman Islands, The");
+            temp.Add("Central African Republic");
+            temp.Add("Chad");
+            temp.Add("Chile");
+            temp.Add("China");
+            temp.Add("Colombia");
+            temp.Add("Comoros");
+            temp.Add("Costa Rica");
+            temp.Add("Cote d’Ivoire(Ivory Coast)");
+            temp.Add("Croatia");
+            temp.Add("Cuba");
+            temp.Add("Cyprus");
+            temp.Add("Czechia");
+
+            //D5
+            temp.Add("Democratic Republic of the Congo");
+            temp.Add("Denmark");
+            temp.Add("Djibouti");
+            temp.Add("Dominica");
+            temp.Add("Dominican Republic");
+
+            //E9
+            temp.Add("Ecuador");
+            temp.Add("Egypt");
+            temp.Add("El Salvador");
+            temp.Add("Equatorial Guinea");
+            temp.Add("Eritrea");
+            temp.Add("Estonia");
+            temp.Add("Eswatini");
+            temp.Add("Ethiopia");
+
+            //F3
+            temp.Add("Faroe Islands (Isls Malvinas)");
+            temp.Add("Fiji");
+            temp.Add("Finland");
+            temp.Add("France");
+            temp.Add("French Polynesia");
+
+            //G12
+            temp.Add("Gabon");
+            temp.Add("Gambia, The");
+            temp.Add("Georgia");
+            temp.Add("Germany");
+            temp.Add("Ghana");
+            temp.Add("Greece");
+            temp.Add("Greenland");
+            temp.Add("Grenada");
+            temp.Add("Guatemala");
+            temp.Add("Guinea");
+            temp.Add("Guinea - Bissau");
+            temp.Add("Guyana");
+
+            //H4
+            temp.Add("Haiti");
+            temp.Add("Holy See");
+            temp.Add("Honduras");
+            temp.Add("Hungary");
+
+            //I8
+            temp.Add("Iceland");
+            temp.Add("India");
+            temp.Add("Indonesia");
+            temp.Add("Iran");
+            temp.Add("Iraq");
+            temp.Add("Ireland");
+            temp.Add("Israel");
+            temp.Add("Italy");
+
+            //J3
+            temp.Add("Jamaica");
+            temp.Add("Japan");
+            temp.Add("Jordan");
+
+            //K7
+            temp.Add("Kazakhstan");
+            temp.Add("Kenya");
+            temp.Add("Kiribati");
+            temp.Add("South Korea");
+            temp.Add("Kosovo");
+            temp.Add("Kuwait");
+            temp.Add("Kyrgyzstan");
+
+            //L
+            temp.Add("Laos");
+            temp.Add("Latvia");
+            temp.Add("Lebanon");
+            temp.Add("Lesotho");
+            temp.Add("Liberia");
+            temp.Add("Libya");
+            temp.Add("Liechtenstein");
+            temp.Add("Lithuania");
+            temp.Add("Luxembourg");
+
+            //M
+            temp.Add("Madagascar");
+            temp.Add("Malawi");
+            temp.Add("Malaysia");
+            temp.Add("Maldives");
+            temp.Add("Mali");
+            temp.Add("Malta");
+            temp.Add("Marshall Islands");
+            temp.Add("Mauritania");
+            temp.Add("Mauritius");
+            temp.Add("Mexico");
+            temp.Add("Micronesia");
+            temp.Add("Moldova");
+            temp.Add("Monaco");
+            temp.Add("Mongolia");
+            temp.Add("Montenegro");
+            temp.Add("Montserrat");
+            temp.Add("Morocco");
+            temp.Add("Mozambique");
+
+            //N
+            temp.Add("Namibia");
+            temp.Add("Nauru");
+            temp.Add("Nepal");
+            temp.Add("Netherlands, The");
+            temp.Add("New Caledonia");
+            temp.Add("New Zealand");
+            temp.Add("Nicaragua");
+            temp.Add("Niger");
+            temp.Add("Nigeria");
+            temp.Add("North Macedonia");
+            temp.Add("Norway");
+
+            //O
+            temp.Add("Oman");
+
+            //P
+            temp.Add("Pakistan");
+            temp.Add("Palau");
+            temp.Add("Panama");
+            temp.Add("Papua New Guinea");
+            temp.Add("Paraguay");
+            temp.Add("Peru");
+            temp.Add("Philippines");
+            temp.Add("Poland");
+            temp.Add("Portugal");
+            temp.Add("Puerto Rico");
+
+            //Q
+            temp.Add("Qatar");
+
+            //R
+            temp.Add("Romania");
+            temp.Add("Russia");
+            temp.Add("Rwanda");
+
+            //S26
+            temp.Add("Saint Helena, Ascension, and Tristan da Cunha");
+            temp.Add("Saint Kitts and Nevis");
+            temp.Add("Saint Lucia");
+            temp.Add("Saint Vincent and the Grenadines");
+            temp.Add("Samoa");
+            temp.Add("San Marino");
+            temp.Add("Sao Tome and Principe");
+            temp.Add("Saudi Arabia");
+            temp.Add("Senegal");
+            temp.Add("Serbia");
+            temp.Add("Seychelles");
+            temp.Add("SierraLeone");
+            temp.Add("Singapore");
+            temp.Add("Slovakia");
+            temp.Add("Slovenia");
+            temp.Add("Solomon Islands, The");
+            temp.Add("Somalia");
+            temp.Add("South Africa");
+            temp.Add("South Sudan");
+            temp.Add("Spain");
+            temp.Add("Sri Lanka");
+            temp.Add("Sudan");
+            temp.Add("Suriname");
+            temp.Add("Sweden");
+            temp.Add("Switzerland");
+            temp.Add("Syria");
+
+            //T
+            temp.Add("Taiwan");
+            temp.Add("Tajikistan");
+            temp.Add("Tanzania");
+            temp.Add("Thailand");
+            temp.Add("Timor - Leste");
+            temp.Add("Togo");
+            temp.Add("Tonga");
+            temp.Add("Trinidad and Tobago");
+            temp.Add("Tunisia");
+            temp.Add("Turkey");
+            temp.Add("Turkmenistan");
+            temp.Add("Tuvalu");
+
+            //U7
+            temp.Add("Uganda");
+            temp.Add("Ukraine");
+            temp.Add("United Arab Emirates, The");
+            temp.Add("United Kingdom, The");
+            temp.Add("United States, The");
+            temp.Add("Uruguay");
+            temp.Add("Uzbekistan");
+
+            //V3
+            temp.Add("Vanuatu");
+            temp.Add("Venezuela");
+            temp.Add("Vietnam");
+
+            //Y1
+            temp.Add("Yemen");
+
+            //Z2
+            temp.Add("Zambia");
+            temp.Add("Zimbabwe");
+
+
+            Debug.WriteLine(temp[125] + temp[125].Count());
+            return temp;
+        }
+        #endregion
+
+        List<string> countryList = new List<string>();
+
+
+
+
         // GET: /Account/Register
         [AllowAnonymous]
         [Authorize(Roles = "Super Administrator")]
         public ActionResult AdminCreate()
         {
-            
-            return View();
+
+            countryList = GetCountries(ref countryList);
+
+            ViewBag.CountriesList = countryList;
+         
+
+            return View("AdminCreate");
         }
 
 
