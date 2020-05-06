@@ -95,6 +95,7 @@ namespace Astronomical_Learning.Controllers
             return jsonString;
         }
 
+        #region Filling list of regions
         public List<List<string>> GetListOfRegions()
         {
             List<List<string>> temp = new List<List<string>>();
@@ -537,6 +538,7 @@ namespace Astronomical_Learning.Controllers
             //temp.Add(new List<string> { "" });
             return temp;
         }
+        #endregion
 
         public ActionResult ListOfCountries()
         {
@@ -551,6 +553,7 @@ namespace Astronomical_Learning.Controllers
 
         List<string> countryList = new List<string>();
 
+        #region Filling list of countries
         public List<string> GetCountries(ref List<string> temp)
         {
             //A11
@@ -805,6 +808,7 @@ namespace Astronomical_Learning.Controllers
             temp.Add("Zimbabwe");
             return temp;
         }
+        #endregion
 
         public ActionResult GetPlaces(string countryName)
         {
