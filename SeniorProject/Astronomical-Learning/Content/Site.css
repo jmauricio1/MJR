@@ -859,3 +859,14 @@ dd {
     color: rgb(146, 146, 146);
     font-size: 150px;
 }
+
+.answer-label{
+    font-weight: 100;
+    font-size: 18px;
+}
+
+#q1-submit{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

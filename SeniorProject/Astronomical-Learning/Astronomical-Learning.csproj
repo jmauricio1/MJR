@@ -346,6 +346,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\planets-js.js" />
     <Content Include="Scripts\ProfileUpdates.js" />
+    <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\something.js" />
     <Content Include="Scripts\spacex-main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -423,6 +424,7 @@
     <Content Include="Views\AspNetUsers\Index.cshtml" />
     <Content Include="Views\AdminAbilities\AdminFeatures.cshtml" />
     <Content Include="Views\AdminAbilities\InputFact.cshtml" />
+    <Content Include="Views\GamesAndQuizzes\Q1Score.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
