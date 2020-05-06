@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<Astronomical_Learning.DAL.AspNetUser>
 
 @{
-    ViewBag.Title = "AllUsers";
+    ViewBag.Title = "AllAdmins";
 }
 
     <div class="information-paragraphs dark-bkr">
         <div style="text-align:center">
-            <h2>All users</h2>
+            <h2>All Users</h2>
             @Html.ActionLink("See the list of all banned users.", "BannedUsers", "AdminAbilities")
         </div>
 
@@ -30,7 +30,7 @@
                     Username
                 </th>
                 <th>
-                    Banned Until
+                    Banned Until (UTC)
                 </th>
 
 

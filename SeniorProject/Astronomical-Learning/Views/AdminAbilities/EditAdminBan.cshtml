@@ -5,7 +5,7 @@
 }
 
     <div class="information-paragraphs dark-bkr">
-        <h2>Edit ban for @Model.UserName</h2>
+        <h2>Edit ban for Admin @Model.UserName</h2>
 
         @using (Html.BeginForm())
         {
@@ -37,6 +37,6 @@
         }
 
         <div>
-        @Html.ActionLink("Back to List", "AllUsers", new { @class = "btn btn-primary" })
+        @Html.ActionLink("Back to List", "AllAdmin", new { @class = "btn btn-primary" })
         </div>
     </div>
