@@ -405,11 +405,8 @@ namespace Astronomical_Learning.Controllers
 
             countryList = GetCountries(ref countryList);
 
-            //SelectList countryList2 = new SelectList(countryList);
-
-            //List<CountryState> theList = GetListOfCountriesRegions();
             ViewBag.CountriesList = countryList;
-            //Debug.WriteLine(countryList);
+
             return View("Register");
         }
 
