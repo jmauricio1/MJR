@@ -29,6 +29,10 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<KeywordRelation> KeywordRelations { get; set; }
         public virtual DbSet<SitePage> SitePages { get; set; }
 
+        public virtual DbSet<Quizze> Quizzes { get; set; }
+        public virtual DbSet<UserQuizScore> UserQuizScores { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AspNetRole>()
@@ -51,6 +55,7 @@ namespace Astronomical_Learning.DAL
                 .WithRequired(e => e.AvatarPath)
                 .HasForeignKey(e => e.AID)
                 .WillCascadeOnDelete(false);
+            
         }
     }
 }
