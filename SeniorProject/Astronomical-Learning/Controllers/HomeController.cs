@@ -16,6 +16,7 @@ namespace Astronomical_Learning.Controllers
 {
     public class HomeController : Controller
     {
+        
         // private FactOfTheDayContext db = new FactOfTheDayContext();
         //private ALContext db = new ALContext();
         private ALContext db = new ALContext();

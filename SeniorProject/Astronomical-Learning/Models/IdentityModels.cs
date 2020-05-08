@@ -16,6 +16,7 @@ namespace Astronomical_Learning.Models
         public int AID { get; internal set; }
         public string Bio { get; internal set; }
         public int AccountScore { get; internal set; }
+        public int? LevelID { get; internal set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

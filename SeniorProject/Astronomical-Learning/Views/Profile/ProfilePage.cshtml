@@ -30,12 +30,16 @@
                 <div style="text-align:center; font-size:24px; word-wrap: break-word">
 
                     <div style="text-align:center; font-size:24px; word-wrap: break-word">
-                        @ViewBag.UserName<br>
+                        <img style="width:40px; height:40px;" src=@ViewBag.Badge alt="Profile Image" /> @ViewBag.UserName<br>
                         <div style="font-size:20px">
+                            <i>Level: @ViewBag.Level</i> <br />
                             @ViewBag.FirstName, @ViewBag.LastName<br>
                             @ViewBag.State, @ViewBag.Country<br>
                             @ViewBag.Description <br>
                             @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                        </div>
+                        <div>
+
                         </div>
                     </div>
                 </div>

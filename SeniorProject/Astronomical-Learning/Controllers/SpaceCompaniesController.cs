@@ -14,6 +14,25 @@ namespace Astronomical_Learning.Controllers
 {
     public class SpaceCompaniesController : Controller
     {
+        public void PrintList()
+        {
+            string json = SendRequest("https://www.dnd5eapi.co/api/equipment");
+            JObject data = JObject.Parse(json);
+
+            List<string> list = new List<string>();
+
+            for (int i = 0; i < (int)data["count"]; i++)
+            {
+                string current = (string)data["results"][i]["name"];
+                Debug.WriteLine("('" + current + "'),");
+
+
+            }
+
+            //Run this by going to your index of this controller then just stop it
+            //When you come back to Visual Studio, choose Debug from your output from below. You might have to drag the bottom window up a bit
+            //But there should be a printed version of the things you need to seed. Okay. I coudlnt find debug at the bottom
+        }
         // GET: SpaceCompanies
         public ActionResult SpaceX()
         {
@@ -25,6 +44,7 @@ namespace Astronomical_Learning.Controllers
         }
         public JsonResult SpaceXLaunchList()
         {
+            PrintList();
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
 
             JArray data = JArray.Parse(json);

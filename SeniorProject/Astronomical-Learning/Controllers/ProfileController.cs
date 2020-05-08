@@ -29,6 +29,10 @@ namespace Astronomical_Learning.Controllers
             ViewBag.State = user.StateProvince;
             ViewBag.Country = user.Country;
             ViewBag.Path = user.AvatarPath.Path.ToString();
+            int? badgeID = user.LevelID;
+            ViewBag.Badge = db.UserLevels.Find(badgeID).BadgePath.ToString();
+            ViewBag.Level = db.UserLevels.Find(badgeID).LevelName.ToString();
+
             string temp = "";
             if (user.Bio != null)
             {
@@ -46,8 +50,6 @@ namespace Astronomical_Learning.Controllers
                 UserManager.AddToRole(user.Id, "User");
                 db.SaveChanges();
             }
-            
-
 
             ViewBag.Role = user.AspNetRoles.ElementAt(0).Id;
             return View(comments);

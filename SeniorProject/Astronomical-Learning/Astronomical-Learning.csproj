@@ -188,6 +188,7 @@
     <Compile Include="DAL\AspNetUserLogin.cs" />
     <Compile Include="DAL\AvatarPath.cs" />
     <Compile Include="DAL\Quizze.cs" />
+    <Compile Include="DAL\UserLevel.cs" />
     <Compile Include="DAL\UserQuizScore.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -244,6 +245,7 @@
       <DependentUpon>ALtempDB.mdf</DependentUpon>
     </Content>
 -->
+    <Content Include="App_Data\Badge Levels\user-levels-up.sql" />
     <Content Include="App_Data\ChangesToDB.sql" />
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
@@ -299,6 +301,15 @@
     <Content Include="Images\icons\stars.gif" />
     <Content Include="Images\icons\sun-icon.png" />
     <Content Include="Images\JimBridenstine.jpg" />
+    <Content Include="Images\Levels\9.jpg" />
+    <Content Include="Images\Levels\8.jpg" />
+    <Content Include="Images\Levels\1.JPG" />
+    <Content Include="Images\Levels\2.JPG" />
+    <Content Include="Images\Levels\3.JPG" />
+    <Content Include="Images\Levels\4.JPG" />
+    <Content Include="Images\Levels\5.JPG" />
+    <Content Include="Images\Levels\6.JPG" />
+    <Content Include="Images\Levels\10.jpg" />
     <Content Include="Images\m1.png" />
     <Content Include="Images\mjr-transparent.png" />
     <Content Include="Images\mjr-transparent2.1.png" />
@@ -445,9 +456,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mom\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
