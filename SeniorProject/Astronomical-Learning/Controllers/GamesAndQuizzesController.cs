@@ -39,7 +39,7 @@ namespace Astronomical_Learning.Controllers
             results.Add(AnswerChecker(a9, 2));
             results.Add(AnswerChecker(a10, 3));
 
-            if (User.IsInRole("User"))
+            if (User.IsInRole("User") || User.IsInRole("Administrator") || User.IsInRole("Super Administrator"))
             {
                 int correctCount = 0;
                 for(int i = 0; i < results.Count; i++)
