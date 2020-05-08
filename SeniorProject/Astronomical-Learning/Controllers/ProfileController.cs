@@ -20,10 +20,23 @@ namespace Astronomical_Learning.Controllers
         // GET: Profile
         public ActionResult ProfilePage(string changedUsername)
         {
-            var userId = User.Identity.GetUserId();
-            var user = db.AspNetUsers.Find(userId);
 
-            ViewBag.UserName = user.UserName;
+            var userId = User.Identity.GetUserId();
+            var user = db.AspNetUsers.Find(userId); ;
+
+            try
+            {
+                ViewBag.UserName = user.UserName;
+            }
+            catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "Profile not found.", errorMessage = "This profile does not exist please try logging in with a different account." });
+
+            }
+
+
+
+            
             ViewBag.FirstName = user.FirstName;
             ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
             ViewBag.State = user.StateProvince;

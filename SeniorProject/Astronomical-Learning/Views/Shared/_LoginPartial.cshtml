@@ -19,7 +19,7 @@
                     @if (this.User.IsInRole("Administrator") || this.User.IsInRole("Super Administrator"))
                     {
                         <div>
-                            @Html.ActionLink("Amdministrator Features", "AdminFeatures", "AdminAbilities", routeValues: null, htmlAttributes: new { @class = "account-dropdown" })
+                            @Html.ActionLink("Administrator Features", "AdminFeatures", "AdminAbilities", routeValues: null, htmlAttributes: new { @class = "account-dropdown" })
                         </div>
                         <div class="dropdown-divider"></div>
                     }
