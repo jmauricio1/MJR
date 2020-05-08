@@ -427,7 +427,7 @@ namespace Astronomical_Learning.Controllers
             {
                 Random rand = new Random();
                 int x = rand.Next(1, 7);
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x};
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x, LevelID = 1};
                 if(db.AspNetUsers.Any(m => m.UserName == user.UserName) == true)
                 {
                     ViewBag.UsernameTaken = "Username already taken or unavailable.";
