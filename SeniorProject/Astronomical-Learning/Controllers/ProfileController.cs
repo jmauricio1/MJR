@@ -29,6 +29,9 @@ namespace Astronomical_Learning.Controllers
             ViewBag.State = user.StateProvince;
             ViewBag.Country = user.Country;
             ViewBag.Path = user.AvatarPath.Path.ToString();
+
+            LevelUpdate(userId);
+
             int? badgeID = user.LevelID;
             ViewBag.Badge = db.UserLevels.Find(badgeID).BadgePath.ToString();
             ViewBag.Level = db.UserLevels.Find(badgeID).LevelName.ToString();
@@ -53,6 +56,52 @@ namespace Astronomical_Learning.Controllers
 
             ViewBag.Role = user.AspNetRoles.ElementAt(0).Id;
             return View(comments);
+        }
+
+        public void LevelUpdate(string userID)
+        {
+            var user = db.AspNetUsers.Find(userID);
+            if((user.AccountScore) >= 0 && (user.AccountScore < 50))
+            {
+                user.LevelID = 1;
+            }
+            else if ((user.AccountScore >= 50) && (user.AccountScore < 100))
+            {
+                user.LevelID = 2;
+            }
+            else if ((user.AccountScore >= 100) && (user.AccountScore < 150))
+            {
+                user.LevelID = 3;
+            }
+            else if ((user.AccountScore >= 150) && (user.AccountScore < 200))
+            {
+                user.LevelID = 4;
+            }
+            else if ((user.AccountScore >= 200) && (user.AccountScore < 250))
+            {
+                user.LevelID = 5;
+            }
+            else if ((user.AccountScore >= 250) && (user.AccountScore < 300))
+            {
+                user.LevelID = 6;
+            }
+            else if ((user.AccountScore >= 300) && (user.AccountScore < 350))
+            {
+                user.LevelID = 7;
+            }
+            else if ((user.AccountScore >= 350) && (user.AccountScore < 400))
+            {
+                user.LevelID = 8;
+            }
+            else if ((user.AccountScore >= 400) && (user.AccountScore < 450))
+            {
+                user.LevelID = 9;
+            }
+            else if (user.AccountScore >= 450)
+            {
+                user.LevelID = 10;
+            }
+            db.SaveChanges();
         }
 
         [HttpPost]
