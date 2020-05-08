@@ -14,25 +14,7 @@ namespace Astronomical_Learning.Controllers
 {
     public class SpaceCompaniesController : Controller
     {
-        public void PrintList()
-        {
-            string json = SendRequest("https://www.dnd5eapi.co/api/equipment");
-            JObject data = JObject.Parse(json);
-
-            List<string> list = new List<string>();
-
-            for (int i = 0; i < (int)data["count"]; i++)
-            {
-                string current = (string)data["results"][i]["name"];
-                Debug.WriteLine("('" + current + "'),");
-
-
-            }
-
-            //Run this by going to your index of this controller then just stop it
-            //When you come back to Visual Studio, choose Debug from your output from below. You might have to drag the bottom window up a bit
-            //But there should be a printed version of the things you need to seed. Okay. I coudlnt find debug at the bottom
-        }
+        
         // GET: SpaceCompanies
         public ActionResult SpaceX()
         {
@@ -44,7 +26,6 @@ namespace Astronomical_Learning.Controllers
         }
         public JsonResult SpaceXLaunchList()
         {
-            PrintList();
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
 
             JArray data = JArray.Parse(json);
@@ -73,15 +54,37 @@ namespace Astronomical_Learning.Controllers
                 id = 1;
             }
             id--;
-            MainLaunchInformation mainInfo = GetMainLaunchInfo(ref data, id);
-            RocketInformation rocketInformation = GetRocketInformation(ref data, id);
-            FirstStage firstStage = GetFirstStageInformation(ref data, id);
-            SecondStage secondStage = GetSecondStageInformation(ref data, id);
-            LaunchSite launchSite = GetLaunchSiteInformation(ref data, id);
-            LaunchLinks launchLinks = GetLinksInformation(ref data, id);
-            Fairing fairings = GetFairingsInformation(ref data, id);
-            LaunchTimeline timeline = GetTimelineInformation(ref data, id);
-            Ship ships = GetShipsInformation(ref data, id);
+
+            MainLaunchInformation mainInfo;
+            RocketInformation rocketInformation;
+            FirstStage firstStage;
+            SecondStage secondStage;
+            LaunchSite launchSite;
+            LaunchLinks launchLinks;
+            Fairing fairings;
+            LaunchTimeline timeline;
+            Ship ships;
+
+            try
+            {
+                mainInfo = GetMainLaunchInfo(ref data, id);
+                rocketInformation = GetRocketInformation(ref data, id);
+                firstStage = GetFirstStageInformation(ref data, id);
+                secondStage = GetSecondStageInformation(ref data, id);
+                launchSite = GetLaunchSiteInformation(ref data, id);
+                launchLinks = GetLinksInformation(ref data, id);
+                fairings = GetFairingsInformation(ref data, id);
+                timeline = GetTimelineInformation(ref data, id);
+                ships = GetShipsInformation(ref data, id);
+            }
+             catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "Cannot find details for this launch.", errorMessage = "Please try again later when we have more information about this launch." });
+            }
+
+
+
+            
 
             SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation,
                 firstStage, secondStage, launchSite, launchLinks, fairings, timeline, ships);

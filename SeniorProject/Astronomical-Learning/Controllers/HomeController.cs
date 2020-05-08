@@ -73,6 +73,7 @@ namespace Astronomical_Learning.Controllers
             //read in the information
             string jsonString = null;
 
+            //try to get the information and if it fails return a default json string with an error picture and message
             try
             {
 
@@ -95,8 +96,22 @@ namespace Astronomical_Learning.Controllers
 
             return jsonString;
         }
+        public ActionResult Credits()
+        {
+            return View();
+        }
 
-        #region Filling list of regions
+
+        public ActionResult CustomError (string errorName, string errorMessage)
+        {
+
+            ViewBag.Name = errorName;
+            ViewBag.Message = errorMessage;
+
+
+            return View();
+        }
+#region Filling list of regions
         public List<List<string>> GetListOfRegions()
         {
             List<List<string>> temp = new List<List<string>>();

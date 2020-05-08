@@ -436,9 +436,15 @@
     <Content Include="Views\AspNetUsers\Details.cshtml" />
     <Content Include="Views\AspNetUsers\Edit.cshtml" />
     <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\AdminAbilities\AdminCreate.cshtml" />
+    <Content Include="Views\AdminAbilities\BannedAdmin.cshtml" />
+    <Content Include="Views\AdminAbilities\AllAdmin.cshtml" />
+    <Content Include="Views\AdminAbilities\EditAdminBan.cshtml" />
     <Content Include="Views\AdminAbilities\AdminFeatures.cshtml" />
     <Content Include="Views\AdminAbilities\InputFact.cshtml" />
     <Content Include="Views\GamesAndQuizzes\Q1Score.cshtml" />
+    <Content Include="Views\Home\Credits.cshtml" />
+    <Content Include="Views\Home\CustomError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
