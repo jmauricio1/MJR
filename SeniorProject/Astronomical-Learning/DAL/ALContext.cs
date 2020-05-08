@@ -31,6 +31,7 @@ namespace Astronomical_Learning.DAL
 
         public virtual DbSet<Quizze> Quizzes { get; set; }
         public virtual DbSet<UserQuizScore> UserQuizScores { get; set; }
+        public virtual DbSet<UserLevel> UserLevels { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

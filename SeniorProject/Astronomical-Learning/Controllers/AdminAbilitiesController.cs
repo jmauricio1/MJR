@@ -51,6 +51,11 @@ namespace Astronomical_Learning.Controllers
                 if (comment != null)
                 {
                     comment.AcceptState = true;
+
+                    var userID = User.Identity.GetUserId();
+                    var user = db.AspNetUsers.Find(userID);
+                    user.AccountScore = (int)user.AccountScore + 5;
+
                     db.SaveChanges();
                 }
             }
