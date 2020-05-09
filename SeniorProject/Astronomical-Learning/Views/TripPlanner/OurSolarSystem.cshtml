@@ -7,135 +7,116 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>ShowHideAllDiv()</script>
 </head>
 
-<div class="information-paragraphs dark-bkr">
-    <h2> Our Solar System Trip Planner</h2>
+<body onload="getDestinationPlanet()">
+    <div class="information-paragraphs dark-bkr">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2> Our Solar System Trip Planner</h2>
 
-    <p> purpose goes here </p>
+                <p style="width: 80%">
+                    This page will allow you to filter between different features of locations in our solar system. You are also able to use the trip planning tool to
+                    plot a course across our solar system and know how many miles you would travel during the course of your travels.
+                </p>
 
-    <h3> Instructions:</h3>
-    <p>instructions go here.</p>
+                <h3> Instructions:</h3>
+                <p>
+                    <ol>
+                        <li>Choose how many stops you would like to include between your starting location and your final destination.</li>
+                        <li>Choose a starting location.</li>
+                        <li>Choose subsequent locations as they become available. (You cannot travel from one location to the same location)</li>
+                        <li>Once you are happy with your route, click the "Confirm Route" button to lock in your choices.</li>
+                        <li>Click the "Calculate Trip" button that appears just below the "Confirm Route" button to see your results.</li>
+                        <li>If you wish to chart another route, click the "Reset" button and start again from step 1.</li>
+                    </ol>
+                </p>
 
-        <p>How many stops would you like to make on this trip?</p>
-        <input type="radio" id="zeroStops" name="numOfStops" value="0" checked onclick="ShowHideAllDiv()" />
-        <label for="zeroStops">Zero</label><br />
-        <input type="radio" id="oneStops" name="numOfStops" value="1" onclick="ShowHideStopOneDiv()" />
-        <label for="oneStops">One</label><br />
-        <input type="radio" id="twoStops" name="numOfStops" value="2" onclick="ShowHideStopTwoDiv()" />
-        <label for="twoStops">Two</label><br />
-        <input type="radio" id="threeStops" name="numOfStops" value="3" onclick="ShowHideStopThreeDiv()" />
-        <label for="threeStops">Three</label><br />
-        <input type="radio" id="fourStops" name="numOfStops" value="4" onclick="ShowHideStopFourDiv()" />
-        <label for="fourStops">Four</label>
-
-    <br /><br />
-
-    <div class="row">
-        <div class="col-lg-2">
-            <label for="startPlanet">Choose a starting planet</label>
-
-            <select id="startPlanet" style="color: black">
-                <option selected disabled hidden>Choose here</option>
-                <option value="Sun">Sun</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Earth">Earth</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
-                <option value="Uranus">Uranus</option>
-                <option value="Neptune">Neptune</option>
-            </select>
+                <p>How many stops would you like to make on this trip?</p>
+                <input type="radio" id="zeroStops" name="numOfStops" value="0" checked onclick="ShowHideAllDiv()" />
+                <label for="zeroStops">Zero</label><br />
+                <input type="radio" id="oneStops" name="numOfStops" value="1" onclick="ShowHideStopOneDiv()" />
+                <label for="oneStops">One</label><br />
+                <input type="radio" id="twoStops" name="numOfStops" value="2" onclick="ShowHideStopTwoDiv()" />
+                <label for="twoStops">Two</label><br />
+                <input type="radio" id="threeStops" name="numOfStops" value="3" onclick="ShowHideStopThreeDiv()" />
+                <label for="threeStops">Three</label><br />
+                <input type="radio" id="fourStops" name="numOfStops" value="4" onclick="ShowHideStopFourDiv()" />
+                <label for="fourStops">Four</label>
+            </div>
+            <div class="col-lg-5">
+                <img src="https://live.staticflickr.com/5573/14810314783_82bdabf6a3_b.jpg" alt="Our Solar System" height="450" width="600" />
+            </div>
         </div>
+        <br /><br />
 
-        <div class="col-lg-2">
-            <label for="endPlanet">Choose a destination planet</label>
+        <div class="row">
+            <div class="col-lg-2">
+                <label for="startPlanet">Choose a starting planet</label>
+                <br>
+                <select id="startPlanet" style="color: black">
+                    <option selected disabled hidden value="default">Choose here</option>
+                    <option value="Sun">Sun</option>
+                    <option value="Mercury">Mercury</option>
+                    <option value="Venus">Venus</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Uranus">Uranus</option>
+                    <option value="Neptune">Neptune</option>
+                </select>
+            </div>
 
-            <select id="endPlanet" style="color: black">
-                <option selected disabled hidden>Choose here</option>
-                <option value="Sun">Sun</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Earth">Earth</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
-                <option value="Uranus">Uranus</option>
-                <option value="Neptune">Neptune</option>
-            </select>
+
+
+            <div class="col-lg-2" id="stopOneDiv" style="display: none">
+                <label for="stopOne">Choose your first stop</label>
+                <br />
+                <select id="stopOne" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2" id="stopTwoDiv" style="display: none">
+                <label for="stopTwo">Choose your second stop</label>
+                <br />
+                <select id="stopTwo" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2" id="stopThreeDiv" style="display: none">
+                <label for="stopThree">Choose your third stop</label>
+                <br />
+                <select id="stopThree" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2" id="stopFourDiv" style="display: none">
+                <label for="stopFour">Choose your fourth stop</label>
+                <br />
+                <select id="stopFour" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2">
+                <label for="endPlanet">Choose a destination planet</label>
+                <br />
+                <select id="endPlanet" style="color: black"></select>
+            </div>
         </div>
-
-        <div class="col-lg-2" id="stopOneDiv" style="visibility: hidden">
-            <label for="stopOne">Choose your first stop</label>
-
-            <select id="stopOne" style="color: black">
-                <option selected disabled hidden value="default">Choose here</option>
-                <option value="Sun">Sun</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Earth">Earth</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
-                <option value="Uranus">Uranus</option>
-                <option value="Neptune">Neptune</option>
-            </select>
+        <br />
+        <button type="button" onclick="confirmRoute()" style="color: black">Confirm Route</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button type="button" onclick="resetTripPlan()" style="color: black">Reset</button>
+        <div>
+            <br /><button type="button" id="calculateButton" onclick="calculateTrip()" disabled style="color: black; background-color: lightcoral">Calculate Trip</button><br />
         </div>
-
-        <div class="col-lg-2" id="stopTwoDiv" style="visibility: hidden">
-            <label for="stopTwo">Choose your second stop</label>
-
-            <select id="stopTwo" style="color: black">
-                <option selected disabled hidden value="default">Choose here</option>
-                <option value="Sun">Sun</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Earth">Earth</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
-                <option value="Uranus">Uranus</option>
-                <option value="Neptune">Neptune</option>
-            </select>
+        <div id="tripResults" style="display: none">
+            <table id="tripResultsTable" style="background-color:white; color: black; border: 3px solid cornflowerblue; width: 40%">
+                <tr>
+                    <th>Location From</th>
+                    <th>Location To</th>
+                    <th>Distance Travelled</th>
+                </tr>
+            </table>
         </div>
-
-        <div class="col-lg-2" id="stopThreeDiv" style="visibility: hidden">
-            <label for="stopThree">Choose your third stop</label>
-
-            <select id="stopThree" style="color: black">
-                <option selected disabled hidden value="default">Choose here</option>
-                <option value="Sun">Sun</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Earth">Earth</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
-                <option value="Uranus">Uranus</option>
-                <option value="Neptune">Neptune</option>
-            </select>
-        </div>
-
-        <div class="col-lg-2" id="stopFourDiv" style="visibility: hidden">
-            <label for="stopFour">Choose your fourth stop</label>
-
-            <select id="stopFour" style="color: black">
-                <option selected disabled hidden value="default">Choose here</option>
-                <option value="Sun">Sun</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Earth">Earth</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
-                <option value="Uranus">Uranus</option>
-                <option value="Neptune">Neptune</option>
-            </select>
-        </div>
-    </div>
-</div>
+    </div> 
+</body>
 
 <script src="~/Scripts/main.js">
 </script>

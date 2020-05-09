@@ -86,3 +86,93 @@ GO
 CREATE NONCLUSTERED INDEX [IX_UserId] ON [dbo].[AspNetUserRoles]([UserId] ASC);
 GO
 CREATE NONCLUSTERED INDEX [IX_RoleId] ON [dbo].[AspNetUserRoles]([RoleId] ASC);
+
+
+-- #######################################
+-- #         User Comment Table          #
+-- #######################################
+
+CREATE TABLE [dbo].[UserComment]
+(
+    [Id]            INT             IDENTITY(1,1)   NOT NULL,
+    [Username]      NVARCHAR        (64)            NOT NULL,
+    [PostDate]      DATE                            NOT NULL,
+    [PageFrom]      NVARCHAR        (128)           NOT NULL,
+    [AcceptState]   BIT                             NOT NULL,
+    [Comment]       NVARCHAR        (1000)          NOT NULL,
+    [ReportCount]   INT                             NOT NULL
+
+    CONSTRAINT [PK_dbo.UserComment] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Locations]
+(
+    [Id]                INT IDENTITY(1, 1)      NOT NULL,
+    [LocationName]      NVARCHAR(64)            NOT NULL
+    
+    CONSTRAINT [PK_dbo.Locations] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+CREATE TABLE [dbo].[Distances]
+(
+    [Id]                INT IDENTITY(1, 1)      NOT NULL,
+    [DistanceMiles]     BIGINT                  NOT NULL
+
+    CONSTRAINT [PK_dbo.Distances] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
+CREATE TABLE [dbo].[LocationDistance]
+(
+    [Id]                INT IDENTITY(1, 1)      NOT NULL,
+    [LocationOneId]     INT                     NOT NULL,
+    [LocationTwoId]     INT                     NOT NULL,
+    [DistanceId]        INT                     NOT NULL
+
+    CONSTRAINT [PK_dbo.LocationDistance] PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FK_dbo.LocationOne_Distance] FOREIGN KEY ([LocationOneId]) REFERENCES [dbo].[Locations]([Id]),
+    CONSTRAINT [FK_dbo.LocationTwo_Distance] FOREIGN KEY ([LocationTwoId]) REFERENCES [dbo].[Locations]([Id]),
+    CONSTRAINT [FK_dbo.Distance_Location] FOREIGN KEY ([DistanceId]) REFERENCES [dbo].[Distances]([Id])
+);
+
+-- #######################################
+-- #             Search Tables         #
+-- #######################################
+
+CREATE TABLE [dbo].[SearchKeywords]
+(
+    [Id]   INT IDENTITY (1,1) NOT NULL,
+    [Name] NVARCHAR (256) NOT NULL,
+    CONSTRAINT [PK_dbo.SearchKeywords] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[KeywordRelations]
+(
+    [Id]   INT IDENTITY (1,1) NOT NULL,
+    [KeywordId] INT NOT NULL,
+    [PageId] INT NOT NULL,
+    CONSTRAINT [PK_dbo.KeywordRelations] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[SitePages]
+(
+    [Id]   INT IDENTITY (1,1) NOT NULL,
+    [Name] NVARCHAR (256) NOT NULL,
+    [Link] NVARCHAR (256) NOT NULL,
+    [Description] NVARCHAR (256) NOT NULL,
+    CONSTRAINT [PK_dbo.SitePages] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+GO
+
+-- #######################################
+-- #             Fact of the Day Tables         #
+-- #######################################
+
+-- ############# AspNetRoles #############
+CREATE TABLE [dbo].[FactOfTheDay]
+(
+    [Id]   INT IDENTITY (1,1) NOT NULL,
+    [Text] NVARCHAR (256) NOT NULL,
+    [Source] NVARCHAR (256) NOT NULL,
+    CONSTRAINT [PK_dbo.FactOfTheDay] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+GO
