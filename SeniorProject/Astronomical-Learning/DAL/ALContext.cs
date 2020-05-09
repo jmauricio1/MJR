@@ -54,7 +54,6 @@ namespace Astronomical_Learning.DAL
                 .WithRequired(e => e.AvatarPath)
                 .HasForeignKey(e => e.AID)
                 .WillCascadeOnDelete(false);
-<<<<<<< HEAD
 
             modelBuilder.Entity<Distance>()
                 .HasMany(e => e.LocationDistances)
@@ -72,9 +71,6 @@ namespace Astronomical_Learning.DAL
                 .WithRequired(e => e.Location1)
                 .HasForeignKey(e => e.LocationTwoId)
                 .WillCascadeOnDelete(false);
-=======
-            
->>>>>>> c434e9afbc305e174b2dbe27facce74a372eb6fb
         }
     }
 }
