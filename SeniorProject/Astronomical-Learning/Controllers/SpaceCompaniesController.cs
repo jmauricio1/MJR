@@ -14,6 +14,7 @@ namespace Astronomical_Learning.Controllers
 {
     public class SpaceCompaniesController : Controller
     {
+        
         // GET: SpaceCompanies
         public ActionResult SpaceX()
         {
@@ -53,15 +54,37 @@ namespace Astronomical_Learning.Controllers
                 id = 1;
             }
             id--;
-            MainLaunchInformation mainInfo = GetMainLaunchInfo(ref data, id);
-            RocketInformation rocketInformation = GetRocketInformation(ref data, id);
-            FirstStage firstStage = GetFirstStageInformation(ref data, id);
-            SecondStage secondStage = GetSecondStageInformation(ref data, id);
-            LaunchSite launchSite = GetLaunchSiteInformation(ref data, id);
-            LaunchLinks launchLinks = GetLinksInformation(ref data, id);
-            Fairing fairings = GetFairingsInformation(ref data, id);
-            LaunchTimeline timeline = GetTimelineInformation(ref data, id);
-            Ship ships = GetShipsInformation(ref data, id);
+
+            MainLaunchInformation mainInfo;
+            RocketInformation rocketInformation;
+            FirstStage firstStage;
+            SecondStage secondStage;
+            LaunchSite launchSite;
+            LaunchLinks launchLinks;
+            Fairing fairings;
+            LaunchTimeline timeline;
+            Ship ships;
+
+            try
+            {
+                mainInfo = GetMainLaunchInfo(ref data, id);
+                rocketInformation = GetRocketInformation(ref data, id);
+                firstStage = GetFirstStageInformation(ref data, id);
+                secondStage = GetSecondStageInformation(ref data, id);
+                launchSite = GetLaunchSiteInformation(ref data, id);
+                launchLinks = GetLinksInformation(ref data, id);
+                fairings = GetFairingsInformation(ref data, id);
+                timeline = GetTimelineInformation(ref data, id);
+                ships = GetShipsInformation(ref data, id);
+            }
+             catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "Cannot find details for this launch.", errorMessage = "Please try again later when we have more information about this launch." });
+            }
+
+
+
+            
 
             SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation,
                 firstStage, secondStage, launchSite, launchLinks, fairings, timeline, ships);
