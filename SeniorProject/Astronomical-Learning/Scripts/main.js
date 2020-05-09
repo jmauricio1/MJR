@@ -1,5 +1,5 @@
 
-﻿function sunShowImageSources() {
+function sunShowImageSources() {
 
     var x = document.getElementById("sunSources");
     if (x.style.display === "none") {
@@ -91,8 +91,7 @@ function homeShowPictureInfo() {
 }
 
 
-function starsChangeInfo(image, source, info)
-{
+function starsChangeInfo(image, source, info) {
     document.getElementById("starsTypesImage").src = image;
 
     document.getElementById("starsTypesSource").href = source;
@@ -164,7 +163,7 @@ function deleteComment(commentId) {
 
 function deleteSuccess() {
     alert("You've deleted the comment.");
-    
+
     setTimeout(function () {
         location.reload();
     }, 350);
@@ -176,9 +175,8 @@ function deleteSuccess() {
 
 
 
-function siteSearch()
-{
-   
+function siteSearch() {
+
     var query = document.getElementById("siteSearchBar").value;
 
     location.href = '/Search/searchPage' + '?searchQuery=' + query;
@@ -189,46 +187,35 @@ function siteSearch()
 
 
 
-function calculateQuiz1Score()
-{
+function calculateQuiz1Score() {
     var totalScore = 0;
 
     if (document.querySelector('input[name="q1"]:checked').value == 2) {
         totalScore = totalScore + 1;
         document.getElementById("a1").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a1").innerHTML = "Incorrect";
     }
-
-
     if (document.querySelector('input[name="q2"]:checked').value == 1) {
         totalScore = totalScore + 1;
         document.getElementById("a2").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a2").innerHTML = "Incorrect";
     }
-
-
     if (document.querySelector('input[name="q3"]:checked').value == 4) {
         totalScore = totalScore + 1;
         document.getElementById("a3").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a3").innerHTML = "Incorrect";
     }
-
-
     if (document.querySelector('input[name="q4"]:checked').value == 3) {
         totalScore = totalScore + 1;
         document.getElementById("a4").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a4").innerHTML = "Incorrect";
     }
 
@@ -236,8 +223,7 @@ function calculateQuiz1Score()
         totalScore = totalScore + 1;
         document.getElementById("a5").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a5").innerHTML = "Incorrect";
     }
 
@@ -245,8 +231,7 @@ function calculateQuiz1Score()
         totalScore = totalScore + 1;
         document.getElementById("a6").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a6").innerHTML = "Incorrect";
     }
 
@@ -254,8 +239,7 @@ function calculateQuiz1Score()
         totalScore = totalScore + 1;
         document.getElementById("a7").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a7").innerHTML = "Incorrect";
     }
 
@@ -263,8 +247,7 @@ function calculateQuiz1Score()
         totalScore = totalScore + 1;
         document.getElementById("a8").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a8").innerHTML = "Incorrect";
     }
 
@@ -272,8 +255,7 @@ function calculateQuiz1Score()
         totalScore = totalScore + 1;
         document.getElementById("a9").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a9").innerHTML = "Incorrect";
     }
 
@@ -281,18 +263,13 @@ function calculateQuiz1Score()
         totalScore = totalScore + 1;
         document.getElementById("a10").innerHTML = "Correct";
     }
-    else
-    {
+    else {
         document.getElementById("a10").innerHTML = "Incorrect";
     }
-
-
     document.getElementById("total").innerHTML = totalScore + "/10";
-    
-
-
 }
 
+/*
 $(function () {
     $('.button').on("click", function () {
         $.post('@Url.Action("PostActionToUpdatePoints", "Home")').always(function () {
@@ -300,14 +277,9 @@ $(function () {
         })
     });
 }); 
+*/
 
-
-
-
-
-
-
-function singleQuestionWrong(aDiv,bDiv) {
+function singleQuestionWrong(aDiv, bDiv) {
 
     var x = document.getElementById(aDiv);
 

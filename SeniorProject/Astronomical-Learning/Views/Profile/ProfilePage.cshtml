@@ -30,36 +30,20 @@
                 <div style="text-align:center; font-size:24px; word-wrap: break-word">
 
                     <div style="text-align:center; font-size:24px; word-wrap: break-word">
-                        @ViewBag.UserName<br>
+                        <img style="width:40px; height:40px;" src=@ViewBag.Badge alt="Profile Image" /> @ViewBag.UserName<br>
                         <div style="font-size:20px">
+                            <i style="font-size: 15px;">Level: @ViewBag.Level</i> <br />
                             @ViewBag.FirstName, @ViewBag.LastName<br>
                             @ViewBag.State, @ViewBag.Country<br>
                             @ViewBag.Description <br>
                             @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                         </div>
-                    </div>
-                </div>
-            </div>
+                        <div>
 
-            <div style="height:20px"></div>
-
-            @if (ViewBag.Role == "SA" || ViewBag.Role == "AD")
-            {
-
-                <div class="homepageCard">
-                    <div style="text-align:center; font-size:24px; word-wrap: break-word">
-                        Adminstrator Abilities
-
-                        <div style="font-size:20px">
-                            @Html.ActionLink("Review Comments", "ReviewComments", "AdminAbilities")<br>
-                            @Html.ActionLink("Manage Users", "AllUsers", "AdminAbilities")
                         </div>
                     </div>
                 </div>
-            }
-
-
-
+            </div>
 
 
         </div>

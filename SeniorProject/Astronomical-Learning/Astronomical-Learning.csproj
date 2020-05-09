@@ -191,6 +191,9 @@
     <Compile Include="DAL\AspNetUserClaim.cs" />
     <Compile Include="DAL\AspNetUserLogin.cs" />
     <Compile Include="DAL\AvatarPath.cs" />
+    <Compile Include="DAL\Quizze.cs" />
+    <Compile Include="DAL\UserLevel.cs" />
+    <Compile Include="DAL\UserQuizScore.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,13 +262,16 @@
     <Content Include="App_Data\ALtempDB_log.ldf">
       <DependentUpon>ALtempDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Badge Levels\user-levels-up.sql" />
     <Content Include="App_Data\ChangesToDB.sql" />
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
+    <Content Include="App_Data\FactOfTheDay\facts-update.sql" />
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\seed.sql" />
     <Content Include="App_Data\Roles\upRoles.sql" />
+    <Content Include="App_Data\Scores\UserQuiz.sql" />
     <!-- Remember to comment this out 
     <Content Include="App_Data\Temporary.mdf" />
     <Content Include="App_Data\Temporary_log.ldf">
@@ -315,6 +321,15 @@
     <Content Include="Images\icons\stars.gif" />
     <Content Include="Images\icons\sun-icon.png" />
     <Content Include="Images\JimBridenstine.jpg" />
+    <Content Include="Images\Levels\1.png" />
+    <Content Include="Images\Levels\10.png" />
+    <Content Include="Images\Levels\2.png" />
+    <Content Include="Images\Levels\3.png" />
+    <Content Include="Images\Levels\4.png" />
+    <Content Include="Images\Levels\5.png" />
+    <Content Include="Images\Levels\6.png" />
+    <Content Include="Images\Levels\8.png" />
+    <Content Include="Images\Levels\9.png" />
     <Content Include="Images\m1.png" />
     <Content Include="Images\mjr-transparent.png" />
     <Content Include="Images\mjr-transparent2.1.png" />
@@ -365,6 +380,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\planets-js.js" />
     <Content Include="Scripts\ProfileUpdates.js" />
+    <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\something.js" />
     <Content Include="Scripts\spacex-main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -440,7 +456,19 @@
     <Content Include="Views\AspNetUsers\Details.cshtml" />
     <Content Include="Views\AspNetUsers\Edit.cshtml" />
     <Content Include="Views\AspNetUsers\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\TripPlanner\OurSolarSystem.cshtml" />
+=======
+    <Content Include="Views\AdminAbilities\AdminCreate.cshtml" />
+    <Content Include="Views\AdminAbilities\BannedAdmin.cshtml" />
+    <Content Include="Views\AdminAbilities\AllAdmin.cshtml" />
+    <Content Include="Views\AdminAbilities\EditAdminBan.cshtml" />
+    <Content Include="Views\AdminAbilities\AdminFeatures.cshtml" />
+    <Content Include="Views\AdminAbilities\InputFact.cshtml" />
+    <Content Include="Views\GamesAndQuizzes\Q1Score.cshtml" />
+    <Content Include="Views\Home\Credits.cshtml" />
+    <Content Include="Views\Home\CustomError.cshtml" />
+>>>>>>> c434e9afbc305e174b2dbe27facce74a372eb6fb
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

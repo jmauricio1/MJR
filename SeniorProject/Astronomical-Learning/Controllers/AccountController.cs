@@ -136,7 +136,7 @@ namespace Astronomical_Learning.Controllers
                     return View(model);
             }
         }
-
+        #region Countries List
         public List<string> GetCountries(ref List<string> temp)
         {
             //A11
@@ -394,6 +394,7 @@ namespace Astronomical_Learning.Controllers
             Debug.WriteLine(temp[125] + temp[125].Count());
             return temp;
         }
+        #endregion
 
         List<string> countryList = new List<string>();
         //
@@ -404,11 +405,8 @@ namespace Astronomical_Learning.Controllers
 
             countryList = GetCountries(ref countryList);
 
-            SelectList countryList2 = new SelectList(countryList);
+            ViewBag.CountriesList = countryList;
 
-            //List<CountryState> theList = GetListOfCountriesRegions();
-            ViewBag.CountriesList = countryList2;
-            Debug.WriteLine(countryList);
             return View("Register");
         }
 
@@ -426,7 +424,7 @@ namespace Astronomical_Learning.Controllers
             {
                 Random rand = new Random();
                 int x = rand.Next(1, 7);
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x};
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x, LevelID = 1};
                 if(db.AspNetUsers.Any(m => m.UserName == user.UserName) == true)
                 {
                     ViewBag.UsernameTaken = "Username already taken or unavailable.";

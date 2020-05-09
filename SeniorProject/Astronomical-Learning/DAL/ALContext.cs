@@ -27,6 +27,11 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<SitePage> SitePages { get; set; }
         public virtual DbSet<UserComment> UserComments { get; set; }
 
+        public virtual DbSet<Quizze> Quizzes { get; set; }
+        public virtual DbSet<UserQuizScore> UserQuizScores { get; set; }
+        public virtual DbSet<UserLevel> UserLevels { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AspNetRole>()
@@ -49,6 +54,7 @@ namespace Astronomical_Learning.DAL
                 .WithRequired(e => e.AvatarPath)
                 .HasForeignKey(e => e.AID)
                 .WillCascadeOnDelete(false);
+<<<<<<< HEAD
 
             modelBuilder.Entity<Distance>()
                 .HasMany(e => e.LocationDistances)
@@ -66,6 +72,9 @@ namespace Astronomical_Learning.DAL
                 .WithRequired(e => e.Location1)
                 .HasForeignKey(e => e.LocationTwoId)
                 .WillCascadeOnDelete(false);
+=======
+            
+>>>>>>> c434e9afbc305e174b2dbe27facce74a372eb6fb
         }
     }
 }

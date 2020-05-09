@@ -6,8 +6,8 @@
 
     <div class="information-paragraphs dark-bkr">
         <div style="text-align:center">
-            <h2>Banned Users</h2>
-            @Html.ActionLink("See the list of all users.", "AllUsers", "AdminAbilities")
+            <h2>Banned Administrators </h2>
+            @Html.ActionLink("See the list of all administrators.", "AllAdmin", "AdminAbilities")
         </div>
 
         <div style="text-align:center; justify-content:center">
@@ -48,7 +48,7 @@
 
 
                     <td>
-                        @Html.ActionLink("Edit Ban", "EditUserBan", new { id = item.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Edit Ban", "EditAdminBan", new { id = item.Id }, new { @class = "btn btn-primary" })
                     </td>
                 </tr>
             }
