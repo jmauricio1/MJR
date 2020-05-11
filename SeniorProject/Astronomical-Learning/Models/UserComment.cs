@@ -28,6 +28,7 @@ namespace Astronomical_Learning.Models
         [StringLength(1000)]
         public string Comment { get; set; }
 
+        [Required]
         public int ReportCount { get; set; }
     }
 }

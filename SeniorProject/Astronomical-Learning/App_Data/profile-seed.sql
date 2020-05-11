@@ -7,3 +7,4 @@
 	('Saturn', '/Images/Profile/avatars/saturn-a.png'),
 	('Star', '/Images/Profile/avatars/star-a.png'),
 	('None', '/Images/Profile/avatars/default-profile.png');
+
