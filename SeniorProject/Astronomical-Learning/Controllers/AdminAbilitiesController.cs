@@ -687,18 +687,6 @@ namespace Astronomical_Learning.Controllers
             return RedirectToAction("AllAdmin");
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AdminFeatures()
         {
