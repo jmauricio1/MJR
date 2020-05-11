@@ -439,7 +439,7 @@ namespace Astronomical_Learning.Controllers
                         UserManager.AddToRole(user.Id, "User");
 
                         string subject = "Astronomical Learning Email Confirmation";
-                        string callbackUrl = await SendConfirmationTokenAsync(user.Id, subject, user.UserName);
+                        var response = await SendConfirmationTokenAsync(user.Id, subject, user.UserName);
 
                         //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
@@ -466,21 +466,8 @@ namespace Astronomical_Learning.Controllers
             string emailBody = "Hello " + name + ", \n Please <a href=\"" + callbackUrl + "\"> click here</a> to confirm your email with Astronomical Learning";
 
             await UserManager.SendEmailAsync(userID, subject, emailBody);
-
             return callbackUrl;
         }
-
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendConfirmationEmail(string url)
-        {
-            string id = User.Identity.GetUserId();
-            await SendConfirmationTokenAsync(id, "Confirm your account", ",");
-            ViewBag.EmailSent = true;
-            return RedirectToAction("Index", new RouteValueDictionary(new { controller = "Home", action = "Index", message = "Email Sent" }));
-        }
-
 
         //
         // GET: /Account/ConfirmEmail
