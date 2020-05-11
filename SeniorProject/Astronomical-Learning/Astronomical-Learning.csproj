@@ -55,6 +55,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -185,6 +188,7 @@
     <Compile Include="Controllers\SolarSystemController.cs" />
     <Compile Include="Controllers\SpaceCompaniesController.cs" />
     <Compile Include="Controllers\SpaceSuitsController.cs" />
+    <Compile Include="Controllers\TripPlannerController.cs" />
     <Compile Include="DAL\AspNetRole.cs" />
     <Compile Include="DAL\AspNetUser.cs" />
     <Compile Include="DAL\AspNetUserClaim.cs" />
@@ -203,6 +207,7 @@
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\CountryState.cs" />
+    <Compile Include="Models\Distance.cs" />
     <Compile Include="Models\FactOfTheDay.cs" />
     <Compile Include="DAL\FactOfTheDayContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -220,7 +225,11 @@
     <Compile Include="Models\Launches\SecondStage.cs" />
     <Compile Include="Models\Launches\Ship.cs" />
     <Compile Include="Models\Launches\SingleLaunchViewModel.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationDistance.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PlanetFilter.cs" />
+    <Compile Include="Models\TripPlanModel.cs" />
     <Compile Include="Models\UserComment.cs" />
     <Compile Include="Models\Search\KeywordRelation.cs" />
     <Compile Include="Models\Search\SearchKeyword.cs" />
@@ -267,6 +276,12 @@
     <Content Include="App_Data\Search\downSearch.sql" />
     <Content Include="App_Data\Search\seedSarch.sql" />
     <Content Include="App_Data\Search\upSearch.sql" />
+    <Content Include="App_Data\TripFilter\downTripFilter.sql" />
+    <Content Include="App_Data\TripFilter\seedTripFilter.sql" />
+    <Content Include="App_Data\TripFilter\upTripFilter.sql" />
+    <Content Include="App_Data\TripPlanner\downTripPlanner.sql" />
+    <Content Include="App_Data\TripPlanner\seedTripPlanner.sql" />
+    <Content Include="App_Data\TripPlanner\upTripPlanner.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="App_Data\UserComment\demoSeedScript.sql" />
     <Content Include="App_Data\UserComment\downUserComment.sql" />
@@ -448,6 +463,7 @@
     <Content Include="Views\GamesAndQuizzes\Q1Score.cshtml" />
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\CustomError.cshtml" />
+    <Content Include="Views\TripPlanner\OurSolarSystem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
