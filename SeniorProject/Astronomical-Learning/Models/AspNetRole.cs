@@ -1,4 +1,4 @@
-namespace Astronomical_Learning.Models
+﻿namespace Astronomical_Learning.Models
 {
     using System;
     using System.Collections.Generic;
