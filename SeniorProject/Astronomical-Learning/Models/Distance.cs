@@ -6,21 +6,19 @@ namespace Astronomical_Learning.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class AspNetRole
+    public partial class Distance
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AspNetRole()
+        public Distance()
         {
-            AspNetUsers = new HashSet<AspNetUser>();
+            LocationDistances = new HashSet<LocationDistance>();
         }
 
-        public string Id { get; set; }
+        public int Id { get; set; }
 
-        [Required]
-        [StringLength(256)]
-        public string Name { get; set; }
+        public long DistanceMiles { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
+        public virtual ICollection<LocationDistance> LocationDistances { get; set; }
     }
 }
