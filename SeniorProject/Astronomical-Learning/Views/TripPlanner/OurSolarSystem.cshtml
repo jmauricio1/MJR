@@ -1,0 +1,288 @@
+﻿@{
+    ViewBag.Title = "OurSolarSystem";
+}
+
+<head>
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body onload="getDestinationPlanet()">
+    <div class="information-paragraphs dark-bkr">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2> Our Solar System Trip Planner</h2>
+
+                <p style="width: 80%">
+                    This page will allow you to filter between different features of locations in our solar system. You are also able to use the trip planning tool to
+                    plot a course across our solar system and know how many miles you would travel during the course of your travels.
+                </p>
+
+                <h3> Planetary Filter Instructions</h3>
+                <p style="width: 80%">
+                    There are 3 drop down lists below that you can choose from to filter between different aspects of planets. You may use these filters to
+                    do a little research into what kind of planets you might want to visit using the trip planner below!
+                </p>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="firstFilter" style="color: lightcoral">Filter #1</label>
+                        <br>
+                        <select id="firstFilter" style="color: black" onchange="filterFirst()">
+                            <option selected disabled hidden>Choose Here / No Filter</option>
+                            <optgroup label="Num Of Moons" style="background-color: lightcyan">
+                                <option class="moons" value="Moon0to5" style="background-color: white">0 - 5 Moons</option>
+                                <option class="moons" value="Moon6to15" style="background-color: white">6 - 15 Moons</option>
+                                <option class="moons" value="Moon16to30" style="background-color: white">16 - 30 Moons</option>
+                                <option class="moons" value="Moon30plus" style="background-color: white">30+ Moons</option>
+                            </optgroup>
+                            <optgroup label="Planet Type" style="background-color: lightcyan">
+                                <option class="planetType" value="TypeTerra" style="background-color: white">Terrestrial</option>
+                                <option class="planetType" value="TypeGas" style="background-color: white">Gas Giant</option>
+                                <option class="planetType" value="TypeIce" style="background-color: white">Ice Giant</option>
+                            </optgroup>
+                            <optgroup label="Size Compared to Earth" style="background-color: lightcyan">
+                                <option class="sizeCompare" value="SizeSmaller" style="background-color: white">Smaller (< 90%)</option>
+                                <option class="sizeCompare" value="SizeEarthlike" style="background-color: white">Earthlike (90%-110%)</option>
+                                <option class="sizeCompare" value="SizeLarger" style="background-color: white">Larger (110-499%)</option>
+                                <option class="sizeCompare" value="SizeMassive" style="background-color: white">Massively Larger (500%+)</option>
+                            </optgroup>
+                            <optgroup label="Time to Orbit (Earth Years)" style="background-color: lightcyan">
+                                <option class="orbitTime" value="Orbit1Year" style="background-color: white">0 to 1 Earth year</option>
+                                <option class="orbitTime" value="Orbit1to10Year" style="background-color: white">1 to 10 Earth years </option>
+                                <option class="orbitTime" value="Orbit11to30Year" style="background-color: white">11 to 30 Earth years</option>
+                                <option class="orbitTime" value="Orbit30plusYear" style="background-color: white">30+ Earth years</option>
+                            </optgroup>
+                            <optgroup label="Forms of Water" style="background-color: lightcyan">
+                                <option class="waterForms" value="WaterIce" style="background-color: white">Liquid Form </option>
+                                <option class="waterForms" value="WaterLiquid" style="background-color: white">Ice Form</option>
+                                <option class="waterForms" value="WaterVapor" style="background-color: white">Vapor Form</option>
+                            </optgroup>
+                            <optgroup label="Human-made Crafts Landed" style="background-color: lightcyan">
+                                <option class="humanContact" value="HumanContactTrue" style="background-color: white">Humans Have Landed</option>
+                                <option class="humanContact" value="HumanContactFalse" style="background-color: white">Humans Have Not Landed</option>
+                            </optgroup>
+                            <optgroup label="Atmosphere Density/Type" style="background-color: lightcyan">
+                                <option class="atmoDensity" value="AtmoNone" style="background-color: white">None</option>
+                                <option class="atmoDensity" value="AtmoThin" style="background-color: white">Thin </option>
+                                <option class="atmoDensity" value="AtmoModerate" style="background-color: white">Moderate</option>
+                                <option class="atmoDensity" value="AtmoThick" style="background-color: white">Thick</option>
+                                <option class="atmoDensity" value="AtmoIce" style="background-color: white">Icy</option>
+                            </optgroup>
+                            <optgroup label="Does It Have Rings?" style="background-color: lightcyan">
+                                <option class="rings" value="RingsTrue" style="background-color: white">Has Rings</option>
+                                <option class="rings" value="RingsFalse" style="background-color: white">Does Not Have Rings</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="secondFilter" style="color: lightgreen">Filter #2</label>
+                        <br>
+                        <select id="secondFilter" style="color: black" onchange="filterSecond()">
+                            <option selected disabled hidden>Choose Here / No Filter</option>
+                            <optgroup label="Num Of Moons" style="background-color: lightcyan">
+                                <option class="moons" value="Moon0to5" style="background-color: white">0 - 5 Moons</option>
+                                <option class="moons" value="Moon6to15" style="background-color: white">6 - 15 Moons</option>
+                                <option class="moons" value="Moon16to30" style="background-color: white">16 - 30 Moons</option>
+                                <option class="moons" value="Moon30plus" style="background-color: white">30+ Moons</option>
+                            </optgroup>
+                            <optgroup label="Planet Type" style="background-color: lightcyan">
+                                <option class="planetType" value="TypeTerra" style="background-color: white">Terrestrial</option>
+                                <option class="planetType" value="TypeGas" style="background-color: white">Gas Giant</option>
+                                <option class="planetType" value="TypeIce" style="background-color: white">Ice Giant</option>
+                            </optgroup>
+                            <optgroup label="Size Compared to Earth" style="background-color: lightcyan">
+                                <option class="sizeCompare" value="SizeSmaller" style="background-color: white">Smaller (< 90%)</option>
+                                <option class="sizeCompare" value="SizeEarthlike" style="background-color: white">Earthlike (90%-110%)</option>
+                                <option class="sizeCompare" value="SizeLarger" style="background-color: white">Larger (110-499%)</option>
+                                <option class="sizeCompare" value="SizeMassive" style="background-color: white">Massively Larger (500%+)</option>
+                            </optgroup>
+                            <optgroup label="Time to Orbit (Earth Years)" style="background-color: lightcyan">
+                                <option class="orbitTime" value="Orbit1Year" style="background-color: white">0 to 1 Earth year</option>
+                                <option class="orbitTime" value="Orbit1to10Year" style="background-color: white">1 to 10 Earth years </option>
+                                <option class="orbitTime" value="Orbit11to30Year" style="background-color: white">11 to 30 Earth years</option>
+                                <option class="orbitTime" value="Orbit30plusYear" style="background-color: white">30+ Earth years</option>
+                            </optgroup>
+                            <optgroup label="Forms of Water" style="background-color: lightcyan">
+                                <option class="waterForms" value="WaterIce" style="background-color: white">Liquid Form </option>
+                                <option class="waterForms" value="WaterLiquid" style="background-color: white">Ice Form</option>
+                                <option class="waterForms" value="WaterVapor" style="background-color: white">Vapor Form</option>
+                            </optgroup>
+                            <optgroup label="Human-made Crafts Landed" style="background-color: lightcyan">
+                                <option class="humanContact" value="HumanContactTrue" style="background-color: white">Humans Have Landed</option>
+                                <option class="humanContact" value="HumanContactFalse" style="background-color: white">Humans Have Not Landed</option>
+                            </optgroup>
+                            <optgroup label="Atmosphere Density/Type" style="background-color: lightcyan">
+                                <option class="atmoDensity" value="AtmoNone" style="background-color: white">None</option>
+                                <option class="atmoDensity" value="AtmoThin" style="background-color: white">Thin </option>
+                                <option class="atmoDensity" value="AtmoModerate" style="background-color: white">Moderate</option>
+                                <option class="atmoDensity" value="AtmoThick" style="background-color: white">Thick</option>
+                                <option class="atmoDensity" value="AtmoIce" style="background-color: white">Icy</option>
+                            </optgroup>
+                            <optgroup label="Does It Have Rings?" style="background-color: lightcyan">
+                                <option class="rings" value="RingsTrue" style="background-color: white">Has Rings</option>
+                                <option class="rings" value="RingsFalse" style="background-color: white">Does Not Have Rings</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="thirdFilter" style="color: lightyellow">Filter #3</label>
+                        <br>
+                        <select id="thirdFilter" style="color: black" onchange="filterThird()">
+                            <option selected disabled hidden>Choose Here / No Filter</option>
+                            <optgroup label="Num Of Moons" style="background-color: lightcyan">
+                                <option class="moons" value="Moon0to5" style="background-color: white">0 - 5 Moons</option>
+                                <option class="moons" value="Moon6to15" style="background-color: white">6 - 15 Moons</option>
+                                <option class="moons" value="Moon16to30" style="background-color: white">16 - 30 Moons</option>
+                                <option class="moons" value="Moon30plus" style="background-color: white">30+ Moons</option>
+                            </optgroup>
+                            <optgroup label="Planet Type" style="background-color: lightcyan">
+                                <option class="planetType" value="TypeTerra" style="background-color: white">Terrestrial</option>
+                                <option class="planetType" value="TypeGas" style="background-color: white">Gas Giant</option>
+                                <option class="planetType" value="TypeIce" style="background-color: white">Ice Giant</option>
+                            </optgroup>
+                            <optgroup label="Size Compared to Earth" style="background-color: lightcyan">
+                                <option class="sizeCompare" value="SizeSmaller" style="background-color: white">Smaller (< 90%)</option>
+                                <option class="sizeCompare" value="SizeEarthlike" style="background-color: white">Earthlike (90%-110%)</option>
+                                <option class="sizeCompare" value="SizeLarger" style="background-color: white">Larger (110-499%)</option>
+                                <option class="sizeCompare" value="SizeMassive" style="background-color: white">Massively Larger (500%+)</option>
+                            </optgroup>
+                            <optgroup label="Time to Orbit (Earth Years)" style="background-color: lightcyan">
+                                <option class="orbitTime" value="Orbit1Year" style="background-color: white">0 to 1 Earth year</option>
+                                <option class="orbitTime" value="Orbit1to10Year" style="background-color: white">1 to 10 Earth years </option>
+                                <option class="orbitTime" value="Orbit11to30Year" style="background-color: white">11 to 30 Earth years</option>
+                                <option class="orbitTime" value="Orbit30plusYear" style="background-color: white">30+ Earth years</option>
+                            </optgroup>
+                            <optgroup label="Forms of Water" style="background-color: lightcyan">
+                                <option class="waterForms" value="WaterIce" style="background-color: white">Liquid Form </option>
+                                <option class="waterForms" value="WaterLiquid" style="background-color: white">Ice Form</option>
+                                <option class="waterForms" value="WaterVapor" style="background-color: white">Vapor Form</option>
+                            </optgroup>
+                            <optgroup label="Human-made Crafts Landed" style="background-color: lightcyan">
+                                <option class="humanContact" value="HumanContactTrue" style="background-color: white">Humans Have Landed</option>
+                                <option class="humanContact" value="HumanContactFalse" style="background-color: white">Humans Have Not Landed</option>
+                            </optgroup>
+                            <optgroup label="Atmosphere Density/Type" style="background-color: lightcyan">
+                                <option class="atmoDensity" value="AtmoNone" style="background-color: white">None</option>
+                                <option class="atmoDensity" value="AtmoThin" style="background-color: white">Thin </option>
+                                <option class="atmoDensity" value="AtmoModerate" style="background-color: white">Moderate</option>
+                                <option class="atmoDensity" value="AtmoThick" style="background-color: white">Thick</option>
+                                <option class="atmoDensity" value="AtmoIce" style="background-color: white">Icy</option>
+                            </optgroup>
+                            <optgroup label="Does It Have Rings?" style="background-color: lightcyan">
+                                <option class="rings" value="RingsTrue" style="background-color: white">Has Rings</option>
+                                <option class="rings" value="RingsFalse" style="background-color: white">Does Not Have Rings</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                <br /><div style="color: white">Matching Planets:</div>
+
+                <div id="filterResults" style="color: white;">
+                    <p id="filterPar"></p>
+                </div>
+
+                <h3> Trip Planner Instructions:</h3>
+                <p>
+                    <ol>
+                        <li>Choose how many stops you would like to include between your starting location and your final destination.</li>
+                        <li>Choose a starting location.</li>
+                        <li>Choose subsequent locations as they become available. (You cannot travel from one location to the same location)</li>
+                        <li>Once you are happy with your route, click the "Confirm Route" button to lock in your choices.</li>
+                        <li>Click the "Calculate Trip" button that appears just below the "Confirm Route" button to see your results.</li>
+                        <li>If you wish to chart another route, click the "Reset" button and start again from step 1.</li>
+                    </ol>
+                </p>
+
+                <p>How many stops would you like to make on this trip?</p>
+                <input type="radio" id="zeroStops" name="numOfStops" value="0" checked onclick="ShowHideAllDiv()" />
+                <label for="zeroStops">Zero</label><br />
+                <input type="radio" id="oneStops" name="numOfStops" value="1" onclick="ShowHideStopOneDiv()" />
+                <label for="oneStops">One</label><br />
+                <input type="radio" id="twoStops" name="numOfStops" value="2" onclick="ShowHideStopTwoDiv()" />
+                <label for="twoStops">Two</label><br />
+                <input type="radio" id="threeStops" name="numOfStops" value="3" onclick="ShowHideStopThreeDiv()" />
+                <label for="threeStops">Three</label><br />
+                <input type="radio" id="fourStops" name="numOfStops" value="4" onclick="ShowHideStopFourDiv()" />
+                <label for="fourStops">Four</label>
+            </div>
+            <div class="col-lg-5">
+                <img src="https://live.staticflickr.com/5573/14810314783_82bdabf6a3_b.jpg" alt="Our Solar System" height="450" width="600" />
+            </div>
+        </div>
+        <br /><br />
+
+        <div class="row">
+            <div class="col-lg-2">
+                <label for="startPlanet">Choose a starting location</label>
+                <br>
+                <select id="startPlanet" style="color: black">
+                    <option selected disabled hidden value="default">Choose here</option>
+                    <option value="Sun">Sun</option>
+                    <option value="Mercury">Mercury</option>
+                    <option value="Venus">Venus</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Uranus">Uranus</option>
+                    <option value="Neptune">Neptune</option>
+                </select>
+            </div>
+
+
+
+            <div class="col-lg-2" id="stopOneDiv" style="display: none">
+                <label for="stopOne">Choose your first stop</label>
+                <br />
+                <select id="stopOne" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2" id="stopTwoDiv" style="display: none">
+                <label for="stopTwo">Choose your second stop</label>
+                <br />
+                <select id="stopTwo" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2" id="stopThreeDiv" style="display: none">
+                <label for="stopThree">Choose your third stop</label>
+                <br />
+                <select id="stopThree" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2" id="stopFourDiv" style="display: none">
+                <label for="stopFour">Choose your fourth stop</label>
+                <br />
+                <select id="stopFour" style="color: black"></select>
+            </div>
+
+            <div class="col-lg-2">
+                <label for="endPlanet">Choose a destination location</label>
+                <br />
+                <select id="endPlanet" style="color: black"></select>
+            </div>
+        </div>
+        <br />
+        <button type="button" onclick="confirmRoute()" style="color: black">Confirm Route</button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button type="button" onclick="resetTripPlan()" style="color: black">Reset</button>
+        <div>
+            <br /><button type="button" id="calculateButton" onclick="calculateTrip()" disabled style="color: black; background-color: lightcoral">Calculate Trip</button><br />
+        </div>
+        <div id="tripResults" style="display: none">
+            <table id="tripResultsTable" style="background-color:white; color: black; border: 3px solid cornflowerblue; width: 40%">
+                <tr>
+                    <th>Location From</th>
+                    <th>Location To</th>
+                    <th>Distance Travelled</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script src="~/Scripts/main.js">
+</script>
+
