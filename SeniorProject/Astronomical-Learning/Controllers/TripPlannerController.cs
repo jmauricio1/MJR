@@ -3,7 +3,7 @@ using Astronomical_Learning.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Linq.Dynamic;
 using System.Web.Mvc;
 
 namespace Astronomical_Learning.Controllers
@@ -170,6 +170,43 @@ namespace Astronomical_Learning.Controllers
             List<string> LocationList = db.Locations.Where(x => x.LocationName != Location).Select(x => x.LocationName).ToList();
 
             return Json(LocationList);
+        }
+
+        [HttpPost]
+        public JsonResult GetFilterData(string FilterOne, string FilterTwo, string FilterThree)
+        {
+            List<string> FilteredPlanets = new List<string>();
+
+            if (FilterOne == null && FilterTwo == null)
+            {
+                FilteredPlanets = db.PlanetFilters.Where(String.Format("{0} == true", FilterThree)).Select(x => x.PlanetName).ToList();
+            }
+            else if (FilterOne == null && FilterThree == null)
+            {
+                FilteredPlanets = db.PlanetFilters.Where(String.Format("{0} == true", FilterTwo)).Select(x => x.PlanetName).ToList();
+            }
+            else if (FilterTwo == null && FilterThree == null)
+            {
+                FilteredPlanets = db.PlanetFilters.Where(String.Format("{0} == true", FilterOne)).Select(x => x.PlanetName).ToList();
+            }
+            else if (FilterOne == null)
+            {
+                FilteredPlanets = db.PlanetFilters.Where(String.Format("{0} == true", FilterTwo)).Where(String.Format("{0} == true", FilterThree)).Select(x => x.PlanetName).ToList();
+            }
+            else if (FilterTwo == null)
+            {
+                FilteredPlanets = db.PlanetFilters.Where(String.Format("{0} == true", FilterOne)).Where(String.Format("{0} == true", FilterThree)).Select(x => x.PlanetName).ToList();
+            }
+            else if (FilterThree == null)
+            {
+                FilteredPlanets = db.PlanetFilters.Where(String.Format("{0} == true", FilterOne)).Where(String.Format("{0} == true", FilterTwo)).Select(x => x.PlanetName).ToList();
+            }
+            else //No filters are null
+            {
+                FilteredPlanets = db.PlanetFilters.Where(String.Format("{0} == true", FilterOne)).Where(String.Format("{0} == true", FilterTwo)).Where(String.Format("{0} == true", FilterThree)).Select(x => x.PlanetName).ToList();
+            }
+
+           return Json(FilteredPlanets);
         }
     }
 }

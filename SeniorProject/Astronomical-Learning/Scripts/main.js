@@ -677,7 +677,7 @@ function confirmRoute() {
     var stopTwo = $('#stopTwo').val();
     var stopThree = $('#stopThree').val();
     var stopFour = $('#stopFour').val();
-    var destination = $('#endPlanet').val(); 
+    var destination = $('#endPlanet').val();
 
     if ($('#zeroStops').is(':checked') == true && (start == null || destination == null)) {
         alert("Please enter a valid route where all locations are selected.")
@@ -709,9 +709,9 @@ function confirmRoute() {
         document.getElementById('stopThree').disabled = true;
         document.getElementById('stopFour').disabled = true;
         document.getElementById('endPlanet').disabled = true;
-        
+
     }
- }
+}
 function calculateTrip() {
 
     document.getElementById('tripResultsTable').innerHTML =
@@ -741,7 +741,7 @@ function calculateTrip() {
                 '<tr>' +
                 '<td>' + Distances[i].Start + '</td>' +
                 '<td>' + Distances[i].Destination + '</td>' +
-                '<td>' + Number(Distances[i].Distance).toLocaleString() + ' miles'+ '</td>' +
+                '<td>' + Number(Distances[i].Distance).toLocaleString() + ' miles' + '</td>' +
                 '</tr>'
             );
             totalDistance += Distances[i].Distance;
@@ -790,4 +790,97 @@ function resetTripPlan() {
         '<th>Location To</th>' +
         '<th>Distance Travelled</th>' +
         '</tr>'
+}
+
+var filterOneClass = "";
+var filterTwoClass = "";
+var filterThreeClass = "";
+
+function filterFirst() {
+    if (filterOneClass != "") {
+        $('#secondFilter .' + filterOneClass).prop('disabled', false);
+        $('#secondFilter .' + filterOneClass).css('background-color', 'white');
+
+        $('#thirdFilter .' + filterOneClass).prop('disabled', false);
+        $('#thirdFilter .' + filterOneClass).css('background-color', 'white');
+    }
+
+    filterOneClass = $('#firstFilter :selected').attr('class');
+
+    $('#secondFilter .' + filterOneClass).attr('disabled', true);
+    $('#secondFilter .' + filterOneClass).css('background-color', 'lightcoral');
+
+    $('#thirdFilter .' + filterOneClass).attr('disabled', true);
+    $('#thirdFilter .' + filterOneClass).css('background-color', 'lightcoral');
+
+    filterDataFetch();
+}
+
+function filterSecond() {
+    if (filterTwoClass != "") {
+        $('#firstFilter .' + filterTwoClass).prop('disabled', false);
+        $('#firstFilter .' + filterTwoClass).css('background-color', 'white');
+
+        $('#thirdFilter .' + filterTwoClass).prop('disabled', false);
+        $('#thirdFilter .' + filterTwoClass).css('background-color', 'white');
+    }
+
+    filterTwoClass = $('#secondFilter :selected').attr('class');
+
+    $('#firstFilter .' + filterTwoClass).attr('disabled', true);
+    $('#firstFilter .' + filterTwoClass).css('background-color', 'lightgreen');
+
+    $('#thirdFilter .' + filterTwoClass).attr('disabled', true);
+    $('#thirdFilter .' + filterTwoClass).css('background-color', 'lightgreen');
+
+    filterDataFetch()
+}
+
+function filterThird() {
+    if (filterThreeClass != "") {
+        $('#secondFilter .' + filterThreeClass).prop('disabled', false);
+        $('#secondFilter .' + filterThreeClass).css('background-color', 'white');
+
+        $('#thirdFilter .' + filterThreeClass).prop('disabled', false);
+        $('#thirdFilter .' + filterThreeClass).css('background-color', 'white');
+    }
+
+    filterThreeClass = $('#thirdFilter :selected').attr('class');
+
+    $('#firstFilter .' + filterThreeClass).attr('disabled', true);
+    $('#firstFilter .' + filterThreeClass).css('background-color', 'lightyellow');
+
+    $('#secondFilter .' + filterThreeClass).attr('disabled', true);
+    $('#secondFilter .' + filterThreeClass).css('background-color', 'lightyellow');
+
+    filterDataFetch()
+}
+
+function filterDataFetch() {
+    var FilterOptions = {};
+    FilterOptions.url = "/TripPlanner/GetFilterData";
+    FilterOptions.type = "POST";
+    FilterOptions.data = JSON.stringify({
+        FilterOne: $('#firstFilter').val(),
+        FilterTwo: $('#secondFilter').val(),
+        FilterThree: $('#thirdFilter').val(),
+    });
+    FilterOptions.datatype = "json";
+    FilterOptions.contentType = "application/json";
+    FilterOptions.success = function (FilteredPlanets) {
+        document.getElementById('filterPar').innerHTML = '';
+
+        for (var i = 0; i < FilteredPlanets.length; i++) {
+            if (i == (FilteredPlanets.length - 1)) {
+                document.getElementById('filterPar').innerHTML += FilteredPlanets[i];
+            }
+            else {
+                document.getElementById('filterPar').innerHTML += FilteredPlanets[i] + ', ';
+            }
+        }
+    };
+    FilterOptions.error = function () {
+        alert("Error fetching filter data!");
+    };
+    $.ajax(FilterOptions);
 }
