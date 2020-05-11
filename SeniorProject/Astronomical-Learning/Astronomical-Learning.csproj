@@ -88,6 +88,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.0.24.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Dynamic.Core.1.1.0\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -227,6 +233,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LocationDistance.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PlanetFilter.cs" />
     <Compile Include="Models\SearchKeyword.cs" />
     <Compile Include="Models\SitePage.cs" />
     <Compile Include="Models\TripPlanModel.cs" />
@@ -269,7 +276,7 @@
     <Content Include="App_Data\FactOfTheDay\facts-update.sql" />
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
-    <Content Include="App_Data\seed.sql" />
+    <Content Include="App_Data\profile-seed.sql" />
     <Content Include="App_Data\Roles\upRoles.sql" />
     <Content Include="App_Data\Scores\UserQuiz.sql" />
     <!-- Remember to comment this out 
@@ -281,8 +288,11 @@
     <Content Include="App_Data\Search\downSearch.sql" />
     <Content Include="App_Data\Search\seedSarch.sql" />
     <Content Include="App_Data\Search\upSearch.sql" />
+    <Content Include="App_Data\TripPlanner\downTripFilter.sql" />
     <Content Include="App_Data\TripPlanner\downTripPlanner.sql" />
+    <Content Include="App_Data\TripPlanner\seedTripFilter.sql" />
     <Content Include="App_Data\TripPlanner\seedTripPlanner.sql" />
+    <Content Include="App_Data\TripPlanner\upTripFilter.sql" />
     <Content Include="App_Data\TripPlanner\upTripPlanner.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="App_Data\UserComment\demoSeedScript.sql" />
