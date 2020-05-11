@@ -12,6 +12,7 @@ using Astronomical_Learning.Models;
 using Astronomical_Learning.DAL;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Web.Routing;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -437,7 +438,10 @@ namespace Astronomical_Learning.Controllers
                     {
                         UserManager.AddToRole(user.Id, "User");
 
-                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        string subject = "Astronomical Learning Email Confirmation";
+                        var response = await SendConfirmationTokenAsync(user.Id, subject, user.UserName);
+
+                        //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                         // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                         // Send an email with this link
@@ -453,6 +457,16 @@ namespace Astronomical_Learning.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        private async Task<string> SendConfirmationTokenAsync(string userID, string subject, string name)
+        {
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
+            var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            string emailBody = "Hello " + name + ", \n Please <a href=\"" + callbackUrl + "\"> click here</a> to confirm your email with Astronomical Learning";
+
+            await UserManager.SendEmailAsync(userID, subject, emailBody);
+            return callbackUrl;
         }
 
         //
