@@ -11,15 +11,31 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Astronomical_Learning.Models;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace Astronomical_Learning
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            await SendGridAsync(message);
+            //return Task.FromResult(0);
+        }
+
+        private async Task SendGridAsync(IdentityMessage message)
+        {
+            string apiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["SendGridKey"];
+            var client = new SendGridClient(apiKey);
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.SetFrom(new EmailAddress("astronomical.learning@gmail.com", "Astronomical Learning"));
+            myMessage.SetSubject(message.Subject);
+            myMessage.AddContent(MimeType.Text, message.Body);
+            myMessage.AddContent(MimeType.Html, message.Body);
+            var response = await client.SendEmailAsync(myMessage);
         }
     }
 
