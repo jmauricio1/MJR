@@ -138,7 +138,7 @@ namespace Astronomical_Learning.Controllers
             }
         }
         #region Countries List
-        public List<string> GetCountries(ref List<string> temp)
+        public List<string> GetCountries(List<string> temp)
         {
             //A11
             temp.Add("Afghanistan");
@@ -393,6 +393,7 @@ namespace Astronomical_Learning.Controllers
 
 
             Debug.WriteLine(temp[125] + temp[125].Count());
+            Debug.WriteLine("country list filled");
             return temp;
         }
         #endregion
@@ -404,9 +405,9 @@ namespace Astronomical_Learning.Controllers
         public ActionResult Register()
         {
 
-            countryList = GetCountries(ref countryList);
+            countryList = GetCountries(countryList);
 
-            ViewBag.CountriesList = countryList;
+            ViewBag.CountriesListNew = countryList;
 
             return View("Register");
         }
