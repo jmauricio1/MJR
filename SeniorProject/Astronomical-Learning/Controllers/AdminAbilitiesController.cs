@@ -732,6 +732,7 @@ namespace Astronomical_Learning.Controllers
             }
             ViewBag.Added = added;
             ViewBag.FactList = db.FactOfTheDays.Where(m => m.DisplayCount >= 0);
+            //
             return View();
         }
 
