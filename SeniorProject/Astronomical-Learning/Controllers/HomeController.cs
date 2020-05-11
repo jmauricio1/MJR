@@ -104,7 +104,7 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult CustomError (string errorName, string errorMessage)
         {
-
+//
             ViewBag.Name = errorName;
             ViewBag.Message = errorMessage;
 
