@@ -855,10 +855,5 @@ namespace Astronomical_Learning.Controllers
             };
             */
         }
-
-
     }
-
-
-
 }
