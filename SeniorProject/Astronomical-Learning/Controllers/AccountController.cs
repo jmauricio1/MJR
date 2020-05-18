@@ -12,6 +12,10 @@ using Astronomical_Learning.Models;
 using Astronomical_Learning.DAL;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Configuration;
+using Newtonsoft.Json.Linq;
+using System.Net;
+using System.IO;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -408,11 +412,53 @@ namespace Astronomical_Learning.Controllers
 
             //List<CountryState> theList = GetListOfCountriesRegions();
             ViewBag.CountriesList = countryList2;
+            ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
             Debug.WriteLine(countryList);
             return View("Register");
         }
 
         private ALContext db = new ALContext();
+
+        public string checkCaptcha(string key, string cResponse)
+        {
+            //create the url and request the information
+            string url = "https://www.google.com/recaptcha/api/siteverify";
+            string secretKey = "?secret=" + key;
+            string check = "&response=" + cResponse;
+
+            url = url + secretKey + check;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+            //read in the information
+            string jsonString = null;
+
+            //try to get the information and if it fails return a default json string with an error picture and message
+            try
+            {
+
+
+                using (WebResponse response = request.GetResponse())
+                {
+                    Stream stream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(stream);
+                    jsonString = reader.ReadToEnd();
+                    reader.Close();
+                    stream.Close();
+                }
+            }
+            catch
+            {
+                jsonString = "false";
+            }
+
+
+
+            return jsonString;
+        }
+
+
+
+
 
         //
         // POST: /Account/Register
@@ -421,6 +467,50 @@ namespace Astronomical_Learning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+
+
+            string captchaResponse = Request.Form["g-Recaptcha-Response"];
+
+            Debug.WriteLine("original response {0}", captchaResponse);
+
+            if (captchaResponse == "")
+            {
+                ViewBag.Error = "Please check the reCaptcha checkbox";
+                return View();
+            }
+
+
+            string secretKey = ConfigurationManager.AppSettings["ReCaptchaSecretKey"];
+
+            string cResponse = checkCaptcha(secretKey, captchaResponse);
+
+
+            Debug.WriteLine("capcha response {0}", cResponse);
+
+
+            if (cResponse.Equals("false"))
+            {
+                ViewBag.Error = "There was an error with the response form the reCaptcha checkbox";
+                return View();
+            }
+
+
+
+            JObject responseData = JObject.Parse(cResponse);
+
+            string success = responseData["success"].ToString();
+
+            Debug.WriteLine("check success {0}", success);
+
+            if (success.Equals("false"))
+            {
+                ViewBag.Error = "There was an invalid response from the reCaptcha checkbox";
+                return View();
+            }
+
+
+
+
 
             if (ModelState.IsValid)
             {
