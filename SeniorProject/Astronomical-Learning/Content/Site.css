@@ -837,3 +837,36 @@ dd {
     color: white;
     text-align: right;
 }
+
+/*Facts Input*/
+
+.fact-table{
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.admin-feature-modal{
+    height: 350px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.add-fact{
+    color: rgb(146, 146, 146);
+    font-size: 150px;
+}
+
+.answer-label{
+    font-weight: 100;
+    font-size: 18px;
+}
+
+#q1-submit{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

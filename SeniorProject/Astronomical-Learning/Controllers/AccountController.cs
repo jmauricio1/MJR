@@ -16,6 +16,7 @@ using System.Configuration;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.IO;
+using System.Web.Routing;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -140,8 +141,8 @@ namespace Astronomical_Learning.Controllers
                     return View(model);
             }
         }
-
-        public List<string> GetCountries(ref List<string> temp)
+        #region Countries List
+        public List<string> GetCountries(List<string> temp)
         {
             //A11
             temp.Add("Afghanistan");
@@ -396,8 +397,10 @@ namespace Astronomical_Learning.Controllers
 
 
             Debug.WriteLine(temp[125] + temp[125].Count());
+            Debug.WriteLine("country list filled");
             return temp;
         }
+        #endregion
 
         List<string> countryList = new List<string>();
         //
@@ -406,14 +409,13 @@ namespace Astronomical_Learning.Controllers
         public ActionResult Register()
         {
 
-            countryList = GetCountries(ref countryList);
+            countryList = GetCountries(countryList);
 
-            SelectList countryList2 = new SelectList(countryList);
+            ViewBag.CountriesListNew = countryList;
 
-            //List<CountryState> theList = GetListOfCountriesRegions();
-            ViewBag.CountriesList = countryList2;
             ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
             Debug.WriteLine(countryList);
+
             return View("Register");
         }
 
@@ -476,6 +478,7 @@ namespace Astronomical_Learning.Controllers
             if (captchaResponse == "")
             {
                 ViewBag.Error = "Please check the reCaptcha checkbox";
+                ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
                 return View();
             }
 
@@ -491,6 +494,7 @@ namespace Astronomical_Learning.Controllers
             if (cResponse.Equals("false"))
             {
                 ViewBag.Error = "There was an error with the response form the reCaptcha checkbox";
+                ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
                 return View();
             }
 
@@ -505,6 +509,7 @@ namespace Astronomical_Learning.Controllers
             if (success.Equals("false"))
             {
                 ViewBag.Error = "There was an invalid response from the reCaptcha checkbox";
+                ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
                 return View();
             }
 
@@ -516,7 +521,7 @@ namespace Astronomical_Learning.Controllers
             {
                 Random rand = new Random();
                 int x = rand.Next(1, 7);
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x};
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x, LevelID = 1};
                 if(db.AspNetUsers.Any(m => m.UserName == user.UserName) == true)
                 {
                     ViewBag.UsernameTaken = "Username already taken or unavailable.";
@@ -529,7 +534,10 @@ namespace Astronomical_Learning.Controllers
                     {
                         UserManager.AddToRole(user.Id, "User");
 
-                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        string subject = "Astronomical Learning Email Confirmation";
+                        var response = await SendConfirmationTokenAsync(user.Id, subject, user.UserName);
+
+                        //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                         // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                         // Send an email with this link
@@ -545,6 +553,16 @@ namespace Astronomical_Learning.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        private async Task<string> SendConfirmationTokenAsync(string userID, string subject, string name)
+        {
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
+            var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            string emailBody = "Hello " + name + ", \n Please <a href=\"" + callbackUrl + "\"> click here</a> to confirm your email with Astronomical Learning";
+
+            await UserManager.SendEmailAsync(userID, subject, emailBody);
+            return callbackUrl;
         }
 
         //

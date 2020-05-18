@@ -64,6 +64,9 @@ namespace Astronomical_Learning.DAL
         [StringLength(256)]
         public string Bio { get; set; }
 
+        public int AccountScore { get; set; }
+        public int? LevelID { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
 
@@ -74,6 +77,6 @@ namespace Astronomical_Learning.DAL
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
-        
+
     }
 }

@@ -20,15 +20,35 @@ namespace Astronomical_Learning.Controllers
         // GET: Profile
         public ActionResult ProfilePage(string changedUsername)
         {
-            var userId = User.Identity.GetUserId();
-            var user = db.AspNetUsers.Find(userId);
 
-            ViewBag.UserName = user.UserName;
+            var userId = User.Identity.GetUserId();
+            var user = db.AspNetUsers.Find(userId); ;
+
+            try
+            {
+                ViewBag.UserName = user.UserName;
+            }
+            catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "Profile not found.", errorMessage = "This profile does not exist please try logging in with a different account." });
+
+            }
+
+
+
+            
             ViewBag.FirstName = user.FirstName;
             ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
             ViewBag.State = user.StateProvince;
             ViewBag.Country = user.Country;
             ViewBag.Path = user.AvatarPath.Path.ToString();
+
+            LevelUpdate(userId);
+
+            int? badgeID = user.LevelID;
+            ViewBag.Badge = db.UserLevels.Find(badgeID).BadgePath.ToString();
+            ViewBag.Level = db.UserLevels.Find(badgeID).LevelName.ToString();
+
             string temp = "";
             if (user.Bio != null)
             {
@@ -46,11 +66,55 @@ namespace Astronomical_Learning.Controllers
                 UserManager.AddToRole(user.Id, "User");
                 db.SaveChanges();
             }
-            
-
 
             ViewBag.Role = user.AspNetRoles.ElementAt(0).Id;
             return View(comments);
+        }
+
+        public void LevelUpdate(string userID)
+        {
+            var user = db.AspNetUsers.Find(userID);
+            if((user.AccountScore) >= 0 && (user.AccountScore < 50))
+            {
+                user.LevelID = 1;
+            }
+            else if ((user.AccountScore >= 50) && (user.AccountScore < 100))
+            {
+                user.LevelID = 2;
+            }
+            else if ((user.AccountScore >= 100) && (user.AccountScore < 150))
+            {
+                user.LevelID = 3;
+            }
+            else if ((user.AccountScore >= 150) && (user.AccountScore < 200))
+            {
+                user.LevelID = 4;
+            }
+            else if ((user.AccountScore >= 200) && (user.AccountScore < 250))
+            {
+                user.LevelID = 5;
+            }
+            else if ((user.AccountScore >= 250) && (user.AccountScore < 300))
+            {
+                user.LevelID = 6;
+            }
+            else if ((user.AccountScore >= 300) && (user.AccountScore < 350))
+            {
+                user.LevelID = 7;
+            }
+            else if ((user.AccountScore >= 350) && (user.AccountScore < 400))
+            {
+                user.LevelID = 8;
+            }
+            else if ((user.AccountScore >= 400) && (user.AccountScore < 450))
+            {
+                user.LevelID = 9;
+            }
+            else if (user.AccountScore >= 450)
+            {
+                user.LevelID = 10;
+            }
+            db.SaveChanges();
         }
 
         [HttpPost]

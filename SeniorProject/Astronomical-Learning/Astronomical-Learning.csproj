@@ -49,9 +49,15 @@
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SendGrid, Version=9.14.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>packages\SendGrid.9.14.1\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -171,7 +177,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminAbilitiesController.cs" />
-    <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\GamesAndQuizzesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ISSController.cs" />
@@ -182,11 +187,15 @@
     <Compile Include="Controllers\SolarSystemController.cs" />
     <Compile Include="Controllers\SpaceCompaniesController.cs" />
     <Compile Include="Controllers\SpaceSuitsController.cs" />
+    <Compile Include="Controllers\TripPlannerController.cs" />
     <Compile Include="DAL\AspNetRole.cs" />
     <Compile Include="DAL\AspNetUser.cs" />
     <Compile Include="DAL\AspNetUserClaim.cs" />
     <Compile Include="DAL\AspNetUserLogin.cs" />
     <Compile Include="DAL\AvatarPath.cs" />
+    <Compile Include="DAL\Quizze.cs" />
+    <Compile Include="DAL\UserLevel.cs" />
+    <Compile Include="DAL\UserQuizScore.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +206,7 @@
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\CountryState.cs" />
+    <Compile Include="Models\Distance.cs" />
     <Compile Include="Models\FactOfTheDay.cs" />
     <Compile Include="DAL\FactOfTheDayContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -214,7 +224,11 @@
     <Compile Include="Models\Launches\SecondStage.cs" />
     <Compile Include="Models\Launches\Ship.cs" />
     <Compile Include="Models\Launches\SingleLaunchViewModel.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationDistance.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PlanetFilter.cs" />
+    <Compile Include="Models\TripPlanModel.cs" />
     <Compile Include="Models\UserComment.cs" />
     <Compile Include="Models\Search\KeywordRelation.cs" />
     <Compile Include="Models\Search\SearchKeyword.cs" />
@@ -242,13 +256,16 @@
       <DependentUpon>ALtempDB.mdf</DependentUpon>
     </Content>
 -->
+    <Content Include="App_Data\Badge Levels\user-levels-up.sql" />
     <Content Include="App_Data\ChangesToDB.sql" />
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
+    <Content Include="App_Data\FactOfTheDay\facts-update.sql" />
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\profile-seed.sql" />
     <Content Include="App_Data\Roles\upRoles.sql" />
+    <Content Include="App_Data\Scores\UserQuiz.sql" />
     <!-- Remember to comment this out 
     <Content Include="App_Data\Temporary.mdf" />
     <Content Include="App_Data\Temporary_log.ldf">
@@ -258,6 +275,12 @@
     <Content Include="App_Data\Search\downSearch.sql" />
     <Content Include="App_Data\Search\seedSarch.sql" />
     <Content Include="App_Data\Search\upSearch.sql" />
+    <Content Include="App_Data\TripFilter\downTripFilter.sql" />
+    <Content Include="App_Data\TripFilter\seedTripFilter.sql" />
+    <Content Include="App_Data\TripFilter\upTripFilter.sql" />
+    <Content Include="App_Data\TripPlanner\downTripPlanner.sql" />
+    <Content Include="App_Data\TripPlanner\seedTripPlanner.sql" />
+    <Content Include="App_Data\TripPlanner\upTripPlanner.sql" />
     <Content Include="App_Data\up.sql" />
     <Content Include="App_Data\UserComment\demoSeedScript.sql" />
     <Content Include="App_Data\UserComment\downUserComment.sql" />
@@ -295,6 +318,15 @@
     <Content Include="Images\icons\stars.gif" />
     <Content Include="Images\icons\sun-icon.png" />
     <Content Include="Images\JimBridenstine.jpg" />
+    <Content Include="Images\Levels\1.png" />
+    <Content Include="Images\Levels\10.png" />
+    <Content Include="Images\Levels\2.png" />
+    <Content Include="Images\Levels\3.png" />
+    <Content Include="Images\Levels\4.png" />
+    <Content Include="Images\Levels\5.png" />
+    <Content Include="Images\Levels\6.png" />
+    <Content Include="Images\Levels\8.png" />
+    <Content Include="Images\Levels\9.png" />
     <Content Include="Images\m1.png" />
     <Content Include="Images\mjr-transparent.png" />
     <Content Include="Images\mjr-transparent2.1.png" />
@@ -345,6 +377,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\planets-js.js" />
     <Content Include="Scripts\ProfileUpdates.js" />
+    <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\something.js" />
     <Content Include="Scripts\spacex-main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -415,11 +448,16 @@
     <Content Include="Views\AdminAbilities\AllUsers.cshtml" />
     <Content Include="Views\AdminAbilities\BannedUsers.cshtml" />
     <Content Include="Views\AdminAbilities\EditUserBan.cshtml" />
-    <Content Include="Views\AspNetUsers\Create.cshtml" />
-    <Content Include="Views\AspNetUsers\Delete.cshtml" />
-    <Content Include="Views\AspNetUsers\Details.cshtml" />
-    <Content Include="Views\AspNetUsers\Edit.cshtml" />
-    <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\AdminAbilities\AdminCreate.cshtml" />
+    <Content Include="Views\AdminAbilities\BannedAdmin.cshtml" />
+    <Content Include="Views\AdminAbilities\AllAdmin.cshtml" />
+    <Content Include="Views\AdminAbilities\EditAdminBan.cshtml" />
+    <Content Include="Views\AdminAbilities\AdminFeatures.cshtml" />
+    <Content Include="Views\AdminAbilities\InputFact.cshtml" />
+    <Content Include="Views\GamesAndQuizzes\Q1Score.cshtml" />
+    <Content Include="Views\Home\Credits.cshtml" />
+    <Content Include="Views\Home\CustomError.cshtml" />
+    <Content Include="Views\TripPlanner\OurSolarSystem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -437,6 +475,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -16,6 +16,7 @@ namespace Astronomical_Learning.Controllers
 {
     public class HomeController : Controller
     {
+        
         // private FactOfTheDayContext db = new FactOfTheDayContext();
         //private ALContext db = new ALContext();
         private ALContext db = new ALContext();
@@ -48,6 +49,13 @@ namespace Astronomical_Learning.Controllers
             int chosenSpot = (dayOfYear % (factCount - 1)) + 1;
             var selectedFact = db.FactOfTheDays.Find(chosenSpot);
 
+            if(selectedFact.LastDisplayed.Date != DateTime.Now.Date)
+            {
+                selectedFact.DisplayCount += 1;
+                selectedFact.LastDisplayed = DateTime.Now;
+                db.SaveChanges();
+            }
+
             ViewBag.fact = selectedFact.Text;
             ViewBag.factSource = selectedFact.Source;
 
@@ -65,6 +73,7 @@ namespace Astronomical_Learning.Controllers
             //read in the information
             string jsonString = null;
 
+            //try to get the information and if it fails return a default json string with an error picture and message
             try
             {
 
@@ -87,7 +96,22 @@ namespace Astronomical_Learning.Controllers
 
             return jsonString;
         }
+        public ActionResult Credits()
+        {
+            return View();
+        }
 
+
+        public ActionResult CustomError (string errorName, string errorMessage)
+        {
+//
+            ViewBag.Name = errorName;
+            ViewBag.Message = errorMessage;
+
+
+            return View();
+        }
+#region Filling list of regions
         public List<List<string>> GetListOfRegions()
         {
             List<List<string>> temp = new List<List<string>>();
@@ -530,6 +554,7 @@ namespace Astronomical_Learning.Controllers
             //temp.Add(new List<string> { "" });
             return temp;
         }
+        #endregion
 
         public ActionResult ListOfCountries()
         {
@@ -544,6 +569,7 @@ namespace Astronomical_Learning.Controllers
 
         List<string> countryList = new List<string>();
 
+        #region Filling list of countries
         public List<string> GetCountries(ref List<string> temp)
         {
             //A11
@@ -798,6 +824,7 @@ namespace Astronomical_Learning.Controllers
             temp.Add("Zimbabwe");
             return temp;
         }
+        #endregion
 
         public ActionResult GetPlaces(string countryName)
         {
@@ -828,10 +855,5 @@ namespace Astronomical_Learning.Controllers
             };
             */
         }
-
-
     }
-
-
-
 }
