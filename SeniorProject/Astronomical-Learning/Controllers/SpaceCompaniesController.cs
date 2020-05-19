@@ -77,7 +77,7 @@ namespace Astronomical_Learning.Controllers
                 list.Add(launch);
             }
 
-            if(launchSuccess != null)
+            if (!launchSuccess.IsNullOrWhiteSpace())
             {
                 RefineSuccess(launchSuccess, ref list);
             }
@@ -85,20 +85,39 @@ namespace Astronomical_Learning.Controllers
             {
                 RefineLand(landSuccess, ref list);
             }
+            if (!launchSite.IsNullOrWhiteSpace())
+            {
+                RefineSite(launchSite, ref list);
+            }
+            if (!rocketUsed.IsNullOrWhiteSpace())
+            {
+                RefineRocket(rocketUsed, ref list);
+            }
+            if (!year.IsNullOrWhiteSpace())
+            {
+                RefineYear(year, ref list);
+            }
+            if (!shipUsed.IsNullOrWhiteSpace())
+            {
+                RefineShip(shipUsed, ref list);
+            }
+
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
         public void RefineSuccess(string launchSuccess, ref List<Launch> list)
         {
+            /*
+            Debug.WriteLine("Got inside of RefineSuccess function");
             Debug.WriteLine(launchSuccess + " : " + list.Count());
-
+            */
             string condition = "";
-            if(launchSuccess == "Successful")
+            if (launchSuccess == "Successful")
             {
                 condition = "True";
             }
-            else if(launchSuccess == "Unsuccessful")
+            else if (launchSuccess == "Unsuccessful")
             {
                 condition = "False";
             }
@@ -111,23 +130,43 @@ namespace Astronomical_Learning.Controllers
                     i--;
                 }
             }
-
-            Debug.WriteLine(launchSuccess + " : " + list.Count());
+            //Debug.WriteLine(launchSuccess + " : " + list.Count());
         }
 
-        public void RefineSite()
+        public void RefineSite(string value, ref List<Launch> list)
         {
-
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (list[i].launchSite != value)
+                {
+                    list.RemoveAt(i);
+                    i--;
+                }
+            }
         }
 
-        public void RefineRocket()
+        public void RefineRocket(string value, ref List<Launch> list)
         {
-
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (list[i].rocketUsed != value)
+                {
+                    list.RemoveAt(i);
+                    i--;
+                }
+            }
         }
 
-        public void RefineYears()
+        public void RefineYear(string value, ref List<Launch> list)
         {
-
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (list[i].year != value)
+                {
+                    list.RemoveAt(i);
+                    i--;
+                }
+            }
         }
 
         public void RefineLand(string landSuccess, ref List<Launch> list)
@@ -152,9 +191,18 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
-        public void RefineShip()
+        public void RefineShip(string value, ref List<Launch> list)
         {
+            for (int i = 0; i < list.Count(); i++)
+            {
 
+                if (!list[i].shipsUsed.Contains(value))
+                {
+                    list.RemoveAt(i);
+                    i--;
+                }
+
+            }
         }
 
         public ActionResult LaunchDetails(int? id)
@@ -583,5 +631,124 @@ namespace Astronomical_Learning.Controllers
             }
             return jsonString;
         }
+
+        #region Helping to get list of data
+        /*
+        public JsonResult SearchThing()
+        {
+            string json = SendRequest("https://api.spacexdata.com/v3/launches");
+
+            JArray data = JArray.Parse(json);
+            List<Launch> list = new List<Launch>();
+
+            for (int i = 0; i < data.Count; i++)
+            {
+                Launch launch = new Launch();
+                launch.missionName = (string)data[i]["mission_name"];
+                launch.missionDate = (string)data[i]["launch_date_utc"];
+                launch.launchSuccess = (string)data[i]["launch_success"];
+                launch.flightNum = (int)data[i]["flight_number"];
+
+                launch.launchSite = (string)data[i]["launch_site"]["site_name"];
+                launch.rocketUsed = (string)data[i]["rocket"]["rocket_name"];
+                launch.year = (string)data[i]["launch_year"];
+                launch.landSuccess = (string)data[i]["rocket"]["first_stage"]["cores"][0]["land_success"];
+
+                int? temp = (int)data[i]["ships"].Count();
+                if (temp != null)
+                {
+                    for (int j = 0; j < temp; j++)
+                    {
+                        string name = (string)data[i]["ships"][j];
+                        launch.shipsUsed.Add(name);
+                    }
+                }
+                list.Add(launch);
+            }
+
+            PrintRocket(ref list);
+            PrintSite(ref list);
+            PrintYear(ref list);
+            PrintShip(ref list);
+
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public void PrintRocket(ref List<Launch> list)
+        {
+            List<string> temp = new List<string>();
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (!temp.Contains(list[i].rocketUsed))
+                {
+                    temp.Add(list[i].rocketUsed);
+                }
+            }
+
+            Debug.WriteLine("-- ROCKET --");
+            for (int i = 0; i < temp.Count(); i++)
+            {
+                Debug.WriteLine("<option>" + temp[i] + "</option>");
+            }
+        }
+
+        public void PrintSite(ref List<Launch> list)
+        {
+            List<string> temp = new List<string>();
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (!temp.Contains(list[i].launchSite))
+                {
+                    temp.Add(list[i].launchSite);
+                }
+            }
+
+            Debug.WriteLine("-- SITE --");
+            for (int i = 0; i < temp.Count(); i++)
+            {
+                Debug.WriteLine("<option>" + temp[i] + "</option>");
+            }
+        }
+
+        public void PrintYear(ref List<Launch> list)
+        {
+            List<string> temp = new List<string>();
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (!temp.Contains(list[i].year))
+                {
+                    temp.Add(list[i].year);
+                }
+            }
+
+            Debug.WriteLine("-- YEAR --");
+            for (int i = 0; i < temp.Count(); i++)
+            {
+                Debug.WriteLine("<option>" + temp[i] + "</option>");
+            }
+        }
+
+        public void PrintShip(ref List<Launch> list)
+        {
+            List<string> temp = new List<string>();
+            for (int i = 0; i < list.Count(); i++)
+            {
+                for(int j = 0; j < list[i].shipsUsed.Count(); j++)
+                {
+                    if (!temp.Contains(list[i].shipsUsed[j]))
+                    {
+                        temp.Add(list[i].shipsUsed[j]);
+                    }
+                }
+            }
+
+            Debug.WriteLine("-- SHIP --");
+            for (int i = 0; i < temp.Count(); i++)
+            {
+                Debug.WriteLine("<option>" + temp[i] + "</option>");
+            }
+        }
+        */
+        #endregion
     }
 }

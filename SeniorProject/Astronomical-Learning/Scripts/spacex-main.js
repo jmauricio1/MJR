@@ -13,25 +13,36 @@ function errorOnAjax() {
 }
 
 $('#launchSuccess-dropdown').change(function () {
-    var launch = $('#launchSuccess-dropdown').val();
-    var land = $('#landSuccess-dropdown').val();
-
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "/SpaceCompanies/SearchDefined",
-        data: {
-            launchSuccess: launch,
-            landSuccess: land
-        },
-        success: work,
-        error: errorOnAjax
-    });
+    newList();
 });
 
 $('#landSuccess-dropdown').change(function () {
+    newList();
+});
+
+$('#rocket-used-dropdown').change(function () {
+    newList();
+});
+
+$('#year-dropdown').change(function () {
+    newList();
+});
+
+$('#site-dropdown').change(function () {
+    newList();
+});
+
+$('#ship-dropdown').change(function () {
+    newList();
+});
+
+function newList() {
     var launch = $('#launchSuccess-dropdown').val();
     var land = $('#landSuccess-dropdown').val();
+    var rocket = $('#rocket-used-dropdown').val();
+    var theYear = $('#year-dropdown').val();
+    var site = $('#site-dropdown').val();
+    var ship = $('#ship-dropdown').val();
 
     $.ajax({
         type: "GET",
@@ -39,19 +50,24 @@ $('#landSuccess-dropdown').change(function () {
         url: "/SpaceCompanies/SearchDefined",
         data: {
             launchSuccess: launch,
-            landSuccess: land
+            landSuccess: land,
+            rocketUsed: rocket,
+            year: theYear,
+            launchSite: site,
+            shipUsed: ship
         },
-        success: work,
+        success: displaySpaceXList,
         error: errorOnAjax
     });
-});
+}
 
 function work(data) {
     console.log(data);
 }
 
 function displaySpaceXList(data) {
-    //console.log(data);
+    console.log(data);
+    $('#launch-list').empty();
 
     for (var i = 1; i < data.length + 1; i++) {
         var module = document.createElement('div');
