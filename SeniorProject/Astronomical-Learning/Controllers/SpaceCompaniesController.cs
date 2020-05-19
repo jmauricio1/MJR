@@ -1,5 +1,6 @@
 ﻿using Astronomical_Learning.Models;
 using Astronomical_Learning.Models.Launches;
+using Microsoft.Ajax.Utilities;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Astronomical_Learning.Controllers
 {
     public class SpaceCompaniesController : Controller
     {
-        
+
         // GET: SpaceCompanies
         public ActionResult SpaceX()
         {
@@ -42,6 +43,118 @@ namespace Astronomical_Learning.Controllers
             }
 
             return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult SearchDefined(string launchSuccess, string launchSite, string rocketUsed, string year, string landSuccess, string shipUsed)
+        {
+            string json = SendRequest("https://api.spacexdata.com/v3/launches");
+
+            JArray data = JArray.Parse(json);
+            List<Launch> list = new List<Launch>();
+
+            for (int i = 0; i < data.Count; i++)
+            {
+                Launch launch = new Launch();
+                launch.missionName = (string)data[i]["mission_name"];
+                launch.missionDate = (string)data[i]["launch_date_utc"];
+                launch.launchSuccess = (string)data[i]["launch_success"];
+                launch.flightNum = (int)data[i]["flight_number"];
+
+                launch.launchSite = (string)data[i]["launch_site"]["site_name"];
+                launch.rocketUsed = (string)data[i]["rocket"]["rocket_name"];
+                launch.year = (string)data[i]["launch_year"];
+                launch.landSuccess = (string)data[i]["rocket"]["first_stage"]["cores"][0]["land_success"];
+
+                int? temp = (int)data[i]["ships"].Count();
+                if (temp != null)
+                {
+                    for (int j = 0; j < temp; j++)
+                    {
+                        string name = (string)data[i]["ships"][j];
+                        launch.shipsUsed.Add(name);
+                    }
+                }
+                list.Add(launch);
+            }
+
+            if(launchSuccess != null)
+            {
+                RefineSuccess(launchSuccess, ref list);
+            }
+            if (!landSuccess.IsNullOrWhiteSpace())
+            {
+                RefineLand(landSuccess, ref list);
+            }
+
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public void RefineSuccess(string launchSuccess, ref List<Launch> list)
+        {
+            Debug.WriteLine(launchSuccess + " : " + list.Count());
+
+            string condition = "";
+            if(launchSuccess == "Successful")
+            {
+                condition = "True";
+            }
+            else if(launchSuccess == "Unsuccessful")
+            {
+                condition = "False";
+            }
+
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (list[i].launchSuccess != condition)
+                {
+                    list.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            Debug.WriteLine(launchSuccess + " : " + list.Count());
+        }
+
+        public void RefineSite()
+        {
+
+        }
+
+        public void RefineRocket()
+        {
+
+        }
+
+        public void RefineYears()
+        {
+
+        }
+
+        public void RefineLand(string landSuccess, ref List<Launch> list)
+        {
+            string condition = "";
+            if (landSuccess == "Successful")
+            {
+                condition = "True";
+            }
+            else if (landSuccess == "Unsuccessful")
+            {
+                condition = "False";
+            }
+
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (list[i].landSuccess != condition)
+                {
+                    list.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        public void RefineShip()
+        {
+
         }
 
         public ActionResult LaunchDetails(int? id)
@@ -77,14 +190,14 @@ namespace Astronomical_Learning.Controllers
                 timeline = GetTimelineInformation(ref data, id);
                 ships = GetShipsInformation(ref data, id);
             }
-             catch
+            catch
             {
                 return RedirectToAction("CustomError", "Home", new { errorName = "Cannot find details for this launch.", errorMessage = "Please try again later when we have more information about this launch." });
             }
 
 
 
-            
+
 
             SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation,
                 firstStage, secondStage, launchSite, launchLinks, fairings, timeline, ships);
@@ -300,7 +413,7 @@ namespace Astronomical_Learning.Controllers
             current.wikipedia = GetLinkString(ref data, id, "wikipedia");
             current.videoLink = GetLinkString(ref data, id, "video_link");
             current.ytID = GetLinkString(ref data, id, "youtube_id");
-            if((string)data[id]["telemetry"]["flight_club"] != null)
+            if ((string)data[id]["telemetry"]["flight_club"] != null)
             {
                 current.telemetry = (string)data[id]["telemetry"]["flight_club"];
             }
@@ -339,9 +452,9 @@ namespace Astronomical_Learning.Controllers
             Fairing current = new Fairing();
             var temp = data[id]["rocket"]["fairings"];
 
-            if(temp.HasValues == false)
+            if (temp.HasValues == false)
             {
-                
+
             }
             else
             {
@@ -356,7 +469,7 @@ namespace Astronomical_Learning.Controllers
         public LaunchTimeline GetTimelineInformation(ref JArray data, int? id)
         {
             LaunchTimeline current = new LaunchTimeline();
-            if(data[id]["timeline"].HasValues == false)
+            if (data[id]["timeline"].HasValues == false)
             {
 
             }
@@ -428,7 +541,7 @@ namespace Astronomical_Learning.Controllers
             Ship list = new Ship();
 
             string temp = "";
-            for(int i = 0; i < data[id]["ships"].Count(); i++)
+            for (int i = 0; i < data[id]["ships"].Count(); i++)
             {
                 temp = (string)data[id]["ships"][i];
                 list.ships.Add(temp);
