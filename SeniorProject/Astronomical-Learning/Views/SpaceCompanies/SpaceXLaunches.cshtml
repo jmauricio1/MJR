@@ -7,6 +7,32 @@
     <br />
     <br />
     <h1 class="information-paragraphs text-center mission-sub underlined"> SpaceX Launches </h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("launch-succ", "Launch Success", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="launchSuccess-dropdown" class="form-control" name="launch-succ">
+                        <option></option>
+                        <option>Successful</option>
+                        <option>Unsuccessful</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("land-succ", "Land Success", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="landSuccess-dropdown" class="form-control" name="land-succ">
+                        <option></option>
+                        <option>Successful</option>
+                        <option>Unsuccessful</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="launch-list" class="row information-paragraphs">
 
     </div>
