@@ -413,6 +413,8 @@ namespace Astronomical_Learning.Controllers
 
             ViewBag.CountriesListNew = countryList;
 
+            ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
+
             return View("Register");
         }
 
