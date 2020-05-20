@@ -996,3 +996,31 @@ else
     <script src="~/Scripts/planets-js.js"></script>
     <script src="~/Scripts/main.js"></script>
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+
+    var hash = location.hash.substring(1);
+
+    console.log(parseInt(hash));
+
+    if (hash == "") { hash = "0"; }
+
+    var hashNum = parseInt(hash);
+
+    if (hashNum) { hashNum = 0; }
+
+    if ($.isNumeric(hashNum) == false) { hashNum = 0; }
+
+    if (hashNum < 0) { hashNum = 0; }
+
+    if (hashNum > 8) { hashNum = 8; }
+
+    $('#planets-carousel').carousel(hashNum);
+
+});
+
+
+
+</script>
