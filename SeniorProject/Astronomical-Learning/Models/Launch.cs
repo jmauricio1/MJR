@@ -11,5 +11,11 @@ namespace Astronomical_Learning.Models
         public string missionDate;
         public string launchSuccess;
         public int flightNum;
+
+        public string launchSite;
+        public string rocketUsed;
+        public string year;
+        public string landSuccess;
+        public List<string> shipsUsed = new List<string>();
     }
 }
