@@ -418,7 +418,6 @@ footer {
 .tooltipNew {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted white;
     font-size: 15px
 }
 

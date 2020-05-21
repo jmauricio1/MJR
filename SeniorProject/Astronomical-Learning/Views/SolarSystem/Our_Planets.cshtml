@@ -1009,13 +1009,13 @@ $(document).ready(function(){
 
     var hashNum = parseInt(hash);
 
-    if (hashNum) { hashNum = 0; }
-
     if ($.isNumeric(hashNum) == false) { hashNum = 0; }
 
     if (hashNum < 0) { hashNum = 0; }
 
     if (hashNum > 8) { hashNum = 8; }
+
+    console.log(hashNum);
 
     $('#planets-carousel').carousel(hashNum);
 
