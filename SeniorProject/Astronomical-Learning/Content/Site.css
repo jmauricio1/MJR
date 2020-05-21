@@ -492,6 +492,18 @@ footer {
     background-color: black;
 }
 
+#launch-search-row1{
+    margin-top: 5%;
+}
+
+#launch-search-row2 {
+    margin-top: 2%;
+}
+
+#reset-list {
+    margin-top: 2%;
+}
+
 /* Launch Information/Details*/
 .launch-details {
     background-color: black;

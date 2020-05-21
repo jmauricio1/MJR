@@ -7,7 +7,7 @@
     <br />
     <br />
     <h1 class="information-paragraphs text-center mission-sub underlined"> SpaceX Launches </h1>
-    <div class="row">
+    <div class="row" id="launch-search-row1">
         <div class="col-lg-4">
             <div class="form-group text-center">
                 @Html.Label("launch-succ", "Launch Success", new { @class = "col-lg-6 control-label" })
@@ -45,6 +45,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row" id="launch-search-row2">
         <div class="col-lg-4">
             <div class="form-group text-center">
                 @Html.Label("year", "Launch Year", new { @class = "col-lg-6 control-label" })
@@ -114,7 +116,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 text-center">
             <button class="btn btn-primary" id="reset-list">
                 Reset
             </button>
