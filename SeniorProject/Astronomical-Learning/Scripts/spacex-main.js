@@ -12,6 +12,23 @@ function errorOnAjax() {
     console.log("ERROR on ajax request.");
 }
 
+$('#reset-list').click(function () {
+    $('#launchSuccess-dropdown').val("");
+    $('#landSuccess-dropdown').val("");
+    $('#rocket-used-dropdown').val("");
+    $('#year-dropdown').val("");
+    $('#site-dropdown').val("");
+    $('#ship-dropdown').val("");
+
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/api/spacex-launchlist",
+        success: displaySpaceXList,
+        error: errorOnAjax
+    });
+});
+
 $('#launchSuccess-dropdown').change(function () {
     newList();
 });
@@ -114,5 +131,13 @@ function displaySpaceXList(data) {
         if (((i % 3) == 0)) {
             $('#launch-list').append(sameLine);
         }
+    }
+    console.log(data);
+    if (data.length <= 0) {
+        var message = document.createElement('h4');
+        message.append("No results found.");
+        message.className = "text-center";
+
+        $('#launch-list').append(message);
     }
 }
