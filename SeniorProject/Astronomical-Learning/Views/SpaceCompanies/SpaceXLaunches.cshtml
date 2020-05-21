@@ -7,6 +7,121 @@
     <br />
     <br />
     <h1 class="information-paragraphs text-center mission-sub underlined"> SpaceX Launches </h1>
+    <div class="row" id="launch-search-row1">
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("launch-succ", "Launch Success", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="launchSuccess-dropdown" class="form-control" name="launch-succ">
+                        <option></option>
+                        <option>Successful</option>
+                        <option>Unsuccessful</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("land-succ", "Land Success", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="landSuccess-dropdown" class="form-control" name="land-succ">
+                        <option></option>
+                        <option>Successful</option>
+                        <option>Unsuccessful</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("rocket-used", "Rocket Used", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="rocket-used-dropdown" class="form-control" name="rocket-used">
+                        <option></option>
+                        <option>Falcon 1</option>
+                        <option>Falcon 9</option>
+                        <option>Falcon Heavy</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="launch-search-row2">
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("year", "Launch Year", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="year-dropdown" class="form-control" name="year">
+                        <option></option>
+                        <option>2006</option>
+                        <option>2007</option>
+                        <option>2008</option>
+                        <option>2009</option>
+                        <option>2010</option>
+                        <option>2012</option>
+                        <option>2013</option>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("site", "Launch Site", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="site-dropdown" class="form-control" name="site">
+                        <option></option>
+                        <option>Kwajalein Atoll</option>
+                        <option>CCAFS SLC 40</option>
+                        <option>VAFB SLC 4E</option>
+                        <option>KSC LC 39A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group text-center">
+                @Html.Label("ship", "Ship Used", new { @class = "col-lg-6 control-label" })
+                <div class="col-lg-6">
+                    <select id="ship-dropdown" class="form-control" name="ship">
+                        <option></option>
+                        <option>AMERICANCHAMPION</option>
+                        <option>AMERICANISLANDER</option>
+                        <option>AMERICANSPIRIT</option>
+                        <option>ELSBETH3</option>
+                        <option>GOQUEST</option>
+                        <option>GOSEARCHER</option>
+                        <option>JRTI-1</option>
+                        <option>NRCQUEST</option>
+                        <option>JRTI-2</option>
+                        <option>PACIFICFREEDOM</option>
+                        <option>OCISLY</option>
+                        <option>PACIFICWARRIOR</option>
+                        <option>KELLYC</option>
+                        <option>BETTYRGAMBARELLA</option>
+                        <option>HAWK</option>
+                        <option>GOMSTREE</option>
+                        <option>GOPURSUIT</option>
+                        <option>RACHEL</option>
+                        <option>HOLLYWOOD</option>
+                        <option>GONAVIGATOR</option>
+                        <option>GOMSCHIEF</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 text-center">
+            <button class="btn btn-primary" id="reset-list">
+                Reset
+            </button>
+        </div>
+    </div>
     <div id="launch-list" class="row information-paragraphs">
 
     </div>
