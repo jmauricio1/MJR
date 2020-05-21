@@ -177,7 +177,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminAbilitiesController.cs" />
-    <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\GamesAndQuizzesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ISSController.cs" />
@@ -449,11 +448,6 @@
     <Content Include="Views\AdminAbilities\AllUsers.cshtml" />
     <Content Include="Views\AdminAbilities\BannedUsers.cshtml" />
     <Content Include="Views\AdminAbilities\EditUserBan.cshtml" />
-    <Content Include="Views\AspNetUsers\Create.cshtml" />
-    <Content Include="Views\AspNetUsers\Delete.cshtml" />
-    <Content Include="Views\AspNetUsers\Details.cshtml" />
-    <Content Include="Views\AspNetUsers\Edit.cshtml" />
-    <Content Include="Views\AspNetUsers\Index.cshtml" />
     <Content Include="Views\AdminAbilities\AdminCreate.cshtml" />
     <Content Include="Views\AdminAbilities\BannedAdmin.cshtml" />
     <Content Include="Views\AdminAbilities\AllAdmin.cshtml" />
