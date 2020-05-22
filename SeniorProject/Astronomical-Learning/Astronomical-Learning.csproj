@@ -295,6 +295,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\SolarSystemMapSmall.jpg" />
+    <Content Include="Images\GalaxyMapSmall.jpg" />
+    <Content Include="Images\Constellation.jpg" />
+    <Content Include="Images\GalaxyMap.jpg" />
     <Content Include="Images\SolarSystemMap.jpg" />
     <Content Include="Images\Astronomical-Logo1.png" />
     <Content Include="Images\Backgrounds\login-planets.png" />
