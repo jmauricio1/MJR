@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ISSController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\OuterSystemController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -294,6 +295,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\SolarSystemMap.jpg" />
     <Content Include="Images\Astronomical-Logo1.png" />
     <Content Include="Images\Backgrounds\login-planets.png" />
     <Content Include="Images\Backgrounds\register-rocket.png" />
@@ -458,6 +460,7 @@
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\CustomError.cshtml" />
     <Content Include="Views\TripPlanner\OurSolarSystem.cshtml" />
+    <Content Include="Views\Map\InteractiveMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
