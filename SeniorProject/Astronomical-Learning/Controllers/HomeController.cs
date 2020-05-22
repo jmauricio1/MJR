@@ -46,7 +46,8 @@ namespace Astronomical_Learning.Controllers
             int dayOfYear = currentDate.DayOfYear;
 
             //the fact-1 and the final +1 is so the answer is from 1 to the final amount of facts and would not return 0
-            int chosenSpot = (dayOfYear % (factCount - 1)) + 1;
+            int chosenSpot = 1;
+            //int chosenSpot = (dayOfYear % (factCount - 1)) + 1;
             var selectedFact = db.FactOfTheDays.Find(chosenSpot);
 
             if(selectedFact.LastDisplayed.Date != DateTime.Now.Date)
