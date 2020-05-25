@@ -6,13 +6,14 @@
     <div class="container information-paragraphs dark-bkr" >
         <div style="text-align: center">
             <h2>Interactive Map</h2>
-            <h4>Use the map to explore the universe</h4>
+            <h4>Use the map to explore the universe.</h4>
+            <h5>Click on an area to learn more about it.</h5>
 
 
 
 
 
-            <div id="mapCarousel" class="carousel slide" data-ride="carousel" data-interval="false" style="height: 600px; width: 1500px; display: block; margin-left: auto; margin-right: auto;">
+            <div id="mapCarousel" class="carousel slide" data-ride="carousel carousel-fade" data-interval="false" style="height: 600px; width: 1500px; display: block; margin-left: auto; margin-right: auto;">
 
 
 
@@ -53,25 +54,19 @@
 
                             <div onclick="location.href='/SolarSystem/Moon_Information'" style="height:25px; width:25px;  cursor:pointer; position: absolute; top:220px; right:670px" class="tooltipNew"><span class="tooltiptextNew">The Moon</span><div style="height:12px; width:12px; background-color:whitesmoke; border-radius:10px; position: absolute; top:5px; right:5px"></div></div>
 
-                            <div onclick="location.href='/SolarSystem/Mars_Research'" style="height:25px; width:25px; cursor:pointer; position: absolute; top:162px; right:618px" class="tooltipNew"><span class="tooltiptextNew">Mars Research</span></div>
 
                             <div style="position: absolute; top:170px; right:617px; width: 0;  height: 0; border-top: 3px solid transparent;  border-bottom: 3px solid transparent; border-left: 9px solid red;"></div>
                             <div style="position: absolute; top:163px; right:634px; height:8px; width:8px; width: 0;  height: 0; border-top: 9px solid transparent;  border-bottom: 9px solid transparent; border-left: 6px solid blue;"></div>
                             <div style=" background-color:darkgray; position: absolute; top:170px; right:624px; height:6px; width:12px;"></div>
 
+                            <div onclick="location.href='/SolarSystem/Mars_Research'" style="height:25px; width:25px; cursor:pointer; position: absolute; top:162px; right:618px" class="tooltipNew"><span class="tooltiptextNew">Mars Research</span></div>
+
+
                             <div onclick="location.href='/SolarSystem/SpaceDebris_Information'" style="height:25px; width:25px;  cursor:pointer; position: absolute; top:120px; right:690px" class="tooltipNew"><span class="tooltiptextNew">Space Debris</span><div style="position: absolute; top:5px; right:-12px; width: 0;  height: 0; border-top: 6px solid transparent;  border-bottom: 6px solid transparent; border-left: 25px solid lightblue;"></div><div style="height:12px; width:12px; background-color:antiquewhite; border-radius:10px; position: absolute; top:5px; right:5px"></div></div>
 
                             <div onclick="location.href='/SolarSystem/Our_Planets#8'" style=" height: 25px; width: 25px;   cursor: pointer; position: absolute; top: 20px; right: 35px" class="tooltipNew"><span class="tooltiptextNew">Eris</span><div style="height:12px; width:12px; background-color:antiquewhite; border-radius:10px; position: absolute; top:5px; right:5px"></div></div>
 
-                            <div onclick="$('#mapCarousel').carousel(1);" style=" height: 75px; width: 75px; border: solid 1px white; background-image: url('../Images/GalaxyMapSmall.jpg'); cursor: pointer; position: absolute; top: 300px; right: 0px" class="tooltipNew">
-                                <span class="tooltiptextNew">The Universe</span><div style="        height: 12px;
-        width: 12px;
-        background-color: antiquewhite;
-        border-radius: 10px;
-        position: absolute;
-        top: 5px;
-        right: 5px"></div>
-                            </div>
+                            <div onclick="$('#mapCarousel').carousel(1);" style=" height: 75px; width: 75px; border: solid 1px white; background-image: url('../Images/GalaxyMapSmall.jpg'); cursor: pointer; position: absolute; top: 300px; right: 0px" class="tooltipNew">  <span class="tooltiptextNew">The Universe</span> </div>
 
                         </div>
                     </div>
@@ -93,7 +88,7 @@
                             <div onclick="$('#mapCarousel').carousel(0);" style="border: solid 1px white; height:36px; width:100px; background-image: url('../Images/SolarSystemMapSmall.jpg'); cursor:pointer; position: absolute; top:350px; right:110px" class="tooltipNew"><span class="tooltiptextNew">Our Solar System</span></div>
                             <div style="position: absolute; top:386px; right:155px; width: 0;  height: 0; border-top: 6px solid white;  border-bottom: 6px solid transparent; border-left: 6px solid transparent; border-right: 6px solid transparent;" ></div>
 
-                            <div onclick="location.href='/OuterSystem/MilkyWay_Information'" style="width:160px; cursor:pointer; position: absolute; top:300px; right:200px" class="tooltipNew"><span class="tooltiptextNew">Milky Way Galaxy</span></div>
+                            <div onclick="location.href='/OuterSystem/MilkyWay_Information'" style="height: 160px; width:160px; cursor:pointer; position: absolute; top:300px; right:200px" class="tooltipNew"><span class="tooltiptextNew">Milky Way Galaxy</span></div>
 
                             <div onclick="location.href='/OuterSystem/Stars_Information'" style=" height:100px; width:100px; cursor:pointer; position: absolute; top:170px; right:180px" class="tooltipNew"><span class="tooltiptextNew">Stars</span></div>
 
@@ -109,11 +104,13 @@
 
         <button class="btn-primary" onclick="showDiv('mapSources')">Click to show the sources of these images</button>
         <div id="mapSources" style="display:none">
-            <ol>
-                <li>Solar System <a href="https://www.flickr.com/photos/11304375@N07/2818891443">Source</a></li>
-                <li>Galaxy <a href="https://www.flickr.com/photos/hubble-heritage/3409118793/sizes/l/">Source</a></li>
-                <li>Constellation <a href="https://www.flickr.com/photos/kevinmgill/14628935305">Source</a></li>
-            </ol>
+            <ul>
+                <li>These images come from these owners.</li>
+                <li>Solar System <a href="https://www.flickr.com/photos/11304375@N07/2818891443">Source</a>, <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons</a></li>
+                <li>Galaxy <a href="https://www.flickr.com/photos/hubble-heritage/3409118793/sizes/l/">Source</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">Creative Commons</a></li>
+                <li>Constellation <a href="https://www.flickr.com/photos/kevinmgill/14628935305">Source</a>, <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons</a></li>
+                <li>These images are edited from their original form.</li> 
+            </ul>
         </div>
     </div>
 
