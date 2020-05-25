@@ -465,6 +465,7 @@
     <Content Include="Views\Home\CustomError.cshtml" />
     <Content Include="Views\TripPlanner\OurSolarSystem.cshtml" />
     <Content Include="Views\Map\InteractiveMap.cshtml" />
+    <Content Include="Views\Profile\UserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
