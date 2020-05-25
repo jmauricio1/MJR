@@ -71,6 +71,42 @@ namespace Astronomical_Learning.Controllers
             return View(comments);
         }
 
+        public ActionResult UserProfile(string id)
+        {
+            var user = db.AspNetUsers.Find(id);
+
+            try
+            {
+                ViewBag.UserName = user.UserName;
+            }
+            catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "Profile not found.", errorMessage = "This profile does not exist please try logging in with a different account." });
+
+            }
+
+            ViewBag.FirstName = user.FirstName;
+            ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
+            ViewBag.State = user.StateProvince;
+            ViewBag.Country = user.Country;
+            ViewBag.Path = user.AvatarPath.Path.ToString();
+
+            int? badgeID = user.LevelID;
+            ViewBag.Badge = db.UserLevels.Find(badgeID).BadgePath.ToString();
+            ViewBag.Level = db.UserLevels.Find(badgeID).LevelName.ToString();
+
+            string temp = "";
+            if (user.Bio != null)
+            {
+                temp = user.Bio.ToString();
+            }
+            ViewBag.Description = temp;
+
+            List<UserComment> comments = db.UserComments.Where(x => x.Username == user.UserName && x.AcceptState == true && x.ReportCount < 5).ToList();
+            
+            return View(comments);
+        }
+
         public void LevelUpdate(string userID)
         {
             var user = db.AspNetUsers.Find(userID);
