@@ -21,7 +21,7 @@
             </div>
             <div style="text-align:center" class="row">
                 <h4>@ViewBag.pictureTitle</h4>
-                <button class="btn-primary" onclick="homeShowPictureInfo()">Click for a description of this image.</button>
+                <button class="btn-primary" onclick="showDiv('pictureInfo')">Click for a description of this image.</button>
             </div>
             <div style="margin-left: 10px; margin-right: 10px; margin-top: 10px; display:none" class="row" id="pictureInfo">
                 @ViewBag.pictureExplanation

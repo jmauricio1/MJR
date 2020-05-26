@@ -16,20 +16,21 @@ namespace Astronomical_Learning.Controllers
         private ALContext db = new ALContext();
 
         // GET: Projects
-        public ActionResult Index()
+        public ActionResult ProjectList()
         {
             var allProjects = db.Projects.Where(x => x.AcceptState == true);
             return View(allProjects);
         }
 
-
-        public ActionResult Create()
+        [Authorize(Roles = "User,Administrator,Super Administrator")]
+        public ActionResult CreateProject()
         {
             return View();
         }
 
+        [Authorize(Roles = "User,Administrator,Super Administrator")]
         [HttpPost]
-        public ActionResult Create(Project model)
+        public ActionResult CreateProject(Project model)
         {
 
             model.AcceptState = false;
@@ -49,7 +50,7 @@ namespace Astronomical_Learning.Controllers
 
             
 
-            return View();
+            return View("ProjectList");
         }
     }
 }
