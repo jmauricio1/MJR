@@ -762,18 +762,17 @@ namespace Astronomical_Learning.Controllers
 
 
 
-
+        //the view that shows all of the acccepted projects
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult ReviewProjects()
         {
-
-
+            //get all of the projects that have been accepted
             var unreviewdProjects = db.Projects.Where(x => x.AcceptState == false);
 
             return View(unreviewdProjects);
         }
 
-        //method to accept a comment from the review comments page
+        //method to accept a project from the review projects page
         [HttpPost]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public void AcceptProject(int? projectId)
@@ -797,7 +796,7 @@ namespace Astronomical_Learning.Controllers
 
         }
 
-        //method to delete a comment from the review comments page
+        //method to delete a project from the review projects page
         [HttpPost]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public void DeleteProject(int? projectId)

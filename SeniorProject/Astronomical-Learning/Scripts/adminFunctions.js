@@ -31,3 +31,19 @@ function acceptProjectSuccess() {
         location.reload();
     }, 350);
 }
+
+function deleteProject(commentId) {
+    var del = confirm("Are you sure you want to delete this project?");
+
+    if (del == true) {
+        $.post("/AdminAbilities/DeleteProject?projectId=" + commentId, commentId, deleteProjectSuccess(), 'int');
+    }
+}
+
+function deleteProjectSuccess() {
+    alert("You've deleted the project.");
+
+    setTimeout(function () {
+        location.reload();
+    }, 350);
+}

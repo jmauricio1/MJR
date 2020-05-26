@@ -1,7 +1,6 @@
+function showDiv(name) {
 
-function sunShowImageSources() {
-
-    var x = document.getElementById("sunSources");
+    var x = document.getElementById(name);
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
@@ -44,15 +43,6 @@ function changeFactInfoReligion() {
 
 
 
-function moonShowImageSources() {
-    var x = document.getElementById("moonSources");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-
 
 
 
@@ -78,19 +68,6 @@ function changeFactInfoTemp() {
 
 
 
-
-
-function homeShowPictureInfo() {
-
-    var x = document.getElementById("pictureInfo");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-
-
 function starsChangeInfo(image, source, info) {
     document.getElementById("starsTypesImage").src = image;
 
@@ -100,15 +77,6 @@ function starsChangeInfo(image, source, info) {
 
 }
 
-function showDiv(name) {
-
-    var x = document.getElementById(name);
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 
 
 

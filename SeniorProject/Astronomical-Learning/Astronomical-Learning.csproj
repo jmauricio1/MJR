@@ -472,8 +472,8 @@
     <Content Include="Views\Home\CustomError.cshtml" />
     <Content Include="Views\TripPlanner\OurSolarSystem.cshtml" />
     <Content Include="Views\Map\InteractiveMap.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
-    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\ProjectList.cshtml" />
+    <Content Include="Views\Projects\CreateProject.cshtml" />
     <Content Include="Views\AdminAbilities\ReviewProjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
