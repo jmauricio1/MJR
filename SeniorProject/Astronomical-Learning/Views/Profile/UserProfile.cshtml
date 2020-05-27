@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Astronomical_Learning.Models.UserComment>
+
+@{
+    ViewBag.Title = "ProfilePage";
+}
+
+<div class="information-paragraphs dark-bkr">
+    <div style="height:20px"></div>
+    <div class="row">
+        <div class="col-lg-1">
+
+        </div>
+        <div class="col-sm-3 ">
+            <div class="homepageCard">
+                <div>
+                    <div style="height:20px"></div>
+                    <img style="width:100%; height:100%" src=@ViewBag.Path alt="Profile Image" />
+                    <div style="height:20px"></div>
+                </div>
+
+                <div style="text-align:center; font-size:24px; word-wrap: break-word">
+
+                    <div style="text-align:center; font-size:24px; word-wrap: break-word">
+                        <img style="width:40px; height:40px;" src=@ViewBag.Badge alt="Profile Image" /> @ViewBag.UserName<br>
+                        <div style="font-size:20px">
+                            <i style="font-size: 15px;">Level: @ViewBag.Level</i> <br />
+                            @ViewBag.FirstName, @ViewBag.LastName<br>
+                            @ViewBag.State, @ViewBag.Country<br>
+                            @ViewBag.Description <br>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-8 " style="text-align:center" id="yourComments">
+            <h1 style="color: white; text-align: center">Comments</h1>
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="container information-paragraphs dark-bkr" style="border: 1px solid white; width: 50%">
+
+                        <div id="userCommentBox">
+                            <p>@item.Comment</p>
+                        </div>
+
+                        <div id="usernameDateBox">
+                            <p>Date Posted: @item.PostDate.ToShortDateString()</p>
+                            <p>On page: @item.PageFrom</p>
+                        </div>
+
+                    </div>
+                    <br />
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/main.js">
+</script>
