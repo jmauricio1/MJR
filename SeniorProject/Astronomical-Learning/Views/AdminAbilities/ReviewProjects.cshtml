@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Astronomical_Learning.Models.Project>
+
+@{
+    ViewBag.Title = "ReviewProjects";
+}
+
+    <div class="information-paragraphs dark-bkr">
+        <div style="text-align:center"><h2>Review Projects for Approval</h2></div>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <div class="homepageCard" style="height:50%;width:50%; display: block; margin-left: auto; margin-right: auto;">
+                    <div style="display: flex; align-items: center; justify-content: center">
+                        
+                            <button type="button" style="color: black;" onclick="acceptProject(@item.Id)">Accept Project</button>
+                            <div style="width:10px"></div>
+                            <button type="button" style="color: black;" onclick="deleteProject(@item.Id)">Delete Project</button>
+                        
+                    </div>
+                <h2 style="text-align: center">@Html.DisplayFor(modelItem => item.Title)</h2>  
+                <div class="row" style="text-align:center"> Posted by @Html.DisplayFor(modelItem => item.Username) Posted on  @Html.DisplayFor(modelItem => item.PostDate)</div>
+                <hr />
+                <div style="text-align:center;">@Html.DisplayFor(modelItem => item.Description)</div>
+                </div>
+                <br />
+
+               
+
+                <br />
+            }
+        }
+    </div>
+
+<script src="~/Scripts/main.js">
+</script>
+
+<script src="~/Scripts/adminFunctions.js">
+</script>

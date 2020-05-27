@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="col-lg-6 form-group">
                                     <div>
-                                        @Html.RadioButton("a1", "1", true) @Html.Label( "", "3.8 Billion Years", new { @class = "answer-label" })
+                                        @Html.RadioButton("a1", "1", true) @Html.Label("", "3.8 Billion Years", new { @class = "answer-label" })
                                     </div>
                                     <div>
                                         @Html.RadioButton("a1", "2") @Html.Label("", "4.5 Billion Years", new { @class = "answer-label" })
@@ -389,5 +389,8 @@
 
 @section scripts{
     <script src="~/Scripts/main.js">
+    </script>
+
+    <script src="~/Scripts/Q1Answers.js">
     </script>
 }

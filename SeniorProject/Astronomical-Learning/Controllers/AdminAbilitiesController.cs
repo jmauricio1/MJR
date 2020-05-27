@@ -756,5 +756,65 @@ namespace Astronomical_Learning.Controllers
         }
 
 
+
+
+
+
+
+
+        //the view that shows all of the acccepted projects
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public ActionResult ReviewProjects()
+        {
+            //get all of the projects that have been accepted
+            var unreviewdProjects = db.Projects.Where(x => x.AcceptState == false);
+
+            return View(unreviewdProjects);
+        }
+
+        //method to accept a project from the review projects page
+        [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public void AcceptProject(int? projectId)
+        {
+            if (projectId != null)
+            {
+                Project project = db.Projects.Where(x => x.Id == projectId).FirstOrDefault();
+
+                if (project != null)
+                {
+                    project.AcceptState = true;
+
+                    //add points to admin who accepted the comment
+                    var userID = User.Identity.GetUserId();
+                    var user = db.AspNetUsers.Find(userID);
+                    user.AccountScore = (int)user.AccountScore + 5;
+
+                    db.SaveChanges();
+                }
+            }
+
+        }
+
+        //method to delete a project from the review projects page
+        [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public void DeleteProject(int? projectId)
+        {
+            if (projectId != null)
+            {
+                Project project = db.Projects.Where(x => x.Id == projectId).FirstOrDefault();
+
+                if (project != null)
+                {
+                    db.Projects.Remove(project);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+
     }
+
+
 }
