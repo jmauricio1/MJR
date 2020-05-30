@@ -437,7 +437,6 @@
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
     <Content Include="Views\OuterSystem\Stars_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\SpaceXLaunches.cshtml" />
-    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
     <Content Include="Views\SpaceCompanies\ISS.cshtml" />
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
@@ -449,7 +448,6 @@
     <Content Include="Views\OuterSystem\Interstellar_Space.cshtml" />
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
     <Content Include="Views\SpaceCompanies\ISS.cshtml" />
-    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
     <Content Include="Views\SpaceCompanies\LaunchDetails.cshtml" />
     <Content Include="Views\Profile\ProfilePage.cshtml" />
     <Content Include="Views\Manage\ChangeProfileAvatar.cshtml" />
@@ -476,6 +474,7 @@
     <Content Include="Views\Projects\ProjectList.cshtml" />
     <Content Include="Views\Projects\CreateProject.cshtml" />
     <Content Include="Views\AdminAbilities\ReviewProjects.cshtml" />
+    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

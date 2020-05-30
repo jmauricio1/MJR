@@ -881,3 +881,20 @@ dd {
     right: 0;
     bottom: 0;
 }
+
+.larger-font{
+    font-size: 20px;
+}
+
+.mars-table-header{
+    width: 150px;
+}
+
+.info-par{
+    text-indent: 50px;
+}
+
+.info-page-title{
+    font-size: 50px;
+    margin-top: 50px;
+}
