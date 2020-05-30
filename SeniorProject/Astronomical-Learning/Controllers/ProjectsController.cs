@@ -50,7 +50,7 @@ namespace Astronomical_Learning.Controllers
 
             
 
-            return View("ProjectList");
+            return RedirectToAction("ProjectList");
         }
     }
 }
