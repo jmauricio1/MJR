@@ -277,13 +277,5 @@ namespace Astronomical_Learning.Controllers
                 _userManager = value;
             }
         }
-
-        public void CalculateBadgePercent()
-        {
-            var userId = User.Identity.GetUserId();
-            var user = db.AspNetUsers.Find(userId);
-
-
-        }
     }
 }
