@@ -54,6 +54,9 @@ namespace Astronomical_Learning.Controllers
             ViewBag.pagesList = pages;
             ViewBag.search = searchQuery;
 
+            var userList = db.AspNetUsers.Where(m => m.UserName.Contains(searchQuery));
+            ViewBag.UserList = userList;
+
             return View();
 
            

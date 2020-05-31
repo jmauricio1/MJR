@@ -3,76 +3,128 @@
     ViewBag.Title = "Manage";
 }
 
-<h2>@ViewBag.Title.</h2>
+<head>
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
 
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Change your account settings</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>Profile Avatar:</dt>
+
+<div class="container information-paragraphs white-txt">
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <div class="container dark-bk ">
+        <h1 class="white-txt text-center info-page-title">Manage Account</h1>
+        <div style="height:50px"></div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <a href="~/Manage/ChangeProfileAvatar">
+                    <div class="account-settings-modal text-center">
+                        <h3>Profile Avatar</h3>
+                        <br />
+                        <p>
+                            Change your profile avatar.
+                        </p>
+                        <br />
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <a href="~/Manage/ChangeProfileDetails">
+                    <div class="account-settings-modal text-center">
+                        <h3>Change Profile Details</h3>
+                        <br />
+                        <p>
+                            Change your username, first name, last name, or biography.
+                        </p>
+                        <br />
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <a href="~/Manage/ChangePassword">
+                    <div class="account-settings-modal text-center">
+                        <h3>Password</h3>
+                        <br />
+                        <p>
+                            Change your account password.
+                        </p>
+                        <br />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div style="height:30px"></div>
+    </div>
+    @*
+        <div>
+            <h4>Change your account settings</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>Profile Avatar:</dt>
+                <dd>
+                    @Html.ActionLink("Change your profile avatar", "ChangeProfileAvatar")
+                </dd>
+                <dt>
+                    Profile details
+                </dt>
+                <dd>
+                    @Html.ActionLink("Change your profile details", "ChangeProfileDetails")
+                </dd>
+                <dt>Password:</dt>
+                <dd>
+                    [
+                    @if (Model.HasPassword)
+                    {
+                        @Html.ActionLink("Change your password", "ChangePassword")
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Create", "SetPassword")
+                    }
+                    ]
+                </dd>
+                <dt>External Logins:</dt>
+                <dd>
+                    @Model.Logins.Count [
+                    @Html.ActionLink("Manage", "ManageLogins") ]
+                </dd>
+                @*
+                    Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+                     See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                        for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+                     Uncomment the following block after you have set up two-factor authentication
+    *@
+    @*
+        <dt>Phone Number:</dt>
         <dd>
-            @Html.ActionLink("Change your profile avatar", "ChangeProfileAvatar")
-        </dd>
-        <dt>
-            Profile details
-            </dt>
-        <dd>
-            @Html.ActionLink("Change your profile details", "ChangeProfileDetails")
-        </dd>
-        <dt>Password:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
+            @(Model.PhoneNumber ?? "None")
+            @if (Model.PhoneNumber != null)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                <br />
+                <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
+                using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
+                }
             }
             else
             {
-                @Html.ActionLink("Create", "SetPassword")
+                <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
             }
-            ]
         </dd>
-        <dt>External Logins:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
-        </dd>
-        @*
-            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
-
-             See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
-
-             Uncomment the following block after you have set up two-factor authentication
-        *@
-        @*
-            <dt>Phone Number:</dt>
+    *@
+    @*<dt>Two-Factor Authentication:</dt>
             <dd>
-                @(Model.PhoneNumber ?? "None")
-                @if (Model.PhoneNumber != null)
-                {
-                    <br />
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
-                    }
-                }
-                else
-                {
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-                }
-            </dd>
-        *@
-        <dt>Two-Factor Authentication:</dt>
-        <dd>
-            <p>
-                There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication.
-            </p>
-            @*@if (Model.TwoFactor)
+                <p>
+                    There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                    for details on setting up this ASP.NET application to support two-factor authentication.
+                </p>
+                @if (Model.TwoFactor)
                 {
                     using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
@@ -91,7 +143,8 @@
                         <input type="submit" value="Enable" class="btn btn-link" />
                         </text>
                     }
-                }*@
-        </dd>
-    </dl>
+                }
+        </dl>
+    *@
 </div>
+
