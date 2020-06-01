@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Astronomical Learning</title>
     @Styles.Render("~/Content/Site.css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -205,10 +205,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     @section scripts{
-        <script src="~/Scripts/main.js">
-            arguments
-        </script>
+
         <script type="text/javascript" src="~/Scripts/ProfileUpdates.js"></script>
     }
+
+    <script type="text/javascript"src="~/Scripts/main.js"></script> 
 </body>
+
 </html>
