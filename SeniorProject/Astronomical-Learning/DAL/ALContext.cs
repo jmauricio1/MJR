@@ -35,6 +35,7 @@ namespace Astronomical_Learning.DAL
         public virtual DbSet<PlanetFilter> PlanetFilters { get; set; }
 
         public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<ViewData> ViewDatas { get; set; }
 
 
 
