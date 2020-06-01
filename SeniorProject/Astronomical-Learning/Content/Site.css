@@ -881,3 +881,29 @@ dd {
     right: 0;
     bottom: 0;
 }
+
+.larger-font{
+    font-size: 20px;
+}
+
+.mars-table-header{
+    width: 150px;
+}
+
+.info-par{
+    text-indent: 50px;
+}
+
+.info-page-title{
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.account-settings-modal {
+    height: 125px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
