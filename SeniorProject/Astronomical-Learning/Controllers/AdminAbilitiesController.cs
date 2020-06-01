@@ -14,6 +14,7 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace Astronomical_Learning.Controllers
 {
+    
     public class AdminAbilitiesController : Controller
     {
 
@@ -98,6 +99,7 @@ namespace Astronomical_Learning.Controllers
 
         //returns all users who are searched from the all users page
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AllUsers(string searchInput)
         {
@@ -145,6 +147,7 @@ namespace Astronomical_Learning.Controllers
 
         //returns all banned users who are searched from the banned users page
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult BannedUsers(string searchInput)
         {
