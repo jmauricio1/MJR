@@ -813,8 +813,29 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public ActionResult Demographics()
+        {
+            var countries = db.AspNetUsers.GroupBy(x => x.Country)
+                .Select(n => new CountryData { CountryName = n.Key, CountryCount = n.Count() })
+                .OrderByDescending(x => x.CountryCount)
+                .ToList();
+
+            var views = db.ViewDatas.OrderBy(x => x.ViewCount).ToList();
+
+            var levels = db.AspNetUsers.GroupBy(x => x.LevelID)
+                .Select(n => new UserLevelsData { UsersLevel = n.Key.ToString(), UsersLevelCount = n.Count() })
+                .ToList();
+
+
+            DemographicViewModel vm = new DemographicViewModel();
+            vm.CountryDatas = countries;
+            vm.UserLevelsDatas = levels;
+            vm.ViewsDatas = views;
+
+            return View(vm);
+        }
+
 
     }
-
-
 }
