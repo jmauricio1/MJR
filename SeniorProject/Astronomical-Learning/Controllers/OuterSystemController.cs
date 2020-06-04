@@ -17,6 +17,15 @@ namespace Astronomical_Learning.Controllers
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/OuterSystem/MilkyWay_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/OuterSystem/SubmitComment";
 
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "MilkyWay");
+
+            foreach (ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+
+            db.SaveChanges();
+
             return View(comments);
         }
 
@@ -25,12 +34,30 @@ namespace Astronomical_Learning.Controllers
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/OuterSystem/Andromeda_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/OuterSystem/SubmitComment";
 
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "Andromeda");
+
+            foreach (ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+
+            db.SaveChanges();
+
             return View(comments);
         }
         public ActionResult Stars_Information()
         {
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/OuterSystem/Stars_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/OuterSystem/SubmitComment";
+
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "Stars");
+
+            foreach (ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+
+            db.SaveChanges();
 
             return View(comments);
         }
