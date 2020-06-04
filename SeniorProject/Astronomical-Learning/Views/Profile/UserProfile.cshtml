@@ -5,15 +5,6 @@
 }
 
 <div class="information-paragraphs dark-bkr">
-    @if (ViewBag.ChangedUsername == "true")
-    {
-        <div class="container text-center">
-            <div class="alert alert-info" role="alert">
-                <p>Username changed! Please log out and log back in to see full affect of changes.</p>
-            </div>
-        </div>
-    }
-    <div style="text-align:center"><h2>My Profile</h2></div>
     <div style="height:20px"></div>
     <div class="row">
         <div class="col-lg-1">
@@ -33,29 +24,9 @@
                         <img style="width:40px; height:40px;" src=@ViewBag.Badge alt="Profile Image" /> @ViewBag.UserName<br>
                         <div style="font-size:20px">
                             <i style="font-size: 15px;">Level: @ViewBag.Level</i> <br />
-                            @if(ViewBag.NextLevelXP == -1) 
-                            {
-                                <p style="font-size: 15px">Congratulations! <br /> @ViewBag.NextLevel</p>
-                            }
-                            else 
-                            { 
-                                <p style="font-size: 15px">@ViewBag.NextLevelXP xp until rank: @ViewBag.NextLevel</p>
-                                <div class="row">
-                                    <div class="col-sm-10" style="padding-right: 0px; margin-right: 0px">
-                                        <div class="progress" style="width: 95%; display: block; margin-left: auto; margin-right: auto;">
-                                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: @ViewBag.NextLevelPct"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-2" style="padding-left: 0px; padding-right: 25px">
-                                        <p style="font-size: 15px; color: white;">@ViewBag.NextLevelPct</p>
-                                    </div>
-                                </div>
-                                
-                            }
                             @ViewBag.FirstName, @ViewBag.LastName<br>
                             @ViewBag.State, @ViewBag.Country<br>
                             @ViewBag.Description <br>
-                            @Html.ActionLink("Manage Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                         </div>
                         <div>
 
@@ -68,7 +39,7 @@
         </div>
 
         <div class="col-lg-8 " style="text-align:center" id="yourComments">
-            <h1 style="color: white; text-align: center">Your Comments</h1>
+            <h1 style="color: white; text-align: center">Comments</h1>
 
             @if (Model != null)
             {
@@ -84,8 +55,6 @@
                             <p>Date Posted: @item.PostDate.ToShortDateString()</p>
                             <p>On page: @item.PageFrom</p>
                         </div>
-
-                        <button type="button" style="color: black;" onclick="deleteComment(@item.Id)">Delete Comment</button>
 
                     </div>
                     <br />

@@ -68,6 +68,141 @@ namespace Astronomical_Learning.Controllers
             }
 
             ViewBag.Role = user.AspNetRoles.ElementAt(0).Id;
+
+            if ((user.AccountScore) >= 0 && (user.AccountScore < 50))
+            {
+                int nextLevelXP = 50 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Astronaut In Training";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+
+            }
+            else if ((user.AccountScore >= 50) && (user.AccountScore < 100))
+            {
+                int nextLevelXP = 100 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Astronaut";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if ((user.AccountScore >= 100) && (user.AccountScore < 150))
+            {
+                int nextLevelXP = 150 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Star Charter";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if ((user.AccountScore >= 150) && (user.AccountScore < 200))
+            {
+                int nextLevelXP = 200 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Orbit Breaker";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if ((user.AccountScore >= 200) && (user.AccountScore < 250))
+            {
+                int nextLevelXP = 250 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Space Walker";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if ((user.AccountScore >= 250) && (user.AccountScore < 300))
+            {
+                int nextLevelXP = 300 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Shooting Star";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if ((user.AccountScore >= 300) && (user.AccountScore < 350))
+            {
+                int nextLevelXP = 350 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Superstar";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if ((user.AccountScore >= 350) && (user.AccountScore < 400))
+            {
+                int nextLevelXP = 400 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Supernova";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if ((user.AccountScore >= 400) && (user.AccountScore < 450))
+            {
+                int nextLevelXP = 450 - user.AccountScore;
+                ViewBag.NextLevelXP = nextLevelXP;
+
+                ViewBag.NextLevel = "Celestial Being";
+
+                int nextLevelPct = 100 - (nextLevelXP * 2);
+                ViewBag.NextLevelPct = nextLevelPct + "%";
+            }
+            else if (user.AccountScore >= 450)
+            {
+                ViewBag.NextLevelXP = -1;
+                ViewBag.NextLevel = "You're maximum rank!";
+            }
+
+
+            return View(comments);
+        }
+
+        public ActionResult UserProfile(string id)
+        {
+            var user = db.AspNetUsers.Find(id);
+
+            try
+            {
+                ViewBag.UserName = user.UserName;
+            }
+            catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "Profile not found.", errorMessage = "This profile does not exist please try logging in with a different account." });
+
+            }
+
+            ViewBag.FirstName = user.FirstName;
+            ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
+            ViewBag.State = user.StateProvince;
+            ViewBag.Country = user.Country;
+            ViewBag.Path = user.AvatarPath.Path.ToString();
+
+            int? badgeID = user.LevelID;
+            ViewBag.Badge = db.UserLevels.Find(badgeID).BadgePath.ToString();
+            ViewBag.Level = db.UserLevels.Find(badgeID).LevelName.ToString();
+
+            string temp = "";
+            if (user.Bio != null)
+            {
+                temp = user.Bio.ToString();
+            }
+            ViewBag.Description = temp;
+
+            List<UserComment> comments = db.UserComments.Where(x => x.Username == user.UserName && x.AcceptState == true && x.ReportCount < 5).ToList();
+            
             return View(comments);
         }
 

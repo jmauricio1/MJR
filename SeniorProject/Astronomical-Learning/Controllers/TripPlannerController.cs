@@ -19,6 +19,7 @@ namespace Astronomical_Learning.Controllers
         }
 
         [HttpPost]
+
         public JsonResult CalculateDistances(string Start, string StopOne, string StopTwo, string StopThree, string StopFour, string Destination)
         {
             List<TripPlanModel> Distances = new List<TripPlanModel>();

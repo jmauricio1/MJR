@@ -418,7 +418,6 @@ footer {
 .tooltipNew {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted white;
     font-size: 15px
 }
 
@@ -490,6 +489,18 @@ footer {
 
 #launch-list {
     background-color: black;
+}
+
+#launch-search-row1{
+    margin-top: 5%;
+}
+
+#launch-search-row2 {
+    margin-top: 2%;
+}
+
+#reset-list {
+    margin-top: 2%;
 }
 
 /* Launch Information/Details*/
@@ -869,4 +880,30 @@ dd {
     position: absolute;
     right: 0;
     bottom: 0;
+}
+
+.larger-font{
+    font-size: 20px;
+}
+
+.mars-table-header{
+    width: 150px;
+}
+
+.info-par{
+    text-indent: 50px;
+}
+
+.info-page-title{
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.account-settings-modal {
+    height: 125px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
 }

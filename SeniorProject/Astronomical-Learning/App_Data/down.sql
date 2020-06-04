@@ -1,6 +1,21 @@
 ﻿DROP TABLE [dbo].[AspNetUserRoles];
 DROP TABLE [dbo].[AspNetUserClaims];
 DROP TABLE [dbo].[AspNetUserLogins];
+DROP TABLE [dbo].[UserQuizScores];
+
+DROP TABLE [dbo].[FactOfTheDay];
+DROP TABLE [dbo].[Projects];
+DROP TABLE [dbo].[Quizzes];
+DROP TABLE [dbo].[SitePages];
+DROP TABLE [dbo].[KeywordRelations];
+DROP TABLE [dbo].[SearchKeywords];
+DROP TABLE [dbo].[PlanetFilters];
+DROP TABLE [dbo].[LocationDistance];
+DROP TABLE [dbo].[Distances];
+DROP TABLE [dbo].[Locations];
+DROP TABLE [dbo].[UserComment];
+DROP TABLE [dbo].[ViewData];
 DROP TABLE [dbo].[AspNetUsers];
+DROP TABLE [dbo].[UserLevels];
 DROP TABLE [dbo].[AspNetRoles];
 DROP TABLE [dbo].[AvatarPaths];

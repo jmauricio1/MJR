@@ -14,12 +14,13 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace Astronomical_Learning.Controllers
 {
+    
     public class AdminAbilitiesController : Controller
     {
 
         private ALContext db = new ALContext();
 
-
+        //returns all of the unchecked comments as a list
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult ReviewComments()
         {
@@ -30,7 +31,7 @@ namespace Astronomical_Learning.Controllers
             return View(unreviewdComments);
         }
 
-
+        //method to accept a comment from the review comments page
         [HttpPost]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public void AcceptComment(int? commentId)
@@ -43,6 +44,7 @@ namespace Astronomical_Learning.Controllers
                 {
                     comment.AcceptState = true;
 
+                    //add points to admin who accepted the comment
                     var userID = User.Identity.GetUserId();
                     var user = db.AspNetUsers.Find(userID);
                     user.AccountScore = (int)user.AccountScore + 5;
@@ -50,9 +52,10 @@ namespace Astronomical_Learning.Controllers
                     db.SaveChanges();
                 }
             }
+
         }
 
-
+        //method to delete a comment from the review comments page
         [HttpPost]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public void DeleteComment(int? commentId)
@@ -69,7 +72,7 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
-
+        //return all users in the database who are regular users
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AllUsers()
         {
@@ -94,8 +97,9 @@ namespace Astronomical_Learning.Controllers
 
         }
 
-
+        //returns all users who are searched from the all users page
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AllUsers(string searchInput)
         {
@@ -107,9 +111,9 @@ namespace Astronomical_Learning.Controllers
             List<DAL.AspNetUser> regularUsers = new List<DAL.AspNetUser>();
 
 
-            for(int i = 0; i < searchedUsers.Length; i++)
+            for (int i = 0; i < searchedUsers.Length; i++)
             {
-                if(searchedUsers[i].AspNetRoles.ElementAt(0).Id == "US")
+                if (searchedUsers[i].AspNetRoles.ElementAt(0).Id == "US")
                 {
                     regularUsers.Add(searchedUsers[i]);
                 }
@@ -119,7 +123,7 @@ namespace Astronomical_Learning.Controllers
             return View(regularUsers);
         }
 
-
+        //returns a list of all banned users who are regular users
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult BannedUsers()
         {
@@ -141,7 +145,9 @@ namespace Astronomical_Learning.Controllers
             return View(bannedUsers);
         }
 
+        //returns all banned users who are searched from the banned users page
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult BannedUsers(string searchInput)
         {
@@ -162,7 +168,7 @@ namespace Astronomical_Learning.Controllers
             return View(bannedUsers);
         }
 
-
+        //the page to display when editing the ban for a user
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult EditUserBan(string id)
         {
@@ -170,30 +176,41 @@ namespace Astronomical_Learning.Controllers
 
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("CustomError", "Home", new { errorName = "This use does not exist.", errorMessage = "The user may have been removed or did not exist." });
             }
             DAL.AspNetUser aspNetUser = db.AspNetUsers.Find(id);
             if (aspNetUser == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("CustomError", "Home", new { errorName = "This user does not exist.", errorMessage = "The user may have been removed or did not exist." });
             }
             ViewBag.AID = new SelectList(db.AvatarPaths, "ID", "AvatarName", aspNetUser.AID);
             return View(aspNetUser);
         }
 
+        //edit the ban of the user and save it to the database 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,Super Administrator")]
-        public ActionResult EditUserBan( DAL.AspNetUser aspNetUser)
+        public ActionResult EditUserBan(DAL.AspNetUser aspNetUser)
         {
 
-            var user = db.AspNetUsers.Find(aspNetUser.Id);
+            DAL.AspNetUser user;
+
+            try
+            {
+                user = db.AspNetUsers.Find(aspNetUser.Id);
+            }
+            catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "This user does not exist.", errorMessage = "The user may have been removed or did not exist." });
+            }
+
             user.LockoutEndDateUtc = aspNetUser.LockoutEndDateUtc;
 
 
-                db.SaveChanges();
-                //return View(user);
-               
+            db.SaveChanges();
+            //return View(user);
+
 
             return RedirectToAction("AllUsers");
         }
@@ -480,8 +497,7 @@ namespace Astronomical_Learning.Controllers
 
 
 
-        // GET: /Account/Register
-        [AllowAnonymous]
+        //the page to create new regular admins
         [Authorize(Roles = "Super Administrator")]
         public ActionResult AdminCreate()
         {
@@ -489,16 +505,14 @@ namespace Astronomical_Learning.Controllers
             countryList = GetCountries(ref countryList);
 
             ViewBag.CountriesList = countryList;
-         
+
 
             return View("AdminCreate");
         }
 
 
-        //
-        // POST: /Account/Register
+        //create the new admin
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Super Administrator")]
         public async Task<ActionResult> AdminCreate(RegisterViewModel model)
@@ -506,8 +520,10 @@ namespace Astronomical_Learning.Controllers
 
             if (ModelState.IsValid)
             {
+                //used to determine the profile picture of the admin
                 Random rand = new Random();
                 int x = rand.Next(1, 7);
+
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x };
                 if (db.AspNetUsers.Any(m => m.UserName == user.UserName) == true)
                 {
@@ -564,7 +580,7 @@ namespace Astronomical_Learning.Controllers
 
 
 
-
+        //returns a list of all regular administrators
         [Authorize(Roles = "Super Administrator")]
         public ActionResult AllAdmin()
         {
@@ -588,6 +604,7 @@ namespace Astronomical_Learning.Controllers
 
         }
 
+        //returns the search of all regular administrators
         [HttpPost]
         [Authorize(Roles = "Super Administrator")]
         public ActionResult AllAdmin(string searchInput)
@@ -612,6 +629,7 @@ namespace Astronomical_Learning.Controllers
             return View(searchedAdmins);
         }
 
+        //returns the list of all banned regular administrators
         [Authorize(Roles = "Super Administrator")]
         public ActionResult BannedAdmin()
         {
@@ -631,6 +649,7 @@ namespace Astronomical_Learning.Controllers
             return View(bannedAdmins);
         }
 
+        //returns the results of all banned admins after searching
         [Authorize(Roles = "Super Administrator")]
         [HttpPost]
         public ActionResult BannedAdmin(string searchInput)
@@ -652,47 +671,60 @@ namespace Astronomical_Learning.Controllers
         }
 
 
-
+        //page to edit the bans of admins
         [Authorize(Roles = "Super Administrator")]
         public ActionResult EditAdminBan(string id)
         {
 
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("CustomError", "Home", new { errorName = "This administrator does not exist.", errorMessage = "The administrator may have been removed or did not exist." });
             }
             DAL.AspNetUser aspNetUser = db.AspNetUsers.Find(id);
             if (aspNetUser == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("CustomError", "Home", new { errorName = "This administrator does not exist.", errorMessage = "The administrator may have been removed or did not exist." });
             }
             ViewBag.AID = new SelectList(db.AvatarPaths, "ID", "AvatarName", aspNetUser.AID);
             return View(aspNetUser);
         }
 
+        //edit the admin ban and save changes
         [HttpPost]
         [Authorize(Roles = "Super Administrator")]
         [ValidateAntiForgeryToken]
         public ActionResult EditAdminBan(DAL.AspNetUser aspNetUser)
         {
 
-            var user = db.AspNetUsers.Find(aspNetUser.Id);
+            DAL.AspNetUser user;
+
+            try
+            {
+                user = db.AspNetUsers.Find(aspNetUser.Id);
+            }
+            catch
+            {
+                return RedirectToAction("CustomError", "Home", new { errorName = "This administrator does not exist.", errorMessage = "The administrator may have been removed or did not exist." });
+            }
+
+
             user.LockoutEndDateUtc = aspNetUser.LockoutEndDateUtc;
 
 
             db.SaveChanges();
-            //return View(user);
 
 
             return RedirectToAction("AllAdmin");
         }
 
+        //the page where the admin features are located
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AdminFeatures()
         {
             return View();
         }
 
+        //page to input fact of the day
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult InputFact()
         {
@@ -700,6 +732,7 @@ namespace Astronomical_Learning.Controllers
             return View();
         }
 
+        //add the newly created fact into the database
         [HttpPost]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult InputFact(FactOfTheDay model)
@@ -721,6 +754,87 @@ namespace Astronomical_Learning.Controllers
             ViewBag.Added = added;
             ViewBag.FactList = db.FactOfTheDays.Where(m => m.DisplayCount >= 0);
             return View();
+        }
+
+
+
+
+
+
+
+
+        //the view that shows all of the acccepted projects
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public ActionResult ReviewProjects()
+        {
+            //get all of the projects that have been accepted
+            var unreviewdProjects = db.Projects.Where(x => x.AcceptState == false);
+
+            return View(unreviewdProjects);
+        }
+
+        //method to accept a project from the review projects page
+        [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public void AcceptProject(int? projectId)
+        {
+            if (projectId != null)
+            {
+                Project project = db.Projects.Where(x => x.Id == projectId).FirstOrDefault();
+
+                if (project != null)
+                {
+                    project.AcceptState = true;
+
+                    //add points to admin who accepted the project
+                    var userID = User.Identity.GetUserId();
+                    var user = db.AspNetUsers.Find(userID);
+                    user.AccountScore = (int)user.AccountScore + 5;
+
+                    db.SaveChanges();
+                }
+            }
+
+        }
+
+        //method to delete a project from the review projects page
+        [HttpPost]
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public void DeleteProject(int? projectId)
+        {
+            if (projectId != null)
+            {
+                Project project = db.Projects.Where(x => x.Id == projectId).FirstOrDefault();
+
+                if (project != null)
+                {
+                    db.Projects.Remove(project);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        [Authorize(Roles = "Administrator,Super Administrator")]
+        public ActionResult Demographics()
+        {
+            var countries = db.AspNetUsers.GroupBy(x => x.Country)
+                .Select(n => new CountryData { CountryName = n.Key, CountryCount = n.Count() })
+                .OrderByDescending(x => x.CountryCount)
+                .ToList();
+
+            var views = db.ViewDatas.OrderBy(x => x.ViewCount).ToList();
+
+            var levels = db.AspNetUsers.GroupBy(x => x.LevelID)
+                .Select(n => new UserLevelsData { UsersLevel = n.Key.ToString(), UsersLevelCount = n.Count() })
+                .ToList();
+
+
+            DemographicViewModel vm = new DemographicViewModel();
+            vm.CountryDatas = countries;
+            vm.UserLevelsDatas = levels;
+            vm.ViewsDatas = views;
+
+            return View(vm);
         }
 
 

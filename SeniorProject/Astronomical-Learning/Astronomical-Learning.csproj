@@ -177,13 +177,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminAbilitiesController.cs" />
-    <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\GamesAndQuizzesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ISSController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\OuterSystemController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SolarSystemController.cs" />
     <Compile Include="Controllers\SpaceCompaniesController.cs" />
@@ -206,7 +207,9 @@
     <Compile Include="Models\AspNetUser.cs" />
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\CountryData.cs" />
     <Compile Include="Models\CountryState.cs" />
+    <Compile Include="Models\DemographicViewModel.cs" />
     <Compile Include="Models\Distance.cs" />
     <Compile Include="Models\FactOfTheDay.cs" />
     <Compile Include="DAL\FactOfTheDayContext.cs" />
@@ -229,11 +232,14 @@
     <Compile Include="Models\LocationDistance.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PlanetFilter.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Models\TripPlanModel.cs" />
     <Compile Include="Models\UserComment.cs" />
     <Compile Include="Models\Search\KeywordRelation.cs" />
     <Compile Include="Models\Search\SearchKeyword.cs" />
     <Compile Include="Models\Search\SitePage.cs" />
+    <Compile Include="Models\UserLevelsData.cs" />
+    <Compile Include="Models\ViewData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <!-- Remember to comment this out
@@ -265,6 +271,8 @@
     <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
     <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
     <Content Include="App_Data\profile-seed.sql" />
+    <Content Include="App_Data\Projects\downProjects.sql" />
+    <Content Include="App_Data\Projects\upProjects.sql" />
     <Content Include="App_Data\Roles\upRoles.sql" />
     <Content Include="App_Data\Scores\UserQuiz.sql" />
     <!-- Remember to comment this out 
@@ -286,6 +294,9 @@
     <Content Include="App_Data\UserComment\demoSeedScript.sql" />
     <Content Include="App_Data\UserComment\downUserComment.sql" />
     <Content Include="App_Data\UserComment\upUserComment.sql" />
+    <Content Include="App_Data\ViewsData\downViewData.sql" />
+    <Content Include="App_Data\ViewsData\seedViewData.sql" />
+    <Content Include="App_Data\ViewsData\upViewData.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -295,6 +306,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\SolarSystemMapSmall.jpg" />
+    <Content Include="Images\GalaxyMapSmall.jpg" />
+    <Content Include="Images\Constellation.jpg" />
+    <Content Include="Images\GalaxyMap.jpg" />
+    <Content Include="Images\SolarSystemMap.jpg" />
     <Content Include="Images\Astronomical-Logo1.png" />
     <Content Include="Images\Backgrounds\login-planets.png" />
     <Content Include="Images\Backgrounds\register-rocket.png" />
@@ -374,10 +390,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\planner.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\planets-js.js" />
     <Content Include="Scripts\ProfileUpdates.js" />
+    <Content Include="Scripts\Q1Answers.js" />
+    <Content Include="Scripts\adminFunctions.js" />
     <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\something.js" />
     <Content Include="Scripts\spacex-main.js" />
@@ -425,7 +444,6 @@
     <Content Include="Views\SolarSystem\Our_Planets.cshtml" />
     <Content Include="Views\OuterSystem\Stars_Information.cshtml" />
     <Content Include="Views\SpaceCompanies\SpaceXLaunches.cshtml" />
-    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
     <Content Include="Views\SpaceCompanies\ISS.cshtml" />
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
@@ -437,7 +455,6 @@
     <Content Include="Views\OuterSystem\Interstellar_Space.cshtml" />
     <Content Include="Views\SpaceCompanies\NASAMissions.cshtml" />
     <Content Include="Views\SpaceCompanies\ISS.cshtml" />
-    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
     <Content Include="Views\SpaceCompanies\LaunchDetails.cshtml" />
     <Content Include="Views\Profile\ProfilePage.cshtml" />
     <Content Include="Views\Manage\ChangeProfileAvatar.cshtml" />
@@ -449,11 +466,6 @@
     <Content Include="Views\AdminAbilities\AllUsers.cshtml" />
     <Content Include="Views\AdminAbilities\BannedUsers.cshtml" />
     <Content Include="Views\AdminAbilities\EditUserBan.cshtml" />
-    <Content Include="Views\AspNetUsers\Create.cshtml" />
-    <Content Include="Views\AspNetUsers\Delete.cshtml" />
-    <Content Include="Views\AspNetUsers\Details.cshtml" />
-    <Content Include="Views\AspNetUsers\Edit.cshtml" />
-    <Content Include="Views\AspNetUsers\Index.cshtml" />
     <Content Include="Views\AdminAbilities\AdminCreate.cshtml" />
     <Content Include="Views\AdminAbilities\BannedAdmin.cshtml" />
     <Content Include="Views\AdminAbilities\AllAdmin.cshtml" />
@@ -464,6 +476,13 @@
     <Content Include="Views\Home\Credits.cshtml" />
     <Content Include="Views\Home\CustomError.cshtml" />
     <Content Include="Views\TripPlanner\OurSolarSystem.cshtml" />
+    <Content Include="Views\Map\InteractiveMap.cshtml" />
+    <Content Include="Views\Profile\UserProfile.cshtml" />
+    <Content Include="Views\Projects\ProjectList.cshtml" />
+    <Content Include="Views\Projects\CreateProject.cshtml" />
+    <Content Include="Views\AdminAbilities\ReviewProjects.cshtml" />
+    <Content Include="Views\SolarSystem\Mars_Research.cshtml" />
+    <Content Include="Views\AdminAbilities\Demographics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

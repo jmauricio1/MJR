@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Astronomical Learning</title>
     @Styles.Render("~/Content/Site.css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-lg-12">
                         <ul class="nav navbar-nav">
 
 
@@ -142,27 +142,26 @@
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="~/TripPlanner/OurSolarSystem">Trip Planner</a>
                                         <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="~/Map/InteractiveMap">Interactive Map</a>
+                                        <div class="dropdown-divider"></div>
                                     </div>
                                 </div>
                             </li>
 
+                            <li>@Html.ActionLink("Projects", "ProjectList", "Projects")</li>
+
                             <li>@Html.ActionLink("Credits", "Credits", "Home")</li>
 
+                            <li>
+                                <div style="height:10px">
 
+                                </div>
+                                <input id="siteSearchBar" type="search" />
+                                <!--<button class="btn-primary" onclick="siteSearch()">Search</button>-->
+                                <button class="btn-primary" onclick="siteSearch()">Search</button>
+                            </li>
 
                         </ul>
-                    </div>
-
-                    <div>
-                        <div style="height:10px">
-
-                        </div>
-
-                        <div>
-                            <input id="siteSearchBar" type="search" />
-                            <!--<button class="btn-primary" onclick="siteSearch()">Search</button>-->
-                            <button class="btn-primary" onclick="siteSearch()">Search</button>
-                        </div>
                     </div>
                 </div>
 
@@ -206,10 +205,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     @section scripts{
-        <script src="~/Scripts/main.js">
-            arguments
-        </script>
+
         <script type="text/javascript" src="~/Scripts/ProfileUpdates.js"></script>
     }
+
+    <script type="text/javascript"src="~/Scripts/main.js"></script> 
 </body>
+
 </html>

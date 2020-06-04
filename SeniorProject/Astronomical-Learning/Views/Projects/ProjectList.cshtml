@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Astronomical_Learning.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <div class="container information-paragraphs dark-bkr">
+
+
+        <div style="text-align:center"><h2>Check out the projects that others are working on</h2></div>
+
+        <p style="text-align:center">
+            @Html.ActionLink("Login to your account to start a project of your own", "CreateProject")
+        </p>
+
+
+        @foreach (var item in Model)
+        {
+            <div class="homepageCard" style="height:50%;width:50%; display: block; margin-left: auto; margin-right: auto;">
+                <h2 style="text-align:center">@Html.DisplayFor(modelItem => item.Title)</h2>
+                <div class="row" style="text-align:center"> Posted by @Html.DisplayFor(modelItem => item.UserName) Posted on  @Html.DisplayFor(modelItem => item.PostDate)</div>
+                <hr />
+                <div style="text-align:center">@Html.DisplayFor(modelItem => item.Description)</div>
+            </div>
+            <br />
+        }
+
+        </div>

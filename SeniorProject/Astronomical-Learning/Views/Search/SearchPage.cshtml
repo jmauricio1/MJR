@@ -16,6 +16,15 @@
 
         <h4>@x.Description</h4>
     }
+
+    <br />
+    <h2>Users</h2>
+    @foreach( var name in ViewBag.UserList)
+    {
+        <h3>
+            <a href="~/Profile/UserProfile?id=@name.Id">@name.UserName</a>
+        </h3>
+    }
 </div>
 
 

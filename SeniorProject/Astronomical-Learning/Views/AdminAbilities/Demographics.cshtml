@@ -1,0 +1,119 @@
+﻿@model Astronomical_Learning.Models.DemographicViewModel
+
+@{
+    ViewBag.Title = "Demographics";
+}
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+
+<script>
+    window.onload = function () {
+
+        var countryModel = @Html.Raw(Json.Encode(Model.CountryDatas));
+
+        // Initialise a new array
+        var countryDataPoints = [];
+
+        // Build an array of objects
+        $.each(countryModel, function (index, item) {
+            countryDataPoints.push({ label: item.CountryName, y: item.CountryCount });
+        });
+
+        var countryChart = new CanvasJS.Chart("CountryDemographics", {
+            animationEnabled: true,
+            title: {
+                text: "Registered Users Countries"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 270,
+                indexLabel: "{label}",
+                dataPoints: countryDataPoints
+            }]
+        });
+        countryChart.render();
+
+
+        var viewsModel = @Html.Raw(Json.Encode(Model.ViewsDatas));
+
+        // Initialise a new array
+        var viewsDataPoints = [];
+
+        // Build an array of objects
+        $.each(viewsModel, function (index, item) {
+            viewsDataPoints.push({ label: item.PageName, y: item.ViewCount});
+        });
+
+        var viewsChart = new CanvasJS.Chart("ViewsDemographics", {
+            animationEnabled: true,
+
+            title: {
+                text: "Information Page View Counts"
+            },
+            axisX: {
+                interval: 1
+            },
+            axisY2: {
+                interlacedColor: "rgba(1,77,101,.2)",
+                gridColor: "rgba(1,77,101,.1)",
+                title: "Number of Views"
+            },
+            data: [{
+                type: "bar",
+                name: "companies",
+                axisYType: "secondary",
+                color: "#014D65",
+                dataPoints: viewsDataPoints
+            }]
+        });
+        viewsChart.render();
+
+
+        var levelsModel = @Html.Raw(Json.Encode(Model.UserLevelsDatas));
+
+        // Initialise a new array
+        var levelsDataPoints = [];
+
+        // Build an array of objects
+        $.each(levelsModel, function (index, item) {
+            levelsDataPoints.push({label: item.UsersLevel, y: item.UsersLevelCount });
+        });
+
+        var levelsChart = new CanvasJS.Chart("LevelsDemographics", {
+            animationEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title: {
+                text: "User Badge Levels"
+            },
+            axisY: {
+                title: "Num of Users"
+            },
+            axisX: {
+                title: "Badge Level"
+            },
+            data: [{
+                type: "column",
+                dataPoints: levelsDataPoints
+            }]
+        });
+        levelsChart.render();
+    }
+</script>
+
+
+<div class="dark-bkr information-paragraphs" style="height: 1500px">
+    <div id="CountryDemographics" style="width: 50%; margin-left: auto; margin-right: auto; display: block;">
+
+    </div>
+
+    <div id="ViewsDemographics" style="width: 50%; margin-left: auto; margin-right: auto; display: block; margin-top: 500px">
+
+    </div>
+
+    <div id="LevelsDemographics" style="width: 50%; margin-left: auto; margin-right: auto; display: block; margin-top: 1000px">
+
+    </div>
+
+</div>

@@ -13,6 +13,10 @@ using Astronomical_Learning.DAL;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Web.Routing;
+using System.Net;
+using System.IO;
+using System.Configuration;
+using Newtonsoft.Json.Linq;
 
 namespace Astronomical_Learning.Controllers
 {
@@ -409,8 +413,53 @@ namespace Astronomical_Learning.Controllers
 
             ViewBag.CountriesListNew = countryList;
 
+            ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
+
             return View("Register");
         }
+
+
+        public string checkCaptcha(string key, string cResponse)
+        {
+            //create the url and request the information
+            string url = "https://www.google.com/recaptcha/api/siteverify";
+            string secretKey = "?secret=" + key;
+            string check = "&response=" + cResponse;
+
+            url = url + secretKey + check;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+            //read in the information
+            string jsonString = null;
+
+            //try to get the information and if it fails return a default json string with an error picture and message
+            try
+            {
+
+
+                using (WebResponse response = request.GetResponse())
+                {
+                    Stream stream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(stream);
+                    jsonString = reader.ReadToEnd();
+                    reader.Close();
+                    stream.Close();
+                }
+            }
+            catch
+            {
+                jsonString = "false";
+            }
+
+
+
+            return jsonString;
+        }
+
+
+
+
+
 
         private ALContext db = new ALContext();
 
@@ -421,6 +470,45 @@ namespace Astronomical_Learning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            //get if the checkbox was checked
+            string captchaResponse = Request.Form["g-Recaptcha-Response"];
+
+            //if it was not checked send back an error
+            if (captchaResponse == "")
+            {
+                ViewBag.Error = "Please check the reCaptcha checkbox";
+                ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
+                return View();
+            }
+
+
+            string secretKey = ConfigurationManager.AppSettings["ReCaptchaSecretKey"];
+
+            //take the secret key and get a confirmation from rechatcha
+            string cResponse = checkCaptcha(secretKey, captchaResponse);
+
+            //if the response failed give back an error
+            if (cResponse.Equals("false"))
+            {
+                ViewBag.Error = "There was an error with the response form the reCaptcha checkbox";
+                ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
+                return View();
+            }
+
+
+
+            JObject responseData = JObject.Parse(cResponse);
+
+            string success = responseData["success"].ToString();
+
+            //if the check failed return an error
+            if (success.Equals("false"))
+            {
+                ViewBag.Error = "There was an invalid response from the reCaptcha checkbox";
+                ViewBag.DataKey = ConfigurationManager.AppSettings["ReCaptchaDataKey"];
+                return View();
+            }
+
 
             if (ModelState.IsValid)
             {
