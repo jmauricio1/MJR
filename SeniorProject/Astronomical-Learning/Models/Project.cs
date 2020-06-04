@@ -13,9 +13,9 @@ namespace Astronomical_Learning.Models
 
         public int Id { get; set; }
 
-        [Required]
+        
         [StringLength(256)]
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(256)]
