@@ -23,6 +23,15 @@ namespace Astronomical_Learning.Controllers
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Moon_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
 
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "Moon");
+
+            foreach (ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+
+            db.SaveChanges();
+
             return View(comments);
         }
 
@@ -30,6 +39,15 @@ namespace Astronomical_Learning.Controllers
         {
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Sun_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
+
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "Sun");
+
+            foreach (ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+
+            db.SaveChanges();
 
             return View(comments) ;
         }
@@ -39,6 +57,15 @@ namespace Astronomical_Learning.Controllers
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/SpaceDebris_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
 
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "SpaceDebris");
+            
+            foreach(ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+            
+            db.SaveChanges();
+
             return View(comments);
         }
 
@@ -46,6 +73,15 @@ namespace Astronomical_Learning.Controllers
         {
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Our_Planets" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
+
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "Planets");
+
+            foreach (ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+
+            db.SaveChanges();
 
             return View(comments);
         }
@@ -58,6 +94,15 @@ namespace Astronomical_Learning.Controllers
         {
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Mars_Research" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
+
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "Mars");
+
+            foreach (ViewData item in viewCount)
+            {
+                item.ViewCount += 1;
+            }
+
+            db.SaveChanges();
 
             return View(comments);
         }
