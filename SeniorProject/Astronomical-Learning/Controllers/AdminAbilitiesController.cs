@@ -14,6 +14,7 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace Astronomical_Learning.Controllers
 {
+    
     public class AdminAbilitiesController : Controller
     {
 
@@ -98,6 +99,7 @@ namespace Astronomical_Learning.Controllers
 
         //returns all users who are searched from the all users page
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult AllUsers(string searchInput)
         {
@@ -145,6 +147,7 @@ namespace Astronomical_Learning.Controllers
 
         //returns all banned users who are searched from the banned users page
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult BannedUsers(string searchInput)
         {
@@ -495,7 +498,6 @@ namespace Astronomical_Learning.Controllers
 
 
         //the page to create new regular admins
-        [AllowAnonymous]
         [Authorize(Roles = "Super Administrator")]
         public ActionResult AdminCreate()
         {
@@ -511,7 +513,6 @@ namespace Astronomical_Learning.Controllers
 
         //create the new admin
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Super Administrator")]
         public async Task<ActionResult> AdminCreate(RegisterViewModel model)
@@ -785,7 +786,7 @@ namespace Astronomical_Learning.Controllers
                 {
                     project.AcceptState = true;
 
-                    //add points to admin who accepted the comment
+                    //add points to admin who accepted the project
                     var userID = User.Identity.GetUserId();
                     var user = db.AspNetUsers.Find(userID);
                     user.AccountScore = (int)user.AccountScore + 5;

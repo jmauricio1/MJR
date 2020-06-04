@@ -30,22 +30,26 @@ namespace Astronomical_Learning.Controllers
 
         [Authorize(Roles = "User,Administrator,Super Administrator")]
         [HttpPost]
-        public ActionResult CreateProject(Project model)
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateProject( Project model)
         {
+
+            var userId = User.Identity.GetUserId();
+            var user = db.AspNetUsers.Find(userId);
+
+
 
             model.AcceptState = false;
             model.PostDate = DateTime.Now;
-            model.Username = User.Identity.GetUserName();
+            model.UserName = user.UserName;
 
-            Debug.WriteLine(model.Username);
-            Debug.WriteLine(model.Title);
-            Debug.WriteLine(model.Description);
-            Debug.WriteLine(model.PostDate);
-            Debug.WriteLine(model.AcceptState);
 
-           
+            if (ModelState.IsValid)
+            {
                 db.Projects.Add(model);
                 db.SaveChanges();
+            }
+               
             
 
             
