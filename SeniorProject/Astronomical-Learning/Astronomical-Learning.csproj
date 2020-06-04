@@ -263,40 +263,14 @@
       <DependentUpon>ALtempDB.mdf</DependentUpon>
     </Content>
 -->
-    <Content Include="App_Data\Badge Levels\user-levels-up.sql" />
-    <Content Include="App_Data\ChangesToDB.sql" />
     <Content Include="App_Data\down.sql" />
-    <Content Include="App_Data\FactOfTheDay\downFacts.sql" />
-    <Content Include="App_Data\FactOfTheDay\facts-update.sql" />
-    <Content Include="App_Data\FactOfTheDay\seedFacts.sql" />
-    <Content Include="App_Data\FactOfTheDay\upFacts.sql" />
-    <Content Include="App_Data\profile-seed.sql" />
-    <Content Include="App_Data\Projects\downProjects.sql" />
-    <Content Include="App_Data\Projects\upProjects.sql" />
-    <Content Include="App_Data\Roles\upRoles.sql" />
-    <Content Include="App_Data\Scores\UserQuiz.sql" />
     <!-- Remember to comment this out 
     <Content Include="App_Data\Temporary.mdf" />
     <Content Include="App_Data\Temporary_log.ldf">
       <DependentUpon>Temporary.mdf</DependentUpon>
     </Content>
     -->
-    <Content Include="App_Data\Search\downSearch.sql" />
-    <Content Include="App_Data\Search\seedSarch.sql" />
-    <Content Include="App_Data\Search\upSearch.sql" />
-    <Content Include="App_Data\TripFilter\downTripFilter.sql" />
-    <Content Include="App_Data\TripFilter\seedTripFilter.sql" />
-    <Content Include="App_Data\TripFilter\upTripFilter.sql" />
-    <Content Include="App_Data\TripPlanner\downTripPlanner.sql" />
-    <Content Include="App_Data\TripPlanner\seedTripPlanner.sql" />
-    <Content Include="App_Data\TripPlanner\upTripPlanner.sql" />
     <Content Include="App_Data\up.sql" />
-    <Content Include="App_Data\UserComment\demoSeedScript.sql" />
-    <Content Include="App_Data\UserComment\downUserComment.sql" />
-    <Content Include="App_Data\UserComment\upUserComment.sql" />
-    <Content Include="App_Data\ViewsData\downViewData.sql" />
-    <Content Include="App_Data\ViewsData\seedViewData.sql" />
-    <Content Include="App_Data\ViewsData\upViewData.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
