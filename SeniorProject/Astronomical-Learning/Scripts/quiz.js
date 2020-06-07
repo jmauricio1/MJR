@@ -11,6 +11,9 @@
         var input9 = document.querySelector('input[name="q9"]:checked').value;
         var input10 = document.querySelector('input[name="q10"]:checked').value;
 
+        /*
+         * AJAX call that sends the quiz inputs
+         */
         $.ajax({
             type: "GET",
             dataType: "json",

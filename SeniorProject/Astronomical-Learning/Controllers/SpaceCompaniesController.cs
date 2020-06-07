@@ -25,6 +25,10 @@ namespace Astronomical_Learning.Controllers
         {
             return View();
         }
+
+        /*
+         * This is viewing the list of launches and only gets some data from the API to view in the list
+         */
         public JsonResult SpaceXLaunchList()
         {
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
@@ -45,6 +49,10 @@ namespace Astronomical_Learning.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
+        /*
+         * If a user is searching for a launch using requirements, this JsonResult will be called.
+         * In this case, we get more information from the API to see if a launch meets the search requirements.
+         */
         public JsonResult SearchDefined(string launchSuccess, string launchSite, string rocketUsed, string year, string landSuccess, string shipUsed)
         {
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
@@ -77,6 +85,10 @@ namespace Astronomical_Learning.Controllers
                 list.Add(launch);
             }
 
+            /*
+             * Some values from keys from the API can be null.
+             * If it is not null, then we do something specific with that data
+             */
             if (!launchSuccess.IsNullOrWhiteSpace())
             {
                 RefineSuccess(launchSuccess, ref list);
@@ -122,6 +134,7 @@ namespace Astronomical_Learning.Controllers
                 condition = "False";
             }
 
+            //Removes the launch that does not meet the launch success condition
             for (int i = 0; i < list.Count(); i++)
             {
                 if (list[i].launchSuccess != condition)
@@ -133,6 +146,9 @@ namespace Astronomical_Learning.Controllers
             //Debug.WriteLine(launchSuccess + " : " + list.Count());
         }
 
+        /*
+         * Removes items from list that do not contain the site used
+         */
         public void RefineSite(string value, ref List<Launch> list)
         {
             for (int i = 0; i < list.Count(); i++)
@@ -145,6 +161,9 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
+        /*
+         * Removes items from list that do not contain the rocket used for the mission/flight
+         */
         public void RefineRocket(string value, ref List<Launch> list)
         {
             for (int i = 0; i < list.Count(); i++)
@@ -156,7 +175,9 @@ namespace Astronomical_Learning.Controllers
                 }
             }
         }
-
+        /*
+         * Removes items from list that were not launched in a specific year
+         */
         public void RefineYear(string value, ref List<Launch> list)
         {
             for (int i = 0; i < list.Count(); i++)
@@ -169,6 +190,9 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
+        /*
+         * Removes items from list that does not match the land success requiremet
+         */
         public void RefineLand(string landSuccess, ref List<Launch> list)
         {
             string condition = "";
@@ -191,6 +215,9 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
+        /*
+         * Removes the launches that do not contain the ship a user is searching for
+         */
         public void RefineShip(string value, ref List<Launch> list)
         {
             for (int i = 0; i < list.Count(); i++)
@@ -204,7 +231,9 @@ namespace Astronomical_Learning.Controllers
 
             }
         }
-
+        /*
+         * This function gets all the specific details about a particular launch
+         */
         public ActionResult LaunchDetails(int? id)
         {
             string json = SendRequest("https://api.spacexdata.com/v3/launches");
@@ -216,6 +245,7 @@ namespace Astronomical_Learning.Controllers
             }
             id--;
 
+            //Creating objects to hold groups of information
             MainLaunchInformation mainInfo;
             RocketInformation rocketInformation;
             FirstStage firstStage;
@@ -228,6 +258,7 @@ namespace Astronomical_Learning.Controllers
 
             try
             {
+                //We get the information of a specific launch in groups to separate concerns
                 mainInfo = GetMainLaunchInfo(ref data, id);
                 rocketInformation = GetRocketInformation(ref data, id);
                 firstStage = GetFirstStageInformation(ref data, id);
@@ -243,15 +274,15 @@ namespace Astronomical_Learning.Controllers
                 return RedirectToAction("CustomError", "Home", new { errorName = "Cannot find details for this launch.", errorMessage = "Please try again later when we have more information about this launch." });
             }
 
-
-
-
-
+            //Returns all the information through a view model that holds everything
             SingleLaunchViewModel viewModel = new SingleLaunchViewModel(mainInfo, rocketInformation,
                 firstStage, secondStage, launchSite, launchLinks, fairings, timeline, ships);
             return View(viewModel);
         }
 
+        /*
+         * This function gets the main launch information from the API and puts it in a temporary objecy, mainInfo
+         */
         public MainLaunchInformation GetMainLaunchInfo(ref JArray data, int? id)
         {
             MainLaunchInformation mainInfo = new MainLaunchInformation();
@@ -289,6 +320,9 @@ namespace Astronomical_Learning.Controllers
             return mainInfo;
         }
 
+        /*
+         * This function gets the rocket information from the API and puts it in a temporary object called rocketInfo
+         */
         public RocketInformation GetRocketInformation(ref JArray data, int? id)
         {
             RocketInformation rocketInfo = new RocketInformation();
@@ -300,6 +334,10 @@ namespace Astronomical_Learning.Controllers
             return rocketInfo;
         }
 
+        /*
+         * This function gets the information from the first stage from the API and puts it in the object, firstStage
+         * If some values from the API give us a certain value, we put in a specific value into that attribute of firstStage
+         */
         public FirstStage GetFirstStageInformation(ref JArray data, int? id)
         {
             FirstStage firstStage = new FirstStage();
@@ -353,6 +391,9 @@ namespace Astronomical_Learning.Controllers
             return value;
         }
 
+        /*
+         * This function gets the information from the second stage from the API and puts it in our object secondStage
+         */
         public SecondStage GetSecondStageInformation(ref JArray data, int? id)
         {
             SecondStage secondStage = new SecondStage();
@@ -361,6 +402,8 @@ namespace Astronomical_Learning.Controllers
 
             secondStage.block2 = (int?)temp["block"];
             List<Payload> payloads = new List<Payload>();
+            
+            //this gets the list of payloads along with their information for a specific launch
             for (int i = 0; i < data[id]["rocket"]["second_stage"]["payloads"].Count(); i++)
             {
                 Payload current = new Payload();
@@ -385,7 +428,8 @@ namespace Astronomical_Learning.Controllers
 
                 payloads.Add(current);
             }
-
+            
+            //This for loop gets the orbit information for each payload using a helper function called GetPayloadOrbit
             for (int j = 0; j < (int)temp["payloads"].Count(); j++)
             {
                 payloads[j].orbit = GetPayloadOrbit(ref data, id, j);
@@ -396,6 +440,9 @@ namespace Astronomical_Learning.Controllers
             return secondStage;
         }
 
+        /*
+         * This function gets the payload orbit information for a payload from a specific launch from the API and
+         */
         public Orbit GetPayloadOrbit(ref JArray data, int? id, int num)
         {
             Orbit orbit = new Orbit();
@@ -421,6 +468,10 @@ namespace Astronomical_Learning.Controllers
             return orbit;
         }
 
+        /*
+         * Instead of writing more lines of code,
+         * this function gets the value of whatever key we're searching for, for a payload's orbit.
+         */
         public string GetOrbitStringValue(ref JArray data, int? id, int num, string name)
         {
             var temp = (string)data[id]["rocket"]["second_stage"]["payloads"][num]["orbit_params"][name];
@@ -436,6 +487,9 @@ namespace Astronomical_Learning.Controllers
             return value;
         }
 
+        /*
+         * This function gets the launch site informatoin from the API
+         */
         public LaunchSite GetLaunchSiteInformation(ref JArray data, int? id)
         {
             LaunchSite current = new LaunchSite();
@@ -446,10 +500,14 @@ namespace Astronomical_Learning.Controllers
             return current;
         }
 
+        /*
+         * This function gets the links of the different resources from the API 
+         */
         public LaunchLinks GetLinksInformation(ref JArray data, int? id)
         {
             LaunchLinks current = new LaunchLinks();
 
+            //Below, a helper function called GetLinkString is used to help get the value of specific key/link
             current.patch = GetLinkString(ref data, id, "mission_patch");
             current.patchSmall = GetLinkString(ref data, id, "mission_patch_small");
             current.redditCampaign = GetLinkString(ref data, id, "reddit_campaign");
@@ -480,6 +538,10 @@ namespace Astronomical_Learning.Controllers
             return current;
         }
 
+        /*
+         * If a link exists, we return the link.
+         * If a link does not exist, we have the function return # 
+         */
         public string GetLinkString(ref JArray data, int? id, string name)
         {
             var temp = (string)data[id]["links"][name];
@@ -495,6 +557,9 @@ namespace Astronomical_Learning.Controllers
             return value;
         }
 
+        /*
+         * This function gets the fairing informaiton from the API
+         */
         public Fairing GetFairingsInformation(ref JArray data, int? id)
         {
             Fairing current = new Fairing();
@@ -514,6 +579,9 @@ namespace Astronomical_Learning.Controllers
             return current;
         }
 
+        /*
+         * This function gets the sequence events that happened during the flight from the API
+         */
         public LaunchTimeline GetTimelineInformation(ref JArray data, int? id)
         {
             LaunchTimeline current = new LaunchTimeline();
@@ -574,6 +642,9 @@ namespace Astronomical_Learning.Controllers
             return current;
         }
 
+        /*
+         * This function is used to help get the value of a specific event during the launch timeline
+         */
         public int? TimelineHelper(ref JArray data, int? id, string name)
         {
             int? value;
@@ -583,7 +654,9 @@ namespace Astronomical_Learning.Controllers
             return value;
         }
 
-
+        /*
+         * This function gets the list of ships from the API for a specific launch
+         */
         public Ship GetShipsInformation(ref JArray data, int? id)
         {
             Ship list = new Ship();

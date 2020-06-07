@@ -29,6 +29,7 @@ namespace Astronomical_Learning.Controllers
         {
             List<string> results = new List<string>();
 
+            //Below, add to list of results if an answer from user matches to correct answer
             results.Add(AnswerChecker(a1, 2));
             results.Add(AnswerChecker(a2, 1));
             results.Add(AnswerChecker(a3, 4));
@@ -51,7 +52,7 @@ namespace Astronomical_Learning.Controllers
                     }
                 }
                 int newScore = correctCount * 3;
-                Debug.WriteLine("Quiz Score : " + newScore);
+                //Debug.WriteLine("Quiz Score : " + newScore);
                 ApplyScore(newScore);
             }
 
@@ -85,6 +86,7 @@ namespace Astronomical_Learning.Controllers
             }
             else
             {
+                //Create a new UserQuizScore if this was the first time a user was taking a quiz
                 UserQuizScore userScore = new UserQuizScore();
                 userScore.UserID = userID;
                 userScore.QuizID = 1;

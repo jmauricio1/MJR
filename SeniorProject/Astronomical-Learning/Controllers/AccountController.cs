@@ -513,7 +513,7 @@ namespace Astronomical_Learning.Controllers
             if (ModelState.IsValid)
             {
                 Random rand = new Random();
-                int x = rand.Next(1, 7);
+                int x = rand.Next(1, 7); //This variable represents the ID of which random picture the user will get 
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Country = model.Country, StateProvince = model.StateProvince, AID = x, LevelID = 1};
                 if(db.AspNetUsers.Any(m => m.UserName == user.UserName) == true)
                 {
@@ -551,9 +551,11 @@ namespace Astronomical_Learning.Controllers
         private async Task<string> SendConfirmationTokenAsync(string userID, string subject, string name)
         {
             string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
+            //This will be the link that user has to click to confirm their email
             var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
             string emailBody = "Hello " + name + ", \n Please <a href=\"" + callbackUrl + "\"> click here</a> to confirm your email with Astronomical Learning";
 
+            //Sending the confirmation email to the user
             await UserManager.SendEmailAsync(userID, subject, emailBody);
             return callbackUrl;
         }

@@ -148,13 +148,6 @@ function siteSearch() {
     location.href = '/Search/searchPage' + '?searchQuery=' + query;
 }
 
-
-
-
-
-
-
-
 /*
 $(function () {
     $('.button').on("click", function () {
@@ -187,7 +180,3 @@ function singleQuestionRight(aDiv, bDiv) {
 
     y.style.display = "none";
 }
-
-
-
-

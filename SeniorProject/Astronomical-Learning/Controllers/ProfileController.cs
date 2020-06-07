@@ -20,7 +20,6 @@ namespace Astronomical_Learning.Controllers
         // GET: Profile
         public ActionResult ProfilePage(string changedUsername)
         {
-
             var userId = User.Identity.GetUserId();
             var user = db.AspNetUsers.Find(userId); ;
 
@@ -34,9 +33,7 @@ namespace Astronomical_Learning.Controllers
 
             }
 
-
-
-            
+            //Viewbags used to help display information of a user
             ViewBag.FirstName = user.FirstName;
             ViewBag.LastName = StringInfo.GetNextTextElement(user.LastName, 0);
             ViewBag.State = user.StateProvince;
@@ -169,7 +166,11 @@ namespace Astronomical_Learning.Controllers
 
             return View(comments);
         }
-
+        /*
+         * This function is different ProfilePage.
+         * This is when a user is not viewing their own profile page.
+         * User does not have the ability to change their own details and comments as well as other users' properties.
+         */
         public ActionResult UserProfile(string id)
         {
             var user = db.AspNetUsers.Find(id);

@@ -23,13 +23,9 @@ namespace Astronomical_Learning.Controllers
                 searchQuery = "";
             }
 
-
             string dataBaseSearchQuery = searchQuery.ToLower();
-
             var keywordList = db.SearchKeywords.ToArray();
-
             int keywordListSize = keywordList.Count();
-
             List<string> validSearches = new List<string>();
 
             for(int i = 0; i < keywordListSize; i++)
@@ -54,6 +50,7 @@ namespace Astronomical_Learning.Controllers
             ViewBag.pagesList = pages;
             ViewBag.search = searchQuery;
 
+            //Also gets a list of users that match contain the search query's value
             var userList = db.AspNetUsers.Where(m => m.UserName.Contains(searchQuery));
             ViewBag.UserList = userList;
 

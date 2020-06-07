@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿//Getting the list of launches when the page loads
+$(document).ready(function () {
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -12,6 +13,7 @@ function errorOnAjax() {
     console.log("ERROR on ajax request.");
 }
 
+//When "Reset" is clicked, the search requirements values will clear and the current list will display a full list of launches
 $('#reset-list').click(function () {
     $('#launchSuccess-dropdown').val("");
     $('#landSuccess-dropdown').val("");
@@ -61,6 +63,10 @@ function newList() {
     var site = $('#site-dropdown').val();
     var ship = $('#ship-dropdown').val();
 
+    /*
+     * This function sends the launch requirements information and
+     * gets back the list of launches that have/meet the values that were being searched for
+     */ 
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -82,6 +88,7 @@ function work(data) {
     console.log(data);
 }
 
+//Displaying the list of we got back from the API
 function displaySpaceXList(data) {
     console.log(data);
     $('#launch-list').empty();
