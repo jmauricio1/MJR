@@ -63,5 +63,8 @@ For the Astronomical Learning project we followed the Disciplined Agile Delivery
 For a list of tools we used while constructing this project click [HERE!](https://github.com/jmauricio1/MJR/blob/master/tools.md). Ideally if you wish to contribute attempt to use compatible tools with the ones we have used for the project. 
 
 ### Continuously Deployed Website
-You may view our continually deployed website [HERE!](http://astronomicaldev.azurewebsites.net/)
+You may view our continually deployed website [HERE!](http://astronomical.azurewebsites.net/)
+
+### Project Repository Visualization
+To see a visualized version of our projects commit history click [HERE!](https://www.youtube.com/watch?v=aNwQgLSwIjA&feature=youtu.be)
 

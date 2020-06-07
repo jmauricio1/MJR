@@ -21,6 +21,7 @@
             countryDataPoints.push({ label: item.CountryName, y: item.CountryCount });
         });
 
+        // Create and render the countries chart
         var countryChart = new CanvasJS.Chart("CountryDemographics", {
             animationEnabled: true,
             title: {
@@ -46,6 +47,7 @@
             viewsDataPoints.push({ label: item.PageName, y: item.ViewCount});
         });
 
+        // Create and render the view counts chart
         var viewsChart = new CanvasJS.Chart("ViewsDemographics", {
             animationEnabled: true,
 
@@ -81,6 +83,7 @@
             levelsDataPoints.push({label: item.UsersLevel, y: item.UsersLevelCount });
         });
 
+        // Create and render the user badge levels chart
         var levelsChart = new CanvasJS.Chart("LevelsDemographics", {
             animationEnabled: true,
             theme: "light2", // "light1", "light2", "dark1", "dark2"
@@ -102,7 +105,9 @@
     }
 </script>
 
-
+<!-- 
+Empty div containers that will be populated with charts when the window loads    
+-->
 <div class="dark-bkr information-paragraphs" style="height: 1500px">
     <div id="CountryDemographics" style="width: 50%; margin-left: auto; margin-right: auto; display: block;">
 
