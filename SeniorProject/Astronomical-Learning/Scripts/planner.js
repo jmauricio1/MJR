@@ -1,5 +1,4 @@
-
-
+//Shows and hides divs until the appropriate number of stops is displayed, also emptys lists to ensure proper population of lists
 function ShowHideAllDiv() {
     document.getElementById('stopOneDiv').style.display = 'none';
     document.getElementById('stopTwoDiv').style.display = 'none';
@@ -14,6 +13,7 @@ function ShowHideAllDiv() {
     getDestinationPlanet();
 }
 
+//Shows and hides divs until the appropriate number of stops is displayed, also emptys lists to ensure proper population of lists
 function ShowHideStopOneDiv() {
     document.getElementById('stopOneDiv').style.display = 'block';
     document.getElementById('stopTwoDiv').style.display = 'none';
@@ -28,6 +28,7 @@ function ShowHideStopOneDiv() {
     getDestinationPlanet();
 }
 
+//Shows and hides divs until the appropriate number of stops is displayed, also emptys lists to ensure proper population of lists
 function ShowHideStopTwoDiv() {
     document.getElementById('stopOneDiv').style.display = 'block';
     document.getElementById('stopTwoDiv').style.display = 'block';
@@ -42,6 +43,7 @@ function ShowHideStopTwoDiv() {
     getDestinationPlanet();
 }
 
+//Shows and hides divs until the appropriate number of stops is displayed, also emptys lists to ensure proper population of lists
 function ShowHideStopThreeDiv() {
     document.getElementById('stopOneDiv').style.display = 'block';
     document.getElementById('stopTwoDiv').style.display = 'block';
@@ -56,6 +58,7 @@ function ShowHideStopThreeDiv() {
     getDestinationPlanet();
 }
 
+//Shows and hides divs until the appropriate number of stops is displayed, also emptys lists to ensure proper population of lists
 function ShowHideStopFourDiv() {
     document.getElementById('stopOneDiv').style.display = 'block';
     document.getElementById('stopTwoDiv').style.display = 'block';
@@ -70,6 +73,10 @@ function ShowHideStopFourDiv() {
     getDestinationPlanet();
 }
 
+/* The next 9 methods are all AJAX calls that create cascading lists for the trip planner planet selection system.
+ * Each one builds it's AJAX query and then posts it.
+ * The 9 methods contain every possibility from one list populating to the next possible list.
+*/
 $("#startPlanet").change(function () {
     $("#stopOne").prop("disabled", true);
     if ($("#startPlanet").val() != "Choose here") {
@@ -343,6 +350,7 @@ function getDestinationPlanet() {
     }
 }
 
+//The following method validates the users input by checking that all inputs are appropriate
 function confirmRoute() {
     var start = $('#startPlanet').val();
     var stopOne = $('#stopOne').val();
@@ -384,6 +392,8 @@ function confirmRoute() {
 
     }
 }
+
+//An AJAX call that displays the calculated trip values in a table, once received from the controller
 function calculateTrip() {
 
     document.getElementById('tripResultsTable').innerHTML =
@@ -434,9 +444,7 @@ function calculateTrip() {
 }
 
 
-
-
-
+//A button function that resets all fields to their original values
 function resetTripPlan() {
     document.getElementById('tripResults').style.display = 'none';
     ShowHideAllDiv();
@@ -464,10 +472,14 @@ function resetTripPlan() {
         '</tr>'
 }
 
+
+
+//Variables to hold filter class data
 var filterOneClass = "";
 var filterTwoClass = "";
 var filterThreeClass = "";
 
+//The following three functions color and disable what has been selected in them for the other two filters
 function filterFirst() {
     if (filterOneClass != "") {
         $('#secondFilter .' + filterOneClass).prop('disabled', false);
@@ -528,6 +540,7 @@ function filterThird() {
     filterDataFetch()
 }
 
+//The filters AJAX call for fetching the planets from the filter data controller method
 function filterDataFetch() {
     var FilterOptions = {};
     FilterOptions.url = "/TripPlanner/GetFilterData";

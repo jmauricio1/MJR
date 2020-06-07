@@ -14,11 +14,13 @@ namespace Astronomical_Learning.Controllers
         // GET: OuterSystem
         public ActionResult MilkyWay_Information()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/OuterSystem/MilkyWay_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/OuterSystem/SubmitComment";
 
-            var viewCount = db.ViewDatas.Where(x => x.PageName == "MilkyWay");
-
+            //incremeent the ViewCount of the page in the database
+            var viewCount = db.ViewDatas.Where(x => x.PageName == "MilkyWay");          
+            
             foreach (ViewData item in viewCount)
             {
                 item.ViewCount += 1;
@@ -31,9 +33,11 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult Andromeda_Information()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/OuterSystem/Andromeda_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/OuterSystem/SubmitComment";
 
+            //incremeent the ViewCount of the page in the database
             var viewCount = db.ViewDatas.Where(x => x.PageName == "Andromeda");
 
             foreach (ViewData item in viewCount)
@@ -47,11 +51,13 @@ namespace Astronomical_Learning.Controllers
         }
         public ActionResult Stars_Information()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/OuterSystem/Stars_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/OuterSystem/SubmitComment";
 
             var viewCount = db.ViewDatas.Where(x => x.PageName == "Stars");
 
+            //incremeent the ViewCount of the page in the database
             foreach (ViewData item in viewCount)
             {
                 item.ViewCount += 1;
@@ -99,6 +105,7 @@ namespace Astronomical_Learning.Controllers
             {
                 UserComment originalComment = db.UserComments.Where(x => x.Id == id).FirstOrDefault();
 
+                //Increment the report count of pages within the database
                 if (originalComment != null)
                 {
                     UserComment newComment = originalComment;

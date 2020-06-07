@@ -12,9 +12,6 @@ namespace Astronomical_Learning.Controllers
         // GET: ISS
         public ActionResult InternationalSpaceStation()
         {
-            /*
-            ViewBag.AzureValue = ConfigurationManager.AppSettings["TestAppSetting"];
-            */
             return View();
         }
     }

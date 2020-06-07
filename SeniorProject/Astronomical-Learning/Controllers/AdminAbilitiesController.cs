@@ -814,6 +814,7 @@ namespace Astronomical_Learning.Controllers
             }
         }
 
+        //feeds demographic information pulled from the database to the view in a ViewModel
         [Authorize(Roles = "Administrator,Super Administrator")]
         public ActionResult Demographics()
         {

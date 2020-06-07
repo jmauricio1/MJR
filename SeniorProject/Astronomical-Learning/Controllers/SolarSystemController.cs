@@ -20,9 +20,11 @@ namespace Astronomical_Learning.Controllers
         // GET: SolarSystem
         public ActionResult Moon_Information()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Moon_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
 
+            //incremeent the ViewCount of the page in the database
             var viewCount = db.ViewDatas.Where(x => x.PageName == "Moon");
 
             foreach (ViewData item in viewCount)
@@ -37,9 +39,11 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult Sun_Information()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Sun_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
 
+            //incremeent the ViewCount of the page in the database
             var viewCount = db.ViewDatas.Where(x => x.PageName == "Sun");
 
             foreach (ViewData item in viewCount)
@@ -54,9 +58,11 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult SpaceDebris_Information()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/SpaceDebris_Information" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
 
+            //incremeent the ViewCount of the page in the database
             var viewCount = db.ViewDatas.Where(x => x.PageName == "SpaceDebris");
             
             foreach(ViewData item in viewCount)
@@ -71,9 +77,11 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult Our_Planets()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Our_Planets" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
 
+            //incremeent the ViewCount of the page in the database
             var viewCount = db.ViewDatas.Where(x => x.PageName == "Planets");
 
             foreach (ViewData item in viewCount)
@@ -92,9 +100,11 @@ namespace Astronomical_Learning.Controllers
 
         public ActionResult Mars_Research()
         {
+            //Retrieves and displays comment section
             List<UserComment> comments = db.UserComments.Where(x => x.PageFrom == "/SolarSystem/Mars_Research" && x.AcceptState == true && x.ReportCount < 5).ToList();
             ViewBag.URL = "/SolarSystem/SubmitComment";
 
+            //incremeent the ViewCount of the page in the database
             var viewCount = db.ViewDatas.Where(x => x.PageName == "Mars");
 
             foreach (ViewData item in viewCount)
@@ -134,6 +144,7 @@ namespace Astronomical_Learning.Controllers
             {
                 UserComment originalComment = db.UserComments.Where(x => x.Id == id).FirstOrDefault();
 
+                //Increment the report count of pages within the database
                 if (originalComment != null)
                 {
                     UserComment newComment = originalComment;
