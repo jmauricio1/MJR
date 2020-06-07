@@ -23,13 +23,15 @@ namespace Astronomical_Learning.Controllers
         public JsonResult CalculateDistances(string Start, string StopOne, string StopTwo, string StopThree, string StopFour, string Destination)
         {
             List<TripPlanModel> Distances = new List<TripPlanModel>();
+
+            //temporary variables to store information
             TripPlanModel tempOne = new TripPlanModel();
             TripPlanModel tempTwo = new TripPlanModel();
             TripPlanModel tempThree = new TripPlanModel();
             TripPlanModel tempFour = new TripPlanModel();
             TripPlanModel tempFive = new TripPlanModel();
 
-
+            //fetching the proper Id values from the database
             int startId = db.Locations.Where(x => x.LocationName == Start).Select(x => x.Id).FirstOrDefault();
             int stopOneId = db.Locations.Where(x => x.LocationName == StopOne).Select(x => x.Id).FirstOrDefault();
             int stopTwoId = db.Locations.Where(x => x.LocationName == StopTwo).Select(x => x.Id).FirstOrDefault();
@@ -168,6 +170,7 @@ namespace Astronomical_Learning.Controllers
         [HttpPost]
         public JsonResult GetNewLocations(string Location)
         {
+            //retreieves the list of locations not including the currently selected location
             List<string> LocationList = db.Locations.Where(x => x.LocationName != Location).Select(x => x.LocationName).ToList();
 
             return Json(LocationList);
@@ -176,6 +179,7 @@ namespace Astronomical_Learning.Controllers
         [HttpPost]
         public JsonResult GetFilterData(string FilterOne, string FilterTwo, string FilterThree)
         {
+            //Checks all conditions possible with filters and acquires the data value from the appropriate place in the database
             List<string> FilteredPlanets = new List<string>();
 
             if (FilterOne == null && FilterTwo == null)

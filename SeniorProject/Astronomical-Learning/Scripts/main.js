@@ -10,7 +10,7 @@ function showDiv(name) {
 
 
 
-
+//Changes the sun information panel based on selected button
 function changeFactInfoCenter() {
 
     document.getElementById("sunFactImage").src = "https://upload.wikimedia.org/wikipedia/commons/2/28/Copernican_heliocentrism_diagram-2.jpg";
@@ -45,7 +45,7 @@ function changeFactInfoReligion() {
 
 
 
-
+//Changes the moon information panel based on selected button
 function changeFactInfoGravity() {
 
     document.getElementById("moonFactImage").src = "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16587_hires.jpg";
@@ -79,7 +79,7 @@ function starsChangeInfo(image, source, info) {
 
 
 
-
+//Changes the space debris information panel based on selected button
 function changeFactInfoDesert() {
     document.getElementById("cometImage").src = "https://i.pinimg.com/originals/66/ef/a2/66efa2297100fff8b1f69b31f9221caa.jpg";
 
@@ -102,7 +102,7 @@ function changeFactInfoScarab() {
 
 
 
-
+//AJAX call for the submit comment system
 function submitComment(url) {
     if ($('#commentBox').val().length >= 10) {
         // Build the comment
@@ -116,11 +116,13 @@ function submitComment(url) {
     }
 }
 
+//Success function for the submite comments AJAX call
 function showSuccess() {
     alert("Your comment was submitted successfully! It will appear on this page as soon as an admin has reviewed and approved it.");
     document.getElementById("commentBox").value = "";
 }
 
+//AJAX call for comment deletion in user profile
 function deleteComment(commentId) {
     var del = confirm("Are you sure you want to delete this comment?");
 
@@ -129,6 +131,7 @@ function deleteComment(commentId) {
     }
 }
 
+//Success function for AJAX comment delete call in user profile
 function deleteSuccess() {
     alert("You've deleted the comment.");
 
@@ -136,11 +139,6 @@ function deleteSuccess() {
         location.reload();
     }, 350);
 }
-
-
-
-
-
 
 
 function siteSearch() {
