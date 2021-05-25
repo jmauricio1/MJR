@@ -64,9 +64,3 @@ For a list of tools we used while constructing this project click [HERE!](https:
 
 ### Database Entity Relationships
 For a visual representation of our database schema, click [HERE!]https://github.com/jmauricio1/MJR/blob/master/AstronomicalLearning_FinalERD.pdf
-
-### Continuously Deployed Website
-You may view our continually deployed website [HERE!](http://astronomicaldev.azurewebsites.net/)
-
-
-
